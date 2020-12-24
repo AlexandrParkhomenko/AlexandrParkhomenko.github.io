@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang=en><head><!-- base href=../../ --><title>CS 229 - Probabilities and Statistics refresher</title><meta charset=utf-8><meta content="Teaching page of Shervine Amidi, Graduate Student at Stanford University." name=description><meta content="teaching, shervine, shervine amidi, data science" name=keywords><meta content="width=device-width, initial-scale=1" name=viewport>
+<link href=https://stanford.edu/~shervine/teaching/cs-229/refresher-probabilities-statistics rel=canonical>
+<link href=../../css/bootstrap.min.css rel=stylesheet>
+<link href=../../css/font-awesome.min.css rel=stylesheet>
+<link href=../../css/katex.min.css rel=stylesheet>
+<link href=../../css/style.min.css rel=stylesheet type=text/css>
+<link href=../../css/article.min.css rel=stylesheet>
+<script src=../../js/jquery.min.js></script>
+<script src=../../js/bootstrap.min.js></script>
+<script defer src=../../js/underscore-min.js type=text/javascript></script>
+<script defer src=../../js/katex.min.js></script>
+<script defer src=../../js/auto-render.min.js></script>
+<script defer src=../../js/article.min.js></script>
+<script defer src=../../js/lang.min.js></script>
+<script async defer src=../../js/buttons.js></script>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Probabilities and Statistics</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#introduction>Introduction</a></div> <div class=dropdown-container> <a href=#introduction><span>Sample space</span></a> <a href=#introduction><span>Event</span></a> <a href=#introduction><span>Permutation</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#conditional-probability>Conditional probability</a></div> <div class=dropdown-container> <a href=#conditional-probability><span>Bayes' rule</span></a> <a href=#conditional-probability><span>Independence</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#random-variables>Random Variables</a></div> <div class=dropdown-container> <a href=#random-variables><span>Definitions</span></a> <a href=#random-variables><span>Expectation</span></a> <a href=#random-variables><span>Variance</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#probability-distributions>Probability distributions</a></div> <div class=dropdown-container> <a href=#probability-distributions><span>Chebyshev's inequality</span></a> <a href=#probability-distributions><span>Main distributions</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#joint-rv>Jointly distributed random variables</a></div> <div class=dropdown-container> <a href=#joint-rv><span>Density</span></a> <a href=#joint-rv><span>Covariance</span></a> <a href=#joint-rv><span>Correlation</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#parameter-estimation>Parameter estimation</a></div> <div class=dropdown-container> <a href=#parameter-estimation><span>Mean</span></a> <a href=#parameter-estimation><span>Variance</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/refresher-probabilities-statistics.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+<div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
+  Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
+</div>
+<div class=title-lang style=display:none;> <!-- DISPLAY:NONE -->
+  <a aria-hidden=true class=anchor-bis href=#cs-229---machine-learning id=cs-229---machine-learning></a><a href=teaching/cs-229 onclick=trackOutboundLink(this);>CS 229 - Machine Learning</a>
+  
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE -->
+    <div class=input-group>
+      <select class=form-control onchange=changeLangAndTrack(this); onfocus=storeCurrentIndex(this);>
+        <option value=ar>العربية</option>
+        <option selected value=en>English</option>
+        <option value=es>Español</option>
+        <option value=fa>فارسی</option>
+        <option value=fr>Français</option>
+        <option value=ko>한국어</option>
+        <option value=pt>Português</option>
+        <option value=tr>Türkçe</option>
+        <option value=vi>Tiếng Việt</option>
+        <option value=zh>简中</option>
+        <option value=zh-tw>繁中</option>
+      </select>
+      <div class=input-group-addon><i class=fa></i></div>
+    </div>
+  </div>
+</div>
+<br>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button>CS 221 - Artificial Intelligence</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><b>CS 229 - Machine Learning</b></button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>CS 230 - Deep Learning</button>
+  </div>
+</div>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/probability/index.html'; oldhref='teaching/cs-229/refresher-probabilities-statistics'" type=button><b>Probabilities</b></button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/linear-algebra/index.html'; oldhref='teaching/cs-229/refresher-algebra-calculus'" type=button>Algebra</button>
+  </div>
+</div>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>Supervised Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/unsupervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-unsupervised-learning'" type=button>Unsupervised Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/deep-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-deep-learning'" type=button>Deep Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/machine-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks'" type=button>Tips and tricks</button>
+  </div>
+</div>
+<h1>
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Probabilities and Statistics refresher
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
+</h1>
+<i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
+<h2><a aria-hidden=true class=anchor href=#introduction id=introduction></a>Introduction to Probability and Combinatorics</h2>
+<p><span class="new-item item-g">Sample space</span> The set of all possible outcomes of an experiment is known as the sample space of the experiment and is denoted by $S$.</p>
+<br>
+<p><span class="new-item item-g">Event</span> Any subset $E$ of the sample space is known as an event. That is, an event is a set consisting of possible outcomes of the experiment. If the outcome of the experiment is contained in $E$, then we say that $E$ has occurred.</p>
+<br>
+<p><span class="new-item item-g">Axioms of probability</span> For each event $E$, we denote $P(E)$ as the probability of event $E$ occurring.</p>
+<p><i>Axiom 1</i> ― Every probability is between 0 and 1 included, i.e:</p>
+<div class=mobile-container>
+\[\boxed{0\leqslant P(E)\leqslant 1}\]
+</div>
+<div class=mobile-container>
+<center>
+<img alt="Axiom 1" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=probability-axiom-1.png?20e52e95618c88a4c10a5232c2c60ed0 style=width:100%;max-width:600px>
+</center>
+</div>
+<p><i>Axiom 2</i> ― The probability that at least one of the elementary events in the entire sample space will occur is 1, i.e:</p>
+<div class=mobile-container>
+\[\boxed{P(S)=1}\]
+</div>
+<div class=mobile-container>
+<center>
+<img alt="Axiom 2" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=probability-axiom-2.png?b1295ceda8ee7aa3202488a1ecb6133d style=width:100%;max-width:600px>
+</center>
+</div>
+<p><i>Axiom 3</i> ― For any sequence of mutually exclusive events $E_1, ..., E_n$, we have:</p>
+<div class=mobile-container>
+\[\boxed{P\left(\bigcup_{i=1}^nE_i\right)=\sum_{i=1}^nP(E_i)}\]
+</div>
+<div class=mobile-container>
+<center>
+<img alt="Axiom 3" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=probability-axiom-3.png?3c16a178334bb1d048d6d19c49c9a78d style=width:100%;max-width:600px>
+</center>
+</div>
+<br>
+<p><span class="new-item item-b">Permutation</span> A permutation is an arrangement of $r$ objects from a pool of $n$ objects, in a given order. The number of such arrangements is given by $P(n, r)$, defined as:</p>
+<div class=mobile-container>
+\[\boxed{P(n, r)=\frac{n!}{(n-r)!}}\]
+</div>
+<br>
+<p><span class="new-item item-b">Combination</span> A combination is an arrangement of $r$ objects from a pool of $n$ objects, where the order does not matter. The number of such arrangements is given by $C(n, r)$, defined as:</p>
+<div class=mobile-container>
+\[\boxed{C(n, r)=\frac{P(n, r)}{r!}=\frac{n!}{r!(n-r)!}}\]
+</div>
+<p><span class=remark>Remark: we note that for $0\leqslant r\leqslant n$, we have $P(n,r)\geqslant C(n,r)$.</span></p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#conditional-probability id=conditional-probability></a>Conditional Probability</h2>
+<p><span class="new-item item-r">Bayes' rule</span> For events $A$ and $B$ such that $P(B)&gt;0$, we have:</p>
+<div class=mobile-container>
+\[\boxed{P(A|B)=\frac{P(B|A)P(A)}{P(B)}}\]
+</div>
+<div class=mobile-container>
+<p><span class=remark>Remark: we have $P(A\cap B)=P(A)P(B|A)=P(A|B)P(B)$.</span></p>
+</div>
+<br>
+<p><span class="new-item item-g">Partition</span> Let $\{A_i, i\in[\![1,n]\!]\}$ be such that for all $i$, $A_i\neq\varnothing$. We say that $\{A_i\}$ is a partition if we have:</p>
+<div class=mobile-container>
+\[\boxed{\forall i\neq j, A_i\cap A_j=\emptyset\quad\textrm{ and }\quad\bigcup_{i=1}^nA_i=S}\]
+</div>
+<div class=mobile-container>
+<center>
+<img alt=Partition class=img-responsive netsrc=teaching/cme-106/illustrations/ src=partition.png?1e98f377294dced2c2ebbb59ce1f6188 style=width:100%;max-width:600px>
+</center>
+</div>
+<p><span class=remark>Remark: for any event $B$ in the sample space, we have $\displaystyle P(B)=\sum_{i=1}^nP(B|A_i)P(A_i)$.</span></p>
+<br>
+<p><span class="new-item item-r">Extended form of Bayes' rule</span> Let $\{A_i, i\in[\![1,n]\!]\}$ be a partition of the sample space. We have:</p>
+<div class=mobile-container>
+\[\boxed{P(A_k|B)=\frac{P(B|A_k)P(A_k)}{\displaystyle\sum_{i=1}^nP(B|A_i)P(A_i)}}\]
+</div>
+<br>
+<p><span class="new-item item-g">Independence</span> Two events $A$ and $B$ are independent if and only if we have:</p>
+<div class=mobile-container>
+\[\boxed{P(A\cap B)=P(A)P(B)}\]
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#random-variables id=random-variables></a>Random Variables</h2>
+<h3>Definitions</h3>
+<p><span class="new-item item-g">Random variable</span> A random variable, often noted $X$, is a function that maps every element in a sample space to a real line.</p>
+<br>
+<p><span class="new-item item-g">Cumulative distribution function (CDF)</span> The cumulative distribution function $F$, which is monotonically non-decreasing and is such that $\underset{x\rightarrow-\infty}{\textrm{lim}}F(x)=0$ and $\underset{x\rightarrow+\infty}{\textrm{lim}}F(x)=1$, is defined as:</p>
+<div class=mobile-container>
+\[\boxed{F(x)=P(X\leqslant x)}\]
+</div>
+<div class=mobile-container>
+<center>
+<img alt="Cumulative distribution function" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=cdf.png?f60eb6371235b9fe2d823aff3670ce20 style=width:100%;max-width:600px>
+</center>
+</div>
+<p><span class=remark>Remark: we have $P(a &lt; X\leqslant B)=F(b)-F(a)$.</span></p>
+<br>
+<p><span class="new-item item-g">Probability density function (PDF)</span> The probability density function $f$ is the probability that $X$ takes on values between two adjacent realizations of the random variable.</p>
+<br>
+<p><span class="new-item item-b">Relationships involving the PDF and CDF</span> Here are the important properties to know
+in the discrete (D) and the continuous (C) cases.</p>
+<div class=mobile-container>
+<center>
+<table>
+<tbody>
+<tr>
+<td align=center><b>Case</b></td>
+<td align=center><b>CDF $F$</b></td>
+<td align=center><b>PDF $f$</b></td>
+<td align=center><b>Properties of PDF</b></td>
+</tr>
+<tr>
+<td align=center>(D)</td>
+<td align=center>$\displaystyle F(x)=\sum_{x_i\leqslant x}P(X=x_i)$</td>
+<td align=center>$f(x_j)=P(X=x_j)$</td>
+<td align=center>$\displaystyle0\leqslant f(x_j)\leqslant1\textrm{ and }\sum_{j}f(x_j)=1$</td>
+</tr>
+<tr>
+<td align=center>(C)</td>
+<td align=center>$\displaystyle F(x)=\int_{-\infty}^xf(y)dy$</td>
+<td align=center>$f(x)=\displaystyle \frac{dF}{dx}$</td>
+<td align=center>$\displaystyle f(x)\geqslant0\textrm{ and }\int_{-\infty}^{+\infty}f(x)dx=1$</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-b">Expectation and Moments of the Distribution</span> Here are the expressions of the expected value $E[X]$, generalized expected value $E[g(X)]$, $k^{th}$ moment $E[X^k]$ and characteristic function $\psi(\omega)$ for the discrete and continuous cases:
+</p>
+<div class=mobile-container>
+<center>
+<table>
+<tbody>
+<tr>
+<td align=center><b>Case</b></td>
+<td align=center><b>$E[X]$</b></td>
+<td align=center><b>$E[g(X)]$</b></td>
+<td align=center><b>$E[X^k]$</b></td>
+<td align=center><b>$\psi(\omega)$</b></td>
+</tr>
+<tr>
+<td align=center>(D)</td>
+<td align=center>$\displaystyle \sum_{i=1}^nx_if(x_i)$</td>
+<td align=center>$\displaystyle \sum_{i=1}^ng(x_i)f(x_i)$</td>
+<td align=center>$\displaystyle \sum_{i=1}^nx_i^kf(x_i)$</td>
+<td align=center>$\displaystyle\sum_{i=1}^nf(x_i)e^{i\omega x_i}$</td>
+</tr>
+<tr>
+<td align=center>(C)</td>
+<td align=center>$\displaystyle \int_{-\infty}^{+\infty}xf(x)dx$</td>
+<td align=center>$\displaystyle \int_{-\infty}^{+\infty}g(x)f(x)dx$</td>
+<td align=center>$\displaystyle \int_{-\infty}^{+\infty}x^kf(x)dx$</td>
+<td align=center>$\displaystyle\int_{-\infty}^{+\infty}f(x)e^{i\omega x}dx$</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-g">Variance</span> The variance of a random variable, often noted Var$(X)$ or $\sigma^2$, is a measure of the spread of its distribution function. It is determined as follows:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{Var}(X)=E[(X-E[X])^2]=E[X^2]-E[X]^2}\]
+</div>
+<br>
+<p><span class="new-item item-g">Standard deviation</span> The standard deviation of a random variable, often noted $\sigma$, is a measure of the spread of its distribution function which is compatible with the units of the actual random variable. It is determined as follows:</p>
+<div class=mobile-container>
+\[\boxed{\sigma=\sqrt{\textrm{Var}(X)}}\]
+</div>
+<div class=mobile-container>
+<center>
+<img alt="Standard deviation" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=std.png?782af23c9eeaaefc688417f82dabfba0 style=width:100%;max-width:600px>
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">Transformation of random variables</span> Let the variables $X$ and $Y$ be linked by some function. By noting $f_X$ and $f_Y$ the distribution function of $X$ and $Y$ respectively, we have:</p>
+<div class=mobile-container>
+\[\boxed{f_Y(y)=f_X(x)\left|\frac{dx}{dy}\right|}\]
+</div>
+<br>
+<p><span class="new-item item-b">Leibniz integral rule</span> Let $g$ be a function of $x$ and potentially $c$, and $a, b$ boundaries that may depend on $c$. We have:</p>
+<div class=mobile-container>
+\[\boxed{\frac{\partial}{\partial c}\left(\int_a^bg(x)dx\right)=\frac{\partial b}{\partial c}\cdot g(b)-\frac{\partial a}{\partial c}\cdot g(a)+\int_a^b\frac{\partial g}{\partial c}(x)dx}\]
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#probability-distributions id=probability-distributions></a>Probability Distributions</h2>
+<p><span class="new-item item-r">Chebyshev's inequality</span> Let $X$ be a random variable with expected value $\mu$. For $k, \sigma&gt;0$, we have the following inequality:</p>
+<div class=mobile-container>
+\[\boxed{P(|X-\mu|\geqslant k\sigma)\leqslant\frac{1}{k^2}}\]
+</div>
+<br>
+<p><span class="new-item item-r">Main distributions</span> Here are the main distributions to have in mind:</p>
+<div class=mobile-container>
+<center>
+<table style="table-layout:fixed; width:100%;min-width:950px;">
+  <colgroup>
+    <col style=width:60px>
+    <col style=width:105px>
+    <col style=width:125px>
+    <col style=width:90px>
+    <col style=width:65px>
+    <col style=width:75px>
+    <col style=width:250px>
+  </colgroup>
+<tbody>
+<tr>
+<td align=center><b>Type</b></td>
+<td align=center><b>Distribution</b></td>
+<td align=center><b>PDF</b></td>
+<td align=center><b>$\psi(\omega)$</b></td>
+<td align=center><b>$E[X]$</b></td>
+<td align=center><b>$\textrm{Var}(X)$</b></td>
+<td align=center><b>Illustration</b></td>
+</tr>
+<tr>
+<td align=center>(D)</td>
+<td align=center>$X\sim\mathcal{B}(n, p)$</td>
+<td align=center>$\displaystyle \displaystyle\binom{n}{x} p^xq^{n-x}$</td>
+<td align=center>$(pe^{i\omega}+q)^n$</td>
+<td align=center>$np$</td>
+<td align=center>$npq$</td>
+<td align=center><img alt="Binomial distribution" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=dist-binomial.png?dc87a0e54e2ef1f46391b55ca40dc09e></td>
+</tr>
+<tr>
+<td align=center>(D)</td>
+<td align=center>$X\sim\textrm{Po}(\mu)$</td>
+<td align=center>$\displaystyle \frac{\mu^x}{x!}e^{-\mu}$</td>
+<td align=center>$e^{\mu(e^{i\omega}-1)}$</td>
+<td align=center>$\mu$</td>
+<td align=center>$\mu$</td>
+<td align=center><img alt="Poisson distribution" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=dist-poisson.png?b2c5cd622b917c691814b475f5b6a2fa></td>
+</tr>
+<tr>
+<td align=center>(C)</td>
+<td align=center>$X\sim\mathcal{U}(a, b)$</td>
+<td align=center>$\displaystyle \frac{1}{b-a}$</td>
+<td align=center>$\displaystyle\frac{e^{i\omega b}-e^{i\omega a}}{(b-a)i\omega}$</td>
+<td align=center>$\displaystyle\frac{a+b}{2}$</td>
+<td align=center>$\displaystyle\frac{(b-a)^2}{12}$</td>
+<td align=center><img alt="Uniform distribution" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=dist-uniform.png?8e8595803628c45d3d4e678a29593788></td>
+</tr>
+<tr>
+<td align=center>(C)</td>
+<td align=center>$X\sim\mathcal{N}(\mu, \sigma)$</td>
+<td align=center>$\displaystyle \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$</td>
+<td align=center>$e^{i\omega\mu-\frac{1}{2}\omega^2\sigma^2}$</td>
+<td align=center>$\mu$</td>
+<td align=center>$\sigma^2$</td>
+<td align=center><img alt="Normal distribution" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=dist-normal.png?c8d3d312a2a493540e439cb156e1710a></td>
+</tr>
+<tr>
+<td align=center>(C)</td>
+<td align=center>$X\sim\textrm{Exp}(\lambda)$</td>
+<td align=center>$\displaystyle \lambda e^{-\lambda x}$</td>
+<td align=center>$\displaystyle\frac{1}{1-\frac{i\omega}{\lambda}}$</td>
+<td align=center>$\displaystyle\frac{1}{\lambda}$</td>
+<td align=center>$\displaystyle\frac{1}{\lambda^2}$</td>
+<td align=center><img alt="Exponential distribution" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=dist-exponential.png?09116ce799454b285ac487fb39f097c3></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#joint-rv id=joint-rv></a>Jointly Distributed Random Variables</h2>
+<p><span class="new-item item-g">Marginal density and cumulative distribution</span> From the joint density probability function $f_{XY}$ , we have</p>
+<div class=mobile-container>
+<center>
+<table>
+<tbody>
+<tr>
+<td align=center><b>Case</b></td>
+<td align=center><b>Marginal density</b></td>
+<td align=center><b>Cumulative function</b></td>
+</tr>
+<tr>
+<td align=center>(D)</td>
+<td align=center>$\displaystyle f_X(x_i)=\sum_{j}f_{XY}(x_i,y_j)$</td>
+<td align=center>$\displaystyle F_{XY}(x,y)=\sum_{x_i\leqslant x}\sum_{y_j\leqslant y}f_{XY}(x_i,y_j)$</td>
+</tr>
+<tr>
+<td align=center>(C)</td>
+<td align=center>$\displaystyle f_X(x)=\int_{-\infty}^{+\infty}f_{XY}(x,y)dy$</td>
+<td align=center>$\displaystyle F_{XY}(x,y)=\int_{-\infty}^x\int_{-\infty}^yf_{XY}(x',y')dx'dy'$</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-g">Conditional density</span> The conditional density of $X$ with respect to $Y$, often noted $f_{X|Y}$, is defined as follows:</p>
+<div class=mobile-container>
+\[\boxed{f_{X|Y}(x)=\frac{f_{XY}(x,y)}{f_Y(y)}}\]
+</div>
+<br>
+<p><span class="new-item item-g">Independence</span> Two random variables $X$ and $Y$ are said to be independent if we have:</p>
+<div class=mobile-container>
+\[\boxed{f_{XY}(x,y)=f_X(x)f_Y(y)}\]
+</div>
+<br>
+<p><span class="new-item item-g">Covariance</span> We define the covariance of two random variables $X$ and $Y$, that we note $\sigma_{XY}^2$ or more commonly $\textrm{Cov}(X,Y)$, as follows:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{Cov}(X,Y)\triangleq\sigma_{XY}^2=E[(X-\mu_X)(Y-\mu_Y)]=E[XY]-\mu_X\mu_Y}\]
+</div>
+<br>
+<p><span class="new-item item-g">Correlation</span> By noting $\sigma_X, \sigma_Y$ the standard deviations of $X$ and $Y$, we define the correlation between the random variables $X$ and $Y$, noted $\rho_{XY}$, as follows:</p>
+<div class=mobile-container>
+\[\boxed{\rho_{XY}=\frac{\sigma_{XY}^2}{\sigma_X\sigma_Y}}\]
+</div>
+<p><span class=remark>Remark 1: we note that for any random variables $X, Y$, we have $\rho_{XY}\in[-1,1]$.</span></p>
+<p><span class=remark>Remark 2: If X and Y are independent, then $\rho_{XY} = 0$.</span></p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#parameter-estimation id=parameter-estimation></a>Parameter estimation</h2>
+<h3>Definitions</h3>
+<p><span class="new-item item-g">Random sample</span> A random sample is a collection of $n$ random variables $X_1, ..., X_n$ that are independent and identically distributed with $X$.</p>
+<br>
+<p><span class="new-item item-g">Estimator</span> An estimator is a function of the data that is used to infer the value of an unknown parameter in a statistical model.</p>
+<br>
+<p><span class="new-item item-g">Bias</span> The bias of an estimator $\hat{\theta}$ is defined as being the difference between the expected value of the distribution of $\hat{\theta}$ and the true value, i.e.:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{Bias}(\hat{\theta})=E[\hat{\theta}]-\theta}\]
+</div>
+<p><span class=remark>Remark: an estimator is said to be unbiased when we have $E[\hat{\theta}]=\theta$.</span></p>
+<br>
+<h3>Estimating the mean</h3>
+<p><span class="new-item item-b">Sample mean</span> The sample mean of a random sample is used to estimate the true mean $\mu$ of a distribution, is often noted $\overline{X}$ and is defined as follows:</p>
+<div class=mobile-container>
+\[\boxed{\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i}\]
+</div>
+<p><span class=remark>Remark: the sample mean is unbiased, i.e $E[\overline{X}]=\mu$.</span></p>
+<br>
+<p><span class="new-item item-r">Central Limit Theorem</span> Let us have a random sample $X_1, ..., X_n$ following a given distribution with mean $\mu$ and variance $\sigma^2$, then we have:</p>
+<div class=mobile-container>
+\[\boxed{\overline{X}\underset{n\rightarrow+\infty}{\sim}\mathcal{N}\left(\mu, \frac{\sigma}{\sqrt{n}}\right)}\]
+</div>
+<br>
+<h3>Estimating the variance</h3>
+<p><span class="new-item item-b">Sample variance</span> The sample variance of a random sample is used to estimate the true variance $\sigma^2$ of a distribution, is often noted $s^2$ or $\hat{\sigma}^2$ and is defined as follows:</p>
+<div class=mobile-container>
+\[\boxed{s^2=\hat{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2}\]
+</div>
+<p><span class=remark>Remark: the sample variance is unbiased, i.e $E[s^2]=\sigma^2$.</span></p>
+<br>
+<p><span class="new-item item-r">Chi-Squared relation with sample variance</span> Let $s^2$ be the sample variance of a random sample. We have:</p>
+<div class=mobile-container>
+\[\boxed{\frac{s^2(n-1)}{\sigma^2}\sim\chi_{n-1}^2}\]
+</div>
+<br>
+<!-- div class="alert alert-warning" role=alert>For a more detailed overview of the concepts above, check out the <a class=alert-link href=teaching/cme-106 onclick=trackOutboundLink(this);>Probabilities and Statistics cheatsheets</a>!</div -->
+</article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>

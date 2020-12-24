@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang=en><head><!-- base href=../../ --><title>CS 229 - Linear Algebra and Calculus refresher</title><meta charset=utf-8><meta content="Teaching page of Shervine Amidi, Graduate Student at Stanford University." name=description><meta content="teaching, shervine, shervine amidi, data science" name=keywords><meta content="width=device-width, initial-scale=1" name=viewport>
+<link href=https://stanford.edu/~shervine/teaching/cs-229/refresher-algebra-calculus rel=canonical>
+<link href=../../css/bootstrap.min.css rel=stylesheet>
+<link href=../../css/font-awesome.min.css rel=stylesheet>
+<link href=../../css/katex.min.css rel=stylesheet>
+<link href=../../css/style.min.css rel=stylesheet type=text/css>
+<link href=../../css/article.min.css rel=stylesheet>
+<script src=../../js/jquery.min.js></script>
+<script src=../../js/bootstrap.min.js></script>
+<script defer src=../../js/underscore-min.js type=text/javascript></script>
+<script defer src=../../js/katex.min.js></script>
+<script defer src=../../js/auto-render.min.js></script>
+<script defer src=../../js/article.min.js></script>
+<script defer src=../../js/lang.min.js></script>
+<script async defer src=../../js/buttons.js></script>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Algebra and Calculus</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#notations>General notations</a></div> <div class=dropdown-container> <a href=#notations><span>Definitions</span></a> <a href=#notations><span>Main matrices</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#operations>Matrix operations</a></div> <div class=dropdown-container> <a href=#operations><span>Multiplication</span></a> <a href=#operations><span>Other operations</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#properties>Matrix properties</a></div> <div class=dropdown-container> <a href=#properties><span>Norm</span></a> <a href=#properties><span>Eigenvalue/eigenvector</span></a> <a href=#properties><span>Singular-value decomposition</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#calculus>Matrix calculus</a></div> <div class=dropdown-container> <a href=#calculus><span>Gradient</span></a> <a href=#calculus><span>Hessian</span></a> <a href=#calculus><span>Operations</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/refresher-algebra-calculus.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+<div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
+  Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
+</div>
+<div class=title-lang style=display:none;> <!-- DISPLAY:NONE -->
+  <a aria-hidden=true class=anchor-bis href=#cs-229---machine-learning id=cs-229---machine-learning></a><a href=teaching/cs-229 onclick=trackOutboundLink(this);>CS 229 - Machine Learning</a>
+  
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE -->
+    <div class=input-group>
+      <select class=form-control onchange=changeLangAndTrack(this); onfocus=storeCurrentIndex(this);>
+        <option value=ar>العربية</option>
+        <option selected value=en>English</option>
+        <option value=es>Español</option>
+        <option value=fa>فارسی</option>
+        <option value=fr>Français</option>
+        <option value=ko>한국어</option>
+        <option value=pt>Português</option>
+        <option value=tr>Türkçe</option>
+        <option value=vi>Tiếng Việt</option>
+        <option value=zh>简中</option>
+        <option value=zh-tw>繁中</option>
+      </select>
+      <div class=input-group-addon><i class=fa></i></div>
+    </div>
+  </div>
+</div>
+<br>
+
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button>CS 221 - Artificial Intelligence</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><b>CS 229 - Machine Learning</b></button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>CS 230 - Deep Learning</button>
+  </div>
+</div>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/probability/index.html'; oldhref='teaching/cs-229/refresher-probabilities-statistics'" type=button>Probabilities</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/linear-algebra/index.html'; oldhref='teaching/cs-229/refresher-algebra-calculus'" type=button><b>Algebra</b></button>
+  </div>
+</div>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>Supervised Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/unsupervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-unsupervised-learning'" type=button>Unsupervised Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/deep-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-deep-learning'" type=button>Deep Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/machine-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks'" type=button>Tips and tricks</button>
+  </div>
+</div>
+<h1>
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Linear Algebra and Calculus refresher
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
+</h1>
+<i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
+<h2><a aria-hidden=true class=anchor href=#notations id=notations></a>General notations</h2>
+<h3>Definitions</h3>
+<p><span class="new-item item-b">Vector</span> We note $x\in\mathbb{R}^n$ a vector with $n$ entries, where $x_i\in\mathbb{R}$ is the $i^{th}$ entry:</p>
+<div class=mobile-container>
+\[x=\left(\begin{array}{c}x_1\\x_2\\\vdots\\x_n\end{array}\right)\in\mathbb{R}^n\]
+</div>
+<br>
+<p><span class="new-item item-b">Matrix</span> We note $A\in\mathbb{R}^{m\times n}$ a matrix with $m$ rows and $n$ columns, where $A_{i,j}\in\mathbb{R}$ is the entry located in the $i^{th}$ row and $j^{th}$ column:</p>
+<div class=mobile-container>
+\[A=\left(\begin{array}{ccc}A_{1,1}&amp; \cdots&amp;A_{1,n}\\\vdots&amp;&amp; \vdots\\A_{m,1}&amp; \cdots&amp;A_{m,n}\end{array}\right)\in\mathbb{R}^{m\times n}\]
+</div>
+<p><span class=remark>Remark: the vector $x$ defined above can be viewed as a $n\times1$ matrix and is more particularly called a column-vector.</span></p>
+<br>
+<h3>Main matrices</h3>
+<p><span class="new-item item-b">Identity matrix</span> The identity matrix $I\in\mathbb{R}^{n\times n}$ is a square matrix with ones in its diagonal and zero everywhere else:</p>
+<div class=mobile-container>
+\[I=\left(\begin{array}{cccc}1&amp;0&amp; \cdots&amp;0\\0&amp; \ddots&amp; \ddots&amp; \vdots\\\vdots&amp; \ddots&amp; \ddots&amp;0\\0&amp; \cdots&amp;0&amp;1\end{array}\right)\]
+</div>
+<p><span class=remark>Remark: for all matrices $A\in\mathbb{R}^{n\times n}$, we have $A\times I=I\times A=A$.</span></p>
+<br>
+<p><span class="new-item item-b">Diagonal matrix</span> A diagonal matrix $D\in\mathbb{R}^{n\times n}$ is a square matrix with nonzero values in its diagonal and zero everywhere else:</p>
+<div class=mobile-container>
+\[D=\left(\begin{array}{cccc}d_1&amp;0&amp; \cdots&amp;0\\0&amp; \ddots&amp; \ddots&amp; \vdots\\\vdots&amp; \ddots&amp; \ddots&amp;0\\0&amp; \cdots&amp;0&amp;d_n\end{array}\right)\]
+</div>
+<p><span class=remark>Remark: we also note $D$ as $\textrm{diag}(d_1,...,d_n)$.</span></p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#operations id=operations></a>Matrix operations</h2>
+<h3>Multiplication</h3>
+<p><span class="new-item item-r">Vector-vector</span> There are two types of vector-vector products:
+</p><ul>
+<li>inner product: for $x,y\in\mathbb{R}^n$, we have:
+<div class=mobile-container>
+\[\boxed{x^Ty=\sum_{i=1}^nx_iy_i\in\mathbb{R}}\]
+</div>
+</li><li>outer product: for $x\in\mathbb{R}^m, y\in\mathbb{R}^n$, we have:
+<div class=mobile-container>
+\[\boxed{xy^T=\left(\begin{array}{ccc}x_1y_1&amp; \cdots&amp;x_1y_n\\\vdots&amp;&amp; \vdots\\x_my_1&amp; \cdots&amp;x_my_n\end{array}\right)\in\mathbb{R}^{m\times n}}\]
+</div>
+</li></ul>
+<p></p>
+<br>
+<p><span class="new-item item-r">Matrix-vector</span> The product of matrix $A\in\mathbb{R}^{m\times n}$ and vector $x\in\mathbb{R}^{n}$ is a vector of size $\mathbb{R}^{m}$, such that:
+</p><div class=mobile-container>
+\[\boxed{Ax=\left(\begin{array}{c}a_{r,1}^Tx\\\vdots\\a_{r,m}^Tx\end{array}\right)=\sum_{i=1}^na_{c,i}x_{i}\in\mathbb{R}^{m}}\]
+</div>
+where $a_{r,i}^T$ are the vector rows and $a_{c,j}$ are the vector columns of $A$, and $x_i$ are the entries of $x$.<p></p>
+<br>
+<p><span class="new-item item-r">Matrix-matrix</span> The product of matrices $A\in\mathbb{R}^{m\times n}$ and $B\in\mathbb{R}^{n\times p}$ is a matrix of size $\mathbb{R}^{n\times p}$, such that:
+</p><div class=mobile-container>
+\[\boxed{AB=\left(\begin{array}{ccc}a_{r,1}^Tb_{c,1}&amp; \cdots&amp;a_{r,1}^Tb_{c,p}\\\vdots&amp;&amp; \vdots\\a_{r,m}^Tb_{c,1}&amp; \cdots&amp;a_{r,m}^Tb_{c,p}\end{array}\right)=\sum_{i=1}^na_{c,i}b_{r,i}^T\in\mathbb{R}^{n\times p}}\]
+</div>
+where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the vector columns of $A$ and $B$ respectively.<p></p>
+<br>
+<h3>Other operations</h3>
+<p><span class="new-item item-g">Transpose</span> The transpose of a matrix $A\in\mathbb{R}^{m\times n}$, noted $A^T$, is such that its entries are flipped:</p>
+<div class=mobile-container>
+\[\boxed{\forall i,j,\quad\quad A_{i,j}^T=A_{j,i}}\]
+</div><br>
+<p><span class=remark>Remark: for matrices $A,B$, we have $(AB)^T=B^TA^T$.</span></p>
+<br>
+<p><span class="new-item item-g">Inverse</span> The inverse of an invertible square matrix $A$ is noted $A^{-1}$ and is the only matrix such that:</p>
+<div class=mobile-container>
+\[\boxed{AA^{-1}=A^{-1}A=I}\]
+</div>
+<p><span class=remark>Remark: not all square matrices are invertible. Also, for matrices $A,B$, we have $(AB)^{-1}=B^{-1}A^{-1}$</span></p>
+<br>
+<p><span class="new-item item-g">Trace</span> The trace of a square matrix $A$, noted $\textrm{tr}(A)$, is the sum of its diagonal entries:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{tr}(A)=\sum_{i=1}^nA_{i,i}}\]
+</div>
+<p><span class=remark>Remark: for matrices $A,B$, we have $\textrm{tr}(A^T)=\textrm{tr}(A)$ and $\textrm{tr}(AB)=\textrm{tr}(BA)$</span></p>
+<br>
+<p><span class="new-item item-g">Determinant</span> The determinant of a square matrix $A\in\mathbb{R}^{n\times n}$, noted $|A|$ or $\textrm{det}(A)$ is expressed recursively in terms of $A_{\backslash i, \backslash j}$, which is the matrix A without its $i^{th}$ row and $j^{th}$ column, as follows:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{det}(A)=|A|=\sum_{j=1}^n(-1)^{i+j}A_{i,j}|A_{\backslash i,\backslash j}|}\]
+</div>
+<p><span class=remark>Remark: $A$ is invertible if and only if $|A|\neq0$. Also, $|AB|=|A||B|$ and $|A^T|=|A|$.</span></p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#properties id=properties></a>Matrix properties</h2>
+<h3>Definitions</h3>
+<p><span class="new-item item-r">Symmetric decomposition</span> A given matrix $A$ can be expressed in terms of its symmetric and antisymmetric parts as follows:</p>
+<div class=mobile-container>
+\[\boxed{A=\underbrace{\frac{A+A^T}{2}}_{\textrm{Symmetric}}+\underbrace{\frac{A-A^T}{2}}_{\textrm{Antisymmetric}}}\]
+</div>
+<br>
+<p><span class="new-item item-b">Norm</span> A norm is a function $N:V\longrightarrow[0,+\infty[$ where $V$ is a vector space, and such that for all $x,y\in V$, we have:
+</p><ul>
+<li>$N(x+y)\leqslant N(x)+N(y)$
+</li><li>$N(ax)=|a|N(x)$ for $a$ scalar
+</li><li>if $N(x)=0$, then $x=0$</li></ul><p></p>
+<p>For $x\in V$, the most commonly used norms are summed up in the table below:</p>
+<div class=mobile-container>
+<center>
+<table>
+<tbody>
+<tr>
+<td align=center><b>Norm</b></td>
+<td align=center><b>Notation</b></td>
+<td align=center><b>Definition</b></td>
+<td align=center><b>Use case</b></td>
+</tr>
+<tr>
+<td align=center>Manhattan, $L^1$</td>
+<td align=center>$||x||_1$</td>
+<td align=center>$\displaystyle\sum_{i=1}^n|x_i|$</td>
+<td align=center>LASSO regularization</td>
+</tr>
+<tr>
+<td align=center>Euclidean, $L^2$</td>
+<td align=center>$||x||_2$</td>
+<td align=center>$\displaystyle\sqrt{\sum_{i=1}^nx_i^2}$</td>
+<td align=center>Ridge regularization</td>
+</tr>
+<tr>
+<td align=center>$p$-norm, $L^p$</td>
+<td align=center>$||x||_p$</td>
+<td align=center>$\displaystyle\left(\sum_{i=1}^nx_i^p\right)^{\frac{1}{p}}$</td>
+<td align=center>Hölder inequality</td>
+</tr>
+<tr>
+<td align=center>Infinity, $L^{\infty}$</td>
+<td align=center>$||x||_{\infty}$</td>
+<td align=center>$\underset{i}{\textrm{max }}|x_i|$</td>
+<td align=center>Uniform convergence</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">Linearly dependence</span> A set of vectors is said to be linearly dependent if one of the vectors in the set can be defined as a linear combination of the others.</p>
+<p><span class=remark>Remark: if no vector can be written this way, then the vectors are said to be linearly independent.</span></p>
+<br>
+<p><span class="new-item item-b">Matrix rank</span> The rank of a given matrix $A$ is noted $\textrm{rank}(A)$ and is the dimension of the vector space generated by its columns. This is equivalent to the maximum number of linearly independent columns of $A$.</p>
+<br>
+<p><span class="new-item item-r">Positive semi-definite matrix</span> A matrix $A\in\mathbb{R}^{n\times n}$ is positive semi-definite (PSD) and is noted $A\succeq 0$ if we have:</p>
+<div class=mobile-container>
+\[\boxed{A=A^T}\quad\textrm{ and }\quad\boxed{\forall x\in\mathbb{R}^n,\quad x^TAx\geqslant0}\]
+</div>
+<p><span class=remark>Remark: similarly, a matrix $A$ is said to be positive definite, and is noted $A\succ0$, if it is a PSD matrix which satisfies for all non-zero vector $x$, $x^TAx&gt;0$.</span></p>
+<br>
+<p><span class="new-item item-b">Eigenvalue, eigenvector</span> Given a matrix $A\in\mathbb{R}^{n\times n}$, $\lambda$ is said to be an eigenvalue of $A$ if there exists a vector $z\in\mathbb{R}^n\backslash\{0\}$, called eigenvector, such that we have:</p>
+<div class=mobile-container>
+\[\boxed{Az=\lambda z}\]
+</div>
+<br>
+<p><span class="new-item item-r">Spectral theorem</span> Let $A\in\mathbb{R}^{n\times n}$. If $A$ is symmetric, then $A$ is diagonalizable by a real orthogonal matrix $U\in\mathbb{R}^{n\times n}$. By noting $\Lambda=\textrm{diag}(\lambda_1,...,\lambda_n)$, we have:</p>
+<div class=mobile-container>
+\[\boxed{\exists\Lambda\textrm{ diagonal},\quad A=U\Lambda U^T}\]
+</div>
+<br>
+<p><span class="new-item item-g">Singular-value decomposition</span> For a given matrix $A$ of dimensions $m\times n$, the singular-value decomposition (SVD) is a factorization technique that guarantees the existence of $U$ $m\times m$ unitary, $\Sigma$ $m\times n$ diagonal and $V$ $n\times n$ unitary matrices, such that:</p>
+<div class=mobile-container>
+\[\boxed{A=U\Sigma V^T}\]
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#calculus id=calculus></a>Matrix calculus</h2>
+<p><span class="new-item item-b">Gradient</span> Let $f:\mathbb{R}^{m\times n}\rightarrow\mathbb{R}$ be a function and $A\in\mathbb{R}^{m\times n}$ be a matrix. The gradient of $f$ with respect to $A$ is a $m\times n$ matrix, noted $\nabla_A f(A)$, such that:</p>
+<div class=mobile-container>
+\[\boxed{\Big(\nabla_A f(A)\Big)_{i,j}=\frac{\partial f(A)}{\partial A_{i,j}}}\]
+</div>
+<p><span class=remark>Remark: the gradient of $f$ is only defined when $f$ is a function that returns a scalar.</span></p>
+<br>
+<p><span class="new-item item-b">Hessian</span> Let $f:\mathbb{R}^{n}\rightarrow\mathbb{R}$ be a function and $x\in\mathbb{R}^{n}$ be a vector. The hessian of $f$ with respect to $x$ is a $n\times n$ symmetric matrix, noted $\nabla_x^2 f(x)$, such that:</p>
+<div class=mobile-container>
+\[\boxed{\Big(\nabla_x^2 f(x)\Big)_{i,j}=\frac{\partial^2 f(x)}{\partial x_i\partial x_j}}\]
+</div>
+<p><span class=remark>Remark: the hessian of $f$ is only defined when $f$ is a function that returns a scalar.</span></p>
+<br>
+<p><span class="new-item item-r">Gradient operations</span> For matrices $A,B,C$, the following gradient properties are worth having in mind:</p>
+<div class=mobile-container>
+\[\boxed{\nabla_A\textrm{tr}(AB)=B^T}\quad\quad\boxed{\nabla_{A^T}f(A)=\left(\nabla_Af(A)\right)^T}\]
+\[\boxed{\nabla_A\textrm{tr}(ABA^TC)=CAB+C^TAB^T}\quad\quad\boxed{\nabla_A|A|=|A|(A^{-1})^T}\]
+</div>
+<br>
+</article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>

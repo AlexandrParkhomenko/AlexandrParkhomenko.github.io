@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang=en><head><!-- base href=../../ --><title>CS 221 - Variables-based Models Cheatsheet</title><meta charset=utf-8><meta content="Teaching page of Shervine Amidi, Graduate Student at Stanford University." name=description><meta content="teaching, shervine, shervine amidi, data science" name=keywords><meta content="width=device-width, initial-scale=1" name=viewport><link href=https://stanford.edu/~shervine/teaching/cs-221/cheatsheet-variables-models rel=canonical>
+<link href=../../css/bootstrap.min.css rel=stylesheet>
+<link href=../../css/font-awesome.min.css rel=stylesheet>
+<link href=../../css/katex.min.css rel=stylesheet>
+<link href=../../css/style.min.css rel=stylesheet type=text/css>
+<link href=../../css/article.min.css rel=stylesheet>
+<script src=../../js/jquery.min.js></script>
+<script src=../../js/bootstrap.min.js></script>
+<script defer src=../../js/underscore-min.js type=text/javascript></script>
+<script defer src=../../js/katex.min.js></script>
+<script defer src=../../js/auto-render.min.js></script>
+<script defer src=../../js/article.min.js></script>
+<script defer src=../../js/lang.min.js></script>
+<script async defer src=../../js/buttons.js></script>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Variables-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#factor-graphs>Factor graphs</a></div> <div class=dropdown-container> <a href=#factor-graphs><span>Arity</span></a> <a href=#factor-graphs><span>Assignment weight</span></a> <a href=#factor-graphs><span>Constraint satisfaction problem</span></a> <a href=#factor-graphs><span>Consistent assignment</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#dynamic-ordering>Dynamic ordering</a></div> <div class=dropdown-container> <a href=#dynamic-ordering><span>Dependent factors</span></a> <a href=#dynamic-ordering><span>Backtracking search</span></a> <a href=#dynamic-ordering><span>Forward checking</span></a> <a href=#dynamic-ordering><span>Most constrained variable</span></a> <a href=#dynamic-ordering><span>Least constrained value</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#approximate-methods>Approximate methods</a></div> <div class=dropdown-container> <a href=#approximate-methods><span>Beam search</span></a> <a href=#approximate-methods><span>Iterated conditional modes</span></a> <a href=#approximate-methods><span>Gibbs sampling</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#factor-graph-transformations>Factor graph transformations</a></div> <div class=dropdown-container> <a href=#factor-graph-transformations><span>Conditioning</span></a> <a href=#factor-graph-transformations><span>Elimination</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#bayesian-networks>Bayesian networks</a></div> <div class=dropdown-container> <a href=#bayesian-networks><span>Definition</span></a> <a href=#bayesian-networks><span>Locally normalized</span></a> <a href=#bayesian-networks><span>Marginalization</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#probabilistic-program>Probabilistic program</a></div> <div class=dropdown-container> <a href=#probabilistic-program><span>Concept</span></a> <a href=#probabilistic-program><span>Summary</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#inference>Inference</a></div> <div class=dropdown-container> <a href=#inference><span>Forward-backward algorithm</span></a> <a href=#inference><span>Gibbs sampling</span></a> <a href=#inference><span>Laplace smoothing</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-variables-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+<div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
+  Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
+</div>
+<div class=title-lang style=display:none;> <!-- DISPLAY:NONE -->
+  <a aria-hidden=true class=anchor-bis href=#cs-221---artificial-intelligence id=cs-221---artificial-intelligence></a><a href=teaching/cs-221 onclick=trackOutboundLink(this);>CS 221 - Artificial Intelligence</a>
+  
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE -->
+    <div class=input-group>
+      <select class=form-control onchange=changeLangAndTrack(this); onfocus=storeCurrentIndex(this);>
+        <option selected value=en>English</option>
+        <option value=fr>Français</option>
+        <option value=tr>Türkçe</option>
+      </select>
+      <div class=input-group-addon><i class=fa></i></div>
+    </div>
+  </div>
+</div>
+<br>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button><b>CS 221 - Artificial Intelligence</b></button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>CS 230 - Deep Learning</button>
+  </div>
+</div>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button>Reflex</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/states-models/index.html'; oldhref='teaching/cs-221/cheatsheet-states-models'" type=button>States</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/variables-models/index.html'; oldhref='teaching/cs-221/cheatsheet-variables-models'" type=button><b>Variables</b></button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/logic-models/index.html'; oldhref='teaching/cs-221/cheatsheet-logic-models'" type=button>Logic</button>
+  </div>
+</div>
+<h1>
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Variables-based models with CSP and Bayesian networks
+</h1>
+<i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
+<h2>Constraint satisfaction problems</h2>
+<p>In this section, our objective is to find maximum weight assignments of variable-based models. One advantage compared to states-based models is that these algorithms are more convenient to encode problem-specific constraints.</p>
+<h3><a aria-hidden=true class=anchor href=#factor-graphs id=factor-graphs></a>Factor graphs</h3>
+<p><span class="new-item item-b">Definition</span> A factor graph, also referred to as a Markov random field, is a set of variables $X=(X_1,...,X_n)$ where $X_i\in\textrm{Domain}_i$ and $m$ factors $f_1,...,f_m$ with each $f_j(X)\geqslant 0$.</p>
+<div class=mobile-container>
+<center>
+  <img alt="Factor graph" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=factor-graph.png?6889f9b0508e74da8aaddcaf898b57ef style=width:100%;max-width:400px>
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">Scope and arity</span> The scope of a factor $f_j$ is the set of variables it depends on. The size of this set is called the arity.</p>
+<p><span class=remark>Remark: factors of arity 1 and 2 are called unary and binary respectively.</span></p>
+<br>
+<p><span class="new-item item-b">Assignment weight</span> Each assignment $x=(x_1,...,x_n)$ yields a weight $\textrm{Weight}(x)$ defined as being the product of all factors $f_j$ applied to that assignment. Its expression is given by:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{Weight}(x)=\prod_{j=1}^mf_j(x)}\]
+</div>
+<br>
+<p><span class="new-item item-g">Constraint satisfaction problem</span> A constraint satisfaction problem (CSP) is a factor graph where all factors are binary; we call them to be constraints:
+</p><div class=mobile-container>
+\[\boxed{\forall j\in[\![1,m]\!],\quad f_j(x)\in\{0,1\}}\]
+</div>
+Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only if $f_j(x)=1$.<p></p>
+<br>
+<p><span class="new-item item-g">Consistent assignment</span> An assignment $x$ of a CSP is said to be consistent if and only if $\textrm{Weight}(x)=1$, i.e. all constraints are satisfied.</p>
+<div class=mobile-container>
+<center>
+  <img alt="Consistent assignment" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=consistent-assignment.png?b00b47ff7756953951802408a27cc818 style=width:100%;max-width:400px>
+</center>
+</div>
+<br>
+<h3><a aria-hidden=true class=anchor href=#dynamic-ordering id=dynamic-ordering></a>Dynamic ordering</h3>
+<p><span class="new-item item-g">Dependent factors</span> The set of dependent factors of variable $X_i$ with partial assignment $x$ is called $D(x,X_i)$, and denotes the set of factors that link $X_i$ to already assigned variables.</p>
+<br>
+<p><span class="new-item item-r">Backtracking search</span> Backtracking search is an algorithm used to find maximum weight assignments of a factor graph. At each step, it chooses an unassigned variable and explores its values by recursion. Dynamic ordering (<i>i.e.</i> choice of variables and values) and lookahead (<i>i.e.</i> early elimination of inconsistent options) can be used to explore the graph more efficiently, although the worst-case runtime stays exponential: $O(|\text{Domain}|^n)$.</p>
+<br>
+<p><span class="new-item item-b">Forward checking</span> It is a one-step lookahead heuristic that preemptively removes inconsistent values from the domains of neighboring variables. It has the following characteristics:
+</p><ul>
+<li>After assigning a variable $X_i$, it eliminates inconsistent values from the domains of all its neighbors.
+</li><li>If any of these domains becomes empty, we stop the local backtracking search.
+</li><li>If we un-assign a variable $X_i$, we have to restore the domain of its neighbors.
+</li></ul><p></p>
+<br>
+<p><span class="new-item item-g">Most constrained variable</span> It is a variable-level ordering heuristic that selects the next unassigned variable that has the fewest consistent values. This has the effect of making inconsistent assignments to fail earlier in the search, which enables more efficient pruning.</p>
+<br>
+<p><span class="new-item item-g">Least constrained value</span> It is a value-level ordering heuristic that assigns the next value that yields the highest number of consistent values of neighboring variables. Intuitively, this procedure chooses first the values that are most likely to work.</p>
+<p><span class=remark>Remark: in practice, this heuristic is useful when all factors are constraints.</span></p>
+<div class=mobile-container>
+<center>
+  <img alt="Forward checking with most constrained variable and least constrained value" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=fw-mcv-lcv.png?d5645d9513af10fa804fb0377fa12dc0 style=width:100%;max-width:450px>
+</center>
+</div>
+<p><i>The example above is an illustration of the 3-color problem with backtracking search coupled with most constrained variable exploration and least constrained value heuristic, as well as forward checking at each step.</i></p>
+<br>
+<p><span class="new-item item-g">Arc consistency</span> We say that arc consistency of variable $X_l$ with respect to $X_k$ is enforced when for each $x_l \in \textrm{Domain}_l$:
+</p><ul>
+<li> unary factors of $X_l$ are non-zero,
+</li><li> there exists at least one $x_k \in \textrm{Domain}_k$ such that any factor between $X_l$ and $X_k$ is non-zero.
+</li></ul>
+<p></p>
+<br>
+<p><span class="new-item item-r">AC-3</span> The AC-3 algorithm is a multi-step lookahead heuristic that applies forward checking to all relevant variables. After a given assignment, it performs forward checking and then successively enforces arc consistency with respect to the neighbors of variables for which the domain change during the process.</p>
+<p><span class=remark>Remark: AC-3 can be implemented both iteratively and recursively.</span></p>
+<br>
+<h3><a aria-hidden=true class=anchor href=#approximate-methods id=approximate-methods></a>Approximate methods</h3>
+<p><span class="new-item item-r">Beam search</span> Beam search is an approximate algorithm that extends partial assignments of $n$ variables of branching factor $b=|\textrm{Domain}|$ by exploring the $K$ top paths at each step. The beam size $K \in \{1,...,b^n\}$ controls the tradeoff between efficiency and accuracy. This algorithm has a time complexity of $O(n \cdot Kb\log(Kb))$.</p>
+<p><i>The example below illustrates a possible beam search of parameters $K = 2$, $b = 3$ and $n = 5$.</i></p>
+<div class=mobile-container>
+<center>
+  <img alt="Beam search" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=beam-search.png?146370731c85c0c07bab7eced4259779 style=width:100%;max-width:450px>
+</center>
+</div>
+<br>
+<p><span class=remark>Remark: $K=1$ corresponds to greedy search whereas $K\rightarrow+\infty$ is equivalent to BFS tree search.</span></p>
+<br>
+<p><span class="new-item item-b">Iterated conditional modes</span> Iterated conditional modes (ICM) is an iterative approximate algorithm that modifies the assignment of a factor graph one variable at a time until convergence. At step $i$, we assign to $X_i$ the value $v$ that maximizes the product of all factors connected to that variable.</p>
+<p><span class=remark>Remark: ICM may get stuck in local minima.</span></p>
+<br>
+<p><span class="new-item item-b">Gibbs sampling</span> Gibbs sampling is an iterative approximate method that modifies the assignment of a factor graph one variable at a time until convergence. At step $i$:
+</p><ul>
+<li> we assign to each element $u \in \textrm{Domain}_i$ a weight $w(u)$ that is the product of all factors connected to that variable,
+</li><li> we sample $v$ from the probability distribution induced by $w$ and assign it to $X_i$.
+</li></ul>
+<p></p>
+<p><span class=remark>Remark: Gibbs sampling can be seen as the probabilistic counterpart of ICM. It has the advantage to be able to escape local minima in most cases.</span></p>
+<br>
+<h3><a aria-hidden=true class=anchor href=#factor-graph-transformations id=factor-graph-transformations></a>Factor graph transformations</h3>
+<p><span class="new-item item-g">Independence</span> Let $A,B$ be a partitioning of the variables $X$. We say that $A$ and $B$ are independent if there are no edges between $A$ and $B$ and we write:</p>
+<div class=mobile-container>
+\[\boxed{A\perp\!\!\!\!\perp B}\]
+</div>
+<p><span class=remark>Remark: independence is the key property that allows us to solve subproblems in parallel.</span></p>
+<br>
+<p><span class="new-item item-r">Conditional independence</span> We say that $A$ and $B$ are conditionally independent given $C$ if conditioning on $C$ produces a graph in which $A$ and $B$ are independent. In this case, it is written:</p>
+<div class=mobile-container>
+\[\boxed{A\perp\!\!\!\!\perp B|C}\]
+</div>
+<br>
+<p><span class="new-item item-b">Conditioning</span> Conditioning is a transformation aiming at making variables independent that breaks up a factor graph into smaller pieces that can be solved in parallel and can use backtracking. In order to condition on a variable $X_i=v$, we do as follows:
+</p><ul>
+<li>Consider all factors $f_1,...,f_k$ that depend on $X_i$
+</li><li>Remove $X_i$ and $f_1,...,f_k$
+</li><li>Add $g_j(x)$ for $j \in \{1,...,k\}$ defined as:
+<div class=mobile-container>
+\[\boxed{g_j(x)=f_j(x\cup \{X_i:v\})}\]
+</div>
+</li></ul><p></p>
+<br>
+<p><span class="new-item item-b">Markov blanket</span> Let $A\subseteq X$ be a subset of variables. We define $\textrm{MarkovBlanket}(A)$ to be the neighbors of $A$ that are not in $A$.</p>
+<br>
+<p><span class="new-item item-r">Proposition</span> Let $C=\textrm{MarkovBlanket}(A)$ and $B=X\backslash(A\cup C)$. Then we have:</p>
+<div class=mobile-container>
+\[\boxed{A \perp\!\!\!\!\perp B|C}\]
+</div>
+<div class=mobile-container>
+<center>
+<img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=markov-blanket-proposition.png?bc9d269bafce0976a8b6674d5d4939c2 style=width:100%;max-width:450px;>
+</center>
+</div>
+<br>
+<p><span class="new-item item-g">Elimination</span> Elimination is a factor graph transformation that removes $X_i$ from the graph and solves a small subproblem conditioned on its Markov blanket as follows:
+</p><ul>
+<li>Consider all factors $f_{i,1},...,f_{i,k}$ that depend on $X_i$
+</li><li>Remove $X_i$ and $f_{i,1},...,f_{i,k}$
+</li><li>Add $f_{\textrm{new},i}(x)$ defined as:
+<div class=mobile-container>
+\[\boxed{f_{\textrm{new},i}(x)=\max_{x_i}\prod_{l=1}^kf_{i,l}(x)}\]
+</div>
+</li></ul><p></p>
+<br>
+<p><span class="new-item item-b">Treewidth</span> The treewidth of a factor graph is the maximum arity of any factor created by variable elimination with the best variable ordering. In other words,</p>
+<div class=mobile-container>
+\[\boxed{\textrm{Treewidth} = \min_{\textrm{orderings}} \max_{i\in \{1,...,n\}} \textrm{arity}(f_{\textrm{new},i})}\]
+</div>
+<p>The example below illustrates the case of a factor graph of treewidth 3.</p>
+<div class=mobile-container>
+<center>
+<img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=treewidth.png?451373e68c20903fa9c3fc9dccf6f4b9 style=width:100%;max-width:400px;>
+</center>
+</div>
+<p><span class=remark>Remark: finding the best variable ordering is a NP-hard problem.</span></p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#bayesian-networks id=bayesian-networks></a>Bayesian networks</h2>
+<p>In this section, our goal will be to compute conditional probabilities. What is the probability of a query given evidence?</p>
+<h3>Introduction</h3>
+<p><span class="new-item item-g">Explaining away</span> Suppose causes $C_1$ and $C_2$ influence an effect $E$. Conditioning on the effect $E$ and on one of the causes (say $C_1$) changes the probability of the other cause (say $C_2$). In this case, we say that $C_1$ has explained away $C_2$.</p>
+<br>
+<p><span class="new-item item-g">Directed acyclic graph</span> A directed acyclic graph (DAG) is a finite directed graph with no directed cycles.</p>
+<br>
+<p><span class="new-item item-r">Bayesian network</span> A Bayesian network is a directed acyclic graph (DAG) that specifies a joint distribution over random variables $X=(X_1,...,X_n)$ as a product of local conditional distributions, one for each node:</p>
+<div class=mobile-container>
+\[\boxed{P(X_1=x_1,...,X_n=x_n)\triangleq\prod_{i=1}^np(x_i|x_{\textrm{Parents}(i)})}\]
+</div>
+<p><span class=remark>Remark: Bayesian networks are factor graphs imbued with the language of probability.</span></p>
+<div class=mobile-container>
+<center>
+<img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=bayesian-network.png?437e5479b93706125334e1718a749a1a style=width:100%;max-width:360px;>
+</center>
+</div>
+<br>
+<p><span class="new-item item-b">Locally normalized</span> For each $x_{\textrm{Parents}(i)}$, all factors are local conditional distributions. Hence they have to satisfy:</p>
+<div class=mobile-container>
+\[\boxed{\sum_{x_i}p(x_i|x_{\textrm{Parents}(i)})=1}\]
+</div>
+<p>As a result, sub-Bayesian networks and conditional distributions are consistent.</p>
+<p><span class=remark>Remark: local conditional distributions are the true conditional distributions.</span></p>
+<br>
+<p><span class="new-item item-g">Marginalization</span> The marginalization of a leaf node yields a Bayesian network without that node.</p>
+<br>
+<h3><a aria-hidden=true class=anchor href=#probabilistic-program id=probabilistic-program></a>Probabilistic programs</h3>
+<p><span class="new-item item-b">Concept</span> A probabilistic program randomizes variables assignment. That way, we can write down complex Bayesian networks that generate assignments without us having to explicitly specify associated probabilities.</p>
+<p><span class=remark>Remark: examples of probabilistic programs include Hidden Markov model (HMM), factorial HMM, naive Bayes, latent Dirichlet allocation, diseases and symptoms and stochastic block models.</span></p>
+<br>
+<p><span class="new-item item-g">Summary</span> The table below summarizes the common probabilistic programs as well as their applications:</p>
+<div class=mobile-container>
+<center>
+<table style="table-layout:fixed; width:100%; min-width:700px; max-width:850px;">
+<colgroup>
+<col style=width:140px>
+<col style=width:270px>
+<col style=width:100%>
+<col style=width:160px>
+</colgroup>
+<tbody>
+<tr>
+<td align=center><b>Program</b></td>
+<td align=center><b>Algorithm</b></td>
+<td align=center><b>Illustration</b></td>
+<td align=center><b>Example</b></td>
+</tr>
+<tr>
+<td align=center valign=center>Markov Model</td>
+<td align=left valign=center>Generate $X_i\sim p(X_i|X_{i-1})$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-1.png?6e4d6ca0714baa89294b193bc49fa832></td>
+<td align=center>Language modeling</td>
+</tr>
+<tr>
+<td align=center valign=center>Hidden Markov Model<br>(HMM)</td>
+<td align=left valign=center>Generate $H_t\sim p(H_t|H_{t-1})$<br>
+                              Generate $E_t\sim p(E_t|H_{t})$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-2.png?9775f4e07376395a94d34d4339b7aac5></td>
+<td align=center>Object tracking</td>
+</tr>
+<tr>
+<td align=center valign=center>Factorial HMM</td>
+<td align=left valign=center>Generate $H_t^o\underset{\small o\in\{a,b\}}{\sim} p(H_t^o|H_{t-1}^o)$<br>
+                              Generate $E_t\sim p(E_t|H_t^a,H_t^b)$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-3.png?49285b53aba41464df086b86841a02f8></td>
+<td align=center>Multiple object tracking</td>
+</tr>
+<tr>
+<td align=center valign=center>Naive Bayes</td>
+<td align=left valign=center>Generate $Y\sim p(Y)$<br>
+                              Generate $W_i\sim p(W_i|Y)$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-4.png?bf75f98f3cf02c590d9050d53eb2365f></td>
+<td align=center>Document classification</td>
+</tr>
+<tr>
+<td align=center valign=center>Latent Dirichlet Allocation<br>(LDA)</td>
+<td align=left valign=center>Generate $\alpha\in\mathbb{R}^K$ distribution<br>
+                              Generate $Z_i\sim p(Z_i|\alpha)$<br>
+                              Generate $W_i\sim p(W_i|Z_i)$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-5.png?42bff30421fe4f7acf5881f6bd7cd191></td>
+<td align=center>Topic modeling</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<h3><a aria-hidden=true class=anchor href=#inference id=inference></a>Inference</h3>
+<p><span class="new-item item-g">General probabilistic inference strategy</span> The strategy to compute the probability $P(Q | E=e)$ of query $Q$ given evidence $E=e$ is as follows:
+</p><ul>
+<li><u>Step 1</u>: Remove variables that are not ancestors of the query $Q$ or the evidence $E$ by marginalization
+</li><li><u>Step 2</u>: Convert Bayesian network to factor graph
+</li><li><u>Step 3</u>: Condition on the evidence $E=e$
+</li><li><u>Step 4</u>: Remove nodes disconnected from the query $Q$ by marginalization
+</li><li><u>Step 5</u>: Run a probabilistic inference algorithm (manual, variable elimination, Gibbs sampling, particle filtering)
+</li></ul><p></p>
+<br>
+<p><span class="new-item item-r">Forward-backward algorithm</span> This algorithm computes the exact value of $P(H = h_k | E = e)$ (smoothing query) for any $k \in \{1, ..., L\}$ in the case of an HMM of size $L$. To do so, we proceed in 3 steps:
+</p><div class=mobile-container>
+<ul>
+<li><u>Step 1</u>: for $i \in \{1,..., L\}$, compute $F_i(h_i) = \sum_{h_{i-1}} F_{i-1}(h_{i-1})p(h_{i}|h_{i-1})p(e_i|h_i)$
+</li><li><u>Step 2</u>: for $i \in \{L,..., 1\}$, compute $B_i(h_i) = \sum_{h_{i+1}} B_{i+1}(h_{i+1})p(h_{i+1}|h_i)p(e_{i+1}|h_{i+1})$
+</li><li><u>Step 3</u>: for $i \in \{1,...,L\}$, compute $S_i(h_i) = \frac{F_i(h_i)B_i(h_i)}{\sum_{h_i}F_i(h_i)B_i(h_i)}$
+</li></ul>
+</div>
+with the convention $F_0 = B_{L+1} = 1$. From this procedure and these notations, we get that
+<div class=mobile-container>
+\[\boxed{P(H = h_k | E = e) = S_k(h_k)}\]
+</div>
+<p></p>
+<p><span class=remark>Remark: this algorithm interprets each assignment to be a path where each edge $h_{i-1} \rightarrow h_i$ is of weight $p(h_{i}|h_{i-1})p(e_i|h_i)$.</span></p>
+<br>
+<p><span class="new-item item-b">Gibbs sampling</span> This algorithm is an iterative approximate method that uses a small set of assignments (particles) to represent a large probability distribution. From a random assignment $x$, Gibbs sampling performs the following steps for $i\in \{1,...,n\}$ until convergence:
+</p><ul>
+<li> For all $u \in \textrm{Domain}_i$, compute the weight $w(u)$ of assignment $x$ where $X_i = u$
+</li><li> Sample $v$ from the probability distribution induced by $w$: $v \sim P(X_i = v | X_{-i} = x_{-i})$
+</li><li> Set $X_i = v$
+</li></ul><p></p>
+<p><span class=remark>Remark: $X_{-i}$ denotes $X \backslash \{X_i\}$ and $x_{-i}$ represents the corresponding assignment.</span></p>
+<br>
+<p><span class="new-item item-g">Particle filtering</span> This algorithm approximates the posterior density of state variables given the evidence of observation variables by keeping track of $K$ particles at a time. Starting from a set of particles $C$ of size $K$, we run the following 3 steps iteratively:
+</p><ul>
+<li><u>Step 1</u>: proposal - For each old particle $x_{t-1} \in C$, sample $x$ from the transition probability distribution $p(x | x_{t-1})$ and add $x$ to a set $C'$.
+</li><li><u>Step 2</u>: weighting - Weigh each $x$ of the set $C'$ by $w(x)=p(e_t|x)$, where $e_t$ is the evidence observed at time $t$.
+</li><li><u>Step 3</u>: resampling - Sample $K$ elements from the set $C'$ using the probability distribution induced by $w$ and store them in $C$: these are the current particles $x_t$.
+</li></ul><p></p>
+<p><span class=remark>Remark: a more expensive version of this algorithm also keeps track of past particles in the proposal step.</span></p>
+<br>
+<p><span class="new-item item-g">Maximum likelihood</span> If we don't know the local conditional distributions, we can learn them using maximum likelihood.</p>
+<div class=mobile-container>
+\[\boxed{\max_\theta\prod_{x\in\mathcal{D}_{\textrm{train}}}p(X=x;\theta)}\]
+</div>
+<br>
+<p><span class="new-item item-g">Laplace smoothing</span> For each distribution $d$ and partial assignment $(x_{\textrm{Parents}(i)},x_i)$, add $\lambda$ to $\textrm{count}_d(x_{\textrm{Parents}(i)},x_i)$, then normalize to get probability estimates.</p>
+<br>
+<p><span class="new-item item-r">Algorithm</span> The Expectation-Maximization (EM) algorithm gives an efficient method at estimating the parameter $\theta$ through maximum likelihood estimation by repeatedly constructing a lower-bound on the likelihood (E-step) and optimizing that lower bound (M-step) as follows:
+</p><ul>
+<li><u>E-step</u>: Evaluate the posterior probability $q(h)$ that each data point $e$ came from a particular cluster $h$ as follows:
+<div class=mobile-container>
+\[\boxed{q(h)=P(H=h|E=e;\theta)}\]
+</div>
+</li><li><u>M-step</u>: Use the posterior probabilities $q(h)$ as cluster specific weights on data points $e$ to determine $\theta$ through maximum likelihood.
+</li></ul><p></p>
+</article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>
