@@ -1,0 +1,489 @@
+<!DOCTYPE html><html lang=en><head><!-- base href=../../ --><title>CS 230 - Recurrent Neural Networks Cheatsheet</title><meta charset=utf-8><meta content="Teaching page of Shervine Amidi, Graduate Student at Stanford University." name=description><meta content="teaching, shervine, shervine amidi, data science" name=keywords><meta content="width=device-width, initial-scale=1" name=viewport>
+<link href=https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks rel=canonical>
+<link href=../../css/bootstrap.min.css rel=stylesheet>
+<link href=../../css/font-awesome.min.css rel=stylesheet>
+<link href=../../css/katex.min.css rel=stylesheet>
+<link href=../../css/style.min.css rel=stylesheet type=text/css>
+<link href=../../css/article.min.css rel=stylesheet>
+<script src=../../js/jquery.min.js></script>
+<script src=../../js/bootstrap.min.js></script>
+<script defer src=../../js/underscore-min.js type=text/javascript></script>
+<script defer src=../../js/katex.min.js></script>
+<script defer src=../../js/auto-render.min.js></script>
+<script defer src=../../js/article.min.js></script>
+<script defer src=../../js/lang.min.js></script>
+<script async defer src=../../js/buttons.js></script>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Deep Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Recurrent Neural Networks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#overview>Overview</a></div> <div class=dropdown-container> <a href=#overview><span>Architecture structure</span></a> <a href=#overview><span>Applications of RNNs</span></a> <a href=#overview><span>Loss function</span></a> <a href=#overview><span>Backpropagation</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#architecture>Handling long term dependencies</a></div> <div class=dropdown-container> <a href=#architecture><span>Common activation functions</span></a> <a href=#architecture><span>Vanishing/exploding gradient</span></a> <a href=#architecture><span>Gradient clipping</span></a> <a href=#architecture><span>GRU/LSTM</span></a> <a href=#architecture><span>Types of gates</span></a> <a href=#architecture><span>Bidirectional RNN</span></a> <a href=#architecture><span>Deep RNN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#word-representation>Learning word representation</a></div> <div class=dropdown-container> <a href=#word-representation><span>Notations</span></a> <a href=#word-representation><span>Embedding matrix</span></a> <a href=#word-representation><span>Word2vec</span></a> <a href=#word-representation><span>Skip-gram</span></a> <a href=#word-representation><span>Negative sampling</span></a> <a href=#word-representation><span>GloVe</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#comparing-words>Comparing words</a></div> <div class=dropdown-container> <a href=#comparing-words><span>Cosine similarity</span></a> <a href=#comparing-words><span>t-SNE</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#language-model>Language model</a></div> <div class=dropdown-container> <a href=#language-model><span>n-gram</span></a> <a href=#language-model><span>Perplexity</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#machine-translation>Machine translation</a></div> <div class=dropdown-container> <a href=#machine-translation><span>Beam search</span></a> <a href=#machine-translation><span>Length normalization</span></a> <a href=#machine-translation><span>Error analysis</span></a> <a href=#machine-translation><span>Bleu score</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#attention>Attention</a></div> <div class=dropdown-container> <a href=#attention><span>Attention model</span></a> <a href=#attention><span>Attention weights</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-recurrent-neural-networks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+<div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
+  Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
+</div>
+<div class=title-lang style=display:none;> <!-- DISPLAY:NONE --><a aria-hidden=true class=anchor-bis href=#cs-230---deep-learning id=cs-230---deep-learning></a><a href=teaching/cs-230 onclick=trackOutboundLink(this);>CS 230 - Deep Learning</a>
+  
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE -->
+    <div class=input-group>
+      <select class=form-control onchange=changeLangAndTrack(this); onfocus=storeCurrentIndex(this);>
+        <option selected value=en>English</option>
+        <option value=fa>فارسی</option>
+        <option value=fr>Français</option>
+        <option value=ja>日本語</option>
+        <option value=ko>한국어</option>
+        <option value=tr>Türkçe</option>
+        <option value=vi>Tiếng Việt</option>
+      </select>
+      <div class=input-group-addon><i class=fa></i></div>
+    </div>
+  </div>
+</div>
+<br>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button>CS 221 - Artificial Intelligence</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><b>CS 230 - Deep Learning</b></button>
+  </div>
+</div>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>Convolutional Neural Networks</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-230/recurrent-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-recurrent-neural-networks'" type=button><b>Recurrent Neural Networks</b></button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-230/deep-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks'" type=button>Tips and tricks</button>
+  </div>
+</div>
+
+<h1>
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Recurrent Neural Networks cheatsheet
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-230-deep-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-230-deep-learning onclick=trackOutboundLink(this);>Star</a></div>
+</h1>
+<i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
+<h2><a aria-hidden=true class=anchor href=#overview id=overview></a>Overview</h2>
+<p><span class="new-item item-r">Architecture of a traditional RNN</span> Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states. They are typically as follows:</p>
+<div class=mobile-container>
+<img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=architecture-rnn-ltr.png?9ea4417fc145b9346a3e288801dbdfdc style="width:100%; max-width:700px;">
+</div>
+<br>
+<p>For each timestep $t$, the activation $a^{&lt; t &gt;}$ and the output $y^{&lt; t &gt;}$ are expressed as follows:
+</p><div class=mobile-container>
+\[\boxed{a^{&lt; t &gt;}=g_1(W_{aa}a^{&lt; t-1 &gt;}+W_{ax}x^{&lt; t &gt;}+b_a)}\quad\textrm{and}\quad\boxed{y^{&lt; t &gt;}=g_2(W_{ya}a^{&lt; t &gt;}+b_y)}\]
+</div>
+where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared temporally and $g_1, g_2$ activation functions.<br>
+<div class=mobile-container>
+<center>
+<img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=description-block-rnn-ltr.png?74e25518f882f8758439bcb3637715e5 style="width:100%; max-width:630px;">
+</center>
+</div>
+<br>
+<p>The pros and cons of a typical RNN architecture are summed up in the table below:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=50%>
+<col width=50%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>Advantages</b></td>
+<td align=center><b>Drawbacks</b></td>
+</tr>
+<tr>
+<td align=left>• Possibility of processing input of any length<br>
+                 • Model size not increasing with size of input<br>
+                 • Computation takes into account historical information<br>
+                 • Weights are shared across time</td>
+<td align=left>• Computation being slow<br>
+                 • Difficulty of accessing information from a long time ago<br>
+                 • Cannot consider any future input for the current state</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-g">Applications of RNNs</span> RNN models are mostly used in the fields of natural language processing and speech recognition. The different applications are summed up in the table below:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=20%>
+<col width=55%>
+<col width=25%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>Type of RNN</b></td>
+<td align=center><b>Illustration</b></td>
+<td align=center><b>Example</b></td>
+</tr>
+<tr>
+<td align=center>One-to-one<br>$T_x=T_y=1$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-one-to-one-ltr.png?9c8e3b04d222d178d6bee4506cc3f779></td>
+<td align=left>Traditional neural network</td>
+</tr>
+<tr>
+<td align=center>One-to-many<br>$T_x=1, T_y&gt;1$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-one-to-many-ltr.png?d246c2f0d1e0f43a21a8bd95f579cb3b></td>
+<td align=left>Music generation</td>
+</tr>
+<tr>
+<td align=center>Many-to-one<br>$T_x&gt;1, T_y=1$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-many-to-one-ltr.png?c8a442b3ea9f4cb81f929c089b910c9d></td>
+<td align=left>Sentiment classification</td>
+</tr>
+<tr>
+<td align=center>Many-to-many<br>$T_x=T_y$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-many-to-many-same-ltr.png?2790431b32050b34b80011afead1f232></td>
+<td align=left>Name entity recognition</td>
+</tr>
+<tr>
+<td align=center>Many-to-many<br>$T_x\neq T_y$</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-many-to-many-different-ltr.png?8ca8bafd1eeac4e8c961d9293858407b></td>
+<td align=left>Machine translation</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-b">Loss function</span> In the case of a recurrent neural network, the loss function $\mathcal{L}$ of all time steps is defined based on the loss at every time step as follows:</p>
+<div class=mobile-container>
+\[\boxed{\mathcal{L}(\widehat{y},y)=\sum_{t=1}^{T_y}\mathcal{L}(\widehat{y}^{&lt; t &gt;},y^{&lt; t &gt;})}\]
+</div>
+<br>
+<p><span class="new-item item-b">Backpropagation through time</span> Backpropagation is done at each point in time. At timestep $T$, the derivative of the loss $\mathcal{L}$ with respect to weight matrix $W$ is expressed as follows:</p>
+<div class=mobile-container>
+\[\boxed{\frac{\partial \mathcal{L}^{(T)}}{\partial W}=\sum_{t=1}^T\left.\frac{\partial\mathcal{L}^{(T)}}{\partial W}\right|_{(t)}}\]
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#architecture id=architecture></a>Handling long term dependencies</h2>
+<p><span class="new-item item-b">Commonly used activation functions</span> The most common activation functions used in RNN modules are described below:</p>
+<div class=mobile-container>
+<center>
+<table style="table-layout:fixed; width:100%; min-width:450px;">
+<colgroup>
+<col style=width:33%>
+<col style=width:33%>
+<col style=width:33%>
+</colgroup>
+<tbody>
+<tr>
+<td align=center><b>Sigmoid</b></td>
+<td align=center><b>Tanh</b></td>
+<td align=center><b>RELU</b></td>
+</tr>
+<tr>
+<td align=center>$\displaystyle g(z)=\frac{1}{1+e^{-z}}$</td>
+<td align=center>$\displaystyle g(z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}$</td>
+<td align=center>$\displaystyle g(z)=\max(0,z)$</td>
+</tr>
+<tr>
+<td align=center><img alt=Sigmoid class=img-responsive netsrc=teaching/cs-229/illustrations/ src=sigmoid.png?c91b6e5a7d4e78e95880bcf4e39889df style="width:100%; max-width:200px;"></td>
+<td align=center><img alt=Tanh class=img-responsive netsrc=teaching/cs-229/illustrations/ src=tanh.png?22ac27f27c510c6414e8a3bb4aca2d80 style="width:100%; max-width:200px;"></td>
+<td align=center><img alt=RELU class=img-responsive netsrc=teaching/cs-229/illustrations/ src=relu.png?6c1d78551355db5c6e4f6f8b5282cfa8 style="width:100%; max-width:200px;"></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-b">Vanishing/exploding gradient</span> The vanishing and exploding gradient phenomena are often encountered in the context of RNNs. The reason why they happen is that it is difficult to capture long term dependencies because of multiplicative gradient that can be exponentially decreasing/increasing with respect to the number of layers.</p>
+<br>
+<p><span class="new-item item-b">Gradient clipping</span> It is a technique used to cope with the exploding gradient problem sometimes encountered when performing backpropagation. By capping the maximum value for the gradient, this phenomenon is controlled in practice.</p>
+<div class=mobile-container>
+<center>
+<img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=gradient-clipping-en.png?6c3de441dc56aad634dc1a91accb48f2 style="width:100%; max-width:375px;">
+</center>
+</div>
+<br>
+<p><span class="new-item item-g">Types of gates</span> In order to remedy the vanishing gradient problem, specific gates are used in some types of RNNs and usually have a well-defined purpose. They are usually noted $\Gamma$ and are equal to:</p>
+<div class=mobile-container>
+\[\boxed{\Gamma=\sigma(Wx^{&lt; t &gt;}+Ua^{&lt; t-1 &gt;}+b)}\]
+</div>
+<p>where $W, U, b$ are coefficients specific to the gate and $\sigma$ is the sigmoid function. The main ones are summed up in the table below:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=25%>
+<col width=45%>
+<col width=30%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>Type of gate</b></td>
+<td align=center><b>Role</b></td>
+<td align=center><b>Used in</b></td>
+</tr>
+<tr>
+<td align=center>Update gate $\Gamma_u$</td>
+<td align=center>How much past should matter now?</td>
+<td align=center>GRU, LSTM</td>
+</tr>
+<tr>
+<td align=center>Relevance gate $\Gamma_r$</td>
+<td align=center>Drop previous information?</td>
+<td align=center>GRU, LSTM</td>
+</tr>
+<tr>
+<td align=center>Forget gate $\Gamma_f$</td>
+<td align=center>Erase a cell or not?</td>
+<td align=center>LSTM</td>
+</tr>
+<tr>
+<td align=center>Output gate $\Gamma_o$</td>
+<td align=center>How much to reveal of a cell?</td>
+<td align=center>LSTM</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">GRU/LSTM</span> Gated Recurrent Unit (GRU) and Long Short-Term Memory units (LSTM) deal with the vanishing gradient problem encountered by traditional RNNs, with LSTM being a generalization of GRU. Below is a table summing up the characterizing equations of each architecture:</p>
+<div class=mobile-container>
+<center>
+<table style="table-layout:fixed; width:100%; min-width:725px;">
+<colgroup>
+<col width=160px>
+<col width=50%>
+<col width=50%>
+</colgroup>
+<tbody>
+<tr>
+<td align=center><b>Characterization</b></td>
+<td align=center><b>Gated Recurrent Unit</b> (GRU)</td>
+<td align=center><b>Long Short-Term Memory</b> (LSTM)</td>
+</tr>
+<tr>
+<td align=center>$\tilde{c}^{&lt; t &gt;}$</td>
+<td align=center>$\textrm{tanh}(W_c[\Gamma_r\star a^{&lt; t-1 &gt;},x^{&lt; t &gt;}]+b_c)$</td>
+<td align=center>$\textrm{tanh}(W_c[\Gamma_r\star a^{&lt; t-1 &gt;},x^{&lt; t &gt;}]+b_c)$</td>
+</tr>
+<tr>
+<td align=center>$c^{&lt; t &gt;}$</td>
+<td align=center>$\Gamma_u\star\tilde{c}^{&lt; t &gt;}+(1-\Gamma_u)\star c^{&lt; t-1 &gt;}$</td>
+<td align=center>$\Gamma_u\star\tilde{c}^{&lt; t &gt;}+\Gamma_f\star c^{&lt; t-1 &gt;}$</td>
+</tr>
+<tr>
+<td align=center>$a^{&lt; t &gt;}$</td>
+<td align=center>$c^{&lt; t &gt;}$</td>
+<td align=center>$\Gamma_o\star c^{&lt; t &gt;}$</td>
+</tr>
+<tr>
+<td align=center>Dependencies</td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=gru-ltr.png?00f278f71b4833d32a87ed53d86f251c style="width:100%; max-width:400px;"></td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=lstm-ltr.png?4539fbbcbd9fabfd365936131c13476c style="width:100%; max-width:400px;"></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p><span class=remark>Remark: the sign $\star$ denotes the element-wise multiplication between two vectors.</span></p>
+<br>
+<p><span class="new-item item-r">Variants of RNNs</span> The table below sums up the other commonly used RNN architectures:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=50%>
+<col width=50%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>Bidirectional</b> (BRNN)</td>
+<td align=center><b>Deep</b> (DRNN)</td>
+</tr>
+<tr>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=bidirectional-rnn-ltr.png?e3e66fae56ea500924825017917b464a style="width:100%; max-width:375px;"></td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=deep-rnn-ltr.png?f57da6de44ddd4709ad3b696cac6a912 style="width:100%; max-width:375px;"></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#word-representation id=word-representation></a>Learning word representation</h2>
+<p>In this section, we note $V$ the vocabulary and $|V|$ its size.</p>
+<h3>Motivation and notations</h3>
+<p><span class="new-item item-g">Representation techniques</span> The two main ways of representing words are summed up in the table below:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=50%>
+<col width=50%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>1-hot representation</b></td>
+<td align=center><b>Word embedding</b></td>
+</tr>
+<tr>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=one-hot-representation-en.png?c60bb9aafc7b14e1076d43c8f85f63df style="width:100%; max-width:225px;"></td>
+<td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=word-embedding-representation-en.png?2dcceb341d5a5ccc9c7e0da0fd523a74 style="width:100%; max-width:225px;"></td>
+</tr>
+<tr>
+<td align=left>• Noted $o_w$<br>
+                 • Naive approach, no similarity information</td>
+<td align=left>• Noted $e_w$<br>
+                 • Takes into account words similarity</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-b">Embedding matrix</span> For a given word $w$, the embedding matrix $E$ is a matrix that maps its 1-hot representation $o_w$ to its embedding $e_w$ as follows:</p>
+<div class=mobile-container>
+\[\boxed{e_w=Eo_w}\]
+</div>
+<p><span class=remark>Remark: learning the embedding matrix can be done using target/context likelihood models.</span></p>
+<br>
+<h3>Word embeddings</h3>
+<p><span class="new-item item-r">Word2vec</span> Word2vec is a framework aimed at learning word embeddings by estimating the likelihood that a given word is surrounded by other words. Popular models include skip-gram, negative sampling and CBOW.</p>
+<br>
+<div class=mobile-container>
+<center>
+<img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=word2vec-en.png?4198ce416cd8afb1ba06f2b5f5784583 style="width:100%; max-width:900px;">
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">Skip-gram</span> The skip-gram word2vec model is a supervised learning task that learns word embeddings by assessing the likelihood of any given target word $t$ happening with a context word $c$. By noting $\theta_t$ a parameter associated with $t$, the probability $P(t|c)$ is given by:</p>
+<div class=mobile-container>
+\[\boxed{P(t|c)=\frac{\exp(\theta_t^Te_c)}{\displaystyle\sum_{j=1}^{|V|}\exp(\theta_j^Te_c)}}\]
+</div>
+<p><span class=remark>Remark: summing over the whole vocabulary in the denominator of the softmax part makes this model computationally expensive. CBOW is another word2vec model using the surrounding words to predict a given word.</span></p>
+<br>
+<p><span class="new-item item-b">Negative sampling</span> It is a set of binary classifiers using logistic regressions that aim at assessing how a given context and a given target words are likely to appear simultaneously, with the models being trained on sets of $k$ negative examples and 1 positive example. Given a context word $c$ and a target word $t$, the prediction is expressed by:</p>
+<div class=mobile-container>
+\[\boxed{P(y=1|c,t)=\sigma(\theta_t^Te_c)}\]
+</div>
+<p><span class=remark>Remark: this method is less computationally expensive than the skip-gram model.</span></p>
+<br>
+<p><span class="new-item item-r">GloVe</span> The GloVe model, short for global vectors for word representation, is a word embedding technique that uses a co-occurence matrix $X$ where each $X_{i,j}$ denotes the number of times that a target $i$ occurred with a context $j$. Its cost function $J$ is as follows:</p>
+<div class=mobile-container>
+\[\boxed{J(\theta)=\frac{1}{2}\sum_{i,j=1}^{|V|}f(X_{ij})(\theta_i^Te_j+b_i+b_j'-\log(X_{ij}))^2}\]
+</div>
+<p>where $f$ is a weighting function such that $X_{i,j}=0\Longrightarrow f(X_{i,j})=0$.<br>
+Given the symmetry that $e$ and $\theta$ play in this model, the final word embedding $e_w^{(\textrm{final})}$ is given by:</p>
+<div class=mobile-container>
+\[\boxed{e_w^{(\textrm{final})}=\frac{e_w+\theta_w}{2}}\]
+</div>
+<p><span class=remark>Remark: the individual components of the learned word embeddings are not necessarily interpretable.</span></p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#comparing-words id=comparing-words></a>Comparing words</h2>
+<p><span class="new-item item-b">Cosine similarity</span> The cosine similarity between words $w_1$ and $w_2$ is expressed as follows:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{similarity}=\frac{w_1\cdot w_2}{||w_1||\textrm{ }||w_2||}=\cos(\theta)}\]
+</div>
+<p><span class=remark>Remark: $\theta$ is the angle between words $w_1$ and $w_2$.</span></p>
+<div class=mobile-container>
+<center>
+<img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=cosine-similarity.png?58c75740dd02237336f5883328d050e9 style="width:100%; max-width:250px;">
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">$t$-SNE</span> $t$-SNE ($t$-distributed Stochastic Neighbor Embedding) is a technique aimed at reducing high-dimensional embeddings into a lower dimensional space. In practice, it is commonly used to visualize word vectors in the 2D space.</p>
+<div class=mobile-container>
+<center>
+<img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=t-sne-en.png?411bf8ff5d5c06c6e90cae95f7110ff1 style="width:100%; max-width:550px;">
+</center>
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#language-model id=language-model></a>Language model</h2>
+<p><span class="new-item item-r">Overview</span> A language model aims at estimating the probability of a sentence $P(y)$.</p>
+<br>
+<p><span class="new-item item-r">$n$-gram model</span> This model is a naive approach aiming at quantifying the probability that an expression appears in a corpus by counting its number of appearance in the training data.</p>
+<br>
+<p><span class="new-item item-b">Perplexity</span> Language models are commonly assessed using the perplexity metric, also known as PP, which can be interpreted as the inverse probability of the dataset normalized by the number of words $T$. The perplexity is such that the lower, the better and is defined as follows:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{PP}=\prod_{t=1}^T\left(\frac{1}{\sum_{j=1}^{|V|}y_j^{(t)}\cdot \widehat{y}_j^{(t)}}\right)^{\frac{1}{T}}}\]
+</div>
+<p><span class=remark>Remark: PP is commonly used in $t$-SNE.</span></p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#machine-translation id=machine-translation></a>Machine translation</h2>
+<p><span class="new-item item-r">Overview</span> A machine translation model is similar to a language model except it has an encoder network placed before. For this reason, it is sometimes referred as a conditional language model.</p>
+<p>The goal is to find a sentence $y$ such that:</p>
+<div class=mobile-container>
+\[\boxed{y=\underset{y^{&lt; 1 &gt;}, ..., y^{&lt; T_y &gt;}}{\textrm{arg max}}P(y^{&lt; 1 &gt;},...,y^{&lt; T_y &gt;}|x)}\]
+</div>
+<br>
+<p><span class="new-item item-g">Beam search</span> It is a heuristic search algorithm used in machine translation and speech recognition to find the likeliest sentence $y$ given an input $x$.</p>
+<p>• Step 1: Find top $B$ likely words $y^{&lt; 1 &gt;}$
+<br>• Step 2: Compute conditional probabilities $y^{&lt; k &gt;}|x,y^{&lt; 1 &gt;},...,y^{&lt; k-1 &gt;}$
+<br>• Step 3: Keep top $B$ combinations $x,y^{&lt; 1&gt;},...,y^{&lt; k &gt;}$</p>
+<br>
+<div class=mobile-container>
+<center>
+<img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=beam-search-en.png?3515955a2324591070618dd85812d5d7 style="width:100%; max-width:900px;">
+</center>
+</div>
+<br>
+<p><span class=remark>Remark: if the beam width is set to 1, then this is equivalent to a naive greedy search.</span></p>
+<br>
+<p><span class="new-item item-r">Beam width</span> The beam width $B$ is a parameter for beam search. Large values of $B$ yield to better result but with slower performance and increased memory. Small values of $B$ lead to worse results but is less computationally intensive. A standard value for $B$ is around 10.</p>
+<br>
+<p><span class="new-item item-r">Length normalization</span> In order to improve numerical stability, beam search is usually applied on the following normalized objective, often called the normalized log-likelihood objective, defined as:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{Objective } = \frac{1}{T_y^\alpha}\sum_{t=1}^{T_y}\log\Big[p(y^{&lt; t &gt;}|x,y^{&lt; 1 &gt;}, ..., y^{&lt; t-1 &gt;})\Big]}\]
+</div>
+<p><span class=remark>Remark: the parameter $\alpha$ can be seen as a softener, and its value is usually between 0.5 and 1.</span></p>
+<br>
+<p><span class="new-item item-b">Error analysis</span> When obtaining a predicted translation $\widehat{y}$ that is bad, one can wonder why we did not get a good translation $y^*$ by performing the following error analysis:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=25%>
+<col width=37.5%>
+<col width=37.5%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>Case</b></td>
+<td align=center>$P(y^*|x)&gt;P(\widehat{y}|x)$</td>
+<td align=center>$P(y^*|x)\leqslant P(\widehat{y}|x)$</td>
+</tr>
+<tr>
+<td align=center><b>Root cause</b></td>
+<td align=center>Beam search faulty</td>
+<td align=center>RNN faulty</td>
+</tr>
+<tr>
+<td align=center><b>Remedies</b></td>
+<td align=center>Increase beam width</td>
+<td align=left>• Try different architecture<br>
+                 • Regularize<br>
+                 • Get more data</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-b">Bleu score</span> The bilingual evaluation understudy (bleu) score quantifies how good a machine translation is by computing a similarity score based on $n$-gram precision. It is defined as follows:
+</p><div class=mobile-container>
+\[\boxed{\textrm{bleu score}=\exp\left(\frac{1}{n}\sum_{k=1}^np_k\right)}\]
+</div>
+where $p_n$ is the bleu score on $n$-gram only defined as follows:
+<div class=mobile-container>
+\[p_n=\frac{\displaystyle\sum_{\textrm{n-gram}\in\widehat{y}}\textrm{count}_{\textrm{clip}}(\textrm{n-gram})}{\displaystyle\sum_{\textrm{n-gram}\in\widehat{y}}\textrm{count}(\textrm{n-gram})}\]
+</div>
+<p><span class=remark>Remark: a brevity penalty may be applied to short predicted translations to prevent an artificially inflated bleu score.</span></p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#attention id=attention></a>Attention</h2>
+<p><span class="new-item item-b">Attention model</span> This model allows an RNN to pay attention to specific parts of the input that is considered as being important, which improves the performance of the resulting model in practice. By noting $\alpha^{&lt; t, t'&gt;}$ the amount of attention that the output $y^{&lt; t &gt;}$ should pay to the activation $a^{&lt; t' &gt;}$ and $c^{&lt; t &gt;}$ the context at time $t$, we have:</p>
+<div class=mobile-container>
+\[\boxed{c^{&lt; t &gt;}=\sum_{t'}\alpha^{&lt; t, t' &gt;}a^{&lt; t' &gt;}}\quad\textrm{with}\quad\sum_{t'}\alpha^{&lt; t,t' &gt;}=1\]
+</div>
+<p><span class=remark>Remark: the attention scores are commonly used in image captioning and machine translation.</span></p>
+<br>
+<center>
+  <div class=row>
+      <div class="col-xs-6 col-md-6"><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=attention-model-captioning-1-en.jpeg?88f2fc4c05c8bd834112845a238cfa8b style="width:100%; max-width:330px"></div>
+      <div class="col-xs-6 col-md-6"><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=attention-model-captioning-2-en.jpeg?d02de27df05fdb8106bac8f0bfa3a32d style="width:100%; max-width:330px"></div>
+  </div>
+</center>
+<br>
+<p><span class="new-item item-b">Attention weight</span> The amount of attention that the output $y^{&lt; t &gt;}$ should pay to the activation $a^{&lt; t' &gt;}$ is given by $\alpha^{&lt; t,t' &gt;}$ computed as follows:</p>
+<div class=mobile-container>
+\[\boxed{\alpha^{&lt; t,t' &gt;}=\frac{\exp(e^{&lt; t,t' &gt;})}{\displaystyle\sum_{t''=1}^{T_x}\exp(e^{&lt; t,t'' &gt;})}}\]
+</div>
+<p><span class=remark>Remark: computation complexity is quadratic with respect to $T_x$.</span></p>
+<br>
+</article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>

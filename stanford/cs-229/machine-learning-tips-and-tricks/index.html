@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang=en><head><!-- base href=../../ --><title>CS 229 - Machine Learning Tips and Tricks Cheatsheet</title><meta charset=utf-8><meta content="Teaching page of Shervine Amidi, Graduate Student at Stanford University." name=description><meta content="teaching, shervine, shervine amidi, data science" name=keywords><meta content="width=device-width, initial-scale=1" name=viewport>
+<link href=https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks rel=canonical>
+<link href=../../css/bootstrap.min.css rel=stylesheet>
+<link href=../../css/font-awesome.min.css rel=stylesheet>
+<link href=../../css/katex.min.css rel=stylesheet>
+<link href=../../css/style.min.css rel=stylesheet type=text/css>
+<link href=../../css/article.min.css rel=stylesheet>
+<script src=../../js/jquery.min.js></script>
+<script src=../../js/bootstrap.min.js></script>
+<script defer src=../../js/underscore-min.js type=text/javascript></script>
+<script defer src=../../js/katex.min.js></script>
+<script defer src=../../js/auto-render.min.js></script>
+<script defer src=../../js/article.min.js></script>
+<script defer src=../../js/lang.min.js></script>
+<script async defer src=../../js/buttons.js></script>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Tips and tricks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#classification-metrics>Classification metrics</a></div> <div class=dropdown-container> <a href=#classification-metrics><span>Confusion matrix</span></a> <a href=#classification-metrics><span>Accuracy</span></a> <a href=#classification-metrics><span>Precision, recall</span></a> <a href=#classification-metrics><span>F1 score</span></a> <a href=#classification-metrics><span>ROC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#regression-metrics>Regression metrics</a></div> <div class=dropdown-container> <a href=#regression-metrics><span>R squared</span></a> <a href=#regression-metrics><span>Mallow's CP</span></a> <a href=#regression-metrics><span>AIC, BIC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#model-selection>Model selection</a></div> <div class=dropdown-container> <a href=#model-selection><span>Cross-validation</span></a> <a href=#model-selection><span>Regularization</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#diagnostics>Diagnostics</a></div> <div class=dropdown-container> <a href=#diagnostics><span>Bias/variance tradeoff</span></a> <a href=#diagnostics><span>Error/ablative analysis</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-machine-learning-tips-and-tricks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+<div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
+  Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
+</div>
+<div class=title-lang style=display:none;> <!-- DISPLAY:NONE -->
+  <a aria-hidden=true class=anchor-bis href=#cs-229---machine-learning id=cs-229---machine-learning></a><a href=teaching/cs-229 onclick=trackOutboundLink(this);>CS 229 - Machine Learning</a>
+  
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE -->
+    <div class=input-group>
+      <select class=form-control onchange=changeLangAndTrack(this); onfocus=storeCurrentIndex(this);>
+        <option value=ar>العربية</option>
+        <option selected value=en>English</option>
+        <option value=es>Español</option>
+        <option value=fa>فارسی</option>
+        <option value=fr>Français</option>
+        <option value=ko>한국어</option>
+        <option value=pt>Português</option>
+        <option value=tr>Türkçe</option>
+        <option value=vi>Tiếng Việt</option>
+        <option value=zh>简中</option>
+        <option value=zh-tw>繁中</option>
+      </select>
+      <div class=input-group-addon><i class=fa></i></div>
+    </div>
+  </div>
+</div>
+<br>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button>CS 221 - Artificial Intelligence</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><b>CS 229 - Machine Learning</b></button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>CS 230 - Deep Learning</button>
+  </div>
+</div>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/probability/index.html'; oldhref='teaching/cs-229/refresher-probabilities-statistics'" type=button>Probabilities</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/linear-algebra/index.html'; oldhref='teaching/cs-229/refresher-algebra-calculus'" type=button>Algebra</button>
+  </div>
+</div>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>Supervised Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/unsupervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-unsupervised-learning'" type=button>Unsupervised Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/deep-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-deep-learning'" type=button>Deep Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/machine-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks'" type=button><b>Tips and tricks</b></button>
+  </div>
+</div>
+<h1>
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Machine Learning tips and tricks cheatsheet
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
+</h1>
+<p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
+<h2><a aria-hidden=true class=anchor href=#classification-metrics id=classification-metrics></a>Classification metrics</h2>
+<p>In a context of a binary classification, here are the main metrics that are important to track in order to assess the performance of the model.</p>
+<p><span class="new-item item-b">Confusion matrix</span> The confusion matrix is used to have a more complete picture when assessing the performance of a model. It is defined as follows:</p>
+<div class=mobile-container>
+<table style="margin-left: 10%">
+<colgroup><col width=120px>
+<col width=50px>
+<col width=200px>
+<col width=200px>
+</colgroup><tbody>
+<tr style="border-top: 0px">
+<td align=center colspan=2 rowspan=2 style="background: rgba(255, 255, 255, 1);border: 0px"></td>
+<td align=center colspan=2 style="background: rgba(255, 255, 255, 1);border: 0px"><b>Predicted</b> class</td>
+</tr>
+<tr style="border-top: 0px">
+<td align=center style="background: rgba(255, 255, 255, 1);border: 0px"><b>+</b></td>
+<td align=center style="background: rgba(255, 255, 255, 1);border: 0px"><b>-</b></td>
+</tr>
+<tr style="border-top: 0px">
+<td align=center rowspan=2 style="border: 0px"><b>Actual</b> class</td>
+<td align=center style="background: rgba(255, 255, 255, 1);border: 0px;"><b>+</b></td>
+<td align=center style="background: rgba(0, 255, 0, 0.15);border: 0px;"><b>TP</b><br>True Positives</td>
+<td align=center style="background: rgba(255, 0, 0, 0.25);border: 0px;"><b>FN</b><br>False Negatives<br>Type II error</td>
+</tr>
+<tr style="border-top: 0px">
+<td align=center style="background: rgba(255, 255, 255, 1);border: 0px;"><b>-</b></td>
+<td align=center style="background: rgba(255, 0, 0, 0.25);border: 0px;"><b>FP</b><br>False Positives<br>Type I error</td>
+<td align=center style="background: rgba(0, 255, 0, 0.15);border: 0px;"><b>TN</b><br>True Negatives</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<p><span class="new-item item-r">Main metrics</span> The following metrics are commonly used to assess the performance of classification models:</p>
+<div class=mobile-container>
+<center>
+<table>
+<tbody>
+<tr>
+<td align=center><b>Metric</b></td>
+<td align=center><b>Formula</b></td>
+<td align=center><b>Interpretation</b></td>
+</tr>
+<tr>
+<td align=center>Accuracy</td>
+<td align=center>$\displaystyle\frac{\textrm{TP}+\textrm{TN}}{\textrm{TP}+\textrm{TN}+\textrm{FP}+\textrm{FN}}$</td>
+<td align=left>Overall performance of model</td>
+</tr>
+<tr>
+<td align=center>Precision</td>
+<td align=center>$\displaystyle\frac{\textrm{TP}}{\textrm{TP}+\textrm{FP}}$</td>
+<td align=left>How accurate the positive predictions are</td>
+</tr>
+<tr>
+<td align=center>Recall<br>Sensitivity</td>
+<td align=center>$\displaystyle\frac{\textrm{TP}}{\textrm{TP}+\textrm{FN}}$</td>
+<td align=left>Coverage of actual positive sample</td>
+</tr>
+<tr>
+<td align=center>Specificity</td>
+<td align=center>$\displaystyle\frac{\textrm{TN}}{\textrm{TN}+\textrm{FP}}$</td>
+<td align=left>Coverage of actual negative sample</td>
+</tr>
+<tr>
+<td align=center>F1 score</td>
+<td align=center>$\displaystyle\frac{2\textrm{TP}}{2\textrm{TP}+\textrm{FP}+\textrm{FN}}$</td>
+<td align=left>Hybrid metric useful for unbalanced classes</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">ROC</span> The receiver operating curve, also noted ROC, is the plot of TPR versus FPR by varying the threshold. These metrics are are summed up in the table below:</p>
+<div class=mobile-container>
+<center>
+<table>
+<tbody>
+<tr>
+<td align=center><b>Metric</b></td>
+<td align=center><b>Formula</b></td>
+<td align=center><b>Equivalent</b></td>
+</tr>
+<tr>
+<td align=center>True Positive Rate<br>TPR</td>
+<td align=center>$\displaystyle\frac{\textrm{TP}}{\textrm{TP}+\textrm{FN}}$</td>
+<td align=left>Recall, sensitivity</td>
+</tr>
+<tr>
+<td align=center>False Positive Rate<br>FPR</td>
+<td align=center>$\displaystyle\frac{\textrm{FP}}{\textrm{TN}+\textrm{FP}}$</td>
+<td align=left>1-specificity</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">AUC</span> The area under the receiving operating curve, also noted AUC or AUROC, is the area below the ROC as shown in the following figure:</p>
+<br>
+<div class=mobile-container>
+<center>
+<img alt="ROC AUC" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=roc-auc-en.png?d2dda6ec6e15f3e05597c058de976702 style=width:100%;max-width:700px>
+</center>
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#regression-metrics id=regression-metrics></a>Regression metrics</h2>
+<p><span class="new-item item-b">Basic metrics</span> Given a regression model $f$, the following metrics are commonly used to assess the performance of the model:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=33%>
+<col width=33%>
+<col width=33%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>Total sum of squares</b></td>
+<td align=center><b>Explained sum of squares</b></td>
+<td align=center><b>Residual sum of squares</b></td>
+</tr>
+<tr>
+<td align=center>$\displaystyle\textrm{SS}_{\textrm{tot}}=\sum_{i=1}^m(y_i-\overline{y})^2$</td>
+<td align=center>$\displaystyle\textrm{SS}_{\textrm{reg}}=\sum_{i=1}^m(f(x_i)-\overline{y})^2$</td>
+<td align=center>$\displaystyle\textrm{SS}_{\textrm{res}}=\sum_{i=1}^m(y_i-f(x_i))^2$</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-b">Coefficient of determination</span> The coefficient of determination, often noted $R^2$ or $r^2$, provides a measure of how well the observed outcomes are replicated by the model and is defined as follows:</p>
+\[\boxed{R^2=1-\frac{\textrm{SS}_\textrm{res}}{\textrm{SS}_\textrm{tot}}}\]
+<br>
+<p><span class="new-item item-r">Main metrics</span> The following metrics are commonly used to assess the performance of regression models, by taking into account the number of variables $n$ that they take into consideration:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=25%>
+<col width=25%>
+<col width=25%>
+<col width=25%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>Mallow's Cp</b></td>
+<td align=center><b>AIC</b></td>
+<td align=center><b>BIC</b></td>
+<td align=center><b>Adjusted $R^2$</b></td>
+</tr>
+<tr>
+<td align=center>$\displaystyle\frac{\textrm{SS}_{\textrm{res}}+2(n+1)\widehat{\sigma}^2}{m}$</td>
+<td align=center>$\displaystyle2\Big[(n+2)-\log(L)\Big]$</td>
+<td align=center>$\displaystyle\log(m)(n+2)-2\log(L)$</td>
+<td align=center>$\displaystyle1-\frac{(1-R^2)(m-1)}{m-n-1}$</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p>where $L$ is the likelihood and $\widehat{\sigma}^2$ is an estimate of the variance associated with each response.</p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#model-selection id=model-selection></a>Model selection</h2>
+<p><span class="new-item item-b">Vocabulary</span> When selecting a model, we distinguish 3 different parts of the data that we have as follows:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=33%>
+<col width=33%>
+<col width=33%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>Training set</b></td>
+<td align=center><b>Validation set</b></td>
+<td align=center><b>Testing set</b></td>
+</tr>
+<tr>
+<td align=left>• Model is trained<br>
+                 • Usually 80% of the dataset</td>
+<td align=left>• Model is assessed<br>
+                 • Usually 20% of the dataset<br>
+                 • Also called hold-out or development set</td>
+<td align=left>• Model gives predictions<br>
+                 • Unseen data</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p>Once the model has been chosen, it is trained on the entire dataset and tested on the unseen test set. These are represented in the figure below:</p>
+<div class=mobile-container>
+<center>
+<img alt="Partition of the dataset" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=train-val-test-en.png?0949795ac868562e193efdc249ae1066 style=width:100%;max-width:550px>
+</center>
+</div>
+<br>
+<p><span class="new-item item-g">Cross-validation</span> Cross-validation, also noted CV, is a method that is used to select a model that does not rely too much on the initial training set. The different types are summed up in the table below:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=50%>
+<col width=50%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>k-fold</b></td>
+<td align=center><b>Leave-p-out</b></td>
+</tr>
+<tr>
+<td align=left>• Training on $k-1$ folds and assessment on the remaining one<br>
+                 • Generally $k=5$ or $10$</td>
+<td align=left>• Training on $n-p$ observations and assessment on the $p$ remaining ones<br>
+                 • Case $p=1$ is called leave-one-out</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p>The most commonly used method is called $k$-fold cross-validation and splits the training data into $k$ folds to validate the model on one fold while training the model on the $k-1$ other folds, all of this $k$ times. The error is then averaged over the $k$ folds and is named cross-validation error.</p>
+<div class=mobile-container>
+<center>
+<img alt=Cross-validation class=img-responsive netsrc=teaching/cs-229/illustrations/ src=cross-validation-en.png?0f7ada4dc141d0af6b12bb21cc431471 style=width:100%;max-width:770px>
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">Regularization</span> The regularization procedure aims at avoiding the model to overfit the data and thus deals with high variance issues. The following table sums up the different types of commonly used regularization techniques:</p>
+<div class=mobile-container>
+<center>
+<table style="table-layout:fixed; width:100%; min-width:760px;">
+  <colgroup>
+    <col style=width:33%>
+    <col style=width:33%>
+    <col style=width:33%>
+  </colgroup>
+<tbody>
+<tr>
+<td align=center><b>LASSO</b></td>
+<td align=center><b>Ridge</b></td>
+<td align=center><b>Elastic Net</b></td>
+</tr>
+<tr>
+<td align=left>• Shrinks coefficients to 0<br>• Good for variable selection</td>
+<td align=left>Makes coefficients smaller</td>
+<td align=left>Tradeoff between variable selection and small coefficients</td>
+</tr>
+<tr>
+<td align=center><img alt=Lasso class=img-responsive netsrc=teaching/cs-229/illustrations/ src=lasso.png?ad67282f00fc8b2a529e5b15a856f91b></td>
+<td align=center><img alt=Ridge class=img-responsive netsrc=teaching/cs-229/illustrations/ src=ridge.png?77abafe4253433af93fb8ffc7d4f6bc7></td>
+<td align=center><img alt="Elastic Net" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=elastic-net.png?8cd93eb9df1b6ae667d8eb69d20bf4a1></td>
+</tr>
+<tr>
+<td align=left>$...+\lambda||\theta||_1$<br>$\lambda\in\mathbb{R}$</td>
+<td align=left>$...+\lambda||\theta||_2^2$<br>$\lambda\in\mathbb{R}$</td>
+<td align=left>$...+\lambda\Big[(1-\alpha)||\theta||_1+\alpha||\theta||_2^2\Big]$<br>$\lambda\in\mathbb{R},\alpha\in[0,1]$</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#diagnostics id=diagnostics></a>Diagnostics</h2>
+<p><span class="new-item item-b">Bias</span> The bias of a model is the difference between the expected prediction and the correct model that we try to predict for given data points.</p>
+<br>
+<p><span class="new-item item-b">Variance</span> The variance of a model is the variability of the model prediction for given data points.</p>
+<br>
+<p><span class="new-item item-r">Bias/variance tradeoff</span> The simpler the model, the higher the bias, and the more complex the model, the higher the variance.</p>
+<div class=mobile-container>
+<center>
+<br>
+<table style="table-layout:fixed; width:100%; min-width:735px;">
+  <colgroup>
+    <col style=width:19%>
+    <col style=width:27%>
+    <col style=width:27%>
+    <col style=width:27%>
+  </colgroup>
+<tbody>
+<tr>
+<td align=center></td>
+<td align=center><b>Underfitting</b></td>
+<td align=center><b>Just right</b></td>
+<td align=center><b>Overfitting</b></td>
+</tr>
+<tr>
+<td align=center><b>Symptoms</b></td>
+<td align=left>• High training error <br>• Training error close to test error <br>• High bias</td>
+<td align=left style=vertical-align:top>• Training error slightly lower than test error</td>
+<td align=left>• Very low training error <br>• Training error much lower than test error <br>• High variance</td>
+</tr>
+<tr>
+<td align=center><b>Regression illustration</b></td>
+<td align=center><img alt="Underfit in regression" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=regression-underfit.png?cd7fd5e4d334aa31d323b7d3f994a9df></td>
+<td align=center><img alt="Right fit in regression" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=regression-just-right.png?4018112cca66bdc10de14e7e59702a32></td>
+<td align=center><img alt="Overfit in regression" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=regression-overfit.png?4133157c77ba0baff93110d1d0e73382></td>
+</tr>
+<tr>
+<td align=center><b>Classification illustration</b></td>
+<td align=center><img alt="Underfit in classification" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=classification-underfit.png?1f014836b68bfc74da1d767ca32783a3></td>
+<td align=center><img alt="Right fit in classification" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=classification-just-right.png?67a70eb8c5fb11dd75d8e5035714a435></td>
+<td align=center><img alt="Overfit in classification" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=classification-overfit.png?64516ea4ed89dad5b422380ea1f8f350></td>
+</tr>
+<tr>
+<td align=center><b>Deep learning illustration</b></td>
+<td align=center><img alt="Underfit in deep learning" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=deep-learning-underfit-en.png?028697ac0c3ffff2a7a64edbab4dd61a></td>
+<td align=center><img alt="Right fit in deep learning" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=deep-learning-just-right-en.png?5accb2fc5bfed4b0e328fa798b1dd47c></td>
+<td align=center><img alt="Overfit in deep learning" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=deep-learning-overfit-en.png?026ff9256072273492de106ed7a9857f></td>
+</tr>
+<tr>
+<td align=center><b>Possible remedies</b></td>
+<td align=left>• Complexify model<br>• Add more features<br>• Train longer</td>
+<td align=center style="background: rgba(234, 234, 234, 1);"></td>
+<td align=left>• Perform regularization<br>• Get more data</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-b">Error analysis</span> Error analysis is analyzing the root cause of the difference in performance between the current and the perfect models.</p>
+<br>
+<p><span class="new-item item-b">Ablative analysis</span> Ablative analysis is analyzing the root cause of the difference in performance between the current and the baseline models.</p>
+<br>
+</article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang=en><head><!-- base href=../../ --><title>CS 221 - Reflex-based Models Cheatsheet</title><meta charset=utf-8><meta content="Teaching page of Shervine Amidi, Graduate Student at Stanford University." name=description><meta content="teaching, shervine, shervine amidi, data science" name=keywords><meta content="width=device-width, initial-scale=1" name=viewport><link href=https://stanford.edu/~shervine/teaching/cs-221/cheatsheet-reflex-models rel=canonical>
+<link href=../../css/bootstrap.min.css rel=stylesheet>
+<link href=../../css/font-awesome.min.css rel=stylesheet>
+<link href=../../css/katex.min.css rel=stylesheet>
+<link href=../../css/style.min.css rel=stylesheet type=text/css>
+<link href=../../css/article.min.css rel=stylesheet>
+<script src=../../js/jquery.min.js></script>
+<script src=../../js/bootstrap.min.js></script>
+<script defer src=../../js/underscore-min.js type=text/javascript></script>
+<script defer src=../../js/katex.min.js></script>
+<script defer src=../../js/auto-render.min.js></script>
+<script defer src=../../js/article.min.js></script>
+<script defer src=../../js/lang.min.js></script>
+<script async defer src=../../js/buttons.js></script>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Reflex-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#linear-predictors>Linear predictors</a></div> <div class=dropdown-container> <a href=#linear-predictors><span>Feature vector</span></a> <a href=#linear-predictors><span>Linear classifier/regression</span></a> <a href=#linear-predictors><span>Margin</span></a> <a href=#linear-predictors><span>Residual</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#loss-minimization>Loss minimization</a></div> <div class=dropdown-container> <a href=#loss-minimization><span>Loss function</span></a> <a href=#loss-minimization><span>Framework</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#non-linear-predictors>Non-linear predictors</a></div> <div class=dropdown-container> <a href=#non-linear-predictors><span>k-nearest neighbors</span></a> <a href=#non-linear-predictors><span>Neural networks</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#stochastic-gradient-descent>Stochastic gradient descent</a></div> <div class=dropdown-container> <a href=#stochastic-gradient-descent><span>Gradient</span></a> <a href=#stochastic-gradient-descent><span>Stochastic updates</span></a> <a href=#stochastic-gradient-descent><span>Batch updates</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#fine-tuning-models>Fine-tuning models</a></div> <div class=dropdown-container> <a href=#fine-tuning-models><span>Hypothesis class</span></a> <a href=#fine-tuning-models><span>Backpropagation</span></a> <a href=#fine-tuning-models><span>Regularization</span></a> <a href=#fine-tuning-models><span>Sets vocabulary</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#unsupervised-learning>Unsupervised Learning</a></div> <div class=dropdown-container> <a href=#unsupervised-learning><span>k-means</span></a> <a href=#unsupervised-learning><span>Principal components analysis</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-reflex-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+<div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
+  Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
+</div>
+<div class=title-lang style=display:none;> <!-- DISPLAY:NONE -->
+  <a aria-hidden=true class=anchor-bis href=#cs-221---artificial-intelligence id=cs-221---artificial-intelligence></a><a href=teaching/cs-221 onclick=trackOutboundLink(this);>CS 221 - Artificial Intelligence</a>
+  
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE -->
+    <div class=input-group>
+      <select class=form-control onchange=changeLangAndTrack(this); onfocus=storeCurrentIndex(this);>
+        <option selected value=en>English</option>
+        <option value=fr>Français</option>
+        <option value=tr>Türkçe</option>
+      </select>
+      <div class=input-group-addon><i class=fa></i></div>
+    </div>
+  </div>
+</div>
+<br>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button><b>CS 221 - Artificial Intelligence</b></button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>CS 230 - Deep Learning</button>
+  </div>
+</div>
+<div aria-label=... class="btn-group btn-group-justified" role=group>
+  <div class=btn-group role=group>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button><b>Reflex</b></button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/states-models/index.html'; oldhref='teaching/cs-221/cheatsheet-states-models'" type=button>States</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/variables-models/index.html'; oldhref='teaching/cs-221/cheatsheet-variables-models'" type=button>Variables</button>
+  </div>
+  <div class=btn-group role=group>
+    <button class="btn btn-default" onclick="location.href='../../cs-221/logic-models/index.html'; oldhref='teaching/cs-221/cheatsheet-logic-models'" type=button>Logic</button>
+  </div>
+</div>
+<h1>
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Reflex-based models with Machine Learning
+</h1>
+<i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
+  <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
+<h2><a aria-hidden=true class=anchor href=#linear-predictors id=linear-predictors></a>Linear predictors</h2>
+<p>In this section, we will go through reflex-based models that can improve with experience, by going through samples that have input-output pairs.</p>
+<br>
+<p><span class="new-item item-g">Feature vector</span> The feature vector of an input $x$ is denoted $\phi(x)$ and is such that:</p>
+<div class=mobile-container>
+\[\boxed{\phi(x)=\left[\begin{array}{c}\phi_1(x)\\\vdots\\\phi_d(x)\end{array}\right]\in\mathbb{R}^d}\]
+</div>
+<br>
+<p><span class="new-item item-r">Score</span> The score $s(x,w)$ of an example $(\phi(x),y) \in \mathbb{R}^d \times \mathbb{R}$ associated to a linear model of weights $w \in \mathbb{R}^d$ is given by the inner product:</p>
+<div class=mobile-container>
+\[\boxed{s(x,w)=w\cdot\phi(x)}\]
+</div>
+<br>
+<h3>Classification</h3>
+<p><span class="new-item item-b">Linear classifier</span> Given a weight vector $w\in\mathbb{R}^d$ and a feature vector $\phi(x)\in\mathbb{R}^d$, the binary linear classifier $f_w$ is given by:</p>
+<div class=mobile-container>
+\[\boxed{f_w(x)=\textrm{sign}(s(x,w))=\left\{
+  \begin{array}{cr}
+  +1 &amp; \textrm{if }w\cdot\phi(x)&gt;0\\
+  -1 &amp; \textrm{if }w\cdot\phi(x)&lt; 0\\
+  ? &amp; \textrm{if }w\cdot\phi(x)=0
+  \end{array}\right.}\]
+</div>
+<div class=mobile-container>
+<center>
+<img alt="Linear classifier" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=linear-classifier.png?79f320ac5ba3e9d5dae2c573007dbfb6 style=width:100%;max-width:550px>
+</center>
+</div>
+<br>
+<p><span class="new-item item-g">Margin</span> The margin $m(x,y,w) \in \mathbb{R}$ of an example $(\phi(x),y) \in \mathbb{R}^d \times \{-1,+1\}$ associated to a linear model of weights $w\in \mathbb{R}^d$ quantifies the confidence of the prediction: larger values are better. It is given by:</p>
+<div class=mobile-container>
+\[\boxed{m(x,y,w)=s(x,w)\times y}\]
+</div>
+<br>
+<h3>Regression</h3>
+<p><span class="new-item item-g">Linear regression</span> Given a weight vector $w\in\mathbb{R}^d$ and a feature vector $\phi(x)\in\mathbb{R}^d$, the output of a linear regression of weights $w$ denoted as $f_w$ is given by:</p>
+<div class=mobile-container>
+\[\boxed{f_w(x)=s(x,w)}\]
+</div>
+<p><span class="new-item item-g">Residual</span> The residual $\textrm{res}(x,y,w) \in \mathbb{R}$ is defined as being the amount by which the prediction $f_w(x)$ overshoots the target $y$:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{res}(x,y,w)=f_w(x)-y}\]
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#loss-minimization id=loss-minimization></a>Loss minimization</h2>
+<p><span class="new-item item-g">Loss function</span> A loss function $\textrm{Loss}(x,y,w)$ quantifies how unhappy we are with the weights $w$ of the model in the prediction task of output $y$ from input $x$. It is a quantity we want to minimize during the training process.</p><p>
+<br>
+</p><p><span class="new-item item-r">Classification case</span> The classification of a sample $x$ of true label $y\in \{-1,+1\}$ with a linear model of weights $w$ can be done with the predictor $f_w(x) \triangleq \textrm{sign}(s(x,w))$. In this situation, a metric of interest quantifying the quality of the classification is given by the margin $m(x,y,w)$, and can be used with the following loss functions:</p>
+<div class=mobile-container>
+  <table style="table-layout:fixed; width:100%; min-width:725px; max-width:800px;">
+    <colgroup>
+      <col style=width:125px>
+      <col style=width:33%>
+      <col style=width:33%>
+      <col style=width:33%>
+    </colgroup>
+<tbody>
+<tr>
+<td align=center><b>Name</b></td>
+<td align=center>Zero-one loss</td>
+<td align=center>Hinge loss</td>
+<td align=center>Logistic loss</td>
+</tr>
+<tr>
+<td align=center>$\textrm{Loss}(x,y,w)$</td>
+<td align=center>$1_{\{m(x,y,w) \leqslant 0\}}$</td>
+<td align=center>$\max(1-m(x,y,w), 0)$</td>
+<td align=center>$\log(1+e^{-m(x,y,w)})$</td>
+</tr>
+<tr>
+<td align=center><b>Illustration</b></td>
+<td align=center style=width:100%;max-width:150px;><img alt="Zero-one loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-zero-one.png?f9d7b6349bfa78f70ba7aee99af5e0dc></td>
+<td align=center style=width:100%;max-width:150px;><img alt="Hinge loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-hinge.png?47a1e04a25970a1ad583d8821ba51ff2></td>
+<td align=center style=width:100%;max-width:150px;><img alt="Logistic loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-logistic.png?8891a0a53cb3999a126d3df87080e6e5></td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<p><span class="new-item item-b">Regression case</span> The prediction of a sample $x$ of true label $y \in \mathbb{R}$ with a linear model of weights $w$ can be done with the predictor $f_w(x) \triangleq s(x,w)$. In this situation, a metric of interest quantifying the quality of the regression is given by the margin $\textrm{res}(x,y,w)$ and can be used with the following loss functions:</p>
+<div class=mobile-container>
+  <table style="table-layout:fixed; width:100%; min-width:525px; max-width:575px;">
+    <colgroup>
+      <col style=width:125px>
+      <col style=width:50%>
+      <col style=width:50%>
+    </colgroup>
+<tbody>
+<tr>
+<td align=center><b>Name</b></td>
+<td align=center>Squared loss</td>
+<td align=center>Absolute deviation loss</td>
+</tr>
+<tr>
+<td align=center>$\textrm{Loss}(x,y,w)$</td>
+<td align=center>$(\textrm{res}(x,y,w))^2$</td>
+<td align=center>$|\textrm{res}(x,y,w)|$</td>
+</tr>
+<tr>
+<td align=center><b>Illustration</b></td>
+<td align=center style=width:100%;max-width:150px;><img alt="Squared loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-squared.png?a1af36015fa59fa7f2e0cabeeee938a5></td>
+<td align=center style=width:100%;max-width:150px;><img alt="Absolute deviation loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-absolute-deviation.png?06b20ac340980e2a131f3de34e7647a3></td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<p><span class="new-item item-g">Loss minimization framework</span> In order to train a model, we want to minimize the training loss defined as follows:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{TrainLoss}(w)=\frac{1}{|\mathcal{D}_{\textrm{train}}|}\sum_{(x,y)\in\mathcal{D}_{\textrm{train}}}\textrm{Loss}(x,y,w)}\]
+</div>
+<br>
+<h2><a aria-hidden=true class=anchor href=#non-linear-predictors id=non-linear-predictors></a>Non-linear predictors</h2>
+<p><span class="new-item item-g">$k$-nearest neighbors</span> The $k$-nearest neighbors algorithm, commonly known as $k$-NN, is a non-parametric approach where the response of a data point is determined by the nature of its $k$ neighbors from the training set. It can be used in both classification and regression settings.</p>
+<div class=mobile-container>
+<center>
+<img alt="k nearest neighbors" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=k-nearest-neighbors.png?02f80a524bb11e2b7a70b58c9ed3b0f4 style=width:100%;max-width:740px>
+</center>
+</div>
+<p><span class=remark>Remark: the higher the parameter $k$, the higher the bias, and the lower the parameter $k$, the higher the variance.</span></p>
+<br>
+<p><span class="new-item item-r">Neural networks</span> Neural networks are a class of models that are built with layers. Commonly used types of neural networks include convolutional and recurrent neural networks. The vocabulary around neural networks architectures is described in the figure below:</p>
+<div class=mobile-container>
+<center>
+<img alt="Neural network" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=neural-network-en.png?835862d448ad85bc5a038848d7d7df0b style=width:100%;max-width:600px>
+</center>
+</div>
+<p>By noting $i$ the $i^{th}$ layer of the network and $j$ the $j^{th}$ hidden unit of the layer, we have:</p>
+<div class=mobile-container>
+\[\boxed{z_j^{[i]}={w_j^{[i]}}^Tx+b_j^{[i]}}\]
+</div>
+<p>where we note $w$, $b$, $x$, $z$ the weight, bias, input and non-activated output of the neuron respectively.</p>
+<br>
+<div class="alert alert-warning" role=alert>For a more detailed overview of the concepts above, check out the <a class=alert-link nethref=teaching/cs-229/cheatsheet-supervised-learning  href=../../cs-229/supervised-learning/index.html onclick=trackOutboundLink(this);>Supervised Learning cheatsheets</a>!</div>
+<h2><a aria-hidden=true class=anchor href=#stochastic-gradient-descent id=stochastic-gradient-descent></a>Stochastic gradient descent</h2>
+<p><span class="new-item item-g">Gradient descent</span> By noting $\eta\in\mathbb{R}$ the learning rate (also called step size), the update rule for gradient descent is expressed with the learning rate and the loss function $\textrm{Loss}(x,y,w)$ as follows:</p>
+<div class=mobile-container>
+\[\boxed{w\longleftarrow w-\eta\nabla_w \textrm{Loss}(x,y,w)}\]
+</div>
+<br>
+<div class=mobile-container>
+<center>
+<img alt="Gradient descent" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=gradient-descent.png?7d7bdb054f6ff01cb4fc07dd4b33fa7d style=width:100%;max-width:500px>
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">Stochastic updates</span> Stochastic gradient descent (SGD) updates the parameters of the model one training example $(\phi(x),y)\in\mathcal{D}_{\textrm{train}}$ at a time. This method leads to sometimes noisy, but fast updates.</p>
+<br>
+<p><span class="new-item item-b">Batch updates</span> Batch gradient descent (BGD) updates the parameters of the model one batch of examples (e.g. the entire training set) at a time. This method computes stable update directions, at a greater computational cost.</p>
+<br>
+<h2><a aria-hidden=true class=anchor href=#fine-tuning-models id=fine-tuning-models></a>Fine-tuning models</h2>
+<p><span class="new-item item-g">Hypothesis class</span> A hypothesis class $\mathcal{F}$ is the set of possible predictors with a fixed $\phi(x)$ and varying $w$:</p>
+<div class=mobile-container>
+\[\boxed{\mathcal{F}=\left\{f_w:w\in\mathbb{R}^d\right\}}\]
+</div>
+<br>
+<p><span class="new-item item-r">Logistic function</span> The logistic function $\sigma$, also called the sigmoid function, is defined as:</p>
+<div class=mobile-container>
+\[\boxed{\forall z\in]-\infty,+\infty[,\quad\sigma(z)=\frac{1}{1+e^{-z}}}\]
+</div>
+<p><span class=remark>Remark: we have $\sigma'(z)=\sigma(z)(1-\sigma(z))$.</span></p>
+<br>
+<p><span class="new-item item-b">Backpropagation</span> The forward pass is done through $f_i$, which is the value for the subexpression rooted at $i$, while the backward pass is done through $g_i=\frac{\partial\textrm{out}}{\partial f_i}$ and represents how $f_i$ influences the output.</p>
+<div class=mobile-container>
+<center>
+<img alt=Backpropagation class=img-responsive netsrc=teaching/cs-221/illustrations/ src=backpropagation.png?24671572de19eb4f92606f950c21409d style=width:100%;max-width:450px>
+</center>
+</div>
+<br>
+<p><span class="new-item item-g">Approximation and estimation error</span> The approximation error $\epsilon_\text{approx}$ represents how far the entire hypothesis class $\mathcal{F}$ is from the target predictor $g^*$, while the estimation error $\epsilon_{\text{est}}$ quantifies how good the predictor $\hat{f}$ is with respect to the best predictor $f^{*}$ of the hypothesis class $\mathcal{F}$.</p>
+<div class=mobile-container>
+<center>
+<img alt="Approximation and estimation error" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=approximation-model.png?2598ff172e014fd68e0663c2703b69ef style=width:100%;max-width:450px>
+</center>
+</div>
+<br>
+<p><span class="new-item item-g">Regularization</span> Regularization aims to keep the model from overfitting to the data and thus deals with high variance issues. The following table sums up the different types of commonly used regularization techniques:</p>
+<div class=mobile-container>
+<center>
+<table style="table-layout:fixed; width:100%; min-width:760px;">
+  <colgroup>
+    <col style=width:33%>
+    <col style=width:33%>
+    <col style=width:33%>
+  </colgroup>
+<tbody>
+<tr>
+<td align=center><b>LASSO</b></td>
+<td align=center><b>Ridge</b></td>
+<td align=center><b>Elastic Net</b></td>
+</tr>
+<tr>
+<td align=left>• Shrinks coefficients to 0<br>• Good for variable selection</td>
+<td align=left>Makes coefficients smaller</td>
+<td align=left>Tradeoff between variable selection and small coefficients</td>
+</tr>
+<tr>
+<td align=center><img alt=Lasso class=img-responsive netsrc=teaching/cs-221/illustrations/ src=regularization-lasso.png?39ee3006c1ac3594160474a29df13d2b></td>
+<td align=center><img alt=Ridge class=img-responsive netsrc=teaching/cs-221/illustrations/ src=regularization-ridge.png?229d65c13a8e0bfe4ac8cdcb04972052></td>
+<td align=center><img alt="Elastic Net" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=regularization-elastic-net.png?854b4ab93db8881002a2f2ca72d536be></td>
+</tr>
+<tr>
+<td align=left>$...+\lambda||w||_1$<br>$\lambda\in\mathbb{R}$</td>
+<td align=left>$...+\lambda||w||_2^2$<br>$\lambda\in\mathbb{R}$</td>
+<td align=left>$...+\lambda\Big[(1-\alpha)||w||_1+\alpha||w||_2^2\Big]$<br>$\lambda\in\mathbb{R},\alpha\in[0,1]$</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<br>
+<p><span class="new-item item-r">Hyperparameters</span> Hyperparameters are the properties of the learning algorithm, and include architecture-related features, the regularization parameter $\lambda$, number of iterations $T$, step size $\eta$, etc.</p>
+<br>
+<p><span class="new-item item-b">Sets vocabulary</span> When selecting a model, we distinguish 3 different parts of the data that we have as follows:</p>
+<div class=mobile-container>
+<center>
+<table>
+<colgroup><col width=33%>
+<col width=33%>
+<col width=33%>
+</colgroup><tbody>
+<tr>
+<td align=center><b>Training set</b></td>
+<td align=center><b>Validation set</b></td>
+<td align=center><b>Testing set</b></td>
+</tr>
+<tr>
+<td align=left>• Model is trained<br>
+                 • Usually 80% of the dataset</td>
+<td align=left>• Model is assessed<br>
+                 • Usually 20% of the dataset<br>
+                 • Also called hold-out or development set</td>
+<td align=left>• Model gives predictions<br>
+                 • Unseen data</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<p>Once the model has been chosen, it is trained on the entire dataset and tested on the unseen test set. These are represented in the figure below:</p>
+<div class=mobile-container>
+<center>
+<img alt="Partition of the dataset" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=train-val-test-en.png?0949795ac868562e193efdc249ae1066 style=width:100%;max-width:550px>
+</center>
+</div>
+<br>
+<div class="alert alert-warning" role=alert>For a more detailed overview of the concepts above, check out the <a class=alert-link nethref=teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks href=../../cs-229/machine-learning-tips-and-tricks/index.html onclick=trackOutboundLink(this);>Machine Learning tips and tricks cheatsheets</a>!</div>
+<h2><a aria-hidden=true class=anchor href=#unsupervised-learning id=unsupervised-learning></a>Unsupervised Learning</h2>
+<p>The class of unsupervised learning methods aims at discovering the structure of the data, which may have rich latent structures.</p>
+<h3>$k$-means</h3>
+<p><span class="new-item item-g">Clustering</span> Given a training set of $n$ input points $\mathcal{D}_{\textrm{train}}$, the goal of a clustering algorithm is to assign each point $\phi(x_i)$ to a cluster $z_i\in\{1,...,k\}$.</p>
+<br>
+<p><span class="new-item item-r">Objective function</span> The loss function for one of the main clustering algorithms, $k$-means, is given by:</p>
+<div class=mobile-container>
+\[\boxed{\textrm{Loss}_{\textrm{k-means}}(x,\mu)=\sum_{i=1}^n||\phi(x_i)-\mu_{z_i}||^2}\]
+</div>
+<br>
+<p><span class="new-item item-b">Algorithm</span> After randomly initializing the cluster centroids $\mu_1,\mu_2,...,\mu_k\in\mathbb{R}^d$, the $k$-means algorithm repeats the following step until convergence:</p>
+<div class=mobile-container>
+\[\boxed{z_i=\underset{j}{\textrm{arg min}}||\phi(x_i)-\mu_j||^2}\quad\textrm{and}\quad\boxed{\mu_j=\frac{\displaystyle\sum_{i=1}^n1_{\{z_i=j\}}\phi(x_i)}{\displaystyle\sum_{i=1}^n1_{\{z_i=j\}}}}\]
+</div>
+<center>
+<img alt=Illustration class=img-responsive netsrc=teaching/cs-229/illustrations/ src=k-means-en.png?9925605d814ddadebcae2ae4754ab0a4>
+</center>
+<br>
+<h3>Principal Component Analysis</h3>
+<p><span class="new-item item-g">Eigenvalue, eigenvector</span> Given a matrix $A\in\mathbb{R}^{d\times d}$, $\lambda$ is said to be an eigenvalue of $A$ if there exists a vector $z\in\mathbb{R}^d\backslash\{0\}$, called eigenvector, such that we have:</p>
+<div class=mobile-container>
+\[\boxed{Az=\lambda z}\]
+</div>
+<br>
+<p><span class="new-item item-g">Spectral theorem</span> Let $A\in\mathbb{R}^{d\times d}$. If $A$ is symmetric, then $A$ is diagonalizable by a real orthogonal matrix $U\in\mathbb{R}^{d\times d}$. By noting $\Lambda=\textrm{diag}(\lambda_1,...,\lambda_d)$, we have:</p>
+<div class=mobile-container>
+\[\boxed{\exists\Lambda\textrm{ diagonal},\quad A=U\Lambda U^T}\]
+</div>
+<br>
+<p><span class=remark>Remark: the eigenvector associated with the largest eigenvalue is called principal eigenvector of matrix $A$.</span></p>
+<br>
+<p><span class="new-item item-r">Algorithm</span> The Principal Component Analysis (PCA) procedure is a dimension reduction technique that projects the data on $k$ dimensions by maximizing the variance of the data as follows:
+<br>- <u>Step 1</u>: Normalize the data to have a mean of 0 and standard deviation of 1.
+</p><div class=mobile-container>
+\[\boxed{\phi_j(x_i)\leftarrow\frac{\phi_j(x_i)-\mu_j}{\sigma_j}}\quad\textrm{where}\quad\boxed{\mu_j = \frac{1}{n}\sum_{i=1}^n\phi_j(x_i)}\quad\textrm{and}\quad\boxed{\sigma_j^2=\frac{1}{n}\sum_{i=1}^n(\phi_j(x_i)-\mu_j)^2}\]
+</div>
+<br>- <u>Step 2</u>: Compute $\displaystyle\Sigma=\frac{1}{n}\sum_{i=1}^n\phi(x_i){\phi(x_i)}^T\in\mathbb{R}^{d\times d}$, which is symmetric with real eigenvalues.
+<br>- <u>Step 3</u>: Compute $u_1, ..., u_k\in\mathbb{R}^d$ the $k$ orthogonal principal eigenvectors of $\Sigma$, i.e. the orthogonal eigenvectors of the $k$ largest eigenvalues.
+<br>- <u>Step 4</u>: Project the data on $\textrm{span}_\mathbb{R}(u_1,...,u_k)$.<p></p>
+<p>This procedure maximizes the variance among all $k$-dimensional spaces.</p>
+<center>
+<img alt=Illustration class=img-responsive netsrc=teaching/cs-229/illustrations/ src=pca-en.png?4be4617788fd40f4e998b530b75f4149>
+</center>
+<br>
+<div class="alert alert-warning" role=alert>For a more detailed overview of the concepts above, check out the <a class=alert-link nethref=teaching/cs-229/cheatsheet-unsupervised-learning href=../../cs-229/unsupervised-learning/index.html onclick=trackOutboundLink(this);>Unsupervised Learning cheatsheets</a>!</div>
+</article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>
