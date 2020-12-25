@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Tips and tricks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#classification-metrics>Classification metrics</a></div> <div class=dropdown-container> <a href=#classification-metrics><span>Confusion matrix</span></a> <a href=#classification-metrics><span>Accuracy</span></a> <a href=#classification-metrics><span>Precision, recall</span></a> <a href=#classification-metrics><span>F1 score</span></a> <a href=#classification-metrics><span>ROC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#regression-metrics>Regression metrics</a></div> <div class=dropdown-container> <a href=#regression-metrics><span>R squared</span></a> <a href=#regression-metrics><span>Mallow's CP</span></a> <a href=#regression-metrics><span>AIC, BIC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#model-selection>Model selection</a></div> <div class=dropdown-container> <a href=#model-selection><span>Cross-validation</span></a> <a href=#model-selection><span>Regularization</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#diagnostics>Diagnostics</a></div> <div class=dropdown-container> <a href=#diagnostics><span>Bias/variance tradeoff</span></a> <a href=#diagnostics><span>Error/ablative analysis</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-machine-learning-tips-and-tricks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Tips and tricks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#classification-metrics>Classification metrics</a></div> <div class=dropdown-container> <a href=#classification-metrics><span>Confusion matrix</span></a> <a href=#classification-metrics><span>Accuracy</span></a> <a href=#classification-metrics><span>Precision, recall</span></a> <a href=#classification-metrics><span>F1 score</span></a> <a href=#classification-metrics><span>ROC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#regression-metrics>Regression metrics</a></div> <div class=dropdown-container> <a href=#regression-metrics><span>R squared</span></a> <a href=#regression-metrics><span>Mallow's CP</span></a> <a href=#regression-metrics><span>AIC, BIC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#model-selection>Model selection</a></div> <div class=dropdown-container> <a href=#model-selection><span>Cross-validation</span></a> <a href=#model-selection><span>Regularization</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#diagnostics>Diagnostics</a></div> <div class=dropdown-container> <a href=#diagnostics><span>Bias/variance tradeoff</span></a> <a href=#diagnostics><span>Error/ablative analysis</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-machine-learning-tips-and-tricks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -74,12 +74,12 @@
   </div>
 </div>
 <h1>
-  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Machine Learning tips and tricks cheatsheet
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Шпаргалка с советами и приемами машинного обучения
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
 <h2><a aria-hidden=true class=anchor href=#classification-metrics id=classification-metrics></a>Classification metrics</h2>
-<p>In a context of a binary classification, here are the main metrics that are important to track in order to assess the performance of the model.</p>
+<p>В контексте бинарной классификации вот основные метрики, которые важно отслеживать, чтобы оценить производительность модели.</p>
 <p><span class="new-item item-b">Матрица ошибок</span> Матрица ошибок используется для получения более полной картины при оценке производительности модели. Она определяется следующим образом:</p>
 <div class=mobile-container>
 <table style="margin-left: 10%">
@@ -124,27 +124,27 @@
 <tr>
 <td align=center>Accuracy</td>
 <td align=center>$\displaystyle\frac{\textrm{TP}+\textrm{TN}}{\textrm{TP}+\textrm{TN}+\textrm{FP}+\textrm{FN}}$</td>
-<td align=left>Overall performance of model</td>
+<td align=left>Эффективность работы модели</td>
 </tr>
 <tr>
 <td align=center>Precision</td>
 <td align=center>$\displaystyle\frac{\textrm{TP}}{\textrm{TP}+\textrm{FP}}$</td>
-<td align=left>How accurate the positive predictions are</td>
+<td align=left>Насколько точны положительные прогнозы</td>
 </tr>
 <tr>
 <td align=center>Recall<br>Sensitivity</td>
 <td align=center>$\displaystyle\frac{\textrm{TP}}{\textrm{TP}+\textrm{FN}}$</td>
-<td align=left>Coverage of actual positive sample</td>
+<td align=left>Полнота показывает, какая часть положительных образцов была выделена классификатором</td>
 </tr>
 <tr>
 <td align=center>Specificity</td>
 <td align=center>$\displaystyle\frac{\textrm{TN}}{\textrm{TN}+\textrm{FP}}$</td>
-<td align=left>Coverage of actual negative sample</td>
+<td align=left>Специфика выделенных отрицательных образцов</td>
 </tr>
 <tr>
 <td align=center>F1 score</td>
 <td align=center>$\displaystyle\frac{2\textrm{TP}}{2\textrm{TP}+\textrm{FP}+\textrm{FN}}$</td>
-<td align=left>Hybrid metric useful for unbalanced classes</td>
+<td align=left>Гибридная метрика полезна для несбалансированных классов</td>
 </tr>
 </tbody>
 </table>
@@ -194,9 +194,9 @@
 <col width=33%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>Total sum of squares</b></td>
-<td align=center><b>Explained sum of squares</b></td>
-<td align=center><b>Residual sum of squares</b></td>
+<td align=center><b>Cумма квадратов общая (total)</b></td>
+<td align=center><b>Сумма квадратов объясненная (regression)</b></td>
+<td align=center><b>Сумма квадратов разностей (residual)</b></td>
 </tr>
 <tr>
 <td align=center>$\displaystyle\textrm{SS}_{\textrm{tot}}=\sum_{i=1}^m(y_i-\overline{y})^2$</td>
@@ -254,10 +254,10 @@
 </tr>
 <tr>
 <td align=left>• Model is trained<br>
-                 • Usually 80% of the dataset</td>
+                 • Обычно 80% набора данных</td>
 <td align=left>• Model is assessed<br>
-                 • Usually 20% of the dataset<br>
-                 • Also called hold-out or development set</td>
+                 • Обычно 20% набора данных<br>
+                 • Также называется набором для удержания или развития</td>
 <td align=left>• Model gives predictions<br>
                  • Unseen data</td>
 </tr>
@@ -265,7 +265,7 @@
 </table>
 </center>
 </div>
-<p>Once the model has been chosen, it is trained on the entire dataset and tested on the unseen test set. These are represented in the figure below:</p>
+<p>Как только модель выбрана, она обучается на всем наборе данных и тестируется на невиданном тестовом наборе. Они представлены на рисунке ниже:</p>
 <div class=mobile-container>
 <center>
 <img alt="Partition of the dataset" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=train-val-test-en.png?0949795ac868562e193efdc249ae1066 style=width:100%;max-width:550px>
@@ -287,7 +287,7 @@
 <td align=left>• Training on $k-1$ folds and assessment on the remaining one<br>
                  • Generally $k=5$ or $10$</td>
 <td align=left>• Training on $n-p$ observations and assessment on the $p$ remaining ones<br>
-                 • Case $p=1$ is called leave-one-out</td>
+                 • Случай $p=1$ называется исключение-разовое (leave-one-out)</td>
 </tr>
 </tbody>
 </table>
@@ -316,9 +316,9 @@
 <td align=center><b>Elastic Net</b></td>
 </tr>
 <tr>
-<td align=left>• Shrinks coefficients to 0<br>• Good for variable selection</td>
+<td align=left>• Уменьшает коэффициенты до 0<br>• Подходит для выбора переменных</td>
 <td align=left>Makes coefficients smaller</td>
-<td align=left>Tradeoff between variable selection and small coefficients</td>
+<td align=left>Компромисс между выбором переменных и небольшими коэффициентами</td>
 </tr>
 <tr>
 <td align=center><img alt=Lasso class=img-responsive netsrc=teaching/cs-229/illustrations/ src=lasso.png?ad67282f00fc8b2a529e5b15a856f91b></td>
@@ -360,9 +360,9 @@
 </tr>
 <tr>
 <td align=center><b>Symptoms</b></td>
-<td align=left>• High training error <br>• Training error close to test error <br>• High bias</td>
-<td align=left style=vertical-align:top>• Training error slightly lower than test error</td>
-<td align=left>• Very low training error <br>• Training error much lower than test error <br>• High variance</td>
+<td align=left>• High training error <br>• Ошибка обучения близка к ошибке теста <br>• High bias</td>
+<td align=left style=vertical-align:top>• Ошибка обучения немного ниже ошибки теста</td>
+<td align=left>• Очень низкая ошибка обучения <br>• Ошибка обучения намного ниже ошибка теста <br>• High variance</td>
 </tr>
 <tr>
 <td align=center><b>Regression illustration</b></td>

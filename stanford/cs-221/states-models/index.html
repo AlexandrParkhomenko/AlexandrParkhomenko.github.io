@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>States-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#tree-search>Tree search</a></div> <div class=dropdown-container> <a href=#tree-search><span>Backtracking search</span></a> <a href=#tree-search><span>Breadth-first search</span></a> <a href=#tree-search><span>Depth-first search</span></a> <a href=#tree-search><span>Iterative deepening</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#graph-search>Graph search</a></div> <div class=dropdown-container> <a href=#graph-search><span>Dynamic programming</span></a> <a href=#graph-search><span>Uniform cost search</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-costs>Learning costs</a></div> <div class=dropdown-container> <a href=#learning-costs><span>Structured perceptron</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#a-star>A star search</a></div> <div class=dropdown-container> <a href=#a-star><span>Heuristic function</span></a> <a href=#a-star><span>Algorithm</span></a> <a href=#a-star><span>Consistency, correctness</span></a> <a href=#a-star><span>Admissibility, efficiency</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#relaxation>Relaxation</a></div> <div class=dropdown-container> <a href=#relaxation><span>Relaxed search problem</span></a> <a href=#relaxation><span>Relaxed heuristic</span></a> <a href=#relaxation><span>Max heuristic</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#markov-decision-processes>Markov decision processes</a></div> <div class=dropdown-container> <a href=#markov-decision-processes><span>Overview</span></a> <a href=#markov-decision-processes><span>Policy evaluation</span></a> <a href=#markov-decision-processes><span>Value iteration</span></a> <a href=#markov-decision-processes><span>Transitions, rewards</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#game-playing>Game playing</a></div> <div class=dropdown-container> <a href=#game-playing><span>Expectimax</span></a> <a href=#game-playing><span>Minimax</span></a> <a href=#game-playing><span>Speeding up minimax</span></a> <a href=#game-playing><span>Simultaneous games</span></a> <a href=#game-playing><span>Non-zero-sum games</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-states-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>States-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#tree-search>Tree search</a></div> <div class=dropdown-container> <a href=#tree-search><span>Backtracking search</span></a> <a href=#tree-search><span>Breadth-first search</span></a> <a href=#tree-search><span>Depth-first search</span></a> <a href=#tree-search><span>Iterative deepening</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#graph-search>Graph search</a></div> <div class=dropdown-container> <a href=#graph-search><span>Dynamic programming</span></a> <a href=#graph-search><span>Uniform cost search</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-costs>Learning costs</a></div> <div class=dropdown-container> <a href=#learning-costs><span>Structured perceptron</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#a-star>A star search</a></div> <div class=dropdown-container> <a href=#a-star><span>Heuristic function</span></a> <a href=#a-star><span>Algorithm</span></a> <a href=#a-star><span>Consistency, correctness</span></a> <a href=#a-star><span>Admissibility, efficiency</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#relaxation>Relaxation</a></div> <div class=dropdown-container> <a href=#relaxation><span>Relaxed search problem</span></a> <a href=#relaxation><span>Relaxed heuristic</span></a> <a href=#relaxation><span>Max heuristic</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#markov-decision-processes>Markov decision processes</a></div> <div class=dropdown-container> <a href=#markov-decision-processes><span>Overview</span></a> <a href=#markov-decision-processes><span>Policy evaluation</span></a> <a href=#markov-decision-processes><span>Value iteration</span></a> <a href=#markov-decision-processes><span>Transitions, rewards</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#game-playing>Game playing</a></div> <div class=dropdown-container> <a href=#game-playing><span>Expectimax</span></a> <a href=#game-playing><span>Minimax</span></a> <a href=#game-playing><span>Speeding up minimax</span></a> <a href=#game-playing><span>Simultaneous games</span></a> <a href=#game-playing><span>Non-zero-sum games</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-states-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -58,14 +58,14 @@
   </div>
 </div>
 <h1>
-  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>States-based models with search optimization and MDP
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Модели на основе состояний с поисковой оптимизацией и Марковским процессом принятия решений (MDP)
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
 <h2>Search optimization</h2>
 <p>In this section, we assume that by accomplishing action $a$ from state $s$, we deterministically arrive in state $\textrm{Succ}(s,a)$. The goal here is to determine a sequence of actions $(a_1,a_2,a_3,a_4,...)$ that starts from an initial state and leads to an end state. In order to solve this kind of problem, our objective will be to find the minimum cost path by using states-based models.</p>
 <h3><a aria-hidden=true class=anchor href=#tree-search id=ts></a>Tree search</h3>
-<p>This category of states-based algorithms explores all possible states and actions. It is quite memory efficient, and is suitable for huge state spaces but the runtime can become exponential in the worst cases.</p>
+<p>Эта категория алгоритмов на основе состояний исследует все возможные состояния и действия. Он довольно эффективен с точки зрения памяти и подходит для огромных пространств состояний, но в худших случаях время выполнения может стать экспоненциальным.</p>
 <div class=mobile-container>
 <center>
   <img alt=Tree class=img-responsive netsrc=teaching/cs-221/illustrations/ src=tree.png?2d18a75bbffc54c7db56dd83aed1e224 style=width:100%;max-width:900px>
@@ -86,7 +86,7 @@
   <img alt="Search problem" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=search-problem.png?5b6272e510ca6d44c87c01a68ccaca3a style=width:100%;max-width:465px>
 </center>
 </div>
-<p>The objective is to find a path that minimizes the cost.</p>
+<p>Цель состоит в том, чтобы найти путь, который минимизирует затраты.</p>
 <br>
 <p><span class="new-item item-r">Backtracking</span> Поиск с возвратом - это наивный рекурсивный алгоритм, который пробует все возможности, чтобы найти путь с минимальной стоимостью. Здесь затраты на действия могут быть как положительными, так и отрицательными.</p>
 <br>
@@ -153,14 +153,14 @@
 </div>
 <br>
 <h3><a aria-hidden=true class=anchor href=#graph-search id=graph-search></a>Graph search</h3>
-<p>This category of states-based algorithms aims at constructing optimal paths, enabling exponential savings. In this section, we will focus on dynamic programming and uniform cost search.</p>
+<p>Эта категория алгоритмов на основе состояний направлена на построение оптимальных путей, обеспечивающих экспоненциальную экономию. В этом разделе мы сосредоточимся на динамическом программировании и поиске по единой стоимости.</p>
 <p><span class="new-item item-g">Graph</span> A graph is comprised of a set of vertices $V$ (also called nodes) as well as a set of edges $E$ (also called links).</p>
 <div class=mobile-container>
 <center>
   <img alt=Graph class=img-responsive netsrc=teaching/cs-221/illustrations/ src=graph.png?76351911a7eff56d9f7de999bd7997ab style=width:100%;max-width:450px>
 </center>
 </div>
-<p><span class=remark>Remark: a graph is said to be acylic when there is no cycle.</span></p>
+<p><span class=remark>Примечание: граф называется ациклическим, когда нет цикла.</span></p>
 <br>
 <p><span class="new-item item-r">Состояние</span> это совокупность всех прошлых действий, достаточная для оптимального выбора будущих действий.</p>
 <br>
@@ -173,7 +173,7 @@
   <img alt="Dynamic Programming" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=dynamic-programming.png?6efc6c44c8c7bce9c2c576ecb82ec98c style=width:100%;max-width:450px>
 </center>
 </div>
-<p><span class=remark>Remark: the figure above illustrates a bottom-to-top approach whereas the formula provides the intuition of a top-to-bottom problem resolution.</span></p>
+<p><span class=remark>Примечание: на рисунке выше показан подход снизу вверх, тогда как формула дает интуитивное представление о решении проблемы сверху вниз.</span></p>
 <br>
 <p><span class="new-item item-g">Типы состояний</span> В таблице ниже представлена терминология, когда речь идет о состояниях в контексте поиска по единой стоимости:</p>
 <div class=mobile-container>
@@ -190,15 +190,15 @@
 </tr>
 <tr>
 <td align=center valign=center>Explored $\mathcal{E}$</td>
-<td align=left valign=top>States for which the optimal path has already been found</td>
+<td align=left valign=top>Состояния c уже найденным оптимальным путем</td>
 </tr>
 <tr>
 <td align=center valign=center>Frontier $\mathcal{F}$</td>
-<td align=left valign=top>States seen for which we are still figuring out how to get there with the cheapest cost</td>
+<td align=left valign=top>Видны состояния (нам неизвестен путь к ним с самой низкой ценой)</td>
 </tr>
 <tr>
 <td align=center valign=center>Unexplored $\mathcal{U}$</td>
-<td align=left valign=top>States not seen yet</td>
+<td align=left valign=top>Состояний пока не видно</td>
 </tr>
 </tbody>
 </table>
@@ -211,8 +211,8 @@
   <img alt="Uniform Cost Search" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=ucs-example.png?e565704b2370d49fa14f56f8259d3515 style=width:100%;max-width:450px>
 </center>
 </div>
-<p><span class=remark>Remark 1: the UCS algorithm is logically equivalent to Dijkstra's algorithm.</span></p>
-<p><span class=remark>Remark 2: the algorithm would not work for a problem with negative action costs, and adding a positive constant to make them non-negative would not solve the problem since this would end up being a different problem.</span></p>
+<p><span class=remark>Замечание 1: алгоритм UCS логически эквивалентен алгоритму Дейкстры.</span></p>
+<p><span class=remark>Замечание 2: алгоритм не будет работать для задачи с отрицательными затратами действий, и добавление положительной константы, чтобы сделать их неотрицательными, не решит проблему, так как в конечном итоге это будет другой проблемой.</span></p>
 <br>
 <p><span class="new-item item-r">Correctness theorem</span> When a state $s$ is popped from the frontier $\mathcal{F}$ and moved to explored set $\mathcal{E}$, its priority is equal to $\textrm{PastCost}(s)$ which is the minimum cost path from $s_\textrm{start}$ to $s$.</p>
 <br>
@@ -249,7 +249,7 @@
 </table>
 </center>
 </div>
-<p><span class=remark>Remark: the complexity countdown supposes the number of possible actions per state to be constant.</span></p>
+<p><span class=remark>Примечание: обратный отсчет сложности предполагает, что количество возможных действий для каждого состояния будет постоянным.</span></p>
 <br>
 <h3><a aria-hidden=true class=anchor href=#learning-costs id=learning-costs></a>Learning costs</h3>
 <p>Suppose we are not given the values of $\textrm{Cost}(s,a)$, we want to estimate these quantities from a training set of minimizing-cost-path sequence of actions $(a_1, a_2, ..., a_k)$.</p>
@@ -272,7 +272,7 @@
 <div class=mobile-container>
 \[\boxed{\textrm{Cost}'(s,a)=\textrm{Cost}(s,a)+h(\textrm{Succ}(s,a))-h(s)}\]
 </div>
-<p><span class=remark>Remark: this algorithm can be seen as a biased version of UCS exploring states estimated to be closer to the end state.</span></p>
+<p><span class=remark>Примечание: этот алгоритм можно рассматривать как предвзятую версию исследования состояний UCS, которые оцениваются как более близкие к конечному состоянию.</span></p>
 <br>
 <p><span class="new-item item-b">Консистентность</span> Эвристика $h$ называется согласованной (консистентной) при удовлетворении двух следующих свойств:
 </p><ul>
@@ -285,7 +285,7 @@
   <img alt=Consistency class=img-responsive netsrc=teaching/cs-221/illustrations/ src=consistency-1.png?4cbccf6f546df017acee0dc45d740b92 style=width:100%;max-width:465px>
 </center>
 </div>
-</li><li>The end state verifies the following:
+</li><li>Конечное состояние подтверждает следующее:
 <div class=mobile-container>
 \[\boxed{h(s_{\textrm{end}})=0}\]
 </div>
@@ -318,10 +318,10 @@
   <img alt=Efficiency class=img-responsive netsrc=teaching/cs-221/illustrations/ src=efficiency.png?6306c2c390e4b08c0fe37bc99e6caf5d style=width:100%;max-width:465px>
 </center>
 </div>
-<p><span class=remark>Remark: larger values of $h(s)$ is better as this equation shows it will restrict the set of states $s$ going to be explored.</span></p>
+<p><span class=remark>Примечание: большие значения $h(s)$ лучше, поскольку это уравнение показывает, что оно ограничивает набор состояний $s$, которые будут исследованы.</span></p>
 <br>
 <h3><a aria-hidden=true class=anchor href=#relaxation id=relaxation></a>Relaxation</h3>
-<p>It is a framework for producing consistent heuristics. The idea is to find closed-form reduced costs by removing constraints and use them as heuristics.</p>
+<p>Это основа для создания последовательной эвристики. Идея состоит в том, чтобы найти сокращенные затраты в аналитическом виде, удалив ограничения и используя их в качестве эвристики.</p>
 <br>
 <p><span class="new-item item-g">Relaxed search problem</span> The relaxation of search problem $P$ with costs $\textrm{Cost}$ is denoted $P_{\textrm{rel}}$ with costs $\textrm{Cost}_{\textrm{rel}}$, and satisfies the identity:</p>
 <div class=mobile-container>
@@ -337,7 +337,7 @@
 <br>
 <p><span class="new-item item-g">Компромисс при выборе эвристики</span> При выборе эвристики необходимо уравновесить два аспекта:
 </p><ul>
-<li>Computational efficiency: $h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)$ must be easy to compute. It has to produce a closed form, easier search and independent subproblems.
+<li>Computational efficiency: $h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)$ must be easy to compute. It has to produce a closed form, более легкий поиск и независимые подзадачи.
 </li><li>Good enough approximation: the heuristic $h(s)$ should be close to $\textrm{FutureCost}(s)$ and we have thus to not remove too many constraints.
 </li></ul><p></p>
 <br>
@@ -447,8 +447,8 @@ with
 </li></ul><p></p>
 <p><span class=remark>Remark: if we have either $\gamma &lt; 1$ or the MDP graph being acyclic, then the value iteration algorithm is guaranteed to converge to the correct answer.</span></p>
 <br>
-<h3>When unknown transitions and rewards</h3>
-<p>Now, let's assume that the transition probabilities and the rewards are unknown.</p>
+<h3>Когда неизвестны переходы и награды</h3>
+<p>Теперь предположим, что вероятности перехода и награды неизвестны.</p>
 <p><span class="new-item item-r">Model-based Monte Carlo</span> The model-based Monte Carlo method aims at estimating $T(s,a,s')$ and $\textrm{Reward}(s,a,s')$ using Monte Carlo simulation with:
 </p><div class=mobile-container>
 \[\boxed{\widehat{T}(s,a,s')=\frac{\#\textrm{ times }(s,a,s')\textrm{ occurs}}{\#\textrm{ times }(s,a)\textrm{ occurs}}}\]
@@ -458,7 +458,7 @@ and
 \[\boxed{\widehat{\textrm{Reward}}(s,a,s')=r\textrm{ in }(s,a,r,s')}\]
 </div>
 These estimations will be then used to deduce $Q$-values, including $Q_\pi$ and $Q_\textrm{opt}.$<p></p>
-<p><span class=remark>Remark: model-based Monte Carlo is said to be off-policy, because the estimation does not depend on the exact policy.</span></p>
+<p><span class=remark>Примечание: Основанный на модели Монте-Карло считается вне политики, потому что оценка не зависит от конкретной политики.</span></p>
 <br>
 <p><span class="new-item item-r">Model-free Monte Carlo</span> The model-free Monte Carlo method aims at directly estimating $Q_{\pi}$, as follows:
 </p><div class=mobile-container>
@@ -471,7 +471,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 </p><div class=mobile-container>
 \[\boxed{\widehat{Q}_\pi(s,a)\leftarrow(1-\eta)\widehat{Q}_\pi(s,a)+\eta u}\]
 </div>
-as well as a stochastic gradient formulation:
+а также формулировку стохастического градиента:
 <div class=mobile-container>
 \[\boxed{\widehat{Q}_\pi(s,a)\leftarrow\widehat{Q}_\pi(s,a) - \eta (\widehat{Q}_\pi(s,a) - u)}\]
 </div>
@@ -481,7 +481,7 @@ as well as a stochastic gradient formulation:
 <div class=mobile-container>
 \[\boxed{\widehat{Q}_\pi(s,a)\longleftarrow(1-\eta)\widehat{Q}_\pi(s,a)+\eta\Big[r+\gamma\widehat{Q}_\pi(s',a')\Big]}\]
 </div>
-<p><span class=remark>Remark: the SARSA estimate is updated on the fly as opposed to the model-free Monte Carlo one where the estimate can only be updated at the end of the episode.</span></p>
+<p><span class=remark>Примечание: оценка SARSA обновляется "на лету", в отличие от оценки Монте-Карло без использования модели, где оценка может быть обновлена только в конце эпизода.</span></p>
 <br>
 <p><span class="new-item item-b">Q-learning</span> $Q$-learning is an off-policy algorithm that produces an estimate for $Q_\textrm{opt}$. On each $(s,a,r,s',a')$, we have:</p>
 <div class=mobile-container>
@@ -494,7 +494,7 @@ as well as a stochastic gradient formulation:
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#game-playing id=game-playing></a>Game playing</h2>
-<p>In games (e.g. chess, backgammon, Go), other agents are present and need to be taken into account when constructing our policy.</p>
+<p>В играх (например, шахматы, нарды, го) присутствуют другие агенты, которые необходимо учитывать при построении нашей политики.</p>
 <p><span class="new-item item-b">Дерево игры</span> Дерево игры - это дерево, которое описывает возможности игры. В частности, каждый узел является точкой принятия решения для игрока, а каждый путь от корня к листу - это возможный результат игры.</p>
 <br>
 <p><span class="new-item item-b">Игра для двух игроков с нулевой суммой</span> это игра; в которой полностью соблюдается каждое состояние и игроки ходят по очереди. Она определяется с помощью:
@@ -506,7 +506,7 @@ as well as a stochastic gradient formulation:
   </li><li>the agent's utility $\textrm{Utility}(s)$ at end state $s$
   </li><li>the player $\textrm{Player}(s)$ who controls state $s$
 </li></ul><p></p>
-<p><span class=remark>Remark: we will assume that the utility of the agent has the opposite sign of the one of the opponent.</span></p>
+<p><span class=remark>Примечание: предположим, что полезность агента противоположна полезности оппонента.</span></p>
 <br>
 <p><span class="new-item item-g">Типы политик</span> Есть два типа политик:
 </p><ul>
@@ -518,7 +518,7 @@ as well as a stochastic gradient formulation:
 <div class=mobile-container>
 \[\boxed{V_{\textrm{exptmax}}(s)=\left\{\begin{array}{ll}\textrm{Utility}(s) &amp; \textrm{IsEnd}(s)\\\underset{a\in\textrm{Actions}(s)}{\textrm{max}}V_{\textrm{exptmax}}(\textrm{Succ}(s,a)) &amp; \textrm{Player}(s)=\textrm{agent}\\\displaystyle\sum_{a\in\textrm{Actions}(s)}\pi_{\textrm{opp}}(s,a)V_{\textrm{exptmax}}(\textrm{Succ}(s,a)) &amp; \textrm{Player}(s)=\textrm{opp}\end{array}\right.}\]
 </div>
-<p><span class=remark>Remark: expectimax is the analog of value iteration for MDPs.</span></p>
+<p><span class=remark>Примечание: expectimax - аналог итерации значений для MDP.</span></p>
 <div class=mobile-container>
 <center>
   <img alt=Expectimax class=img-responsive netsrc=teaching/cs-221/illustrations/ src=expectimax.png?e45e88a1bab91386c3e1d4ff401a1d97 style=width:100%;max-width:600px>
@@ -551,7 +551,7 @@ as well as a stochastic gradient formulation:
 \[\boxed{\forall \pi,\quad V(\pi_{\textrm{max}},\pi)\leqslant V(\pi_{\textrm{exptmax}},\pi)}\]
 </div>
 </li></ul>
-In the end, we have the following relationship:
+В итоге имеем следующие отношения:
 <div class=mobile-container>
 \[\boxed{V(\pi_{\textrm{exptmax}},\pi_{\textrm{min}})\leqslant V(\pi_{\textrm{max}},\pi_{\textrm{min}})\leqslant V(\pi_{\textrm{max}},\pi)\leqslant V(\pi_{\textrm{exptmax}},\pi)}\]
 </div>
@@ -574,17 +574,17 @@ In the end, we have the following relationship:
 </div>
 <br>
 <h3>Simultaneous games</h3>
-<p>This is the contrary of turn-based games, where there is no ordering on the player's moves.</p>
+<p>Это полная противоположность пошаговым играм, где нет упорядочивания ходов игрока.</p>
 <br>
 <p><span class="new-item item-g">Single-move simultaneous game</span> Let there be two players $A$ and $B$, with given possible actions. We note $V(a,b)$ to be $A$'s utility if $A$ chooses action $a$, $B$ chooses action $b$. $V$ is called the payoff matrix.</p>
 <br>
 <p><span class="new-item item-r">Стратегии</span> Есть два основных типа стратегий:
 </p><ul>
-<li>A pure strategy is a single action:
+<li>Чистая стратегия - это одно действие:
 <div class=mobile-container>
 \[\boxed{a\in\textrm{Actions}}\]
 </div>
-</li><li>A mixed strategy is a probability distribution over actions:
+</li><li>Смешанная стратегия - это распределение вероятностей по действиям:
 <div class=mobile-container>
 \[\forall a\in\textrm{Actions},\quad\boxed{0\leqslant\pi(a)\leqslant1}\]
 </div>
@@ -607,5 +607,5 @@ In the end, we have the following relationship:
 <div class=mobile-container>
 \[\boxed{\forall \pi_A, V_A(\pi_A^*,\pi_B^*)\geqslant V_A(\pi_A,\pi_B^*)}\quad\textrm{and}\quad\boxed{\forall \pi_B, V_B(\pi_A^*,\pi_B^*)\geqslant V_B(\pi_A^*,\pi_B)}\]
 </div>
-<p><span class=remark>Remark: in any finite-player game with finite number of actions, there exists at least one Nash equilibrium.</span></p>
+<p><span class=remark>Примечание: в любой игре с конечным числом игроков и конечным числом действий существует хотя бы одно равновесие по Нэшу.</span></p>
 </article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>

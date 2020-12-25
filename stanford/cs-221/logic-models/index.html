@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Logic-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#basics>Basics</a></div> <div class=dropdown-container> <a href=#basics><span>Notations</span></a> <a href=#basics><span>Model</span></a> <a href=#basics><span>Interpretation function</span></a> <a href=#basics><span>Set of models</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#knowledge-base>Knowledge base</a></div> <div class=dropdown-container> <a href=#knowledge-base><span>Definition</span></a> <a href=#knowledge-base><span>Probabilistic interpretation</span></a> <a href=#knowledge-base><span>Satisfiability</span></a> <a href=#knowledge-base><span>Relationship with formulas</span></a> <a href=#knowledge-base><span>Forward inference</span></a> <a href=#knowledge-base><span>Rule properties</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#propositional-logic>Propositional logic</a></div> <div class=dropdown-container> <a href=#propositional-logic><span>Clauses</span></a> <a href=#propositional-logic><span>Modus ponens</span></a> <a href=#propositional-logic><span>Conjunctive normal form</span></a> <a href=#propositional-logic><span>Representation equivalence</span></a> <a href=#propositional-logic><span>Resolution</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#first-order-logic>First-order logic</a></div> <div class=dropdown-container> <a href=#first-order-logic><span>Substitution</span></a> <a href=#first-order-logic><span>Unification</span></a> <a href=#first-order-logic><span>Resolution rule</span></a> <a href=#first-order-logic><span>Modus ponens</span></a> <a href=#first-order-logic><span>Resolution</span></a> <a href=#first-order-logic><span>Semi-decidability</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-logic-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Logic-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#basics>Basics</a></div> <div class=dropdown-container> <a href=#basics><span>Notations</span></a> <a href=#basics><span>Model</span></a> <a href=#basics><span>Interpretation function</span></a> <a href=#basics><span>Set of models</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#knowledge-base>Knowledge base</a></div> <div class=dropdown-container> <a href=#knowledge-base><span>Definition</span></a> <a href=#knowledge-base><span>Probabilistic interpretation</span></a> <a href=#knowledge-base><span>Satisfiability</span></a> <a href=#knowledge-base><span>Relationship with formulas</span></a> <a href=#knowledge-base><span>Forward inference</span></a> <a href=#knowledge-base><span>Rule properties</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#propositional-logic>Propositional logic</a></div> <div class=dropdown-container> <a href=#propositional-logic><span>Clauses</span></a> <a href=#propositional-logic><span>Modus ponens</span></a> <a href=#propositional-logic><span>Conjunctive normal form</span></a> <a href=#propositional-logic><span>Representation equivalence</span></a> <a href=#propositional-logic><span>Resolution</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#first-order-logic>First-order logic</a></div> <div class=dropdown-container> <a href=#first-order-logic><span>Substitution</span></a> <a href=#first-order-logic><span>Unification</span></a> <a href=#first-order-logic><span>Resolution rule</span></a> <a href=#first-order-logic><span>Modus ponens</span></a> <a href=#first-order-logic><span>Resolution</span></a> <a href=#first-order-logic><span>Semi-decidability</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-logic-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -58,7 +58,7 @@
   </div>
 </div>
 <h1>
-  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Logic-based models with propositional and first-order logic
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Модели логик с логикой высказываний и логикой первого порядка
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
@@ -120,7 +120,7 @@
 </table>
 </center>
 </div>
-<p><span class=remark>Remark: formulas can be built up recursively out of these connectives.</span></p>
+<p><span class=remark>Примечание: формулы могут быть построены рекурсивно из этих связок.</span></p>
 <br>
 <p><span class="new-item item-r">Модель</span> Модель $w$ обозначает присвоение двоичных весов символам высказываний (пропозициональным).</p>
 <p><i>Example: the set of truth values $w = \{A:0, B:1, C:0\}$ is one possible model to the propositional symbols $A$, $B$ and $C$.</i></p>
@@ -179,7 +179,7 @@
 <td align=center valign=center>$\textrm{KB}$ entails $f$</td>
 <td align=center valign=center>$\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)=\mathcal{M}(\textrm{KB})$</td>
 <td align=center><img alt=Entailment class=img-responsive netsrc=teaching/cs-221/illustrations/ src=entailment.png?7510add6bfb4c6c84aa619042e8d6a59></td>
-<td align=left>• $f$ does not bring any new information
+<td align=left>• $f$ не несет никакой новой информации
 <br>• Also written $\textrm{KB}\models f$</td>
 </tr>
 <tr>
@@ -207,7 +207,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </div>
 <br>
 <p><span class="new-item item-b">Model checking</span> A model checking algorithm takes as input a knowledge base $\textrm{KB}$ and outputs whether it is satisfiable or not.</p>
-<p><span class=remark>Remark: popular model checking algorithms include DPLL and WalkSat.</span></p>
+<p><span class=remark>Примечание: популярные алгоритмы проверки моделей включают DPLL и WalkSat.</span></p>
 <br>
 <p><span class="new-item item-r">Inference rule</span> An inference rule of premises $f_1,...,f_k$ and conclusion $g$ is written:</p>
 <div class=mobile-container>
@@ -237,8 +237,8 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 <td align=center>Soundness</td>
 <td align=center>$\{f \, | \, \textrm{KB}\vdash f\}\subseteq\{f \, | \, \textrm{KB}\models f\}$</td>
 <td align=left>• Inferred formulas are entailed by $\textrm{KB}$<br>
-• Can be checked one rule at a time<br>
-• <i>"Nothing but the truth"</i></td>
+• Можно проверить одно правило за раз<br>
+• <i>"Ничего кроме правды"</i></td>
 </tr>
 <tr>
 <td align=center>Completeness</td>
@@ -253,7 +253,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#propositional-logic id=propositional-logic></a>Propositional logic</h2>
-<p>In this section, we will go through logic-based models that use logical formulas and inference rules. The idea here is to balance expressivity and computational efficiency.</p>
+<p>В этом разделе мы рассмотрим модели на основе логики, в которых используются логические формулы и правила вывода. Идея состоит в том, чтобы сбалансировать выразительность и вычислительную эффективность.</p>
 <p><span class="new-item item-r">Horn clause</span> By noting $p_1,...,p_k$ and $q$ propositional symbols, a Horn clause has the form:</p>
 <div class=mobile-container>
 \[\boxed{(p_1\wedge...\wedge p_k)\longrightarrow q}\]
@@ -264,7 +264,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 <div class=mobile-container>
 \[\boxed{\frac{f_1,...,f_k,\quad (f_1\wedge...\wedge f_k)\longrightarrow p}{p}}\]
 </div>
-<p><span class=remark>Remark: it takes linear time to apply this rule, as each application generate a clause that contains a single propositional symbol.</span></p>
+<p><span class=remark>Примечание: для применения этого правила требуется линейное время, так как каждое приложение генерирует предложение, содержащее один пропозициональный символ.</span></p>
 <br>
 <p><span class="new-item item-g">Completeness</span> Modus ponens is complete with respect to Horn clauses if we suppose that $\textrm{KB}$ contains only Horn clauses and $p$ is an entailed propositional symbol. Applying modus ponens will then derive $p$.</p>
 <br>
@@ -328,7 +328,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 <div class=mobile-container>
 \[\boxed{\frac{f_1\vee...\vee f_n\vee p,\quad\neg p\vee g_1\vee...\vee g_m}{f_1\vee...\vee f_n\vee g_1\vee...\vee g_m}}\]
 </div>
-<p><span class=remark>Remark: it can take exponential time to apply this rule, as each application generates a clause that has a subset of the propositional symbols.</span></p>
+<p><span class=remark>Примечание: для применения этого правила может потребоваться экспоненциальное время, поскольку каждое приложение генерирует предложение, которое имеет подмножество пропозициональных символов.</span></p>
 <br>
 <p><span class="new-item item-b">Вывод на основе разрешения</span> Алгоритм вывода на основе разрешении. Включает следующие шаги:
 </p><ul>
@@ -338,11 +338,11 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </li></ul>
 <br>
 <h2><a aria-hidden=true class=anchor href=#first-order-logic id=first-order-logic></a>First-order logic</h2>
-<p>The idea here is to use variables to yield more compact knowledge representations.</p>
+<p>Идея здесь состоит в том, чтобы использовать переменные для получения более компактных представлений знаний.</p>
 <p><span class="new-item item-g">Модель</span> Модель $w$ в логике первого порядка отображает:
 </p><ul>
-<li>constant symbols to objects
-</li><li>predicate symbols to tuple of objects<p></p>
+<li>константные символы на объекты
+</li><li>предикатные символы на кортеж объектов<p></p>
 </li></ul>
 <br>
 <p><span class="new-item item-r">Horn clause</span> By noting $x_1,...,x_n$ variables and $a_1,...,a_k,b$ atomic formulas, the first-order logic version of a horn clause has the form:</p>
@@ -370,9 +370,9 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 \[\boxed{\frac{f_1\vee...\vee f_n\vee p,\quad\neg q\vee g_1\vee...\vee g_m}{\textrm{Subst}[\theta,f_1\vee...\vee f_n\vee g_1\vee...\vee g_m]}}\]
 </div>
 <br>
-<p><span class="new-item item-b">Полуразрешимость</span> Логика первого порядка, even restricted to only Horn clauses, is semi-decidable.
+<p><span class="new-item item-b">Полуразрешимость</span> Логика первого порядка, даже ограниченная только Хорновскими дизъюнктами, is semi-decidable.
 </p><ul>
-<li>if $\textrm{KB}\models f$, forward inference on complete inference rules will prove $f$ in finite time
-</li><li>if $\textrm{KB}\not\models f$, no algorithm can show this in finite time
+<li>if $\textrm{KB}\models f$, прямой вывод по правилам полного вывода докажет $f$ за конечное время
+</li><li>if $\textrm{KB}\not\models f$, ни один алгоритм не может показать это за конечное время
 </li></ul><p></p>
 </br&lt;span></br&lt;span></article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>

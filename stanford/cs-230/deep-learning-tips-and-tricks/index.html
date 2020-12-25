@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=en><head><!-- base href=../../ --><title>CS 230 - Deep Learning Tips and Tricks Cheatsheet</title><meta charset=utf-8><meta content="Teaching page of Shervine Amidi, Graduate Student at Stanford University." name=description><meta content="teaching, shervine, shervine amidi, data science" name=keywords><meta content="width=device-width, initial-scale=1" name=viewport>
+<!DOCTYPE html><html lang=en><head><!-- base href=../../ --><title>CS 230 - Глубокое обучение Tips and Tricks Cheatsheet</title><meta charset=utf-8><meta content="Teaching page of Shervine Amidi, Graduate Student at Stanford University." name=description><meta content="teaching, shervine, shervine amidi, data science" name=keywords><meta content="width=device-width, initial-scale=1" name=viewport>
 <link href=https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks rel=canonical>
 <link href=../../css/bootstrap.min.css rel=stylesheet>
 <link href=../../css/font-awesome.min.css rel=stylesheet>
@@ -13,11 +13,11 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Deep Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Tips and tricks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#data-processing>Data processing</a></div> <div class=dropdown-container> <a href=#data-processing><span>Data augmentation</span></a> <a href=#data-processing><span>Batch normalization</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#running-nn>Training a neural network</a></div> <div class=dropdown-container> <a href=#running-nn><span>Epoch</span></a> <a href=#running-nn><span>Mini-batch</span></a> <a href=#running-nn><span>Cross-entropy loss</span></a> <a href=#running-nn><span>Backpropagation</span></a> <a href=#running-nn><span>Gradient descent</span></a> <a href=#running-nn><span>Updating weights</span></a> <a href=#running-nn><span>Gradient checking</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#parameter-tuning>Parameter tuning</a></div> <div class=dropdown-container> <a href=#parameter-tuning><span>Xavier initialization</span></a> <a href=#parameter-tuning><span>Transfer learning</span></a> <a href=#parameter-tuning><span>Learning rate</span></a> <a href=#parameter-tuning><span>Adaptive learning rates</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#regularization>Regularization</a></div> <div class=dropdown-container> <a href=#regularization><span>Dropout</span></a> <a href=#regularization><span>Weight regularization</span></a> <a href=#regularization><span>Early stopping</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#good-practices>Good practices</a></div> <div class=dropdown-container> <a href=#good-practices><span>Overfitting small batch</span></a> <a href=#good-practices><span>Gradient checking</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-deep-learning-tips-tricks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Глубокое обучение</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Tips and tricks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#data-processing>Data processing</a></div> <div class=dropdown-container> <a href=#data-processing><span>Data augmentation</span></a> <a href=#data-processing><span>Batch normalization</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#running-nn>Обучение нейронной сети</a></div> <div class=dropdown-container> <a href=#running-nn><span>Epoch</span></a> <a href=#running-nn><span>Mini-batch</span></a> <a href=#running-nn><span>Cross-entropy loss</span></a> <a href=#running-nn><span>Backpropagation</span></a> <a href=#running-nn><span>Gradient descent</span></a> <a href=#running-nn><span>Updating weights</span></a> <a href=#running-nn><span>Gradient checking</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#parameter-tuning>Parameter tuning</a></div> <div class=dropdown-container> <a href=#parameter-tuning><span>Xavier initialization</span></a> <a href=#parameter-tuning><span>Transfer learning</span></a> <a href=#parameter-tuning><span>Learning rate</span></a> <a href=#parameter-tuning><span>Adaptive learning rates</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#regularization>Regularization</a></div> <div class=dropdown-container> <a href=#regularization><span>Dropout</span></a> <a href=#regularization><span>Weight regularization</span></a> <a href=#regularization><span>Early stopping</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#good-practices>Good practices</a></div> <div class=dropdown-container> <a href=#good-practices><span>Overfitting small batch</span></a> <a href=#good-practices><span>Gradient checking</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-deep-learning-tips-tricks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
-<div class=title-lang style=display:none;> <!-- DISPLAY:NONE --><a aria-hidden=true class=anchor-bis href=#cs-230---deep-learning id=cs-230---deep-learning></a><a href=teaching/cs-230 onclick=trackOutboundLink(this);>CS 230 - Deep Learning</a>
+<div class=title-lang style=display:none;> <!-- DISPLAY:NONE --><a aria-hidden=true class=anchor-bis href=#cs-230---deep-learning id=cs-230---deep-learning></a><a href=teaching/cs-230 onclick=trackOutboundLink(this);>CS 230 - Глубокое обучение</a>
   
   <div style=float:right;display:none;> <!-- DISPLAY:NONE -->
     <div class=input-group>
@@ -43,7 +43,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><B>CS 230 - Deep Learning</B></BUTTON>
+    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><B>CS 230 - Глубокое обучение</B></BUTTON>
   </div>
 </div>
 <div aria-label=... class="btn-group btn-group-justified" role=group>
@@ -59,7 +59,7 @@
 </div>
 
 <h1>
-  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Deep Learning Tips and Tricks cheatsheet
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Шпаргалка с советами и приемами глубокого обучения
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-230-deep-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-230-deep-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
@@ -88,12 +88,12 @@
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=augmentation-crop.jpg?811ab0236837a5eb3106e761b6046424></td>
 </tr>
 <tr>
-<td align=left valign=top>• Image without any modification</td>
-<td align=left valign=top>• Flipped with respect to an axis for which the meaning of the image is preserved</td>
-<td align=left valign=top>• Rotation with a slight angle<br>
-                 • Simulates incorrect horizon calibration</td>
-<td align=left valign=top>• Random focus on one part of the image<br>
-                              • Several random crops can be done in a row</td>
+<td align=left valign=top>• Изображение без изменений</td>
+<td align=left valign=top>• Отражение изображения относительно оси</td>
+<td align=left valign=top>• Вращение с небольшим углом<br>
+                 • Имитирует неправильную калибровку горизонта</td>
+<td align=left valign=top>• Случайный фокус на одной части изображения<br>
+                              • Можно сделать несколько случайных обрезок подряд</td>
 </tr>
 </tbody>
 </table>
@@ -122,30 +122,30 @@
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=augmentation-contrast.jpg?776cd26f62f336949ee237817f6af3a5></td>
 </tr>
 <tr>
-<td align=left valign=top>• Nuances of RGB is slightly changed<br>
-                 • Captures noise that can occur with light exposure
+<td align=left valign=top>• Немного изменены нюансы RGB<br>
+                 • Получает возникающий при изменении освещения шум
 </td>
 <td align=left valign=top>• Addition of noise<br>
-                 • More tolerance to quality variation of inputs
+                 • Толерантнее к качеству изображения
 </td>
-<td align=left valign=top>• Parts of image ignored<br>
-                              • Mimics potential loss of parts of image</td>
+<td align=left valign=top>• Части изображения игнорируются<br>
+                              • Имитирует потенциальную потерю частей изображения</td>
 <td align=left valign=top>• Luminosity changes<br>
-                              • Controls difference in exposition due to time of day</td>
+                              • Контролирует разницу в экспозиции в зависимости от времени суток</td>
 </tr>
 </tbody>
 </table>
 </center>
 </div>
-<p><span class=remark>Remark: data is usually augmented on the fly during training.</span></p>
+<p><span class=remark>Примечание: данные обычно пополняются на лету во время обучения.</span></p>
 <br>
 <p><span class="new-item item-b">Batch normalization</span> It is a step of hyperparameter $\gamma, \beta$ that normalizes the batch $\{x_i\}$. By noting $\mu_B, \sigma_B^2$ the mean and variance of that we want to correct to the batch, it is done as follows:
 </p><div class=mobile-container>
 \[\boxed{x_i\longleftarrow\gamma\frac{x_i-\mu_B}{\sqrt{\sigma_B^2+\epsilon}}+\beta}\]
 </div>
-It is usually done after a fully connected/convolutional layer and before a non-linearity layer and aims at allowing higher learning rates and reducing the strong dependence on initialization.<p></p>
+Обычно это делается после полносвязного/сверточного слоя и до уровня нелинейности и направлено на повышение скорости обучения и уменьшение сильной зависимости от инициализации.<p></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#running-nn id=running-nn></a>Training a neural network</h2>
+<h2><a aria-hidden=true class=anchor href=#running-nn id=running-nn></a>Обучение нейронной сети</h2>
 <h3>Definitions</h3>
 <p><span class="new-item item-b">Эпоха</span> в контексте обучения модели эпоха - это термин, используемый для обозначения одной итерации, когда модель видит весь обучающий набор для обновления своих весов.</p>
 <br>
@@ -166,15 +166,15 @@ It is usually done after a fully connected/convolutional layer and before a non-
 </center>
 </div>
 <br>
-<p>Using this method, each weight is updated with the rule:</p>
+<p>Используя этот метод, каждый вес обновляется с помощью правила:</p>
 <div class=mobile-container>
 \[\boxed{w\longleftarrow w-\alpha\frac{\partial L(z,y)}{\partial w}}\]
 </div>
 <br>
 <p><span class="new-item item-g">Обновление весов</span> В нейронной сети веса обновляются следующим образом:</p>
-<p>• Step 1: Take a batch of training data and perform forward propagation to compute the loss.
-<br>• Step 2: Backpropagate the loss to get the gradient of the loss with respect to each weight.
-<br>• Step 3: Use the gradients to update the weights of the network.</p>
+<p>• Шаг 1: Для пакета обучающих данных Выполнить прямое распространение и получить соответствующие значения функции стоимости.
+<br>• Шаг 2: Выполнить обратное распространение ошибки и получить градиенты по каждому весу.
+<br>• Шаг 3: Использовать градиенты и обновить веса сети.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=update-weights-en.png?5394a7bb976892418366d08646a0fd09 style="width:100%; min-width: 500px;">
@@ -201,17 +201,17 @@ It is usually done after a fully connected/convolutional layer and before a non-
 <tr>
 <td align=center>Small</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=transfer-learning-small-ltr.png?bee5e73de8fb2c6297a3a88804fabf5e></td>
-<td align=left>Freezes all layers, trains weights on softmax</td>
+<td align=left>Freezes all layers, тренирует веса на softmax</td>
 </tr>
 <tr>
 <td align=center>Medium</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=transfer-learning-medium-ltr.png?650eae780cff79a9ff0123d62e5812ad></td>
-<td align=left>Freezes most layers, trains weights on last layers and softmax</td>
+<td align=left>Freezes most layers, тренирует веса на последних слоях и softmax</td>
 </tr>
 <tr>
 <td align=center>Large</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=transfer-learning-large-ltr.png?ccdc27259583a57319e0bc39f5d858df></td>
-<td align=left>Trains weights on layers and softmax by initializing weights on pre-trained ones</td>
+<td align=left>Тренирует веса на слоях и softmax инициализирует веса на предварительно обученных</td>
 </tr>
 </tbody>
 </table>
@@ -242,14 +242,14 @@ It is usually done after a fully connected/convolutional layer and before a non-
 <td align=center>Momentum</td>
 <td align=left>• Dampens oscillations<br>
                  • Improvement to SGD<br>
-                 • 2 parameters to tune</td>
+                 • 2 параметра для настройки</td>
 <td align=center>$\displaystyle w-\alpha v_{dw}$</td>
 <td align=center>$\displaystyle b-\alpha v_{db}$</td>
 </tr>
 <tr>
 <td align=center>RMSprop</td>
-<td align=left>• Root Mean Square propagation<br>
-                 • Speeds up learning algorithm by controlling oscillations</td>
+<td align=left>• Среднеквадратичное распространение (Среднеквадратичное распространение (Среднеквадратичное распространение (Среднеквадратичное распространение (Среднеквадратичное распространение (Root Mean Square propagation)))))<br>
+                 • Ускоряет алгоритм обучения за счет управления колебаниями</td>
 <td align=center>$\displaystyle w-\alpha\frac{dw}{\sqrt{s_{dw}}}$</td>
 <td align=center>$\displaystyle b\longleftarrow b-\alpha\frac{db}{\sqrt{s_{db}}}$</td>
 </tr>
@@ -257,7 +257,7 @@ It is usually done after a fully connected/convolutional layer and before a non-
 <td align=center>Adam</td>
 <td align=left>• Adaptive Moment estimation<br>
                  • Most popular method<br>
-                 • 4 parameters to tune</td>
+                 • 4 параметра для настройки</td>
 <td align=center>$\displaystyle w-\alpha\frac{v_{dw}}{\sqrt{s_{dw}}+\epsilon}$</td>
 <td align=center>$\displaystyle b\longleftarrow b-\alpha\frac{v_{db}}{\sqrt{s_{db}}+\epsilon}$</td>
 </tr>
@@ -265,7 +265,7 @@ It is usually done after a fully connected/convolutional layer and before a non-
 </table>
 </center>
 </div>
-<p><span class=remark>Remark: other methods include Adadelta, Adagrad and SGD.</span></p>
+<p><span class=remark>Примечание: другие методы включают Adadelta, Adagrad и SGD.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#regularization id=regularization></a>Regularization</h2>
 <p><span class="new-item item-r">Dropout</span> Dropout is a technique used in neural networks to prevent overfitting the training data by dropping out neurons with probability $p &gt;0$. It forces the model to avoid relying too much on particular sets of features.</p>
@@ -292,9 +292,9 @@ It is usually done after a fully connected/convolutional layer and before a non-
 <td align=center><b>Elastic Net</b></td>
 </tr>
 <tr>
-<td align=left>• Shrinks coefficients to 0<br>• Good for variable selection</td>
+<td align=left>• Уменьшает коэффициенты до 0<br>• Подходит для выбора переменных</td>
 <td align=left>Makes coefficients smaller</td>
-<td align=left>Tradeoff between variable selection and small coefficients</td>
+<td align=left>Компромисс между выбором переменных и небольшими коэффициентами</td>
 </tr>
 <tr>
 <td align=center><img alt=Lasso class=img-responsive netsrc=teaching/cs-229/illustrations/ src=lasso.png?ad67282f00fc8b2a529e5b15a856f91b></td>
@@ -343,12 +343,12 @@ It is usually done after a fully connected/convolutional layer and before a non-
 </tr>
 <tr>
 <td align=center>Comments</td>
-<td align=left valign=top>• Expensive; loss has to be computed two times per dimension<br>
-                              • Used to verify correctness of analytical implementation<br>
-                              • Trade-off in choosing $h$ not too small (numerical instability) nor too large (poor gradient approximation)</td>
+<td align=left valign=top>• Дорого; потери должны вычисляться два раза для каждого измерения<br>
+                              • Используется для проверки правильности аналитической реализации<br>
+                              • Компромисс при выборе $h$ не слишком малого (числовая нестабильность) или слишком большого (плохое приближение градиента)</td>
 <td align=left valign=top>• 'Exact' result<br>
                               • Direct computation<br>
-                              • Used in the final implementation</td>
+                              • Используемое в окончательной реализации</td>
 </tr>
 </tbody>
 </table>

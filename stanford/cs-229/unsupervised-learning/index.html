@@ -78,7 +78,7 @@
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
-<h2><a aria-hidden=true class=anchor href=#intro id=intro></a>Introduction to Unsupervised Learning</h2>
+<h2><a aria-hidden=true class=anchor href=#intro id=intro></a>Введение в обучение без учителя</h2>
 <p><span class="new-item item-b">Motivation</span> The goal of unsupervised learning is to find hidden patterns in unlabeled data $\{x^{(1)},...,x^{(m)}\}$.</p>
 <br>
 <p><span class="new-item item-r">Неравенство Йенсена</span> Пусть $f$ - выпуклая функция, а $X$ - случайная величина. $E$ - математическое ожидание. Имеем следующее неравенство:</p>
@@ -100,7 +100,7 @@
 <td align=center><b>Comments</b></td>
 </tr>
 <tr>
-<td align=center>Mixture of $k$ Gaussians</td>
+<td align=center>Смесь $k$ гауссианов</td>
 <td align=center>$\textrm{Multinomial}(\phi)$</td>
 <td align=center>$\mathcal{N}(\mu_j,\Sigma_j)$</td>
 <td align=center>$\mu_j\in\mathbb{R}^n, \phi\in\mathbb{R}^k$</td>
@@ -164,9 +164,9 @@
 <td align=center><b>Complete linkage</b></td>
 </tr>
 <tr>
-<td align=center>Minimize within cluster distance</td>
-<td align=center>Minimize average distance between cluster pairs</td>
-<td align=center>Minimize maximum distance of between cluster pairs</td>
+<td align=center>Минимизирует расстояние в пределах кластера</td>
+<td align=center>Минимизирует среднее расстояние между парами кластеров</td>
+<td align=center>Минимизирует максимальное расстояние между парами кластеров</td>
 </tr>
 </tbody>
 </table>
@@ -174,7 +174,7 @@
 </div>
 <br>
 <h3>Clustering assessment metrics</h3>
-<p>In an unsupervised learning setting, it is often hard to assess the performance of a model since we don't have the ground truth labels as was the case in the supervised learning setting.</p>
+<p>В условиях обучения без учителя часто бывает трудно оценить производительность модели, поскольку у нас нет основных меток истинности, как это было в условиях обучения с учителем.</p>
 <p><span class="new-item item-b">Silhouette coefficient</span> By noting $a$ and $b$ the mean distance between a sample and all other points in the same class, and between a sample and all other points in the next nearest cluster, the silhouette coefficient $s$ for a single sample is defined as follows:</p>
 <div class=mobile-container>
 \[\boxed{s=\frac{b-a}{\max(a,b)}}\]
@@ -184,14 +184,14 @@
 </p><div class=mobile-container>
 \[B_k=\sum_{j=1}^kn_{c^{(i)}}(\mu_{c^{(i)}}-\mu)(\mu_{c^{(i)}}-\mu)^T,\quad\quad W_k=\sum_{i=1}^m(x^{(i)}-\mu_{c^{(i)}})(x^{(i)}-\mu_{c^{(i)}})^T\]
 </div>
-the Calinski-Harabaz index $s(k)$ indicates how well a clustering model defines its clusters, such that the higher the score, the more dense and well separated the clusters are. It is defined as follows:<p></p>
+индекс Калински-Харабаза $s(k)$ показывает, насколько хорошо модель кластеризации определяет свои кластеры, так что чем выше оценка, тем более плотными и хорошо разделенными являются кластеры. Это определяется следующим образом:<p></p>
 <div class=mobile-container>
 \[\boxed{s(k)=\frac{\textrm{Tr}(B_k)}{\textrm{Tr}(W_k)}\times\frac{N-k}{k-1}}\]
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#dimension-reduction id=dimension-reduction></a>Dimension reduction</h2>
 <h3>Principal component analysis</h3>
-<p>It is a dimension reduction technique that finds the variance maximizing directions onto which to project the data.</p>
+<p>Это метод уменьшения размерности, который находит направления максимизации дисперсии для проецирования данных.</p>
 <p><span class="new-item item-b">Eigenvalue, eigenvector</span> Given a matrix $A\in\mathbb{R}^{n\times n}$, $\lambda$ is said to be an eigenvalue of $A$ if there exists a vector $z\in\mathbb{R}^n\backslash\{0\}$, called eigenvector, such that we have:</p>
 <div class=mobile-container>
 \[\boxed{Az=\lambda z}\]
@@ -214,13 +214,13 @@ the Calinski-Harabaz index $s(k)$ indicates how well a clustering model defines 
 </li><li><u>Step 3</u>: Compute $u_1, ..., u_k\in\mathbb{R}^n$ the $k$ orthogonal principal eigenvectors of $\Sigma$, i.e. the orthogonal eigenvectors of the $k$ largest eigenvalues.
 </li><li><u>Step 4</u>: Project the data on $\textrm{span}_\mathbb{R}(u_1,...,u_k)$.
 </li></ul><p></p>
-<p>This procedure maximizes the variance among all $k$-dimensional spaces.</p>
+<p>Эта процедура максимизирует дисперсию всех $k$-мерных пространств.</p>
 <center>
 <img alt=Illustration class=img-responsive netsrc=teaching/cs-229/illustrations/ src=pca-en.png?4be4617788fd40f4e998b530b75f4149>
 </center>
 <br>
 <h3>Independent component analysis</h3>
-<p>It is a technique meant to find the underlying generating sources.</p>
+<p>Это метод, предназначенный для поиска основных источников генерации.</p>
 <p><span class="new-item item-r">Assumptions</span> We assume that our data $x$ has been generated by the $n$-dimensional source vector $s=(s_1,...,s_n)$, where $s_i$ are independent random variables, via a mixing and non-singular matrix $A$ as follows:</p>
 <div class=mobile-container>
 \[\boxed{x=As}\]

@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Supervised Learning</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#introduction>Introduction</a></div> <div class=dropdown-container> <a href=#introduction><span>Type of prediction</span></a> <a href=#introduction><span>Type of model</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#notations>Notations and general concepts</a></div> <div class=dropdown-container> <a href=#notations><span>Loss function</span></a> <a href=#notations><span>Gradient descent</span></a> <a href=#notations><span>Likelihood</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#linear-models>Linear models</a></div> <div class=dropdown-container> <a href=#linear-models><span>Linear regression</span></a> <a href=#linear-models><span>Logisitic regression</span></a> <a href=#linear-models><span>Generalized linear models</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#svm>Support Vector Machines</a></div> <div class=dropdown-container> <a href=#svm><span>Optimal margin classifier</span></a> <a href=#svm><span>Hinge loss</span></a> <a href=#svm><span>Kernel</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#generative-learning>Generative learning</a></div> <div class=dropdown-container> <a href=#generative-learning><span>Gaussian Discriminant Analysis</span></a> <a href=#generative-learning><span>Naive Bayes</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#tree>Trees and ensemble methods</a></div> <div class=dropdown-container> <a href=#tree><span>CART</span></a> <a href=#tree><span>Random forest</span></a> <a href=#tree><span>Boosting</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#other>Other methods</a></div> <div class=dropdown-container> <a href=#other><span>k-NN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-theory>Learning Theory</a></div> <div class=dropdown-container> <a href=#learning-theory><span>Hoeffding inequality</span></a> <a href=#learning-theory><span>PAC</span></a> <a href=#learning-theory><span>VC dimension</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-supervised-learning.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Supervised Learning</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#introduction>Introduction</a></div> <div class=dropdown-container> <a href=#introduction><span>Type of prediction</span></a> <a href=#introduction><span>Type of model</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#notations>Обозначения и основные понятия</a></div> <div class=dropdown-container> <a href=#notations><span>Loss function</span></a> <a href=#notations><span>Gradient descent</span></a> <a href=#notations><span>Likelihood</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#linear-models>Linear models</a></div> <div class=dropdown-container> <a href=#linear-models><span>Linear regression</span></a> <a href=#linear-models><span>Logisitic regression</span></a> <a href=#linear-models><span>Generalized linear models</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#svm>Support Vector Machines</a></div> <div class=dropdown-container> <a href=#svm><span>Optimal margin classifier</span></a> <a href=#svm><span>Hinge loss</span></a> <a href=#svm><span>Kernel</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#generative-learning>Generative learning</a></div> <div class=dropdown-container> <a href=#generative-learning><span>Gaussian Discriminant Analysis</span></a> <a href=#generative-learning><span>Naive Bayes</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#tree>Деревья и ансамблевые методы</a></div> <div class=dropdown-container> <a href=#tree><span>CART</span></a> <a href=#tree><span>Random forest</span></a> <a href=#tree><span>Boosting</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#other>Other methods</a></div> <div class=dropdown-container> <a href=#other><span>k-NN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-theory>Learning Theory</a></div> <div class=dropdown-container> <a href=#learning-theory><span>Hoeffding inequality</span></a> <a href=#learning-theory><span>PAC</span></a> <a href=#learning-theory><span>VC dimension</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-supervised-learning.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -78,7 +78,7 @@
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
-<h2><a aria-hidden=true class=anchor href=#introduction id=introduction></a>Introduction to Supervised Learning</h2>
+<h2><a aria-hidden=true class=anchor href=#introduction id=introduction></a>Введение в обучение с учителем</h2>
 <p>Given a set of data points $\{x^{(1)}, ..., x^{(m)}\}$ associated to a set of outcomes $\{y^{(1)}, ..., y^{(m)}\}$, we want to build a classifier that learns how to predict $y$ from $x$.</p>
 <p><span class="new-item item-b">Тип предсказания</span> Различные типы прогнозных моделей перечислены в таблице ниже:</p>
 <div class=mobile-container>
@@ -145,7 +145,7 @@
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#notations id=notations></a>Notations and general concepts</h2>
+<h2><a aria-hidden=true class=anchor href=#notations id=notations></a>Обозначения и основные понятия</h2>
 <p><span class="new-item item-b">Hypothesis</span> The hypothesis is noted $h_\theta$ and is the model that we choose. For a given input data $x^{(i)}$ the model prediction output is $h_\theta(x^{(i)})$.</p>
 <br>
 <p><span class="new-item item-r">Loss function</span> A loss function is a function $L:(z,y)\in\mathbb{R}\times Y\longmapsto L(z,y)\in\mathbb{R}$ that takes as inputs the predicted value $z$ corresponding to the real data value $y$ and outputs how different they are. The common loss functions are summed up in the table below:</p>
@@ -202,7 +202,7 @@
   <img alt="Gradient descent" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=gradient-descent.png?01662c4a8147a55ba09f4f5c047641ba style=width:100%;max-width:500px>
 </center>
 <br>
-<p><span class=remark>Remark: Stochastic gradient descent (SGD) is updating the parameter based on each training example, and batch gradient descent is on a batch of training examples.</span></p>
+<p><span class=remark>Примечание: Стохастический градиентный спуск (SGD) обновляет параметры на основе случайного обучающего примера, а пакетный градиентный спуск обновляет параметры используя пакет обучающих примеров.</span></p>
 <br>
 <p><span class="new-item item-b">Likelihood</span> The likelihood of a model $L(\theta)$ given parameters $\theta$ is used to find the optimal parameters $\theta$ through likelihood maximization. We have:</p>
 <div class=mobile-container>
@@ -214,7 +214,7 @@
 <div class=mobile-container>
 \[\boxed{\theta\leftarrow\theta-\frac{\ell'(\theta)}{\ell''(\theta)}}\]
 </div>
-<p><span class=remark>Remark: the multidimensional generalization, also known as the Newton-Raphson method, has the following update rule:</span></p>
+<p><span class=remark>Примечание: многомерное обобщение, также известное как метод Ньютона-Рафсона, имеет следующее правило обновления:</span></p>
 <div class=mobile-container>
 \[\theta\leftarrow\theta-\left(\nabla_\theta^2\ell(\theta)\right)^{-1}\nabla_\theta\ell(\theta)\]
 </div>
@@ -231,14 +231,14 @@
 <div class=mobile-container>
 \[\boxed{\forall j,\quad \theta_j \leftarrow \theta_j+\alpha\sum_{i=1}^m\left[y^{(i)}-h_\theta(x^{(i)})\right]x_j^{(i)}}\]
 </div>
-<p><span class=remark>Remark: the update rule is a particular case of the gradient ascent.</span></p>
+<p><span class=remark>Примечание: правило обновления - это частный случай градиентного подъема.</span></p>
 <br>
 <p><span class="new-item item-b">LWR</span> Locally Weighted Regression, also known as LWR, is a variant of linear regression that weights each training example in its cost function by $w^{(i)}(x)$, which is defined with parameter $\tau\in\mathbb{R}$ as:</p>
 <div class=mobile-container>
 \[\boxed{w^{(i)}(x)=\exp\left(-\frac{(x^{(i)}-x)^2}{2\tau^2}\right)}\]
 </div>
 <br>
-<h3>Classification and logistic regression</h3>
+<h3>Классификация и логистическая регрессия</h3>
 <p><span class="new-item item-b">Сигмоидальная функция</span> сигмовидная функция $g$, также известная как логистическая функция, определяется следующим образом:</p>
 <div class=mobile-container>
 \[\forall z\in\mathbb{R},\quad\boxed{g(z)=\frac{1}{1+e^{-z}}\in]0,1[}\]
@@ -313,10 +313,10 @@
  <div class=col-sm-4>$(3)\quad\boxed{\eta=\theta^Tx}$</div>
 </div>
 <br>
-<p><span class=remark>Remark: ordinary least squares and logistic regression are special cases of generalized linear models.</span></p>
+<p><span class=remark>Примечание: обыкновенный метод наименьших квадратов и логистическая регрессия являются частными случаями обобщенных линейных моделей.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#svm id=svm></a>Support Vector Machines</h2>
-<p>The goal of support vector machines is to find the line that maximizes the minimum distance to the line.</p>
+<p>Задача метода опорных векторов - найти линию, которая максимизирует минимальное расстояние до линии.</p>
 <p><span class="new-item item-b">Оптимальный Классификатор с Отступом</span> $h$ таков, что:</p>
 <div class=mobile-container>
 \[\boxed{h(x)=\textrm{sign}(w^Tx-b)}\]
@@ -353,7 +353,7 @@
 <p><span class=remark>Remark: the coefficients $\beta_i$ are called the Lagrange multipliers.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#generative-learning id=generative-learning></a>Generative Learning</h2>
-<p>A generative model first tries to learn how the data is generated by estimating $P(x|y)$, which we can then use to estimate $P(y|x)$ by using Bayes' rule.</p>
+<p>Генеративная модель сначала пытается узнать, как генерируются данные, оценивая $P(x|y)$, которое мы затем можем использовать для оценки $P(y|x)$ с помощью правила Байеса.</p>
 <h3>Gaussian Discriminant Analysis</h3>
 <p><span class="new-item item-b">Настройка</span> Гауссовский дискриминантный анализ предполагает, что $y$ и $x|y=0$ и $x|y=1$ таковы, что:</p>
 <div class=row>
@@ -393,14 +393,14 @@
 \[\boxed{P(y=k)=\frac{1}{m}\times\#\{j|y^{(j)}=k\}}\quad\textrm{ and }\quad\boxed{P(x_i=l|y=k)=\frac{\#\{j|y^{(j)}=k\textrm{ and }x_i^{(j)}=l\}}{\#\{j|y^{(j)}=k\}}}\]
 </div>
 with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
-<p><span class=remark>Remark: Naive Bayes is widely used for text classification and spam detection.</span></p>
+<p><span class=remark>Примечание: Наивный байесовский метод широко используется для классификации текста и обнаружения спама.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#tree id=tree></a>Tree-based and ensemble methods</h2>
-<p>These methods can be used for both regression and classification problems.</p>
+<h2><a aria-hidden=true class=anchor href=#tree id=tree></a>Древовидные и ансамблевые методы</h2>
+<p>Эти методы можно использовать как для регрессионных, так и для классификационных задач.</p>
 <p><span class="new-item item-b">Classification and Regression Trees (CART)</span> Деревья классификации и регрессии, широко известные как деревья решений, могут быть представлены как двоичные деревья. Их преимущество в том, что они легко интерпретируемы.</p>
 <br>
 <p><span class="new-item item-b">Случайный лес</span> это метод, основанный на деревьях, который использует большое количество деревьев решений, построенных из случайно выбранных наборов функций. В отличие от простого дерева решений, его трудно интерпретировать, но в целом хорошая производительность делает его популярным алгоритмом.</p>
-<p><span class=remark>Remark: random forests are a type of ensemble methods.</span></p>
+<p><span class=remark>Примечание: случайные леса - это разновидность ансамблевых методов.</span></p>
 <br>
 <p><span class="new-item item-b">Boosting (усиление)</span> идея методов усиления заключается в объединении нескольких слабых учеников, чтобы сформировать более сильного. Основные из них приведены в таблице ниже:</p>
 <div class=mobile-container>
@@ -416,7 +416,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 <td align=center><b>Gradient boosting</b></td>
 </tr>
 <tr>
-<td align=left>• High weights are put on errors to improve at the next boosting step<br>
+<td align=left>• Ошибкам уделяется большое внимание, чтобы их можно было исправить на следующем этапе усиления<br>
 • Known as Adaboost</td>
 <td align=left>• Weak learners are trained on residuals<br>
 • Examples include XGBoost</td>
@@ -448,7 +448,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 <div class=mobile-container>
 \[\boxed{P(|\phi-\widehat{\phi}|&gt;\gamma)\leqslant2\exp(-2\gamma^2m)}\]
 </div>
-<p><span class=remark>Remark: this inequality is also known as the Chernoff bound.</span></p>
+<p><span class=remark>Примечание: это неравенство также известно как граница Чернова.</span></p>
 <br>
 <p><span class="new-item item-g">Training error</span> For a given classifier $h$, we define the training error $\widehat{\epsilon}(h)$, also known as the empirical risk or empirical error, to be as follows:</p>
 <div class=mobile-container>
@@ -458,7 +458,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 <p><span class="new-item item-g">Probably Approximately Correct (PAC)</span> Вероятно приближённо корректное обучение - эта схема, в рамках которой были доказаны многочисленные результаты по теории обучения, и имеет следующий набор предположений:</p>
 <ul>
 	<li>the training and testing sets follow the same distribution</li>
-	<li>the training examples are drawn independently</li>
+	<li>обучающие примеры строятся независимо</li>
 </ul>
 <br>
 <p><span class="new-item item-g">Shattering</span> Given a set $S=\{x^{(1)},...,x^{(d)}\}$, and a set of classifiers $\mathcal{H}$, we say that $\mathcal{H}$ shatters $S$ if for any set of labels $\{y^{(1)}, ..., y^{(d)}\}$, we have:</p>
