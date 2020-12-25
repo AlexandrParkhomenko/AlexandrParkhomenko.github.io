@@ -186,7 +186,7 @@
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#hyperparameters id=hyperparameters></a>Tuning hyperparameters</h2>
-<p><span class="new-item item-r">Parameter compatibility in convolution layer</span> By noting $I$ the length of the input volume size, $F$ the length of the filter, $P$ the amount of zero padding, $S$ the stride, then the output size $O$ of the feature map along that dimension is given by:</p>
+<p><span class="new-item item-r">Совместимость параметров в сверточном слое</span> Обозначим $I$ длину входного размера объёма, $F$ длину фильтра, $P$ длину дополнения нулями, $S$ шаг, затем выходной размер $O$ карты функций по этому измерению определяется как:</p>
 <div class=mobile-container>
 \[\boxed{O=\frac{I-F+P_\text{start} + P_\text{end}}{S}+1}\]
 </div>
@@ -268,7 +268,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#activation-function id=activation-function></a>Commonly used activation functions</h2>
-<p><span class="new-item item-g">Rectified Linear Unit</span> The rectified linear unit layer (ReLU) is an activation function $g$ that is used on all elements of the volume. It aims at introducing non-linearities to the network. Its variants are summarized in the table below:</p>
+<p><span class="new-item item-g">Блок линейной ректификации</span> Rectified Linear Unit layer (ReLU) - это функция активации $g$, которая используется для всех элементов объёма. Он направлен на привнесение в сеть нелинейностей. Его варианты приведены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:650px;">

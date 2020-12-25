@@ -81,7 +81,7 @@
 <h2><a aria-hidden=true class=anchor href=#introduction id=introduction></a>Introduction to Probability and Combinatorics</h2>
 <p><span class="new-item item-g">Sample space</span> The set of all possible outcomes of an experiment is known as the sample space of the experiment and is denoted by $S$.</p>
 <br>
-<p><span class="new-item item-g">Event</span> Any subset $E$ of the sample space is known as an event. That is, an event is a set consisting of possible outcomes of the experiment. If the outcome of the experiment is contained in $E$, then we say that $E$ has occurred.</p>
+<p><span class="new-item item-g">Событие</span> Любое подмножество $E$ пространства выборки известно как событие. То есть событие - это набор, состоящий из возможных результатов эксперимента. Если результат эксперимента содержится в $E$, то мы говорим, что $E$ произошло.</p>
 <br>
 <p><span class="new-item item-g">Axioms of probability</span> For each event $E$, we denote $P(E)$ as the probability of event $E$ occurring.</p>
 <p><i>Axiom 1</i> ― Every probability is between 0 and 1 included, i.e:</p>
@@ -148,14 +148,14 @@
 \[\boxed{P(A_k|B)=\frac{P(B|A_k)P(A_k)}{\displaystyle\sum_{i=1}^nP(B|A_i)P(A_i)}}\]
 </div>
 <br>
-<p><span class="new-item item-g">Independence</span> Two events $A$ and $B$ are independent if and only if we have:</p>
+<p><span class="new-item item-g">Независимость</span> два события $A$ и $B$ независимы тогда и только тогда, когда у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{P(A\cap B)=P(A)P(B)}\]
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#random-variables id=random-variables></a>Random Variables</h2>
 <h3>Definitions</h3>
-<p><span class="new-item item-g">Random variable</span> A random variable, often noted $X$, is a function that maps every element in a sample space to a real line.</p>
+<p><span class="new-item item-g">Случайная величина</span> случайная величина, которую часто называют $X$, представляет собой функцию, которая отображает каждый элемент в пространстве выборки на действительную линию.</p>
 <br>
 <p><span class="new-item item-g">Cumulative distribution function (CDF)</span> The cumulative distribution function $F$, which is monotonically non-decreasing and is such that $\underset{x\rightarrow-\infty}{\textrm{lim}}F(x)=0$ and $\underset{x\rightarrow+\infty}{\textrm{lim}}F(x)=1$, is defined as:</p>
 <div class=mobile-container>
@@ -168,7 +168,7 @@
 </div>
 <p><span class=remark>Remark: we have $P(a &lt; X\leqslant B)=F(b)-F(a)$.</span></p>
 <br>
-<p><span class="new-item item-g">Probability density function (PDF)</span> The probability density function $f$ is the probability that $X$ takes on values between two adjacent realizations of the random variable.</p>
+<p><span class="new-item item-g">Функция плотности вероятности</span> Probability density function (PDF) $f$ - это вероятность того, что $X$ принимает значения между двумя смежными реализациями случайной величины.</p>
 <br>
 <p><span class="new-item item-b">Relationships involving the PDF and CDF</span> Here are the important properties to know
 in the discrete (D) and the continuous (C) cases.</p>
@@ -366,7 +366,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 \[\boxed{f_{X|Y}(x)=\frac{f_{XY}(x,y)}{f_Y(y)}}\]
 </div>
 <br>
-<p><span class="new-item item-g">Independence</span> Two random variables $X$ and $Y$ are said to be independent if we have:</p>
+<p><span class="new-item item-g">Независимость</span> две случайные величины $X$ и $Y$ называются независимыми, если у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{f_{XY}(x,y)=f_X(x)f_Y(y)}\]
 </div>

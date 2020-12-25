@@ -81,14 +81,14 @@
 <h2><a aria-hidden=true class=anchor href=#intro id=intro></a>Introduction to Unsupervised Learning</h2>
 <p><span class="new-item item-b">Motivation</span> The goal of unsupervised learning is to find hidden patterns in unlabeled data $\{x^{(1)},...,x^{(m)}\}$.</p>
 <br>
-<p><span class="new-item item-r">Jensen's inequality</span> Let $f$ be a convex function and $X$ a random variable. We have the following inequality:</p>
+<p><span class="new-item item-r">Неравенство Йенсена</span> Пусть $f$ - выпуклая функция, а $X$ - случайная величина. $E$ - математическое ожидание. Имеем следующее неравенство:</p>
 <div class=mobile-container>
 \[\boxed{E[f(X)]\geqslant f(E[X])}\]
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#clustering id=clustering></a>Clustering</h2>
 <h3>Expectation-Maximization</h3>
-<p><span class="new-item item-r">Latent variables</span> Latent variables are hidden/unobserved variables that make estimation problems difficult, and are often denoted $z$. Here are the most common settings where there are latent variables:</p>
+<p><span class="new-item item-r">Скрытые величины</span> это скрытые/ненаблюдаемые величины, которые затрудняют задачи оценки, и часто обозначаются буквой $z$. Вот наиболее распространенные настройки, в которых присутствуют скрытые величины:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -204,7 +204,7 @@ the Calinski-Harabaz index $s(k)$ indicates how well a clustering model defines 
 <br>
 <p><span class=remark>Remark: the eigenvector associated with the largest eigenvalue is called principal eigenvector of matrix $A$.</span></p>
 <br>
-<p><span class="new-item item-g">Algorithm</span> The Principal Component Analysis (PCA) procedure is a dimension reduction technique that projects the data on $k$ dimensions by maximizing the variance of the data as follows:
+<p><span class="new-item item-g">Алгоритм</span> Principal Component Analysis (PCA) - это метод уменьшения размерности, который проецирует данные на $k$ измерений, максимизируя дисперсию данных следующим образом:
 </p><ul>
 <li><u>Step 1</u>: Normalize the data to have a mean of 0 and standard deviation of 1.
 <div class=mobile-container>

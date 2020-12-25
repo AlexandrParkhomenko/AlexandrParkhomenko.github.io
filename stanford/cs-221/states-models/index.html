@@ -106,7 +106,7 @@
 <br>
 <p><span class="new-item item-b">Iterative deepening</span> The iterative deepening trick is a modification of the depth-first search algorithm so that it stops after reaching a certain depth, which guarantees optimality when all action costs are equal. Here, we assume that action costs are equal to a constant $c\geqslant0$.</p>
 <br>
-<p><span class="new-item item-r">Tree search algorithms summary</span> By noting $b$ the number of actions per state, $d$ the solution depth, and $D$ the maximum depth, we have:</p>
+<p><span class="new-item item-r">Сводка алгоритмов поиска по дереву</span> отметив $b$ количество действий на состояние, $d$ глубину решения и $D$ максимальную глубину, которую мы имеем:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:500px;">
@@ -274,7 +274,7 @@
 </div>
 <p><span class=remark>Remark: this algorithm can be seen as a biased version of UCS exploring states estimated to be closer to the end state.</span></p>
 <br>
-<p><span class="new-item item-b">Consistency</span> A heuristic $h$ is said to be consistent if it satisfies the two following properties:
+<p><span class="new-item item-b">Консистентность</span> Эвристика $h$ называется согласованной (консистентной) при удовлетворении двух следующих свойств:
 </p><ul>
 <li>For all states $s$ and actions $a$,
 <div class=mobile-container>
@@ -299,12 +299,12 @@
 <br>
 <p><span class="new-item item-r">Correctness</span> If $h$ is consistent, then $A^*$ returns the minimum cost path.</p>
 <br>
-<p><span class="new-item item-g">Admissibility</span> A heuristic $h$ is said to be admissible if we have:</p>
+<p><span class="new-item item-g">Допустимость</span> Говорят, что эвристика $h$ допустима, если у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{h(s)\leqslant\textrm{FutureCost}(s)}\]
 </div>
 <br>
-<p><span class="new-item item-r">Theorem</span> Let $h(s)$ be a given heuristic. We have:</p>
+<p><span class="new-item item-r">Теорема</span> Пусть $h(s)$ - заданная эвристика. У нас есть:</p>
 <div class=mobile-container>
 \[\boxed{h(s)\textrm{ consistent}\Longrightarrow h(s)\textrm{ admissible}}\]
 </div>

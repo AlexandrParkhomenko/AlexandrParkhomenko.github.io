@@ -313,7 +313,7 @@
 <h3>$k$-means</h3>
 <p><span class="new-item item-g">Clustering</span> Given a training set of $n$ input points $\mathcal{D}_{\textrm{train}}$, the goal of a clustering algorithm is to assign each point $\phi(x_i)$ to a cluster $z_i\in\{1,...,k\}$.</p>
 <br>
-<p><span class="new-item item-r">Objective function</span> The loss function for one of the main clustering algorithms, $k$-means, is given by:</p>
+<p><span class="new-item item-r">Целевая функция</span> функция потерь для одного из основных алгоритмов кластеризации, $k$-средних, определяется выражением:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{Loss}_{\textrm{k-means}}(x,\mu)=\sum_{i=1}^n||\phi(x_i)-\mu_{z_i}||^2}\]
 </div>
@@ -339,7 +339,7 @@
 <br>
 <p><span class=remark>Remark: the eigenvector associated with the largest eigenvalue is called principal eigenvector of matrix $A$.</span></p>
 <br>
-<p><span class="new-item item-r">Algorithm</span> The Principal Component Analysis (PCA) procedure is a dimension reduction technique that projects the data on $k$ dimensions by maximizing the variance of the data as follows:
+<p><span class="new-item item-r">Алгоритм</span> процедура метода главных компонент - это метод уменьшения размерности, который проецирует данные по $k$ измерениям, максимизируя дисперсию данных следующим образом:
 <br>- <u>Step 1</u>: Normalize the data to have a mean of 0 and standard deviation of 1.
 </p><div class=mobile-container>
 \[\boxed{\phi_j(x_i)\leftarrow\frac{\phi_j(x_i)-\mu_j}{\sigma_j}}\quad\textrm{where}\quad\boxed{\mu_j = \frac{1}{n}\sum_{i=1}^n\phi_j(x_i)}\quad\textrm{and}\quad\boxed{\sigma_j^2=\frac{1}{n}\sum_{i=1}^n(\phi_j(x_i)-\mu_j)^2}\]
