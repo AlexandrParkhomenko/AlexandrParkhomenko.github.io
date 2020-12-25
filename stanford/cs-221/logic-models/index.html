@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Logic-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#basics>Basics</a></div> <div class=dropdown-container> <a href=#basics><span>Notations</span></a> <a href=#basics><span>Model</span></a> <a href=#basics><span>Interpretation function</span></a> <a href=#basics><span>Set of models</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#knowledge-base>Knowledge base</a></div> <div class=dropdown-container> <a href=#knowledge-base><span>Definition</span></a> <a href=#knowledge-base><span>Probabilistic interpretation</span></a> <a href=#knowledge-base><span>Satisfiability</span></a> <a href=#knowledge-base><span>Relationship with formulas</span></a> <a href=#knowledge-base><span>Forward inference</span></a> <a href=#knowledge-base><span>Rule properties</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#propositional-logic>Propositional logic</a></div> <div class=dropdown-container> <a href=#propositional-logic><span>Clauses</span></a> <a href=#propositional-logic><span>Modus ponens</span></a> <a href=#propositional-logic><span>Conjunctive normal form</span></a> <a href=#propositional-logic><span>Representation equivalence</span></a> <a href=#propositional-logic><span>Resolution</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#first-order-logic>First-order logic</a></div> <div class=dropdown-container> <a href=#first-order-logic><span>Substitution</span></a> <a href=#first-order-logic><span>Unification</span></a> <a href=#first-order-logic><span>Resolution rule</span></a> <a href=#first-order-logic><span>Modus ponens</span></a> <a href=#first-order-logic><span>Resolution</span></a> <a href=#first-order-logic><span>Semi-decidability</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-logic-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Logic-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#basics>Основы</a></div> <div class=dropdown-container> <a href=#basics><span>Обозначения</span></a> <a href=#basics><span>Модель</span></a> <a href=#basics><span>Функция интерпретации</span></a> <a href=#basics><span>Набор моделей</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#knowledge-base>База знаний</a></div> <div class=dropdown-container> <a href=#knowledge-base><span>Определение</span></a> <a href=#knowledge-base><span>Вероятностная интерпретация</span></a> <a href=#knowledge-base><span>Выполнимость</span></a> <a href=#knowledge-base><span>Связь с формулами</span></a> <a href=#knowledge-base><span>Прямой вывод</span></a> <a href=#knowledge-base><span>Свойства правил</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#propositional-logic>Логика высказываний</a></div> <div class=dropdown-container> <a href=#propositional-logic><span>Дизъюнкты</span></a> <a href=#propositional-logic><span>Modus ponens</span></a> <a href=#propositional-logic><span>Конъюнктивная нормальная форма</span></a> <a href=#propositional-logic><span>Эквивалентность представлений</span></a> <a href=#propositional-logic><span>Разрешение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#first-order-logic>Логика первого порядка</a></div> <div class=dropdown-container> <a href=#first-order-logic><span>Подстановка</span></a> <a href=#first-order-logic><span>Объединение</span></a> <a href=#first-order-logic><span>Правило разрешения</span></a> <a href=#first-order-logic><span>Modus ponens</span></a> <a href=#first-order-logic><span>Разрешение</span></a> <a href=#first-order-logic><span>Полуразрешимость</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-logic-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -62,7 +62,7 @@
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
-<h2><a aria-hidden=true class=anchor href=#basics id=basics></a>Basics</h2>
+<h2><a aria-hidden=true class=anchor href=#basics id=basics></a>Основы</h2>
 <p><span class="new-item item-b">Syntax of propositional logic</span> By noting $f,g$ formulas, and $\neg, \wedge, \vee, \rightarrow, \leftrightarrow$ connectives, we can write the following logical expressions:</p>
 <div class=mobile-container>
 <center>
@@ -75,43 +75,43 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Name</b></td>
-<td align=center><b>Symbol</b></td>
-<td align=center><b>Meaning</b></td>
-<td align=center><b>Illustration</b></td>
+<td align=center><b>Название</b></td>
+<td align=center><b>Символ</b></td>
+<td align=center><b>Значение</b></td>
+<td align=center><b>Иллюстрация</b></td>
 </tr>
 <tr>
-<td align=center valign=center>Affirmation</td>
+<td align=center valign=center>Утверждение</td>
 <td align=center valign=center>$f$</td>
 <td align=center valign=center>$f$</td>
 <td align=center><img alt=Affirmation class=img-responsive netsrc=teaching/cs-221/illustrations/syntax-propositional/ src=001.png?8b4ce55185cf99cf546bdd22d54a0dca></td>
 </tr>
 <tr>
-<td align=center valign=center>Negation</td>
+<td align=center valign=center>Отрицание</td>
 <td align=center valign=center>$\neg f$</td>
 <td align=center valign=center>not $f$</td>
 <td align=center><img alt=Negation class=img-responsive netsrc=teaching/cs-221/illustrations/syntax-propositional/ src=002.png?f502aa346e8470f137d47ca33a558771></td>
 </tr>
 <tr>
-<td align=center valign=center>Conjunction</td>
+<td align=center valign=center>Конъюнкция</td>
 <td align=center valign=center>$f\wedge g$</td>
 <td align=center valign=center>$f$ and $g$</td>
 <td align=center><img alt=Conjunction class=img-responsive netsrc=teaching/cs-221/illustrations/syntax-propositional/ src=003.png?4d8dd97eb76eb95d30e03c5a57600dfa></td>
 </tr>
 <tr>
-<td align=center valign=center>Disjunction</td>
+<td align=center valign=center>Дизъюнкция</td>
 <td align=center valign=center>$f\vee g$</td>
 <td align=center valign=center>$f$ or $g$</td>
 <td align=center><img alt=Disjunction class=img-responsive netsrc=teaching/cs-221/illustrations/syntax-propositional/ src=004.png?7df9acc116a8a200bb320e9c359a62b0></td>
 </tr>
 <tr>
-<td align=center valign=center>Implication</td>
+<td align=center valign=center>Импликация</td>
 <td align=center valign=center>$f\rightarrow g$</td>
 <td align=center valign=center>if $f$ then $g$</td>
 <td align=center><img alt=Implication class=img-responsive netsrc=teaching/cs-221/illustrations/syntax-propositional/ src=005.png?4b7ec8235922dc3a1dbb4d1a3add77b2></td>
 </tr>
 <tr>
-<td align=center valign=center>Biconditional</td>
+<td align=center valign=center>Biconditional (Эквивалентность)</td>
 <td align=center valign=center>$f\leftrightarrow g$</td>
 <td align=center valign=center>$f$, that is to say $g$</td>
 <td align=center><img alt=Biconditional class=img-responsive netsrc=teaching/cs-221/illustrations/syntax-propositional/ src=006.png?ba2e1677fe1291d9b133afce0f1b6234></td>
@@ -135,7 +135,7 @@
 \[\boxed{\mathcal{M}(f) = \{w\, |\, \mathcal{I}(f,w)=1\}}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#knowledge-base id=knowledge-base></a>Knowledge base</h2>
+<h2><a aria-hidden=true class=anchor href=#knowledge-base id=knowledge-base></a>База знаний</h2>
 <p><span class="new-item item-g">Definition</span> The knowledge base $\textrm{KB}$ is the conjunction of all formulas that have been considered so far. The set of models of the knowledge base is the intersection of the set of models that satisfy each formula. In other words:</p>
 <div class=mobile-container>
 \[\boxed{\mathcal{M}(\textrm{KB})=\bigcap_{f\in\textrm{KB}}\mathcal{M}(f)}\]
@@ -170,10 +170,10 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Name</b></td>
-<td align=center><b>Mathematical formulation</b></td>
-<td align=center><b>Illustration</b></td>
-<td align=center><b>Notes</b></td>
+<td align=center><b>Название</b></td>
+<td align=center><b>Математическая формулировка</b></td>
+<td align=center><b>Иллюстрация</b></td>
+<td align=center><b>Примечания</b></td>
 </tr>
 <tr>
 <td align=center valign=center>$\textrm{KB}$ entails $f$</td>
@@ -229,19 +229,19 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Name</b></td>
-<td align=center><b>Mathematical formulation</b></td>
-<td align=center><b>Notes</b></td>
+<td align=center><b>Название</b></td>
+<td align=center><b>Математическая формулировка</b></td>
+<td align=center><b>Примечания</b></td>
 </tr>
 <tr>
-<td align=center>Soundness</td>
+<td align=center>Обоснованность</td>
 <td align=center>$\{f \, | \, \textrm{KB}\vdash f\}\subseteq\{f \, | \, \textrm{KB}\models f\}$</td>
 <td align=left>• Inferred formulas are entailed by $\textrm{KB}$<br>
 • Можно проверить одно правило за раз<br>
 • <i>"Ничего кроме правды"</i></td>
 </tr>
 <tr>
-<td align=center>Completeness</td>
+<td align=center>Полнота</td>
 <td align=center>$\{f \, | \, \textrm{KB}\vdash f\}\supseteq\{f \, | \, \textrm{KB}\models f\}$</td>
 <td align=left>• Formulas entailing $\textrm{KB}$ are either already in the knowledge base or inferred from it<br>
 • <i>"The whole truth"</i>
@@ -252,7 +252,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#propositional-logic id=propositional-logic></a>Propositional logic</h2>
+<h2><a aria-hidden=true class=anchor href=#propositional-logic id=propositional-logic></a>Логика высказываний</h2>
 <p>В этом разделе мы рассмотрим модели на основе логики, в которых используются логические формулы и правила вывода. Идея состоит в том, чтобы сбалансировать выразительность и вычислительную эффективность.</p>
 <p><span class="new-item item-r">Horn clause</span> By noting $p_1,...,p_k$ and $q$ propositional symbols, a Horn clause has the form:</p>
 <div class=mobile-container>
@@ -283,9 +283,9 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </colgroup>
 <tbody>
 <tr>
-<td align=center colspan=2><b>Rule name</b></td>
-<td align=center><b>Initial</b></td>
-<td align=center><b>Converted</b></td>
+<td align=center colspan=2><b>Имя правила</b></td>
+<td align=center><b>Начальное</b></td>
+<td align=center><b>Преобразованное</b></td>
 </tr>
 <tr>
 <td align=center rowspan=3>Eliminate</td>
@@ -337,7 +337,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </li><li><u>Step 3</u>: Return unsatisfiable if and only if $\text{False}$ is derived<p></p>
 </li></ul>
 <br>
-<h2><a aria-hidden=true class=anchor href=#first-order-logic id=first-order-logic></a>First-order logic</h2>
+<h2><a aria-hidden=true class=anchor href=#first-order-logic id=first-order-logic></a>Логика первого порядка</h2>
 <p>Идея здесь состоит в том, чтобы использовать переменные для получения более компактных представлений знаний.</p>
 <p><span class="new-item item-g">Модель</span> Модель $w$ в логике первого порядка отображает:
 </p><ul>

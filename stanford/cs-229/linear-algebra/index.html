@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Algebra and Calculus</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#notations>General notations</a></div> <div class=dropdown-container> <a href=#notations><span>Definitions</span></a> <a href=#notations><span>Main matrices</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#operations>Matrix operations</a></div> <div class=dropdown-container> <a href=#operations><span>Multiplication</span></a> <a href=#operations><span>Other operations</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#properties>Matrix properties</a></div> <div class=dropdown-container> <a href=#properties><span>Norm</span></a> <a href=#properties><span>Eigenvalue/eigenvector</span></a> <a href=#properties><span>Singular-value decomposition</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#calculus>Matrix calculus</a></div> <div class=dropdown-container> <a href=#calculus><span>Gradient</span></a> <a href=#calculus><span>Hessian</span></a> <a href=#calculus><span>Operations</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/refresher-algebra-calculus.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Algebra and Calculus</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#notations>Общие обозначения</a></div> <div class=dropdown-container> <a href=#notations><span>Определения</span></a> <a href=#notations><span>Основные матрицы</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#operations>Матричные операции</a></div> <div class=dropdown-container> <a href=#operations><span>Умножение</span></a> <a href=#operations><span>Прочие операции</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#properties>Свойства матрицы</a></div> <div class=dropdown-container> <a href=#properties><span>Норма</span></a> <a href=#properties><span>Eigenvalue/eigenvector</span></a> <a href=#properties><span>Сингулярное разложение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#calculus>Матричное исчисление</a></div> <div class=dropdown-container> <a href=#calculus><span>Градиент</span></a> <a href=#calculus><span>Гессиан</span></a> <a href=#calculus><span>Операции</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/refresher-algebra-calculus.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -79,8 +79,8 @@
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
-<h2><a aria-hidden=true class=anchor href=#notations id=notations></a>General notations</h2>
-<h3>Definitions</h3>
+<h2><a aria-hidden=true class=anchor href=#notations id=notations></a>Общие обозначения</h2>
+<h3>Определения</h3>
 <p><span class="new-item item-b">Vector</span> We note $x\in\mathbb{R}^n$ a vector with $n$ entries, where $x_i\in\mathbb{R}$ is the $i^{th}$ entry:</p>
 <div class=mobile-container>
 \[x=\left(\begin{array}{c}x_1\\x_2\\\vdots\\x_n\end{array}\right)\in\mathbb{R}^n\]
@@ -92,7 +92,7 @@
 </div>
 <p><span class=remark>Remark: the vector $x$ defined above can be viewed as a $n\times1$ matrix and is more particularly called a column-vector.</span></p>
 <br>
-<h3>Main matrices</h3>
+<h3>Основные матрицы</h3>
 <p><span class="new-item item-b">Identity matrix</span> The identity matrix $I\in\mathbb{R}^{n\times n}$ is a square matrix with ones in its diagonal and zero everywhere else:</p>
 <div class=mobile-container>
 \[I=\left(\begin{array}{cccc}1&amp;0&amp; \cdots&amp;0\\0&amp; \ddots&amp; \ddots&amp; \vdots\\\vdots&amp; \ddots&amp; \ddots&amp;0\\0&amp; \cdots&amp;0&amp;1\end{array}\right)\]
@@ -105,8 +105,8 @@
 </div>
 <p><span class=remark>Remark: we also note $D$ as $\textrm{diag}(d_1,...,d_n)$.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#operations id=operations></a>Matrix operations</h2>
-<h3>Multiplication</h3>
+<h2><a aria-hidden=true class=anchor href=#operations id=operations></a>Матричные операции</h2>
+<h3>Умножение</h3>
 <p><span class="new-item item-r">Вектор-вектор</span> существует два типа векторно-векторных произведений:
 </p><ul>
 <li>inner product: for $x,y\in\mathbb{R}^n$, we have:
@@ -132,7 +132,7 @@ where $a_{r,i}^T$ are the vector rows and $a_{c,j}$ are the vector columns of $A
 </div>
 where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the vector columns of $A$ and $B$ respectively.<p></p>
 <br>
-<h3>Other operations</h3>
+<h3>Прочие операции</h3>
 <p><span class="new-item item-g">Transpose</span> The transpose of a matrix $A\in\mathbb{R}^{m\times n}$, noted $A^T$, is such that its entries are flipped:</p>
 <div class=mobile-container>
 \[\boxed{\forall i,j,\quad\quad A_{i,j}^T=A_{j,i}}\]
@@ -157,8 +157,8 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 </div>
 <p><span class=remark>Remark: $A$ is invertible if and only if $|A|\neq0$. Also, $|AB|=|A||B|$ and $|A^T|=|A|$.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#properties id=properties></a>Matrix properties</h2>
-<h3>Definitions</h3>
+<h2><a aria-hidden=true class=anchor href=#properties id=properties></a>Свойства матрицы</h2>
+<h3>Определения</h3>
 <p><span class="new-item item-r">Symmetric decomposition</span> A given matrix $A$ can be expressed in terms of its symmetric and antisymmetric parts as follows:</p>
 <div class=mobile-container>
 \[\boxed{A=\underbrace{\frac{A+A^T}{2}}_{\textrm{Symmetric}}+\underbrace{\frac{A-A^T}{2}}_{\textrm{Antisymmetric}}}\]
@@ -175,10 +175,10 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 <table>
 <tbody>
 <tr>
-<td align=center><b>Norm</b></td>
-<td align=center><b>Notation</b></td>
-<td align=center><b>Definition</b></td>
-<td align=center><b>Use case</b></td>
+<td align=center><b>Норма</b></td>
+<td align=center><b>Обозначение</b></td>
+<td align=center><b>Определение</b></td>
+<td align=center><b>Вариант использования</b></td>
 </tr>
 <tr>
 <td align=center>Manhattan, $L^1$</td>
@@ -235,7 +235,7 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 \[\boxed{A=U\Sigma V^T}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#calculus id=calculus></a>Matrix calculus</h2>
+<h2><a aria-hidden=true class=anchor href=#calculus id=calculus></a>Матричное исчисление</h2>
 <p><span class="new-item item-b">Gradient</span> Let $f:\mathbb{R}^{m\times n}\rightarrow\mathbb{R}$ be a function and $A\in\mathbb{R}^{m\times n}$ be a matrix. The gradient of $f$ with respect to $A$ is a $m\times n$ matrix, noted $\nabla_A f(A)$, such that:</p>
 <div class=mobile-container>
 \[\boxed{\Big(\nabla_A f(A)\Big)_{i,j}=\frac{\partial f(A)}{\partial A_{i,j}}}\]

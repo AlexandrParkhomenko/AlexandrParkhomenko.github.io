@@ -12,7 +12,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Variables-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#factor-graphs>Factor graphs</a></div> <div class=dropdown-container> <a href=#factor-graphs><span>Arity</span></a> <a href=#factor-graphs><span>Assignment weight</span></a> <a href=#factor-graphs><span>Constraint satisfaction problem</span></a> <a href=#factor-graphs><span>Consistent assignment</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#dynamic-ordering>Dynamic ordering</a></div> <div class=dropdown-container> <a href=#dynamic-ordering><span>Dependent factors</span></a> <a href=#dynamic-ordering><span>Backtracking search</span></a> <a href=#dynamic-ordering><span>Forward checking</span></a> <a href=#dynamic-ordering><span>Most constrained variable</span></a> <a href=#dynamic-ordering><span>Least constrained value</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#approximate-methods>Approximate methods</a></div> <div class=dropdown-container> <a href=#approximate-methods><span>Beam search</span></a> <a href=#approximate-methods><span>Iterated conditional modes</span></a> <a href=#approximate-methods><span>Gibbs sampling</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#factor-graph-transformations>Factor graph transformations</a></div> <div class=dropdown-container> <a href=#factor-graph-transformations><span>Conditioning</span></a> <a href=#factor-graph-transformations><span>Elimination</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#bayesian-networks>Bayesian networks</a></div> <div class=dropdown-container> <a href=#bayesian-networks><span>Definition</span></a> <a href=#bayesian-networks><span>Locally normalized</span></a> <a href=#bayesian-networks><span>Marginalization</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#probabilistic-program>Probabilistic program</a></div> <div class=dropdown-container> <a href=#probabilistic-program><span>Concept</span></a> <a href=#probabilistic-program><span>Summary</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#inference>Inference</a></div> <div class=dropdown-container> <a href=#inference><span>Forward-backward algorithm</span></a> <a href=#inference><span>Gibbs sampling</span></a> <a href=#inference><span>Laplace smoothing</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-variables-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Variables-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#factor-graphs>Факторные графы</a></div> <div class=dropdown-container> <a href=#factor-graphs><span>Арность</span></a> <a href=#factor-graphs><span>Вес присвоения</span></a> <a href=#factor-graphs><span>Задачи удовлетворения ограничений</span></a> <a href=#factor-graphs><span>Непротиворечивое присвоение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#dynamic-ordering>Динамическое упорядочивание</a></div> <div class=dropdown-container> <a href=#dynamic-ordering><span>Зависимые факторы</span></a> <a href=#dynamic-ordering><span>Поиск с возвратом</span></a> <a href=#dynamic-ordering><span>Прямая проверка</span></a> <a href=#dynamic-ordering><span>Наиболее ограниченная переменная</span></a> <a href=#dynamic-ordering><span>Наименьшее ограниченное значение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#approximate-methods>Аппроксимационные методы</a></div> <div class=dropdown-container> <a href=#approximate-methods><span>Лучевой поиск</span></a> <a href=#approximate-methods><span>Итерированные условные режимы</span></a> <a href=#approximate-methods><span>выборка по Гиббсу</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#factor-graph-transformations>Преобразования факторных графов</a></div> <div class=dropdown-container> <a href=#factor-graph-transformations><span>Кондиционирование</span></a> <a href=#factor-graph-transformations><span>Устранение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#bayesian-networks>Байесовские сети</a></div> <div class=dropdown-container> <a href=#bayesian-networks><span>Определение</span></a> <a href=#bayesian-networks><span>Локально нормализованные</span></a> <a href=#bayesian-networks><span>Маргинализация</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#probabilistic-program>Вероятностная программа</a></div> <div class=dropdown-container> <a href=#probabilistic-program><span>Концепция</span></a> <a href=#probabilistic-program><span>Сводка</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#inference>Байесовский вывод</a></div> <div class=dropdown-container> <a href=#inference><span>Алгоритм прямого-обратного хода</span></a> <a href=#inference><span>выборка по Гиббсу</span></a> <a href=#inference><span>Сглаживание Лапласа</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-variables-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -61,9 +61,9 @@
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
-<h2>Constraint satisfaction problems</h2>
+<h2>Задачи удовлетворения ограничений</h2>
 <p>В этом разделе наша цель - найти максимальное присвоение веса моделям на основе переменных. Одно из преимуществ по сравнению с моделями, основанными на состояниях, состоит в том, что эти алгоритмы более удобны для кодирования специфичных для задачи ограничений.</p>
-<h3><a aria-hidden=true class=anchor href=#factor-graphs id=factor-graphs></a>Factor graphs</h3>
+<h3><a aria-hidden=true class=anchor href=#factor-graphs id=factor-graphs></a>Факторные графы</h3>
 <p><span class="new-item item-b">Definition</span> A factor graph, also referred to as a Markov random field, is a set of variables $X=(X_1,...,X_n)$ where $X_i\in\textrm{Domain}_i$ and $m$ factors $f_1,...,f_m$ with each $f_j(X)\geqslant 0$.</p>
 <div class=mobile-container>
 <center>
@@ -92,7 +92,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </center>
 </div>
 <br>
-<h3><a aria-hidden=true class=anchor href=#dynamic-ordering id=dynamic-ordering></a>Dynamic ordering</h3>
+<h3><a aria-hidden=true class=anchor href=#dynamic-ordering id=dynamic-ordering></a>Динамическое упорядочивание</h3>
 <p><span class="new-item item-g">Dependent factors</span> The set of dependent factors of variable $X_i$ with partial assignment $x$ is called $D(x,X_i)$, and denotes the set of factors that link $X_i$ to already assigned variables.</p>
 <br>
 <p><span class="new-item item-r">Backtracking search</span> Backtracking search is an algorithm used to find maximum weight assignments of a factor graph. At each step, it chooses an unassigned variable and explores its values by recursion. Dynamic ordering (<i>i.e.</i> choice of variables and values) and lookahead (<i>i.e.</i> early elimination of inconsistent options) can be used to explore the graph more efficiently, although the worst-case runtime stays exponential: $O(|\text{Domain}|^n)$.</p>
@@ -125,7 +125,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <p><span class="new-item item-r">AC-3</span> Алгоритм AC-3 - это многоэтапная эвристика упреждающего просмотра, которая применяет упреждающую проверку ко всем соответствующим переменным. После заданного присвоения она выполняет прямую проверку, а затем последовательно обеспечивает согласованность дуги по отношению к соседям переменных, для которых домен изменяется во время процесса.</p>
 <p><span class=remark>Примечание: AC-3 может быть реализован как итеративно, так и рекурсивно.</span></p>
 <br>
-<h3><a aria-hidden=true class=anchor href=#approximate-methods id=approximate-methods></a>Approximate methods</h3>
+<h3><a aria-hidden=true class=anchor href=#approximate-methods id=approximate-methods></a>Аппроксимационные методы</h3>
 <p><span class="new-item item-r">Beam search</span> Beam search is an approximate algorithm that extends partial assignments of $n$ variables of branching factor $b=|\textrm{Domain}|$ by exploring the $K$ top paths at each step. The beam size $K \in \{1,...,b^n\}$ controls the tradeoff between efficiency and accuracy. This algorithm has a time complexity of $O(n \cdot Kb\log(Kb))$.</p>
 <p><i>The example below illustrates a possible beam search of parameters $K = 2$, $b = 3$ and $n = 5$.</i></p>
 <div class=mobile-container>
@@ -147,7 +147,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <p></p>
 <p><span class=remark>Примечание: Выборка по Гиббсу можно рассматривать как вероятностный аналог ICM. Преимущество этого метода заключается в возможности избежать локальных минимумов в большинстве случаев.</span></p>
 <br>
-<h3><a aria-hidden=true class=anchor href=#factor-graph-transformations id=factor-graph-transformations></a>Factor graph transformations</h3>
+<h3><a aria-hidden=true class=anchor href=#factor-graph-transformations id=factor-graph-transformations></a>Преобразования факторных графов</h3>
 <p><span class="new-item item-g">Independence</span> Let $A,B$ be a partitioning of the variables $X$. We say that $A$ and $B$ are independent if there are no edges between $A$ and $B$ and we write:</p>
 <div class=mobile-container>
 \[\boxed{A\perp\!\!\!\!\perp B}\]
@@ -203,9 +203,9 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </div>
 <p><span class=remark>Примечание: поиск лучшего порядка переменных - это NP-сложная задача.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#bayesian-networks id=bayesian-networks></a>Bayesian networks</h2>
+<h2><a aria-hidden=true class=anchor href=#bayesian-networks id=bayesian-networks></a>Байесовские сети</h2>
 <p>В этом разделе нашей целью будет вычисление условных вероятностей. Какова вероятность того, что запрос предоставит доказательства?</p>
-<h3>Introduction</h3>
+<h3>Введение</h3>
 <p><span class="new-item item-g">Explaining away</span> Suppose causes $C_1$ and $C_2$ influence an effect $E$. Conditioning on the effect $E$ and on one of the causes (say $C_1$) changes the probability of the other cause (say $C_2$). In this case, we say that $C_1$ has explained away $C_2$.</p>
 <br>
 <p><span class="new-item item-g">Направленный ациклический граф</span> Directed acyclic graph (DAG) - это конечный ориентированный граф без ориентированных циклов.</p>
@@ -230,7 +230,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <br>
 <p><span class="new-item item-g">Маргинализация</span> маргинализация листового узла приводит к байесовской сети без этого узла.</p>
 <br>
-<h3><a aria-hidden=true class=anchor href=#probabilistic-program id=probabilistic-program></a>Probabilistic programs</h3>
+<h3><a aria-hidden=true class=anchor href=#probabilistic-program id=probabilistic-program></a>Вероятностные программы</h3>
 <p><span class="new-item item-b">Концепция</span> вероятностная программа рандомизирует присвоение переменных. Таким образом, мы можем записывать сложные байесовские сети, которые генерируют назначения, без необходимости явно указывать связанные вероятности.</p>
 <p><span class=remark>Примечание: примеры вероятностных программ включают скрытую марковскую модель (Hidden Markov model, HMM), факторную HMM, наивный байесовский алгоритм, скрытое распределение Дирихле, болезни и симптомы (SBD-LDA) и стохастические блочные модели.</span></p>
 <br>
@@ -246,37 +246,37 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Program</b></td>
-<td align=center><b>Algorithm</b></td>
-<td align=center><b>Illustration</b></td>
-<td align=center><b>Example</b></td>
+<td align=center><b>Программа</b></td>
+<td align=center><b>Алгоритм</b></td>
+<td align=center><b>Иллюстрация</b></td>
+<td align=center><b>Пример</b></td>
 </tr>
 <tr>
 <td align=center valign=center>Markov Model</td>
 <td align=left valign=center>Generate $X_i\sim p(X_i|X_{i-1})$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-1.png?6e4d6ca0714baa89294b193bc49fa832></td>
-<td align=center>Language modeling</td>
+<td align=center>Языковое моделирование</td>
 </tr>
 <tr>
 <td align=center valign=center>Hidden Markov Model<br>(HMM)</td>
 <td align=left valign=center>Generate $H_t\sim p(H_t|H_{t-1})$<br>
                               Generate $E_t\sim p(E_t|H_{t})$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-2.png?9775f4e07376395a94d34d4339b7aac5></td>
-<td align=center>Object tracking</td>
+<td align=center>Трекинг объектов</td>
 </tr>
 <tr>
 <td align=center valign=center>Factorial HMM</td>
 <td align=left valign=center>Generate $H_t^o\underset{\small o\in\{a,b\}}{\sim} p(H_t^o|H_{t-1}^o)$<br>
                               Generate $E_t\sim p(E_t|H_t^a,H_t^b)$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-3.png?49285b53aba41464df086b86841a02f8></td>
-<td align=center>Multiple object tracking</td>
+<td align=center>Трекинг нескольких объектов</td>
 </tr>
 <tr>
 <td align=center valign=center>Naive Bayes</td>
 <td align=left valign=center>Generate $Y\sim p(Y)$<br>
                               Generate $W_i\sim p(W_i|Y)$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-4.png?bf75f98f3cf02c590d9050d53eb2365f></td>
-<td align=center>Document classification</td>
+<td align=center>Классификация документов</td>
 </tr>
 <tr>
 <td align=center valign=center>Latent Dirichlet Allocation<br>(LDA)</td>
@@ -284,14 +284,14 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
                               Generate $Z_i\sim p(Z_i|\alpha)$<br>
                               Generate $W_i\sim p(W_i|Z_i)$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-5.png?42bff30421fe4f7acf5881f6bd7cd191></td>
-<td align=center>Topic modeling</td>
+<td align=center>Тематическое моделирование</td>
 </tr>
 </tbody>
 </table>
 </center>
 </div>
 <br>
-<h3><a aria-hidden=true class=anchor href=#inference id=inference></a>Inference</h3>
+<h3><a aria-hidden=true class=anchor href=#inference id=inference></a>Байесовский вывод</h3>
 <p><span class="new-item item-g">General probabilistic inference strategy</span> The strategy to compute the probability $P(Q | E=e)$ of query $Q$ given evidence $E=e$ is as follows:
 </p><ul>
 <li><u>Step 1</u>: Remove variables that are not ancestors of the query $Q$ or the evidence $E$ by marginalization

@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Supervised Learning</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#introduction>Introduction</a></div> <div class=dropdown-container> <a href=#introduction><span>Type of prediction</span></a> <a href=#introduction><span>Type of model</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#notations>Обозначения и основные понятия</a></div> <div class=dropdown-container> <a href=#notations><span>Loss function</span></a> <a href=#notations><span>Gradient descent</span></a> <a href=#notations><span>Likelihood</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#linear-models>Linear models</a></div> <div class=dropdown-container> <a href=#linear-models><span>Linear regression</span></a> <a href=#linear-models><span>Logisitic regression</span></a> <a href=#linear-models><span>Generalized linear models</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#svm>Support Vector Machines</a></div> <div class=dropdown-container> <a href=#svm><span>Optimal margin classifier</span></a> <a href=#svm><span>Hinge loss</span></a> <a href=#svm><span>Kernel</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#generative-learning>Generative learning</a></div> <div class=dropdown-container> <a href=#generative-learning><span>Gaussian Discriminant Analysis</span></a> <a href=#generative-learning><span>Naive Bayes</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#tree>Деревья и ансамблевые методы</a></div> <div class=dropdown-container> <a href=#tree><span>CART</span></a> <a href=#tree><span>Random forest</span></a> <a href=#tree><span>Boosting</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#other>Other methods</a></div> <div class=dropdown-container> <a href=#other><span>k-NN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-theory>Learning Theory</a></div> <div class=dropdown-container> <a href=#learning-theory><span>Hoeffding inequality</span></a> <a href=#learning-theory><span>PAC</span></a> <a href=#learning-theory><span>VC dimension</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-supervised-learning.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Supervised Learning</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#introduction>Введение</a></div> <div class=dropdown-container> <a href=#introduction><span>Тип предсказания</span></a> <a href=#introduction><span>Тип модели</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#notations>Обозначения и основные понятия</a></div> <div class=dropdown-container> <a href=#notations><span>Функция потерь</span></a> <a href=#notations><span>Градиентный спуск</span></a> <a href=#notations><span>Правдоподобие</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#linear-models>Линейные модели</a></div> <div class=dropdown-container> <a href=#linear-models><span>Линейная регрессия</span></a> <a href=#linear-models><span>Логистическая регрессия</span></a> <a href=#linear-models><span>Обобщенные линейные модели</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#svm>Метод Опорных Векторов</a></div> <div class=dropdown-container> <a href=#svm><span>Оптимальный Классификатор с Отступом</span></a> <a href=#svm><span>Hinge loss</span></a> <a href=#svm><span>Ядро</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#generative-learning>Генеративное обучение</a></div> <div class=dropdown-container> <a href=#generative-learning><span>Гауссовский дискриминантный анализ</span></a> <a href=#generative-learning><span>Наивный Байес</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#tree>Деревья и ансамблевые методы</a></div> <div class=dropdown-container> <a href=#tree><span>CART</span></a> <a href=#tree><span>Случайный лес</span></a> <a href=#tree><span>Boosting</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#other>Другие методы</a></div> <div class=dropdown-container> <a href=#other><span>k-NN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-theory>Теория вычислительного обучения</a></div> <div class=dropdown-container> <a href=#learning-theory><span>Неравенство Хёфдинга</span></a> <a href=#learning-theory><span>PAC</span></a> <a href=#learning-theory><span>VC размерность</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-supervised-learning.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -74,7 +74,7 @@
   </div>
 </div>
 <h1>
-  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Supervised Learning cheatsheet
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Шпаргалка по обучению с учителем
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
@@ -87,17 +87,17 @@
 <tbody>
 <tr>
 <td align=center><b></b></td>
-<td align=center><b>Regression</b></td>
+<td align=center><b>Регрессия</b></td>
 <td align=center><b>Classification</b></td>
 </tr>
 <tr>
-<td align=center><b>Outcome</b></td>
-<td align=center>Continuous</td>
-<td align=center>Class</td>
+<td align=center><b>Результат</b></td>
+<td align=center>Непрерывный</td>
+<td align=center>Класс</td>
 </tr>
 <tr>
-<td align=center><b>Examples</b></td>
-<td align=center>Linear regression</td>
+<td align=center><b>Примеры</b></td>
+<td align=center>Линейная регрессия</td>
 <td align=center>Logistic regression, SVM, Naive Bayes</td>
 </tr>
 </tbody>
@@ -117,26 +117,26 @@
 <tbody>
 <tr>
 <td align=center></td>
-<td align=center><b>Discriminative model</b></td>
-<td align=center><b>Generative model</b></td>
+<td align=center><b>Дискриминационная модель</b></td>
+<td align=center><b>Генеративная модель</b></td>
 </tr>
 <tr>
-<td align=center><b>Goal</b></td>
+<td align=center><b>Цель</b></td>
 <td align=left>Directly estimate $P(y|x)$</td>
 <td align=left>Estimate $P(x|y)$ to then deduce $P(y|x)$</td>
 </tr>
 <tr>
-<td align=center><b>What's learned</b></td>
-<td align=left>Decision boundary</td>
+<td align=center><b>Что изучено</b></td>
+<td align=left>Граница решения</td>
 <td align=left>Probability distributions of the data</td>
 </tr>
 <tr>
-<td align=center><b>Illustration</b></td>
+<td align=center><b>Иллюстрация</b></td>
 <td align=center style="width: 41%;"><img alt="Discriminative model" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=discriminative-model.png?767b34c21d43a4fd8b59683578e132f9></td>
 <td align=center style="width: 41%;"><img alt="Generative model" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=generative-model.png?df0642cec6e99ac162cd4848d26f41c3></td>
 </tr>
 <tr>
-<td align=center><b>Examples</b></td>
+<td align=center><b>Примеры</b></td>
 <td align=left>Regressions, SVMs</td>
 <td align=left>GDA, Naive Bayes</td>
 </tr>
@@ -160,10 +160,10 @@
     </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Least squared error</b></td>
-<td align=center><b>Logistic loss</b></td>
+<td align=center><b>Метод наименьших квадратов (LSE)</b></td>
+<td align=center><b>Логистическая функция потерь</b></td>
 <td align=center><b>Hinge loss</b></td>
-<td align=center><b>Cross-entropy</b></td>
+<td align=center><b>Перекрёстная энтропия</b></td>
 </tr>
 <tr>
 <td align=center>$\displaystyle\frac{1}{2}(y-z)^2$</td>
@@ -178,10 +178,10 @@
 <td align=center style="width: 25%;"><img alt="Cross entropy" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=cross-entropy.png?037ea4073873c9be4a7de099dac6d3b5></td>
 </tr>
 <tr>
-<td align=center>Linear regression</td>
-<td align=center>Logistic regression</td>
+<td align=center>Линейная регрессия</td>
+<td align=center>Логистическая регрессия</td>
 <td align=center>SVM</td>
-<td align=center>Neural Network</td>
+<td align=center>Нейронная сеть</td>
 </tr>
 </tbody>
 </table>
@@ -219,8 +219,8 @@
 \[\theta\leftarrow\theta-\left(\nabla_\theta^2\ell(\theta)\right)^{-1}\nabla_\theta\ell(\theta)\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#linear-models id=linear-models></a>Linear models</h2>
-<h3>Linear regression</h3>
+<h2><a aria-hidden=true class=anchor href=#linear-models id=linear-models></a>Линейные модели</h2>
+<h3>Линейная регрессия</h3>
 <p>We assume here that $y|x;\theta\sim\mathcal{N}(\mu,\sigma^2)$</p>
 <p><span class="new-item item-g">Normal equations</span> By noting $X$ the design matrix, the value of $\theta$ that minimizes the cost function is a closed-form solution such that:</p>
 <div class=mobile-container>
@@ -255,7 +255,7 @@
 \[\boxed{\displaystyle\phi_i=\frac{\exp(\theta_i^Tx)}{\displaystyle\sum_{j=1}^K\exp(\theta_j^Tx)}}\]
 </div>
 <br>
-<h3>Generalized Linear Models</h3>
+<h3>Обобщенные линейные модели</h3>
 <p><span class="new-item item-r">Exponential family</span> A class of distributions is said to be in the exponential family if it can be written in terms of a natural parameter, also called the canonical parameter or link function, $\eta$, a sufficient statistic $T(y)$ and a log-partition function $a(\eta)$ as follows:</p>
 <div class=mobile-container>
 \[\boxed{p(y;\eta)=b(y)\exp(\eta T(y)-a(\eta))}\]
@@ -267,35 +267,35 @@
 <table>
 <tbody>
 <tr>
-<td align=center><b>Distribution</b></td>
+<td align=center><b>Распределения</b></td>
 <td align=center><b>$\eta$</b></td>
 <td align=center><b>$T(y)$</b></td>
 <td align=center><b>$a(\eta)$</b></td>
 <td align=center><b>$b(y)$</b></td>
 </tr>
 <tr>
-<td align=center>Bernoulli</td>
+<td align=center>Бернулли</td>
 <td align=center>$\log\left(\frac{\phi}{1-\phi}\right)$</td>
 <td align=center>$y$</td>
 <td align=center>$\log(1+\exp(\eta))$</td>
 <td align=center>$1$</td>
 </tr>
 <tr>
-<td align=center>Gaussian</td>
+<td align=center>Гауссово</td>
 <td align=center>$\mu$</td>
 <td align=center>$y$</td>
 <td align=center>$\frac{\eta^2}{2}$</td>
 <td align=center>$\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{y^2}{2}\right)$</td>
 </tr>
 <tr>
-<td align=center>Poisson</td>
+<td align=center>Пуассон</td>
 <td align=center>$\log(\lambda)$</td>
 <td align=center>$y$</td>
 <td align=center>$e^{\eta}$</td>
 <td align=center>$\displaystyle\frac{1}{y!}$</td>
 </tr>
 <tr>
-<td align=center>Geometric</td>
+<td align=center>Геометрическое</td>
 <td align=center>$\log(1-\phi)$</td>
 <td align=center>$y$</td>
 <td align=center>$\log\left(\frac{e^\eta}{1-e^\eta}\right)$</td>
@@ -315,7 +315,7 @@
 <br>
 <p><span class=remark>Примечание: обыкновенный метод наименьших квадратов и логистическая регрессия являются частными случаями обобщенных линейных моделей.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#svm id=svm></a>Support Vector Machines</h2>
+<h2><a aria-hidden=true class=anchor href=#svm id=svm></a>Метод Опорных Векторов</h2>
 <p>Задача метода опорных векторов - найти линию, которая максимизирует минимальное расстояние до линии.</p>
 <p><span class="new-item item-b">Оптимальный Классификатор с Отступом</span> $h$ таков, что:</p>
 <div class=mobile-container>
@@ -352,9 +352,9 @@
 </div>
 <p><span class=remark>Remark: the coefficients $\beta_i$ are called the Lagrange multipliers.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#generative-learning id=generative-learning></a>Generative Learning</h2>
+<h2><a aria-hidden=true class=anchor href=#generative-learning id=generative-learning></a>Генеративное обучение</h2>
 <p>Генеративная модель сначала пытается узнать, как генерируются данные, оценивая $P(x|y)$, которое мы затем можем использовать для оценки $P(y|x)$ с помощью правила Байеса.</p>
-<h3>Gaussian Discriminant Analysis</h3>
+<h3>Гауссовский дискриминантный анализ</h3>
 <p><span class="new-item item-b">Настройка</span> Гауссовский дискриминантный анализ предполагает, что $y$ и $x|y=0$ и $x|y=1$ таковы, что:</p>
 <div class=row>
  <div class=col-sm-4>$(1)\quad\boxed{y\sim\textrm{Bernoulli}(\phi)}$</div>
@@ -382,7 +382,7 @@
 </center>
 </div>
 <br>
-<h3>Naive Bayes</h3>
+<h3>Наивный Байес</h3>
 <p><span class="new-item item-b">Допущение</span> Наивная байесовская модель предполагает, что все характеристики каждой точки данных независимы:</p>
 <div class=mobile-container>
 \[\boxed{P(x|y)=P(x_1,x_2,...|y)=P(x_1|y)P(x_2|y)...=\prod_{i=1}^nP(x_i|y)}\]
@@ -412,8 +412,8 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Adaptive boosting</b></td>
-<td align=center><b>Gradient boosting</b></td>
+<td align=center><b>Адаптивный бустинг</b></td>
+<td align=center><b>Градиентный бустинг</b></td>
 </tr>
 <tr>
 <td align=left>• Ошибкам уделяется большое внимание, чтобы их можно было исправить на следующем этапе усиления<br>
@@ -426,7 +426,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#other id=other></a>Other non-parametric approaches</h2>
+<h2><a aria-hidden=true class=anchor href=#other id=other></a>Другие непараметрические подходы</h2>
 <p><span class="new-item item-b">$k$-nearest neighbors</span> The $k$-nearest neighbors algorithm, commonly known as $k$-NN, is a non-parametric approach where the response of a data point is determined by the nature of its $k$ neighbors from the training set. It can be used in both classification and regression settings.</p>
 <p><span class=remark>Remark: the higher the parameter $k$, the higher the bias, and the lower the parameter $k$, the higher the variance.</span></p>
 <div class=mobile-container>
@@ -435,7 +435,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#learning-theory id=learning-theory></a>Learning Theory</h2>
+<h2><a aria-hidden=true class=anchor href=#learning-theory id=learning-theory></a>Теория вычислительного обучения</h2>
 <p><span class="new-item item-r">Union bound</span> Let $A_1, ..., A_k$ be $k$ events. We have:</p>
 <div class=mobile-container>
 \[\boxed{P(A_1\cup ...\cup A_k)\leqslant P(A_1)+...+P(A_k)}\]

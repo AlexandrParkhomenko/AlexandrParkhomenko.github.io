@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>States-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#tree-search>Tree search</a></div> <div class=dropdown-container> <a href=#tree-search><span>Backtracking search</span></a> <a href=#tree-search><span>Breadth-first search</span></a> <a href=#tree-search><span>Depth-first search</span></a> <a href=#tree-search><span>Iterative deepening</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#graph-search>Graph search</a></div> <div class=dropdown-container> <a href=#graph-search><span>Dynamic programming</span></a> <a href=#graph-search><span>Uniform cost search</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-costs>Learning costs</a></div> <div class=dropdown-container> <a href=#learning-costs><span>Structured perceptron</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#a-star>A star search</a></div> <div class=dropdown-container> <a href=#a-star><span>Heuristic function</span></a> <a href=#a-star><span>Algorithm</span></a> <a href=#a-star><span>Consistency, correctness</span></a> <a href=#a-star><span>Admissibility, efficiency</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#relaxation>Relaxation</a></div> <div class=dropdown-container> <a href=#relaxation><span>Relaxed search problem</span></a> <a href=#relaxation><span>Relaxed heuristic</span></a> <a href=#relaxation><span>Max heuristic</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#markov-decision-processes>Markov decision processes</a></div> <div class=dropdown-container> <a href=#markov-decision-processes><span>Overview</span></a> <a href=#markov-decision-processes><span>Policy evaluation</span></a> <a href=#markov-decision-processes><span>Value iteration</span></a> <a href=#markov-decision-processes><span>Transitions, rewards</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#game-playing>Game playing</a></div> <div class=dropdown-container> <a href=#game-playing><span>Expectimax</span></a> <a href=#game-playing><span>Minimax</span></a> <a href=#game-playing><span>Speeding up minimax</span></a> <a href=#game-playing><span>Simultaneous games</span></a> <a href=#game-playing><span>Non-zero-sum games</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-states-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>States-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#tree-search>Поиск по дереву</a></div> <div class=dropdown-container> <a href=#tree-search><span>Поиск с возвратом</span></a> <a href=#tree-search><span>Поиск в ширину</span></a> <a href=#tree-search><span>Поиск в глубину</span></a> <a href=#tree-search><span>С итеративным углублением</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#graph-search>Поиск по графу</a></div> <div class=dropdown-container> <a href=#graph-search><span>Динамическое программирование</span></a> <a href=#graph-search><span>Поиск по единой стоимости</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-costs>Стоимость обучения</a></div> <div class=dropdown-container> <a href=#learning-costs><span>Структурированный перцептрон</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#a-star>A со звездой поиск</a></div> <div class=dropdown-container> <a href=#a-star><span>Эвристическая функция</span></a> <a href=#a-star><span>Алгоритм</span></a> <a href=#a-star><span>Consistency, correctness</span></a> <a href=#a-star><span>Admissibility, efficiency</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#relaxation>Ослабление ограничений</a></div> <div class=dropdown-container> <a href=#relaxation><span>Задача с ослабленными ограничениями поиска</span></a> <a href=#relaxation><span>Ослабленная эвристика</span></a> <a href=#relaxation><span>Max эвристика</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#markov-decision-processes>Марковские процессы принятия решений</a></div> <div class=dropdown-container> <a href=#markov-decision-processes><span>Обзор</span></a> <a href=#markov-decision-processes><span>Оценка политики</span></a> <a href=#markov-decision-processes><span>Итерация ценности</span></a> <a href=#markov-decision-processes><span>Transitions, rewards</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#game-playing>Игровой процесс</a></div> <div class=dropdown-container> <a href=#game-playing><span>Expectimax</span></a> <a href=#game-playing><span>Minimax</span></a> <a href=#game-playing><span>Ускорение minimax</span></a> <a href=#game-playing><span>Одновременные игры</span></a> <a href=#game-playing><span>Игры с ненулевой суммой</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-states-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -62,9 +62,9 @@
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
-<h2>Search optimization</h2>
+<h2>Оптимизация поиска</h2>
 <p>In this section, we assume that by accomplishing action $a$ from state $s$, we deterministically arrive in state $\textrm{Succ}(s,a)$. The goal here is to determine a sequence of actions $(a_1,a_2,a_3,a_4,...)$ that starts from an initial state and leads to an end state. In order to solve this kind of problem, our objective will be to find the minimum cost path by using states-based models.</p>
-<h3><a aria-hidden=true class=anchor href=#tree-search id=ts></a>Tree search</h3>
+<h3><a aria-hidden=true class=anchor href=#tree-search id=ts></a>Поиск по дереву</h3>
 <p>Эта категория алгоритмов на основе состояний исследует все возможные состояния и действия. Он довольно эффективен с точки зрения памяти и подходит для огромных пространств состояний, но в худших случаях время выполнения может стать экспоненциальным.</p>
 <div class=mobile-container>
 <center>
@@ -118,10 +118,10 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Algorithm</b></td>
-<td align=center><b>Action costs</b></td>
-<td align=center><b>Space</b></td>
-<td align=center><b>Time</b></td>
+<td align=center><b>Алгоритм</b></td>
+<td align=center><b>Стоимость действий</b></td>
+<td align=center><b>Пространство</b></td>
+<td align=center><b>Время</b></td>
 </tr>
 <tr>
 <td align=center valign=top>Backtracking search</td>
@@ -152,7 +152,7 @@
 </center>
 </div>
 <br>
-<h3><a aria-hidden=true class=anchor href=#graph-search id=graph-search></a>Graph search</h3>
+<h3><a aria-hidden=true class=anchor href=#graph-search id=graph-search></a>Поиск по графу</h3>
 <p>Эта категория алгоритмов на основе состояний направлена на построение оптимальных путей, обеспечивающих экспоненциальную экономию. В этом разделе мы сосредоточимся на динамическом программировании и поиске по единой стоимости.</p>
 <p><span class="new-item item-g">Graph</span> A graph is comprised of a set of vertices $V$ (also called nodes) as well as a set of edges $E$ (also called links).</p>
 <div class=mobile-container>
@@ -185,8 +185,8 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>State</b></td>
-<td align=center><b>Explanation</b></td>
+<td align=center><b>Состояние</b></td>
+<td align=center><b>Объяснение</b></td>
 </tr>
 <tr>
 <td align=center valign=center>Explored $\mathcal{E}$</td>
@@ -228,10 +228,10 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Algorithm</b></td>
-<td align=center><b>Acyclicity</b></td>
-<td align=center><b>Costs</b></td>
-<td align=center><b>Time/space</b></td>
+<td align=center><b>Алгоритм</b></td>
+<td align=center><b>Ацикличность</b></td>
+<td align=center><b>Стоимость</b></td>
+<td align=center><b>Время/пространство</b></td>
 </tr>
 <tr>
 <td align=center valign=top>Dynamic programming</td>
@@ -251,7 +251,7 @@
 </div>
 <p><span class=remark>Примечание: обратный отсчет сложности предполагает, что количество возможных действий для каждого состояния будет постоянным.</span></p>
 <br>
-<h3><a aria-hidden=true class=anchor href=#learning-costs id=learning-costs></a>Learning costs</h3>
+<h3><a aria-hidden=true class=anchor href=#learning-costs id=learning-costs></a>Стоимость обучения</h3>
 <p>Suppose we are not given the values of $\textrm{Cost}(s,a)$, we want to estimate these quantities from a training set of minimizing-cost-path sequence of actions $(a_1, a_2, ..., a_k)$.</p>
 <p><span class="new-item item-g">Структурированный перцептрон</span> Структурированный перцептрон - это алгоритм итеративного изучения стоимости каждой пары состояние-действие. На каждом шагу, it:
 </p><ul>
@@ -320,7 +320,7 @@
 </div>
 <p><span class=remark>Примечание: большие значения $h(s)$ лучше, поскольку это уравнение показывает, что оно ограничивает набор состояний $s$, которые будут исследованы.</span></p>
 <br>
-<h3><a aria-hidden=true class=anchor href=#relaxation id=relaxation></a>Relaxation</h3>
+<h3><a aria-hidden=true class=anchor href=#relaxation id=relaxation></a>Ослабление ограничений</h3>
 <p>Это основа для создания последовательной эвристики. Идея состоит в том, чтобы найти сокращенные затраты в аналитическом виде, удалив ограничения и используя их в качестве эвристики.</p>
 <br>
 <p><span class="new-item item-g">Relaxed search problem</span> The relaxation of search problem $P$ with costs $\textrm{Cost}$ is denoted $P_{\textrm{rel}}$ with costs $\textrm{Cost}_{\textrm{rel}}$, and satisfies the identity:</p>
@@ -346,9 +346,9 @@
 \[\boxed{h_1(s),\textrm{ }h_2(s)\textrm{ consistent}\Longrightarrow h(s)=\max\{h_1(s),\textrm{ }h_2(s)\}\textrm{ consistent}}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#markov-decision-processes id=markov-decision-processes></a>Markov decision processes</h2>
+<h2><a aria-hidden=true class=anchor href=#markov-decision-processes id=markov-decision-processes></a>Марковские процессы принятия решений</h2>
 <p>In this section, we assume that performing action $a$ from state $s$ can lead to several states $s_1',s_2',...$ in a probabilistic manner. In order to find our way between an initial state and an end state, our objective will be to find the maximum value policy by using Markov decision processes that help us cope with randomness and uncertainty.</p>
-<h3>Notations</h3>
+<h3>Обозначения</h3>
 <p><span class="new-item item-b">Определение</span> Цель марковского процесса принятия решений - максимизировать вознаграждение. Он определяется с помощью:
   </p><ul>
     <li>a starting state $s_{\textrm{start}}$
@@ -397,7 +397,7 @@
 </div>
 <p><span class=remark>Remark: $V_\pi(s)$ is equal to 0 if $s$ is an end state.</span></p>
 <br>
-<h3>Applications</h3>
+<h3>Приложения</h3>
 <p><span class="new-item item-r">Policy evaluation</span> Given a policy $\pi$, policy evaluation is an iterative algorithm that aims at estimating $V_\pi$. It is done as follows:
 </p><ul>
 <li><u>Initialization</u>: for all states $s$, we have
@@ -493,7 +493,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 \[\boxed{\pi_\textrm{act}(s)=\left\{\begin{array}{ll}\underset{a\in\textrm{ Actions}}{\textrm{argmax }}\widehat{Q}_\textrm{opt}(s,a) &amp; \textrm{with proba }1-\epsilon\\\textrm{random from Actions}(s) &amp; \textrm{with proba }\epsilon\end{array}\right.}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#game-playing id=game-playing></a>Game playing</h2>
+<h2><a aria-hidden=true class=anchor href=#game-playing id=game-playing></a>Игровой процесс</h2>
 <p>В играх (например, шахматы, нарды, го) присутствуют другие агенты, которые необходимо учитывать при построении нашей политики.</p>
 <p><span class="new-item item-b">Дерево игры</span> Дерево игры - это дерево, которое описывает возможности игры. В частности, каждый узел является точкой принятия решения для игрока, а каждый путь от корня к листу - это возможный результат игры.</p>
 <br>
@@ -557,7 +557,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 </div>
 <p></p>
 <br>
-<h3>Speeding up minimax</h3>
+<h3>Ускорение minimax</h3>
 <p><span class="new-item item-g">Evaluation function</span> An evaluation function is a domain-specific and approximate estimate of the value $V_{\textrm{minimax}}(s)$. It is denoted $\textrm{Eval}(s)$.</p>
 <p><span class=remark>Remark: $\textrm{FutureCost}(s)$ is an analogy for search problems.</span></p>
 <br>
@@ -573,7 +573,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 \[\boxed{w\longleftarrow w-\eta\big[V(s,w)-(r+\gamma V(s',w))\big]\nabla_wV(s,w)}\]
 </div>
 <br>
-<h3>Simultaneous games</h3>
+<h3>Одновременные игры</h3>
 <p>Это полная противоположность пошаговым играм, где нет упорядочивания ходов игрока.</p>
 <br>
 <p><span class="new-item item-g">Single-move simultaneous game</span> Let there be two players $A$ and $B$, with given possible actions. We note $V(a,b)$ to be $A$'s utility if $A$ chooses action $a$, $B$ chooses action $b$. $V$ is called the payoff matrix.</p>
@@ -600,7 +600,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 \[\boxed{\max_{\pi_A}\min_{\pi_B}V(\pi_A,\pi_B)=\min_{\pi_B}\max_{\pi_A}V(\pi_A,\pi_B)}\]
 </div>
 <br>
-<h3>Non-zero-sum games</h3>
+<h3>Игры с ненулевой суммой</h3>
 <p><span class="new-item item-b">Payoff matrix</span> We define $V_p(\pi_A,\pi_B)$ to be the utility for player $p$.</p>
 <br>
 <p><span class="new-item item-r">Nash equilibrium</span> A Nash equilibrium is $(\pi_A^*,\pi_B^*)$ such that no player has an incentive to change its strategy. We have:</p>

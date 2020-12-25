@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Tips and tricks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#classification-metrics>Classification metrics</a></div> <div class=dropdown-container> <a href=#classification-metrics><span>Confusion matrix</span></a> <a href=#classification-metrics><span>Accuracy</span></a> <a href=#classification-metrics><span>Precision, recall</span></a> <a href=#classification-metrics><span>F1 score</span></a> <a href=#classification-metrics><span>ROC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#regression-metrics>Regression metrics</a></div> <div class=dropdown-container> <a href=#regression-metrics><span>R squared</span></a> <a href=#regression-metrics><span>Mallow's CP</span></a> <a href=#regression-metrics><span>AIC, BIC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#model-selection>Model selection</a></div> <div class=dropdown-container> <a href=#model-selection><span>Cross-validation</span></a> <a href=#model-selection><span>Regularization</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#diagnostics>Diagnostics</a></div> <div class=dropdown-container> <a href=#diagnostics><span>Bias/variance tradeoff</span></a> <a href=#diagnostics><span>Error/ablative analysis</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-machine-learning-tips-and-tricks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Tips and tricks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#classification-metrics>Метрики классификации</a></div> <div class=dropdown-container> <a href=#classification-metrics><span>Матрица ошибок</span></a> <a href=#classification-metrics><span>Доля правильных ответов (accuracy)</span></a> <a href=#classification-metrics><span>Precision, recall</span></a> <a href=#classification-metrics><span>F1 мера</span></a> <a href=#classification-metrics><span>ROC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#regression-metrics>Метрики регрессии</a></div> <div class=dropdown-container> <a href=#regression-metrics><span>R в квадрате</span></a> <a href=#regression-metrics><span>Мэллоу CP</span></a> <a href=#regression-metrics><span>AIC, BIC</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#model-selection>Выбор модели</a></div> <div class=dropdown-container> <a href=#model-selection><span>Перекрестная проверка</span></a> <a href=#model-selection><span>Регуляризация</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#diagnostics>Диагностика</a></div> <div class=dropdown-container> <a href=#diagnostics><span>Компромисс смещения/дисперсии</span></a> <a href=#diagnostics><span>Ошибок/абляционный анализ</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-machine-learning-tips-and-tricks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -78,7 +78,7 @@
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
-<h2><a aria-hidden=true class=anchor href=#classification-metrics id=classification-metrics></a>Classification metrics</h2>
+<h2><a aria-hidden=true class=anchor href=#classification-metrics id=classification-metrics></a>Метрики классификации</h2>
 <p>В контексте бинарной классификации вот основные метрики, которые важно отслеживать, чтобы оценить производительность модели.</p>
 <p><span class="new-item item-b">Матрица ошибок</span> Матрица ошибок используется для получения более полной картины при оценке производительности модели. Она определяется следующим образом:</p>
 <div class=mobile-container>
@@ -90,14 +90,14 @@
 </colgroup><tbody>
 <tr style="border-top: 0px">
 <td align=center colspan=2 rowspan=2 style="background: rgba(255, 255, 255, 1);border: 0px"></td>
-<td align=center colspan=2 style="background: rgba(255, 255, 255, 1);border: 0px"><b>Predicted</b> class</td>
+<td align=center colspan=2 style="background: rgba(255, 255, 255, 1);border: 0px"><b>Прогнозируемое</b> class</td>
 </tr>
 <tr style="border-top: 0px">
 <td align=center style="background: rgba(255, 255, 255, 1);border: 0px"><b>+</b></td>
 <td align=center style="background: rgba(255, 255, 255, 1);border: 0px"><b>-</b></td>
 </tr>
 <tr style="border-top: 0px">
-<td align=center rowspan=2 style="border: 0px"><b>Actual</b> class</td>
+<td align=center rowspan=2 style="border: 0px"><b>Актуальное</b> class</td>
 <td align=center style="background: rgba(255, 255, 255, 1);border: 0px;"><b>+</b></td>
 <td align=center style="background: rgba(0, 255, 0, 0.15);border: 0px;"><b>TP</b><br>True Positives</td>
 <td align=center style="background: rgba(255, 0, 0, 0.25);border: 0px;"><b>FN</b><br>False Negatives<br>Type II error</td>
@@ -117,17 +117,17 @@
 <table>
 <tbody>
 <tr>
-<td align=center><b>Metric</b></td>
-<td align=center><b>Formula</b></td>
-<td align=center><b>Interpretation</b></td>
+<td align=center><b>Метрика</b></td>
+<td align=center><b>Формула</b></td>
+<td align=center><b>Интерпретация</b></td>
 </tr>
 <tr>
-<td align=center>Accuracy</td>
+<td align=center>Доля правильных ответов (accuracy)</td>
 <td align=center>$\displaystyle\frac{\textrm{TP}+\textrm{TN}}{\textrm{TP}+\textrm{TN}+\textrm{FP}+\textrm{FN}}$</td>
 <td align=left>Эффективность работы модели</td>
 </tr>
 <tr>
-<td align=center>Precision</td>
+<td align=center>Точность (precision)</td>
 <td align=center>$\displaystyle\frac{\textrm{TP}}{\textrm{TP}+\textrm{FP}}$</td>
 <td align=left>Насколько точны положительные прогнозы</td>
 </tr>
@@ -142,7 +142,7 @@
 <td align=left>Специфика выделенных отрицательных образцов</td>
 </tr>
 <tr>
-<td align=center>F1 score</td>
+<td align=center>F1 мера</td>
 <td align=center>$\displaystyle\frac{2\textrm{TP}}{2\textrm{TP}+\textrm{FP}+\textrm{FN}}$</td>
 <td align=left>Гибридная метрика полезна для несбалансированных классов</td>
 </tr>
@@ -157,9 +157,9 @@
 <table>
 <tbody>
 <tr>
-<td align=center><b>Metric</b></td>
-<td align=center><b>Formula</b></td>
-<td align=center><b>Equivalent</b></td>
+<td align=center><b>Метрика</b></td>
+<td align=center><b>Формула</b></td>
+<td align=center><b>Эквивалент</b></td>
 </tr>
 <tr>
 <td align=center>True Positive Rate<br>TPR</td>
@@ -184,7 +184,7 @@
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#regression-metrics id=regression-metrics></a>Regression metrics</h2>
+<h2><a aria-hidden=true class=anchor href=#regression-metrics id=regression-metrics></a>Метрики регрессии</h2>
 <p><span class="new-item item-b">Базовые метрики</span> Дана регрессионная модель $f$, для оценки производительности модели обычно используются следующие метрики:</p>
 <div class=mobile-container>
 <center>
@@ -238,7 +238,7 @@
 </div>
 <p>where $L$ is the likelihood and $\widehat{\sigma}^2$ is an estimate of the variance associated with each response.</p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#model-selection id=model-selection></a>Model selection</h2>
+<h2><a aria-hidden=true class=anchor href=#model-selection id=model-selection></a>Выбор модели</h2>
 <p><span class="new-item item-b">Словарь</span> При выборе модели мы выделяем 3 разные части имеющихся у нас данных:</p>
 <div class=mobile-container>
 <center>
@@ -248,18 +248,18 @@
 <col width=33%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>Training set</b></td>
-<td align=center><b>Validation set</b></td>
-<td align=center><b>Testing set</b></td>
+<td align=center><b>Обучающий набор</b></td>
+<td align=center><b>Контрольный набор</b></td>
+<td align=center><b>Тестовый набор</b></td>
 </tr>
 <tr>
-<td align=left>• Model is trained<br>
+<td align=left>• Модель обучена<br>
                  • Обычно 80% набора данных</td>
-<td align=left>• Model is assessed<br>
+<td align=left>• Модель оценена<br>
                  • Обычно 20% набора данных<br>
                  • Также называется набором для удержания или развития</td>
-<td align=left>• Model gives predictions<br>
-                 • Unseen data</td>
+<td align=left>• Модель дает прогнозы<br>
+                 • Ранее невиданные данные</td>
 </tr>
 </tbody>
 </table>
@@ -317,7 +317,7 @@
 </tr>
 <tr>
 <td align=left>• Уменьшает коэффициенты до 0<br>• Подходит для выбора переменных</td>
-<td align=left>Makes coefficients smaller</td>
+<td align=left>Делает коэффициенты меньше</td>
 <td align=left>Компромисс между выбором переменных и небольшими коэффициентами</td>
 </tr>
 <tr>
@@ -335,7 +335,7 @@
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#diagnostics id=diagnostics></a>Diagnostics</h2>
+<h2><a aria-hidden=true class=anchor href=#diagnostics id=diagnostics></a>Диагностика</h2>
 <p><span class="new-item item-b">Смещение (Bias)</span> Смещение модели - это разница между ожидаемым прогнозом и правильной моделью, которую мы пытаемся предсказать для заданных точек данных.</p>
 <br>
 <p><span class="new-item item-b">Дисперсия (Variance)</span> Дисперсия модели - это изменчивость прогноза модели для заданных точек данных.</p>
@@ -354,39 +354,39 @@
 <tbody>
 <tr>
 <td align=center></td>
-<td align=center><b>Underfitting</b></td>
-<td align=center><b>Just right</b></td>
-<td align=center><b>Overfitting</b></td>
+<td align=center><b>Недообучение</b></td>
+<td align=center><b>Правильно</b></td>
+<td align=center><b>Переобучение</b></td>
 </tr>
 <tr>
-<td align=center><b>Symptoms</b></td>
-<td align=left>• High training error <br>• Ошибка обучения близка к ошибке теста <br>• High bias</td>
+<td align=center><b>Симптомы</b></td>
+<td align=left>• High training error <br>• Ошибка обучения близка к ошибке теста <br>• Высокое смещение</td>
 <td align=left style=vertical-align:top>• Ошибка обучения немного ниже ошибки теста</td>
-<td align=left>• Очень низкая ошибка обучения <br>• Ошибка обучения намного ниже ошибка теста <br>• High variance</td>
+<td align=left>• Очень низкая ошибка обучения <br>• Ошибка обучения намного ниже ошибка теста <br>• Высокая дисперсия</td>
 </tr>
 <tr>
-<td align=center><b>Regression illustration</b></td>
+<td align=center><b>Иллюстрация регрессии</b></td>
 <td align=center><img alt="Underfit in regression" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=regression-underfit.png?cd7fd5e4d334aa31d323b7d3f994a9df></td>
 <td align=center><img alt="Right fit in regression" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=regression-just-right.png?4018112cca66bdc10de14e7e59702a32></td>
 <td align=center><img alt="Overfit in regression" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=regression-overfit.png?4133157c77ba0baff93110d1d0e73382></td>
 </tr>
 <tr>
-<td align=center><b>Classification illustration</b></td>
+<td align=center><b>Иллюстрация классификации</b></td>
 <td align=center><img alt="Underfit in classification" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=classification-underfit.png?1f014836b68bfc74da1d767ca32783a3></td>
 <td align=center><img alt="Right fit in classification" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=classification-just-right.png?67a70eb8c5fb11dd75d8e5035714a435></td>
 <td align=center><img alt="Overfit in classification" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=classification-overfit.png?64516ea4ed89dad5b422380ea1f8f350></td>
 </tr>
 <tr>
-<td align=center><b>Deep learning illustration</b></td>
+<td align=center><b>Иллюстрация глубокого обучения</b></td>
 <td align=center><img alt="Underfit in deep learning" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=deep-learning-underfit-en.png?028697ac0c3ffff2a7a64edbab4dd61a></td>
 <td align=center><img alt="Right fit in deep learning" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=deep-learning-just-right-en.png?5accb2fc5bfed4b0e328fa798b1dd47c></td>
 <td align=center><img alt="Overfit in deep learning" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=deep-learning-overfit-en.png?026ff9256072273492de106ed7a9857f></td>
 </tr>
 <tr>
-<td align=center><b>Possible remedies</b></td>
-<td align=left>• Complexify model<br>• Add more features<br>• Train longer</td>
+<td align=center><b>Возможные исправления</b></td>
+<td align=left>• Усложнить модель<br>• Добавить больше параметров<br>• Тренироваться дольше</td>
 <td align=center style="background: rgba(234, 234, 234, 1);"></td>
-<td align=left>• Perform regularization<br>• Get more data</td>
+<td align=left>• Выполнить регуляризацию<br>• Взять больше данных</td>
 </tr>
 </tbody>
 </table>

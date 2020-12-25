@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Unsupervised Learning</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#intro>Introduction</a></div> <div class=dropdown-container> <a href=#intro><span>Motivation</span></a> <a href=#intro><span>Jensen's inequality</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#clustering>Clustering</a></div> <div class=dropdown-container> <a href=#clustering><span>Expectation-Maximization</span></a> <a href=#clustering><span>k-means</span></a> <a href=#clustering><span>Hierarchical clustering</span></a> <a href=#clustering><span>Metrics</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#dimension-reduction>Dimension reduction</a></div> <div class=dropdown-container> <a href=#dimension-reduction><span>PCA</span></a> <a href=#dimension-reduction><span>ICA</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-unsupervised-learning.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Unsupervised Learning</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#intro>Введение</a></div> <div class=dropdown-container> <a href=#intro><span>Мотивация</span></a> <a href=#intro><span>Неравенство Йенсена</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#clustering>Кластеризация</a></div> <div class=dropdown-container> <a href=#clustering><span>Максимизация Ожидания</span></a> <a href=#clustering><span>k-средние</span></a> <a href=#clustering><span>Иерархическая кластеризация</span></a> <a href=#clustering><span>Метрики</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#dimension-reduction>Уменьшение размерности</a></div> <div class=dropdown-container> <a href=#dimension-reduction><span>PCA</span></a> <a href=#dimension-reduction><span>ICA</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-unsupervised-learning.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View PDF version on GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -74,7 +74,7 @@
   </div>
 </div>
 <h1>
-  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Unsupervised Learning cheatsheet
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Шпаргалка по обучению без учителя
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
@@ -86,18 +86,18 @@
 \[\boxed{E[f(X)]\geqslant f(E[X])}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#clustering id=clustering></a>Clustering</h2>
-<h3>Expectation-Maximization</h3>
+<h2><a aria-hidden=true class=anchor href=#clustering id=clustering></a>Кластеризация</h2>
+<h3>Максимизация Ожидания</h3>
 <p><span class="new-item item-r">Скрытые величины</span> это скрытые/ненаблюдаемые величины, которые затрудняют задачи оценки, и часто обозначаются буквой $z$. Вот наиболее распространенные настройки, в которых присутствуют скрытые величины:</p>
 <div class=mobile-container>
 <center>
 <table>
 <tbody>
 <tr>
-<td align=center><b>Setting</b></td>
+<td align=center><b>Настройка</b></td>
 <td align=center><b>Latent variable $z$</b></td>
 <td align=center>$x|z$</td>
-<td align=center><b>Comments</b></td>
+<td align=center><b>Комментарии</b></td>
 </tr>
 <tr>
 <td align=center>Смесь $k$ гауссианов</td>
@@ -106,7 +106,7 @@
 <td align=center>$\mu_j\in\mathbb{R}^n, \phi\in\mathbb{R}^k$</td>
 </tr>
 <tr>
-<td align=center>Factor analysis</td>
+<td align=center>Факторный анализ</td>
 <td align=center>$\mathcal{N}(0,I)$</td>
 <td align=center>$\mathcal{N}(\mu+\Lambda z,\psi)$</td>
 <td align=center>$\mu_j\in\mathbb{R}^n$</td>
@@ -147,7 +147,7 @@
 \[\boxed{J(c,\mu)=\sum_{i=1}^m||x^{(i)}-\mu_{c^{(i)}}||^2}\]
 </div>
 <br>
-<h3>Hierarchical clustering</h3>
+<h3>Иерархическая кластеризация</h3>
 <p><span class="new-item item-g">Алгоритм</span> Это алгоритм кластеризации с агломеративным иерархическим подходом, который последовательно создает вложенные кластеры.</p>
 <br>
 <p><span class="new-item item-b">Типы</span> Существуют различные виды алгоритмов иерархической кластеризации, которые направлены на оптимизацию различных целевых функций, которые приведены в таблице ниже:</p>
@@ -159,9 +159,9 @@
 <col width=33%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>Ward linkage</b></td>
-<td align=center><b>Average linkage</b></td>
-<td align=center><b>Complete linkage</b></td>
+<td align=center><b>Связь Уорда</b></td>
+<td align=center><b>Средняя связь</b></td>
+<td align=center><b>Полная связь</b></td>
 </tr>
 <tr>
 <td align=center>Минимизирует расстояние в пределах кластера</td>
@@ -173,7 +173,7 @@
 </center>
 </div>
 <br>
-<h3>Clustering assessment metrics</h3>
+<h3>Кластеризация показателей оценки</h3>
 <p>В условиях обучения без учителя часто бывает трудно оценить производительность модели, поскольку у нас нет основных меток истинности, как это было в условиях обучения с учителем.</p>
 <p><span class="new-item item-b">Silhouette coefficient</span> By noting $a$ and $b$ the mean distance between a sample and all other points in the same class, and between a sample and all other points in the next nearest cluster, the silhouette coefficient $s$ for a single sample is defined as follows:</p>
 <div class=mobile-container>
@@ -189,8 +189,8 @@
 \[\boxed{s(k)=\frac{\textrm{Tr}(B_k)}{\textrm{Tr}(W_k)}\times\frac{N-k}{k-1}}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#dimension-reduction id=dimension-reduction></a>Dimension reduction</h2>
-<h3>Principal component analysis</h3>
+<h2><a aria-hidden=true class=anchor href=#dimension-reduction id=dimension-reduction></a>Уменьшение размерности</h2>
+<h3>Метод главных компонент</h3>
 <p>Это метод уменьшения размерности, который находит направления максимизации дисперсии для проецирования данных.</p>
 <p><span class="new-item item-b">Eigenvalue, eigenvector</span> Given a matrix $A\in\mathbb{R}^{n\times n}$, $\lambda$ is said to be an eigenvalue of $A$ if there exists a vector $z\in\mathbb{R}^n\backslash\{0\}$, called eigenvector, such that we have:</p>
 <div class=mobile-container>
@@ -219,7 +219,7 @@
 <img alt=Illustration class=img-responsive netsrc=teaching/cs-229/illustrations/ src=pca-en.png?4be4617788fd40f4e998b530b75f4149>
 </center>
 <br>
-<h3>Independent component analysis</h3>
+<h3>Метод независимых компонент</h3>
 <p>Это метод, предназначенный для поиска основных источников генерации.</p>
 <p><span class="new-item item-r">Assumptions</span> We assume that our data $x$ has been generated by the $n$-dimensional source vector $s=(s_1,...,s_n)$, where $s_i$ are independent random variables, via a mixing and non-singular matrix $A$ as follows:</p>
 <div class=mobile-container>

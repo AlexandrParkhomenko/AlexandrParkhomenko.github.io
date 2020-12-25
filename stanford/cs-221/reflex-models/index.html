@@ -12,7 +12,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Reflex-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#linear-predictors>Linear predictors</a></div> <div class=dropdown-container> <a href=#linear-predictors><span>Feature vector</span></a> <a href=#linear-predictors><span>Linear classifier/regression</span></a> <a href=#linear-predictors><span>Margin</span></a> <a href=#linear-predictors><span>Residual</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#loss-minimization>Loss minimization</a></div> <div class=dropdown-container> <a href=#loss-minimization><span>Loss function</span></a> <a href=#loss-minimization><span>Framework</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#non-linear-predictors>Non-linear predictors</a></div> <div class=dropdown-container> <a href=#non-linear-predictors><span>k-nearest neighbors</span></a> <a href=#non-linear-predictors><span>Neural networks</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#stochastic-gradient-descent>Stochastic gradient descent</a></div> <div class=dropdown-container> <a href=#stochastic-gradient-descent><span>Gradient</span></a> <a href=#stochastic-gradient-descent><span>Stochastic updates</span></a> <a href=#stochastic-gradient-descent><span>Batch updates</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#fine-tuning-models>Fine-tuning models</a></div> <div class=dropdown-container> <a href=#fine-tuning-models><span>Hypothesis class</span></a> <a href=#fine-tuning-models><span>Backpropagation</span></a> <a href=#fine-tuning-models><span>Regularization</span></a> <a href=#fine-tuning-models><span>Sets vocabulary</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#unsupervised-learning>Unsupervised Learning</a></div> <div class=dropdown-container> <a href=#unsupervised-learning><span>k-means</span></a> <a href=#unsupervised-learning><span>Principal components analysis</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-reflex-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Reflex-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#linear-predictors>Линейные предсказатели</a></div> <div class=dropdown-container> <a href=#linear-predictors><span>Вектор признаков</span></a> <a href=#linear-predictors><span>Линейный классификатор/регрессия</span></a> <a href=#linear-predictors><span>Отступ</span></a> <a href=#linear-predictors><span>Разность</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#loss-minimization>Минимизация потерь</a></div> <div class=dropdown-container> <a href=#loss-minimization><span>Функция потерь</span></a> <a href=#loss-minimization><span>Фреймворк</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#non-linear-predictors>Нелинейные предсказатели</a></div> <div class=dropdown-container> <a href=#non-linear-predictors><span>k-ближайшие соседи</span></a> <a href=#non-linear-predictors><span>Нейронные сети</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#stochastic-gradient-descent>Стохастический градиентный спуск</a></div> <div class=dropdown-container> <a href=#stochastic-gradient-descent><span>Градиент</span></a> <a href=#stochastic-gradient-descent><span>Стохастические обновления</span></a> <a href=#stochastic-gradient-descent><span>Пакетные обновления</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#fine-tuning-models>Доводка моделей</a></div> <div class=dropdown-container> <a href=#fine-tuning-models><span>Класс гипотез</span></a> <a href=#fine-tuning-models><span>Обратное распространение</span></a> <a href=#fine-tuning-models><span>Регуляризация</span></a> <a href=#fine-tuning-models><span>Наборы словарей</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#unsupervised-learning>Обучение без учителя</a></div> <div class=dropdown-container> <a href=#unsupervised-learning><span>k-средние</span></a> <a href=#unsupervised-learning><span>Метод главных компонент</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-reflex-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -61,7 +61,7 @@
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
-<h2><a aria-hidden=true class=anchor href=#linear-predictors id=linear-predictors></a>Linear predictors</h2>
+<h2><a aria-hidden=true class=anchor href=#linear-predictors id=linear-predictors></a>Линейные предсказатели</h2>
 <p>В этом разделе мы рассмотрим модели, основанные на рефлексах, которые можно улучшить с опытом, просмотрев образцы с парами вход-выход.</p>
 <br>
 <p><span class="new-item item-g">Feature vector</span> The feature vector of an input $x$ is denoted $\phi(x)$ and is such that:</p>
@@ -74,7 +74,7 @@
 \[\boxed{s(x,w)=w\cdot\phi(x)}\]
 </div>
 <br>
-<h3>Classification</h3>
+<h3>Классификация</h3>
 <p><span class="new-item item-b">Linear classifier</span> Given a weight vector $w\in\mathbb{R}^d$ and a feature vector $\phi(x)\in\mathbb{R}^d$, the binary linear classifier $f_w$ is given by:</p>
 <div class=mobile-container>
 \[\boxed{f_w(x)=\textrm{sign}(s(x,w))=\left\{
@@ -95,7 +95,7 @@
 \[\boxed{m(x,y,w)=s(x,w)\times y}\]
 </div>
 <br>
-<h3>Regression</h3>
+<h3>Регрессия</h3>
 <p><span class="new-item item-g">Linear regression</span> Given a weight vector $w\in\mathbb{R}^d$ and a feature vector $\phi(x)\in\mathbb{R}^d$, the output of a linear regression of weights $w$ denoted as $f_w$ is given by:</p>
 <div class=mobile-container>
 \[\boxed{f_w(x)=s(x,w)}\]
@@ -105,7 +105,7 @@
 \[\boxed{\textrm{res}(x,y,w)=f_w(x)-y}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#loss-minimization id=loss-minimization></a>Loss minimization</h2>
+<h2><a aria-hidden=true class=anchor href=#loss-minimization id=loss-minimization></a>Минимизация потерь</h2>
 <p><span class="new-item item-g">Loss function</span> A loss function $\textrm{Loss}(x,y,w)$ quantifies how unhappy we are with the weights $w$ of the model in the prediction task of output $y$ from input $x$. It is a quantity we want to minimize during the training process.</p><p>
 <br>
 </p><p><span class="new-item item-r">Classification case</span> The classification of a sample $x$ of true label $y\in \{-1,+1\}$ with a linear model of weights $w$ can be done with the predictor $f_w(x) \triangleq \textrm{sign}(s(x,w))$. In this situation, a metric of interest quantifying the quality of the classification is given by the margin $m(x,y,w)$, and can be used with the following loss functions:</p>
@@ -119,10 +119,10 @@
     </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Name</b></td>
-<td align=center>Zero-one loss</td>
-<td align=center>Hinge loss</td>
-<td align=center>Logistic loss</td>
+<td align=center><b>Название</b></td>
+<td align=center>потеря ноль единицы</td>
+<td align=center>потеря петли</td>
+<td align=center>логистическая потеря</td>
 </tr>
 <tr>
 <td align=center>$\textrm{Loss}(x,y,w)$</td>
@@ -131,7 +131,7 @@
 <td align=center>$\log(1+e^{-m(x,y,w)})$</td>
 </tr>
 <tr>
-<td align=center><b>Illustration</b></td>
+<td align=center><b>Иллюстрация</b></td>
 <td align=center style=width:100%;max-width:150px;><img alt="Zero-one loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-zero-one.png?f9d7b6349bfa78f70ba7aee99af5e0dc></td>
 <td align=center style=width:100%;max-width:150px;><img alt="Hinge loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-hinge.png?47a1e04a25970a1ad583d8821ba51ff2></td>
 <td align=center style=width:100%;max-width:150px;><img alt="Logistic loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-logistic.png?8891a0a53cb3999a126d3df87080e6e5></td>
@@ -150,9 +150,9 @@
     </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Name</b></td>
-<td align=center>Squared loss</td>
-<td align=center>Absolute deviation loss</td>
+<td align=center><b>Название</b></td>
+<td align=center>Квадратичная потеря</td>
+<td align=center>Абсолютное отклонение</td>
 </tr>
 <tr>
 <td align=center>$\textrm{Loss}(x,y,w)$</td>
@@ -160,7 +160,7 @@
 <td align=center>$|\textrm{res}(x,y,w)|$</td>
 </tr>
 <tr>
-<td align=center><b>Illustration</b></td>
+<td align=center><b>Иллюстрация</b></td>
 <td align=center style=width:100%;max-width:150px;><img alt="Squared loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-squared.png?a1af36015fa59fa7f2e0cabeeee938a5></td>
 <td align=center style=width:100%;max-width:150px;><img alt="Absolute deviation loss" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=loss-absolute-deviation.png?06b20ac340980e2a131f3de34e7647a3></td>
 </tr>
@@ -173,7 +173,7 @@
 \[\boxed{\textrm{TrainLoss}(w)=\frac{1}{|\mathcal{D}_{\textrm{train}}|}\sum_{(x,y)\in\mathcal{D}_{\textrm{train}}}\textrm{Loss}(x,y,w)}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#non-linear-predictors id=non-linear-predictors></a>Non-linear predictors</h2>
+<h2><a aria-hidden=true class=anchor href=#non-linear-predictors id=non-linear-predictors></a>Нелинейные предсказатели</h2>
 <p><span class="new-item item-g">$k$-nearest neighbors</span> The $k$-nearest neighbors algorithm, commonly known as $k$-NN, is a non-parametric approach where the response of a data point is determined by the nature of its $k$ neighbors from the training set. It can be used in both classification and regression settings.</p>
 <div class=mobile-container>
 <center>
@@ -195,7 +195,7 @@
 <p>где мы обозначаем $w$, $b$, $x$, $z$ вес, смещение, вход и неактивированный выход нейрона соответственно.</p>
 <br>
 <div class="alert alert-warning" role=alert>For a more detailed overview of the concepts above, check out the <a class=alert-link nethref=teaching/cs-229/cheatsheet-supervised-learning  href=../../cs-229/supervised-learning/index.html onclick=trackOutboundLink(this);>Supervised Learning cheatsheets</a>!</div>
-<h2><a aria-hidden=true class=anchor href=#stochastic-gradient-descent id=stochastic-gradient-descent></a>Stochastic gradient descent</h2>
+<h2><a aria-hidden=true class=anchor href=#stochastic-gradient-descent id=stochastic-gradient-descent></a>Стохастический градиентный спуск</h2>
 <p><span class="new-item item-g">Gradient descent</span> By noting $\eta\in\mathbb{R}$ the learning rate (also called step size), the update rule for gradient descent is expressed with the learning rate and the loss function $\textrm{Loss}(x,y,w)$ as follows:</p>
 <div class=mobile-container>
 \[\boxed{w\longleftarrow w-\eta\nabla_w \textrm{Loss}(x,y,w)}\]
@@ -211,7 +211,7 @@
 <br>
 <p><span class="new-item item-b">Пакетные обновления</span> Batch gradient descent (BGD) обновляет параметры модели по одной партии примеров (например, половина обучающего набора) за раз. Этот метод вычисляет стабильные направления обновления с большими вычислительными затратами.</p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#fine-tuning-models id=fine-tuning-models></a>Fine-tuning models</h2>
+<h2><a aria-hidden=true class=anchor href=#fine-tuning-models id=fine-tuning-models></a>Доводка моделей</h2>
 <p><span class="new-item item-g">Hypothesis class</span> A hypothesis class $\mathcal{F}$ is the set of possible predictors with a fixed $\phi(x)$ and varying $w$:</p>
 <div class=mobile-container>
 \[\boxed{\mathcal{F}=\left\{f_w:w\in\mathbb{R}^d\right\}}\]
@@ -254,7 +254,7 @@
 </tr>
 <tr>
 <td align=left>• Уменьшает коэффициенты до 0<br>• Подходит для выбора переменных</td>
-<td align=left>Makes coefficients smaller</td>
+<td align=left>Делает коэффициенты меньше</td>
 <td align=left>Компромисс между выбором переменных и небольшими коэффициентами</td>
 </tr>
 <tr>
@@ -283,18 +283,18 @@
 <col width=33%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>Training set</b></td>
-<td align=center><b>Validation set</b></td>
-<td align=center><b>Testing set</b></td>
+<td align=center><b>Обучающий набор</b></td>
+<td align=center><b>Контрольный набор</b></td>
+<td align=center><b>Тестовый набор</b></td>
 </tr>
 <tr>
-<td align=left>• Model is trained<br>
+<td align=left>• Модель обучена<br>
                  • Обычно 80% набора данных</td>
-<td align=left>• Model is assessed<br>
+<td align=left>• Модель оценена<br>
                  • Обычно 20% набора данных<br>
                  • Также называется отложенным или набором для разработки</td>
-<td align=left>• Model gives predictions<br>
-                 • Unseen data</td>
+<td align=left>• Модель дает прогнозы<br>
+                 • Ранее невиданные данные</td>
 </tr>
 </tbody>
 </table>
@@ -308,7 +308,7 @@
 </div>
 <br>
 <div class="alert alert-warning" role=alert>For a more detailed overview of the concepts above, check out the <a class=alert-link nethref=teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks href=../../cs-229/machine-learning-tips-and-tricks/index.html onclick=trackOutboundLink(this);>Machine Learning tips and tricks cheatsheets</a>!</div>
-<h2><a aria-hidden=true class=anchor href=#unsupervised-learning id=unsupervised-learning></a>Unsupervised Learning</h2>
+<h2><a aria-hidden=true class=anchor href=#unsupervised-learning id=unsupervised-learning></a>Обучение без учителя</h2>
 <p>The class of unsupervised learning methods aims at discovering the structure of the data, which may have rich latent structures.</p>
 <h3>$k$-means</h3>
 <p><span class="new-item item-g">Clustering</span> Given a training set of $n$ input points $\mathcal{D}_{\textrm{train}}$, the goal of a clustering algorithm is to assign each point $\phi(x_i)$ to a cluster $z_i\in\{1,...,k\}$.</p>
@@ -326,7 +326,7 @@
 <img alt=Illustration class=img-responsive netsrc=teaching/cs-229/illustrations/ src=k-means-en.png?9925605d814ddadebcae2ae4754ab0a4>
 </center>
 <br>
-<h3>Principal Component Analysis</h3>
+<h3>Метод главных компонент - Principal Component Analysis (PCA)</h3>
 <p><span class="new-item item-g">Eigenvalue, eigenvector</span> Given a matrix $A\in\mathbb{R}^{d\times d}$, $\lambda$ is said to be an eigenvalue of $A$ if there exists a vector $z\in\mathbb{R}^d\backslash\{0\}$, called eigenvector, such that we have:</p>
 <div class=mobile-container>
 \[\boxed{Az=\lambda z}\]

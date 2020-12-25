@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Глубокое Обучение</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Recurrent Neural Networks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#overview>Overview</a></div> <div class=dropdown-container> <a href=#overview><span>Architecture structure</span></a> <a href=#overview><span>Applications of RNNs</span></a> <a href=#overview><span>Loss function</span></a> <a href=#overview><span>Backpropagation</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#architecture>Обработка долгосрочных зависимостей</a></div> <div class=dropdown-container> <a href=#architecture><span>Common activation functions</span></a> <a href=#architecture><span>Vanishing/exploding gradient</span></a> <a href=#architecture><span>Gradient clipping</span></a> <a href=#architecture><span>GRU/LSTM</span></a> <a href=#architecture><span>Types of gates</span></a> <a href=#architecture><span>Bidirectional RNN</span></a> <a href=#architecture><span>Deep RNN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#word-representation>Learning word representation</a></div> <div class=dropdown-container> <a href=#word-representation><span>Notations</span></a> <a href=#word-representation><span>Embedding matrix</span></a> <a href=#word-representation><span>Word2vec</span></a> <a href=#word-representation><span>Skip-gram</span></a> <a href=#word-representation><span>Negative sampling</span></a> <a href=#word-representation><span>GloVe</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#comparing-words>Comparing words</a></div> <div class=dropdown-container> <a href=#comparing-words><span>Cosine similarity</span></a> <a href=#comparing-words><span>t-SNE</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#language-model>Language model</a></div> <div class=dropdown-container> <a href=#language-model><span>n-gram</span></a> <a href=#language-model><span>Perplexity</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#machine-translation>Machine translation</a></div> <div class=dropdown-container> <a href=#machine-translation><span>Beam search</span></a> <a href=#machine-translation><span>Length normalization</span></a> <a href=#machine-translation><span>Error analysis</span></a> <a href=#machine-translation><span>Bleu score</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#attention>Attention</a></div> <div class=dropdown-container> <a href=#attention><span>Attention model</span></a> <a href=#attention><span>Attention weights</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-recurrent-neural-networks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Глубокое Обучение</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Recurrent Neural Networks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#overview>Обзор</a></div> <div class=dropdown-container> <a href=#overview><span>Структура архитектуры</span></a> <a href=#overview><span>Приложения RNN</span></a> <a href=#overview><span>Функция потерь</span></a> <a href=#overview><span>Обратное распространение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#architecture>Обработка долгосрочных зависимостей</a></div> <div class=dropdown-container> <a href=#architecture><span>Общие функции активации</span></a> <a href=#architecture><span>Исчезающий/увеличивающийся градиент</span></a> <a href=#architecture><span>Отсечение градиента</span></a> <a href=#architecture><span>GRU/LSTM</span></a> <a href=#architecture><span>Типы вентилей</span></a> <a href=#architecture><span>Двунаправленный RNN</span></a> <a href=#architecture><span>Глубокая RNN.</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#word-representation>Обучение представления слов</a></div> <div class=dropdown-container> <a href=#word-representation><span>Обозначения</span></a> <a href=#word-representation><span>Embedding matrix</span></a> <a href=#word-representation><span>Word2vec</span></a> <a href=#word-representation><span>Скип-грамм</span></a> <a href=#word-representation><span>Отрицательная выборка</span></a> <a href=#word-representation><span>GloVe</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#comparing-words>Сравнение слов</a></div> <div class=dropdown-container> <a href=#comparing-words><span>Косинусное сходство</span></a> <a href=#comparing-words><span>t-SNE</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#language-model>Языковая модель</a></div> <div class=dropdown-container> <a href=#language-model><span>n-грамма</span></a> <a href=#language-model><span>Недоумение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#machine-translation>Машинный перевод</a></div> <div class=dropdown-container> <a href=#machine-translation><span>Поиск луча</span></a> <a href=#machine-translation><span>Нормализация длины</span></a> <a href=#machine-translation><span>Анализ ошибок</span></a> <a href=#machine-translation><span>Оценка BLEU</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#attention>Внимание</a></div> <div class=dropdown-container> <a href=#attention><span>Модель внимания</span></a> <a href=#attention><span>Веса внимания</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-recurrent-neural-networks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -63,7 +63,7 @@
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-230-deep-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-230-deep-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
-<h2><a aria-hidden=true class=anchor href=#overview id=overview></a>Overview</h2>
+<h2><a aria-hidden=true class=anchor href=#overview id=overview></a>Обзор</h2>
 <p><span class="new-item item-r">Архитектура традиционной RNN</span> Рекуррентные нейронные сети, также известные как RNN, представляют собой класс нейронных сетей, которые позволяют использовать предыдущие выходы в качестве входов, имея скрытые состояния. Обычно они следующие:</p>
 <div class=mobile-container>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=architecture-rnn-ltr.png?9ea4417fc145b9346a3e288801dbdfdc style="width:100%; max-width:700px;">
@@ -88,15 +88,15 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 <col width=50%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>Advantages</b></td>
-<td align=center><b>Drawbacks</b></td>
+<td align=center><b>Преимущества</b></td>
+<td align=center><b>Недостатки</b></td>
 </tr>
 <tr>
 <td align=left>• Возможность обработки ввода любой длины<br>
                  • Размер модели не увеличивается с размером входных данных<br>
                  • При расчетах учитывается историческая информация<br>
                  • Веса распределяются во времени</td>
-<td align=left>• Computation being slow<br>
+<td align=left>• Вычисления идут медленно<br>
                  • Сложность доступа к очень давней информации<br>
                  • Невозможно рассмотреть какие-либо будущие входные данные для текущего состояния</td>
 </tr>
@@ -114,34 +114,34 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 <col width=25%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>Type of RNN</b></td>
-<td align=center><b>Illustration</b></td>
-<td align=center><b>Example</b></td>
+<td align=center><b>Тип RNN</b></td>
+<td align=center><b>Иллюстрация</b></td>
+<td align=center><b>Пример</b></td>
 </tr>
 <tr>
 <td align=center>One-to-one<br>$T_x=T_y=1$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-one-to-one-ltr.png?9c8e3b04d222d178d6bee4506cc3f779></td>
-<td align=left>Traditional neural network</td>
+<td align=left>Традиционная нейронная сеть</td>
 </tr>
 <tr>
 <td align=center>One-to-many<br>$T_x=1, T_y&gt;1$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-one-to-many-ltr.png?d246c2f0d1e0f43a21a8bd95f579cb3b></td>
-<td align=left>Music generation</td>
+<td align=left>Генерация музыки</td>
 </tr>
 <tr>
 <td align=center>Many-to-one<br>$T_x&gt;1, T_y=1$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-many-to-one-ltr.png?c8a442b3ea9f4cb81f929c089b910c9d></td>
-<td align=left>Sentiment classification</td>
+<td align=left>Классификация эмоций (Sentiment classification)</td>
 </tr>
 <tr>
 <td align=center>Many-to-many<br>$T_x=T_y$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-many-to-many-same-ltr.png?2790431b32050b34b80011afead1f232></td>
-<td align=left>Name entity recognition</td>
+<td align=left>Распознавание именованных сущностей (Name entity recognition NER)</td>
 </tr>
 <tr>
 <td align=center>Many-to-many<br>$T_x\neq T_y$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=rnn-many-to-many-different-ltr.png?8ca8bafd1eeac4e8c961d9293858407b></td>
-<td align=left>Machine translation</td>
+<td align=left>Машинный перевод</td>
 </tr>
 </tbody>
 </table>
@@ -211,9 +211,9 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 <col width=30%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>Type of gate</b></td>
-<td align=center><b>Role</b></td>
-<td align=center><b>Used in</b></td>
+<td align=center><b>Тип вентиля</b></td>
+<td align=center><b>Роль</b></td>
+<td align=center><b>Используется в</b></td>
 </tr>
 <tr>
 <td align=center>Update gate $\Gamma_u$</td>
@@ -222,7 +222,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </tr>
 <tr>
 <td align=center>Relevance gate $\Gamma_r$</td>
-<td align=center>Drop previous information?</td>
+<td align=center>Отбросить предыдущую информацию?</td>
 <td align=center>GRU, LSTM</td>
 </tr>
 <tr>
@@ -251,7 +251,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Characterization</b></td>
+<td align=center><b>Характеристика</b></td>
 <td align=center><b>Gated Recurrent Unit</b> (GRU)</td>
 <td align=center><b>Long Short-Term Memory</b> (LSTM)</td>
 </tr>
@@ -271,7 +271,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 <td align=center>$\Gamma_o\star c^{&lt; t &gt;}$</td>
 </tr>
 <tr>
-<td align=center>Dependencies</td>
+<td align=center>Зависимости</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=gru-ltr.png?00f278f71b4833d32a87ed53d86f251c style="width:100%; max-width:400px;"></td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=lstm-ltr.png?4539fbbcbd9fabfd365936131c13476c style="width:100%; max-width:400px;"></td>
 </tr>
@@ -301,9 +301,9 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#word-representation id=word-representation></a>Learning word representation</h2>
+<h2><a aria-hidden=true class=anchor href=#word-representation id=word-representation></a>Обучение представления слов</h2>
 <p>In this section, we note $V$ the vocabulary and $|V|$ its size.</p>
-<h3>Motivation and notations</h3>
+<h3>Мотивация и обозначения</h3>
 <p><span class="new-item item-g">Методы представления</span> два основных способа представления слов подытожены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
@@ -312,8 +312,8 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 <col width=50%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>1-hot representation</b></td>
-<td align=center><b>Word embedding</b></td>
+<td align=center><b>1-hot представление</b></td>
+<td align=center><b>Представления слов</b></td>
 </tr>
 <tr>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=one-hot-representation-en.png?c60bb9aafc7b14e1076d43c8f85f63df style="width:100%; max-width:225px;"></td>
@@ -336,7 +336,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </div>
 <p><span class=remark>Примечание: изучение матрицы представления может быть выполнено с использованием моделей целевого/контекстного правдоподобия.</span></p>
 <br>
-<h3>Word embeddings</h3>
+<h3>Векторное представление слов</h3>
 <p><span class="new-item item-r">Word2vec</span> это фреймворк, предназначенный для изучения встраивания слов путем оценки вероятности того, что данное слово окружено другими словами. Популярные модели включают скип-грамм, отрицательную выборку и CBOW.</p>
 <br>
 <div class=mobile-container>
@@ -368,7 +368,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 </div>
 <p><span class=remark>Примечание: отдельные компоненты представления слов не обязательно поддаются интерпретации.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#comparing-words id=comparing-words></a>Comparing words</h2>
+<h2><a aria-hidden=true class=anchor href=#comparing-words id=comparing-words></a>Сравнение слов</h2>
 <p><span class="new-item item-b">Cosine similarity</span> The cosine similarity between words $w_1$ and $w_2$ is expressed as follows:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{similarity}=\frac{w_1\cdot w_2}{||w_1||\textrm{ }||w_2||}=\cos(\theta)}\]
@@ -387,7 +387,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#language-model id=language-model></a>Language model</h2>
+<h2><a aria-hidden=true class=anchor href=#language-model id=language-model></a>Языковая модель</h2>
 <p><span class="new-item item-r">Overview</span> A language model aims at estimating the probability of a sentence $P(y)$.</p>
 <br>
 <p><span class="new-item item-r">Модель $n$</span> граммы - эта модель представляет собой наивный подход, направленный на количественную оценку вероятности того, что выражение появляется в корпусе, путем подсчета его количества появлений в обучающих данных.</p>
@@ -398,7 +398,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 </div>
 <p><span class=remark>Remark: PP is commonly used in $t$-SNE.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#machine-translation id=machine-translation></a>Machine translation</h2>
+<h2><a aria-hidden=true class=anchor href=#machine-translation id=machine-translation></a>Машинный перевод</h2>
 <p><span class="new-item item-r">Overview</span> A machine translation model is similar to a language model except it has an encoder network placed before. For this reason, it is sometimes referred as a conditional language model.</p>
 <p>The goal is to find a sentence $y$ such that:</p>
 <div class=mobile-container>
@@ -435,21 +435,21 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 <col width=37.5%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>Case</b></td>
+<td align=center><b>Случай</b></td>
 <td align=center>$P(y^*|x)&gt;P(\widehat{y}|x)$</td>
 <td align=center>$P(y^*|x)\leqslant P(\widehat{y}|x)$</td>
 </tr>
 <tr>
-<td align=center><b>Root cause</b></td>
-<td align=center>Beam search faulty</td>
-<td align=center>RNN faulty</td>
+<td align=center><b>Первопричина</b></td>
+<td align=center>Ошибка лучевого поиска</td>
+<td align=center>Неисправность RNN</td>
 </tr>
 <tr>
-<td align=center><b>Remedies</b></td>
-<td align=center>Increase beam width</td>
-<td align=left>• Try different architecture<br>
-                 • Regularize<br>
-                 • Get more data</td>
+<td align=center><b>Исправления</b></td>
+<td align=center>Увеличить ширину луча</td>
+<td align=left>• Попробовать другую архитектуру<br>
+                 • Регуляризировать<br>
+                 • Взять больше данных</td>
 </tr>
 </tbody>
 </table>
@@ -466,7 +466,7 @@ where $p_n$ is the bleu score on $n$-gram only defined as follows:
 </div>
 <p><span class=remark>Примечание: к коротким предсказанным переводам может применяться штраф за краткость, чтобы предотвратить искусственно завышенную оценку bleu.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#attention id=attention></a>Attention</h2>
+<h2><a aria-hidden=true class=anchor href=#attention id=attention></a>Внимание</h2>
 <p><span class="new-item item-b">Attention model</span> This model allows an RNN to pay attention to specific parts of the input that is considered as being important, which improves the performance of the resulting model in practice. By noting $\alpha^{&lt; t, t'&gt;}$ the amount of attention that the output $y^{&lt; t &gt;}$ should pay to the activation $a^{&lt; t' &gt;}$ and $c^{&lt; t &gt;}$ the context at time $t$, we have:</p>
 <div class=mobile-container>
 \[\boxed{c^{&lt; t &gt;}=\sum_{t'}\alpha^{&lt; t, t' &gt;}a^{&lt; t' &gt;}}\quad\textrm{with}\quad\sum_{t'}\alpha^{&lt; t,t' &gt;}=1\]

@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Глубокое обучение</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Convolutional Neural Nets</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#overview>Overview</a></div> <div class=dropdown-container> <a href=#overview><span>Architecture structure</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#layer>Types of layer</a></div> <div class=dropdown-container> <a href=#layer><span>Convolution</span></a> <a href=#layer><span>Pooling</span></a> <a href=#layer><span>Fully connected</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#filter>Filter hyperparameters</a></div> <div class=dropdown-container> <a href=#filter><span>Dimensions</span></a> <a href=#filter><span>Stride</span></a> <a href=#filter><span>Padding</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#hyperparameters>Tuning hyperparameters</a></div> <div class=dropdown-container> <a href=#hyperparameters><span>Parameter compatibility</span></a> <a href=#hyperparameters><span>Model complexity</span></a> <a href=#hyperparameters><span>Receptive field</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#activation-function>Activation functions</a></div> <div class=dropdown-container> <a href=#activation-function><span>Rectified Linear Unit</span></a> <a href=#activation-function><span>Softmax</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#object-detection>Object detection</a></div> <div class=dropdown-container> <a href=#object-detection><span>Types of models</span></a> <a href=#object-detection><span>Detection</span></a> <a href=#object-detection><span>Intersection over Union</span></a> <a href=#object-detection><span>Non-max suppression</span></a> <a href=#object-detection><span>YOLO</span></a> <a href=#object-detection><span>R-CNN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#face>Face verification/recognition</a></div> <div class=dropdown-container> <a href=#face><span>One shot learning</span></a> <a href=#face><span>Siamese network</span></a> <a href=#face><span>Triplet loss</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#style-transfer>Neural style transfer</a></div> <div class=dropdown-container> <a href=#style-transfer><span>Activation</span></a> <a href=#style-transfer><span>Style matrix</span></a> <a href=#style-transfer><span>Style/content cost function</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#ct-architectures>Computational trick architectures</a></div> <div class=dropdown-container> <a href=#ct-architectures><span>Generative Adversarial Net</span></a> <a href=#ct-architectures><span>ResNet</span></a> <a href=#ct-architectures><span>Inception Network</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-convolutional-neural-networks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Глубокое обучение</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Convolutional Neural Nets</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#overview>Обзор</a></div> <div class=dropdown-container> <a href=#overview><span>Структура архитектуры</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#layer>Типы слоёв</a></div> <div class=dropdown-container> <a href=#layer><span>Свертка</span></a> <a href=#layer><span>Пулинг</span></a> <a href=#layer><span>Полносвязный</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#filter>Фильтрация гиперпараметров</a></div> <div class=dropdown-container> <a href=#filter><span>Размеры</span></a> <a href=#filter><span>Шаг</span></a> <a href=#filter><span>Дополнение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#hyperparameters>Настройка гиперпараметров</a></div> <div class=dropdown-container> <a href=#hyperparameters><span>Совместимость параметров</span></a> <a href=#hyperparameters><span>Сложность модели</span></a> <a href=#hyperparameters><span>Рецептивное поле</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#activation-function>Функции активации</a></div> <div class=dropdown-container> <a href=#activation-function><span>Блок линейной ректификации</span></a> <a href=#activation-function><span>Softmax</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#object-detection>Обнаружение объектов</a></div> <div class=dropdown-container> <a href=#object-detection><span>Типы моделей</span></a> <a href=#object-detection><span>Обнаружение</span></a> <a href=#object-detection><span>Пересечение по объединению</span></a> <a href=#object-detection><span>Подавление немаксимума</span></a> <a href=#object-detection><span>YOLO</span></a> <a href=#object-detection><span>R-CNN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#face>Проверка/распознавание лиц</a></div> <div class=dropdown-container> <a href=#face><span>Обучение одним выстрелом</span></a> <a href=#face><span>Сиамская сеть</span></a> <a href=#face><span>Triplet loss</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#style-transfer>Перенос нейронного стиля</a></div> <div class=dropdown-container> <a href=#style-transfer><span>Активация</span></a> <a href=#style-transfer><span>Матрица стилей</span></a> <a href=#style-transfer><span>Функция стоимости стиля/контента</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#ct-architectures>Архитектуры вычислительных трюков</a></div> <div class=dropdown-container> <a href=#ct-architectures><span>Generative Adversarial Net</span></a> <a href=#ct-architectures><span>ResNet</span></a> <a href=#ct-architectures><span>Inception Network</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-convolutional-neural-networks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -63,7 +63,7 @@
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-230-deep-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-230-deep-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
-<h2><a aria-hidden=true class=anchor href=#overview id=overview></a>Overview</h2>
+<h2><a aria-hidden=true class=anchor href=#overview id=overview></a>Обзор</h2>
 <p><span class="new-item item-r">Архитектура традиционного</span> Сверточные нейронные сети, также известные как (Convolutional neural networks, CNN), представляют собой особый тип нейронных сетей, которые обычно состоят из следующих слоев:</p>
 <div class=mobile-container>
 <center>
@@ -73,7 +73,7 @@
 <br>
 <p>Слой свертки и слой пулинга можно настроить с учетом гиперпараметров, которые описаны в следующих разделах.</p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#layer id=layer></a>Types of layer</h2>
+<h2><a aria-hidden=true class=anchor href=#layer id=layer></a>Типы слоёв</h2>
 <p><span class="new-item item-b">Convolution layer (CONV)</span> The convolution layer (CONV) uses filters that perform convolution operations as it is scanning the input $I$ with respect to its dimensions. Its hyperparameters include the filter size $F$ and stride $S$. The resulting output $O$ is called <i>feature map</i> or <i>activation map</i>.</p>
 <div class=mobile-container>
 <center>
@@ -94,25 +94,25 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Type</b></td>
-<td align=center>Max pooling</td>
-<td align=center>Average pooling</td>
+<td align=center><b>Тип</b></td>
+<td align=center>Max-пулинг</td>
+<td align=center>Усредненный пулинг</td>
 </tr>
 <tr>
-<td align=center><b>Purpose</b></td>
+<td align=center><b>Цель</b></td>
 <td align=left>Каждая операция пулинга выбирает максимальное значение текущего просмотра</td>
 <td align=left>Каждая операция пулинга усредняет значения текущего представления</td>
 </tr>
 <tr>
-<td align=center><b>Illustration</b></td>
+<td align=center><b>Иллюстрация</b></td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=max-pooling-a.png?711b14799d07f9306864695e2713ae07></td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=average-pooling-a.png?58f9ab6d61248c3ec8d526ef65763d2f></td>
 </tr>
 <tr>
-<td align=center><b>Comments</b></td>
-<td align=left>• Preserves detected features<br>• Most commonly used
+<td align=center><b>Комментарии</b></td>
+<td align=left>• Сохраняет обнаруженные функции<br>• Most commonly used
 </td>
-<td align=left>• Downsamples feature map<br>• Used in LeNet</td>
+<td align=left>• Downsamples feature map<br>• Используется в LeNet</td>
 </tr>
 </tbody>
 </table>
@@ -126,7 +126,7 @@
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#filter id=filter></a>Filter hyperparameters</h2>
+<h2><a aria-hidden=true class=anchor href=#filter id=filter></a>Фильтрация гиперпараметров</h2>
 <p>Слой свертки содержит фильтры, для которых важно знать значение его гиперпараметров.</p>
 <p><span class="new-item item-b">Dimensions of a filter</span> A filter of size $F\times F$ applied to an input containing $C$ channels is a $F \times F \times C$ volume that performs convolutions on an input of size $I \times I \times C$ and produces an output feature map (also called activation map) of size $O \times O \times 1$.
 </p><div class=mobile-container>
@@ -157,26 +157,26 @@
   </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Mode</b></td>
-<td align=center>Valid</td>
-<td align=center>Same</td>
-<td align=center>Full</td>
+<td align=center><b>Режим</b></td>
+<td align=center>Действительный</td>
+<td align=center>Такой же</td>
+<td align=center>Полный</td>
 </tr>
 <tr>
-<td align=center><b>Value</b></td>
+<td align=center><b>Значение</b></td>
 <td align=center>$P = 0$</td>
 <td align=left>$P_\text{start} = \Bigl\lfloor\frac{S \lceil\frac{I}{S}\rceil - I + F - S}{2}\Bigr\rfloor$<br>$P_\text{end} = \Bigl\lceil\frac{S \lceil\frac{I}{S}\rceil - I + F - S}{2}\Bigr\rceil$</td>
 <td align=left>$P_\text{start}\in[\![0,F-1]\!]$<br><br>$P_\text{end} = F-1$</td>
 </tr>
 <tr>
-<td align=center><b>Illustration</b></td>
+<td align=center><b>Иллюстрация</b></td>
 <td align=center><img alt="Padding valid" class=img-responsive netsrc=teaching/cs-230/illustrations/ src=padding-valid-a.png?1f58d78612f6202ce201620919d71609></td>
 <td align=center><img alt="Padding same" class=img-responsive netsrc=teaching/cs-230/illustrations/ src=padding-same-a.png?8b680283b10a6e131209b74e21a61213></td>
 <td align=center><img alt="Padding full" class=img-responsive netsrc=teaching/cs-230/illustrations/ src=padding-full-a.png?b51e98467c8a77574c7e8f108654ad95></td>
 </tr>
 <tr>
-<td align=center><b>Purpose</b></td>
-<td align=left>• No padding<br>• Отбрасывает последнюю свертку при несовпадении размеров</td>
+<td align=center><b>Цель</b></td>
+<td align=left>• Без дополнения<br>• Отбрасывает последнюю свертку при несовпадении размеров</td>
 <td align=left>• Padding such that feature map size has size $\Bigl\lceil\frac{I}{S}\Bigr\rceil$<br>• Размер вывода математически удобен<br>• Также называется 'половинным' дополнением</td>
 <td align=left>• Максимальное дополнение. С ним концевые свертки применяются к пределам ввода<br>• Фильтр 'видит' вход от начала до конца</td>
 </tr>
@@ -185,7 +185,7 @@
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#hyperparameters id=hyperparameters></a>Tuning hyperparameters</h2>
+<h2><a aria-hidden=true class=anchor href=#hyperparameters id=hyperparameters></a>Настройка гиперпараметров</h2>
 <p><span class="new-item item-r">Совместимость параметров в сверточном слое</span> Обозначим $I$ длину входного размера объёма, $F$ длину фильтра, $P$ длину дополнения нулями, $S$ шаг, затем выходной размер $O$ карты функций по этому измерению определяется как:</p>
 <div class=mobile-container>
 \[\boxed{O=\frac{I-F+P_\text{start} + P_\text{end}}{S}+1}\]
@@ -216,37 +216,37 @@
 <td align=center><b>FC</b></td>
 </tr>
 <tr>
-<td align=center><b>Illustration</b></td>
+<td align=center><b>Иллюстрация</b></td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=table-conv.png?79f617dcf0ac221ddfaf21694f6e08ad style="width:100%; max-width:155px;"></td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=table-pool.png?e8528df02bafea0840916a83482e42e9 style="width:100%; max-width:155px;"></td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=table-fc.png?0074d2fdaa632e724022c13e94a49a22 style="width:100%; max-width:155px;"></td>
 </tr>
 <tr>
-<td align=center><b>Input size</b></td>
+<td align=center><b>Входной размер</b></td>
 <td align=center>$I \times I \times C$</td>
 <td align=center>$I \times I \times C$</td>
 <td align=center>$N_{\text{in}}$</td>
 </tr>
 <tr>
-<td align=center><b>Output size</b></td>
+<td align=center><b>Выходной размер</b></td>
 <td align=center>$O \times O \times K$</td>
 <td align=center>$O \times O \times C$</td>
 <td align=center>$N_{\text{out}}$</td>
 </tr>
 <tr>
-<td align=center><b>Number of parameters</b></td>
+<td align=center><b>Количество параметров</b></td>
 <td align=center>$(F \times F \times C + 1) \cdot K$</td>
 <td align=center>$0$</td>
 <td align=center>$(N_{\text{in}} + 1 ) \times N_{\text{out}}$</td>
 </tr>
 <tr>
-<td align=center><b>Remarks</b></td>
+<td align=center><b>Примечания</b></td>
 <td align=left>• Один параметр смещения на фильтр<br>
                  • In most cases, $S &lt; F$<br>
                  • A common choice for $K$ is $2C$</td>
 <td align=left>• Операция пулинга выполняется поканально<br>
                  • In most cases, $S = F$</td>
-<td align=left>• Input is flattened<br>
+<td align=left>• Ввод сглаживается<br>
                  • Один параметр смещения на нейрон<br>
                  • Количество нейронов FC не имеет структурных ограничений</td>
 </tr>
@@ -280,7 +280,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 <tbody>
 <tr>
 <td align=center><b>ReLU</b></td>
-<td align=center><b>Leaky ReLU</b></td>
+<td align=center><b>ReLU с утечкой</b></td>
 <td align=center><b>ELU</b></td>
 </tr>
 <tr>
@@ -298,7 +298,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 <tr>
 <td align=left>• Сложности нелинейности поддаются биологической интерпретации</td>
 <td align=left>• Решает проблему умирания ReLU для отрицательных значений</td>
-<td align=left>• Differentiable everywhere</td>
+<td align=left>• Дифференцируема везде</td>
 </tr>
 </tbody>
 </table>
@@ -310,7 +310,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 \[\boxed{p=\begin{pmatrix}p_1\\\vdots\\p_n\end{pmatrix}}\quad\textrm{where}\quad\boxed{p_i=\frac{e^{x_i}}{\displaystyle\sum_{j=1}^ne^{x_j}}}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#object-detection id=object-detection></a>Object detection</h2>
+<h2><a aria-hidden=true class=anchor href=#object-detection id=object-detection></a>Обнаружение объектов</h2>
 <p><span class="new-item item-r">Виды моделей</span> Существует 3 основных типа алгоритмов распознавания объектов, для которых характер предсказаний различен. Они описаны в таблице ниже:</p>
 <div class=mobile-container>
 <center>
@@ -322,9 +322,9 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Image classification</b></td>
-<td align=center><b>Classification w. localization</b></td>
-<td align=center><b>Detection</b></td>
+<td align=center><b>Классификация изображений</b></td>
+<td align=center><b>Классификация и локализация</b></td>
+<td align=center><b>Обнаружение</b></td>
 </tr>
 <tr>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=object-detection-clas-en.jpeg?f380203d7e5d88936e654205473e86c2></td>
@@ -332,7 +332,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=object-detection-det-en.jpeg?f735de7d1c1bccd2ff1c864b587ad842></td>
 </tr>
 <tr>
-<td align=left>• Classifies a picture<br>
+<td align=left>• Классифицирует картинку<br>
                  • Прогнозирует вероятность объекта</td>
 <td align=left>• Обнаруживает объект на картинке<br>
                  • Прогнозирует вероятность объекта and where it is located</td>
@@ -340,7 +340,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
                  • Прогнозирует вероятности появления объектов и их местонахождение</td>
 </tr>
 <tr>
-<td align=left>Traditional CNN</td>
+<td align=left>Традиционная CNN</td>
 <td align=left>Simplified YOLO, R-CNN</td>
 <td align=left>YOLO, R-CNN</td>
 </tr>
@@ -359,13 +359,13 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Bounding box detection</b></td>
-<td align=center><b>Landmark detection</b></td>
+<td align=center><b>Обнаружение ограничивающей рамки</b></td>
+<td align=center><b>Обнаружение ориентира</b></td>
 </tr>
 <tr>
 <td align=left>• Обнаруживает часть изображения c объектом</td>
 <td align=left>• Обнаруживает форму или характеристики объекта (например: глаза)<br>
-                 • More granular</td>
+                 • Более детализировано</td>
 </tr>
 <tr>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=detection-bounding-box.jpeg?4fab94de8d967605519bfc6bafd14df3 style="width:100%; max-width:300px;"></td>
@@ -439,14 +439,14 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Face verification</b></td>
-<td align=center><b>Face recognition</b></td>
+<td align=center><b>Проверка лица</b></td>
+<td align=center><b>Распознавание лиц</b></td>
 </tr>
 <tr>
 <td align=left>• Это правильный человек?<br>
-                 • One-to-one lookup</td>
+                 • Один-к-одному поиск</td>
 <td align=left>• Это одно из $K$ лиц в базе данных?<br>
-                 • One-to-many lookup</td>
+                 • Один-к-многим поиск</td>
 </tr>
 <tr>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=face-verification-en.jpeg?9b6ea3c15805347193943fe09692f71b style="width:100%; max-width:300px;"></td>
@@ -472,7 +472,7 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
   </div>
 </center>
 <br>
-<h2><a aria-hidden=true class=anchor href=#style-transfer id=style-transfer></a>Neural style transfer</h2>
+<h2><a aria-hidden=true class=anchor href=#style-transfer id=style-transfer></a>Перенос нейронного стиля</h2>
 <p><span class="new-item item-g">Motivation</span> The goal of neural style transfer is to generate an image $G$ based on a given content $C$ and a given style $S$.</p>
 <div class=mobile-container>
 <center>

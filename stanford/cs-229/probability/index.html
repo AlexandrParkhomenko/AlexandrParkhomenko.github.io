@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Probabilities and Statistics</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#introduction>Introduction</a></div> <div class=dropdown-container> <a href=#introduction><span>Sample space</span></a> <a href=#introduction><span>Event</span></a> <a href=#introduction><span>Permutation</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#conditional-probability>Conditional probability</a></div> <div class=dropdown-container> <a href=#conditional-probability><span>Bayes' rule</span></a> <a href=#conditional-probability><span>Independence</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#random-variables>Random Variables</a></div> <div class=dropdown-container> <a href=#random-variables><span>Definitions</span></a> <a href=#random-variables><span>Expectation</span></a> <a href=#random-variables><span>Variance</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#probability-distributions>Probability distributions</a></div> <div class=dropdown-container> <a href=#probability-distributions><span>Chebyshev's inequality</span></a> <a href=#probability-distributions><span>Main distributions</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#joint-rv>Совместно распределенные случайные величины</a></div> <div class=dropdown-container> <a href=#joint-rv><span>Density</span></a> <a href=#joint-rv><span>Covariance</span></a> <a href=#joint-rv><span>Correlation</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#parameter-estimation>Parameter estimation</a></div> <div class=dropdown-container> <a href=#parameter-estimation><span>Mean</span></a> <a href=#parameter-estimation><span>Variance</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/refresher-probabilities-statistics.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Probabilities and Statistics</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#introduction>Введение</a></div> <div class=dropdown-container> <a href=#introduction><span>Пространство выборки</span></a> <a href=#introduction><span>Событие</span></a> <a href=#introduction><span>Перестановка</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#conditional-probability>Условная вероятность</a></div> <div class=dropdown-container> <a href=#conditional-probability><span>Правило Байеса</span></a> <a href=#conditional-probability><span>Независимость</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#random-variables>Случайные величины</a></div> <div class=dropdown-container> <a href=#random-variables><span>Определения</span></a> <a href=#random-variables><span>Ожидание</span></a> <a href=#random-variables><span>Дисперсия</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#probability-distributions>Распределения вероятностей</a></div> <div class=dropdown-container> <a href=#probability-distributions><span>Неравенство Чебышева</span></a> <a href=#probability-distributions><span>Основные распределения</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#joint-rv>Совместно распределенные случайные величины</a></div> <div class=dropdown-container> <a href=#joint-rv><span>Плотность</span></a> <a href=#joint-rv><span>Ковариация</span></a> <a href=#joint-rv><span>Корреляция</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#parameter-estimation>Оценка параметров</a></div> <div class=dropdown-container> <a href=#parameter-estimation><span>Среднее</span></a> <a href=#parameter-estimation><span>Дисперсия</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/refresher-probabilities-statistics.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -123,7 +123,7 @@
 </div>
 <p><span class=remark>Remark: we note that for $0\leqslant r\leqslant n$, we have $P(n,r)\geqslant C(n,r)$.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#conditional-probability id=conditional-probability></a>Conditional Probability</h2>
+<h2><a aria-hidden=true class=anchor href=#conditional-probability id=conditional-probability></a>Условная вероятность</h2>
 <p><span class="new-item item-r">Bayes' rule</span> For events $A$ and $B$ such that $P(B)&gt;0$, we have:</p>
 <div class=mobile-container>
 \[\boxed{P(A|B)=\frac{P(B|A)P(A)}{P(B)}}\]
@@ -153,8 +153,8 @@
 \[\boxed{P(A\cap B)=P(A)P(B)}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#random-variables id=random-variables></a>Random Variables</h2>
-<h3>Definitions</h3>
+<h2><a aria-hidden=true class=anchor href=#random-variables id=random-variables></a>Случайные величины</h2>
+<h3>Определения</h3>
 <p><span class="new-item item-g">Случайная величина</span> случайная величина, которую часто называют $X$, представляет собой функцию, которая отображает каждый элемент в пространстве выборки на действительную линию.</p>
 <br>
 <p><span class="new-item item-g">Cumulative distribution function (CDF)</span> The cumulative distribution function $F$, which is monotonically non-decreasing and is such that $\underset{x\rightarrow-\infty}{\textrm{lim}}F(x)=0$ and $\underset{x\rightarrow+\infty}{\textrm{lim}}F(x)=1$, is defined as:</p>
@@ -177,10 +177,10 @@ in the discrete (D) and the continuous (C) cases.</p>
 <table>
 <tbody>
 <tr>
-<td align=center><b>Case</b></td>
+<td align=center><b>Случай</b></td>
 <td align=center><b>CDF $F$</b></td>
 <td align=center><b>PDF $f$</b></td>
-<td align=center><b>Properties of PDF</b></td>
+<td align=center><b>Свойства PDF</b></td>
 </tr>
 <tr>
 <td align=center>(D)</td>
@@ -206,7 +206,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 <table>
 <tbody>
 <tr>
-<td align=center><b>Case</b></td>
+<td align=center><b>Случай</b></td>
 <td align=center><b>$E[X]$</b></td>
 <td align=center><b>$E[g(X)]$</b></td>
 <td align=center><b>$E[X^k]$</b></td>
@@ -256,7 +256,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 \[\boxed{\frac{\partial}{\partial c}\left(\int_a^bg(x)dx\right)=\frac{\partial b}{\partial c}\cdot g(b)-\frac{\partial a}{\partial c}\cdot g(a)+\int_a^b\frac{\partial g}{\partial c}(x)dx}\]
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#probability-distributions id=probability-distributions></a>Probability Distributions</h2>
+<h2><a aria-hidden=true class=anchor href=#probability-distributions id=probability-distributions></a>Распределения вероятностей</h2>
 <p><span class="new-item item-r">Chebyshev's inequality</span> Let $X$ be a random variable with expected value $\mu$. For $k, \sigma&gt;0$, we have the following inequality:</p>
 <div class=mobile-container>
 \[\boxed{P(|X-\mu|\geqslant k\sigma)\leqslant\frac{1}{k^2}}\]
@@ -277,8 +277,8 @@ in the discrete (D) and the continuous (C) cases.</p>
   </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Type</b></td>
-<td align=center><b>Distribution</b></td>
+<td align=center><b>Тип</b></td>
+<td align=center><b>Распределения</b></td>
 <td align=center><b>PDF</b></td>
 <td align=center><b>$\psi(\omega)$</b></td>
 <td align=center><b>$E[X]$</b></td>
@@ -342,9 +342,9 @@ in the discrete (D) and the continuous (C) cases.</p>
 <table>
 <tbody>
 <tr>
-<td align=center><b>Case</b></td>
-<td align=center><b>Marginal density</b></td>
-<td align=center><b>Cumulative function</b></td>
+<td align=center><b>Случай</b></td>
+<td align=center><b>Предельная плотность</b></td>
+<td align=center><b>Кумулятивная функция</b></td>
 </tr>
 <tr>
 <td align=center>(D)</td>
@@ -383,8 +383,8 @@ in the discrete (D) and the continuous (C) cases.</p>
 <p><span class=remark>Remark 1: we note that for any random variables $X, Y$, we have $\rho_{XY}\in[-1,1]$.</span></p>
 <p><span class=remark>Remark 2: If X and Y are independent, then $\rho_{XY} = 0$.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#parameter-estimation id=parameter-estimation></a>Parameter estimation</h2>
-<h3>Definitions</h3>
+<h2><a aria-hidden=true class=anchor href=#parameter-estimation id=parameter-estimation></a>Оценка параметров</h2>
+<h3>Определения</h3>
 <p><span class="new-item item-g">Random sample</span> A random sample is a collection of $n$ random variables $X_1, ..., X_n$ that are independent and identically distributed with $X$.</p>
 <br>
 <p><span class="new-item item-g">Оценщик</span> Estimator - это функция данных, которая используется для определения значения неизвестного параметра в статистической модели.</p>
@@ -395,7 +395,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 </div>
 <p><span class=remark>Remark: an estimator is said to be unbiased when we have $E[\hat{\theta}]=\theta$.</span></p>
 <br>
-<h3>Estimating the mean</h3>
+<h3>Оценка среднего</h3>
 <p><span class="new-item item-b">Sample mean</span> The sample mean of a random sample is used to estimate the true mean $\mu$ of a distribution, is often noted $\overline{X}$ and is defined as follows:</p>
 <div class=mobile-container>
 \[\boxed{\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i}\]
@@ -407,7 +407,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 \[\boxed{\overline{X}\underset{n\rightarrow+\infty}{\sim}\mathcal{N}\left(\mu, \frac{\sigma}{\sqrt{n}}\right)}\]
 </div>
 <br>
-<h3>Estimating the variance</h3>
+<h3>Оценка дисперсии</h3>
 <p><span class="new-item item-b">Sample variance</span> The sample variance of a random sample is used to estimate the true variance $\sigma^2$ of a distribution, is often noted $s^2$ or $\hat{\sigma}^2$ and is defined as follows:</p>
 <div class=mobile-container>
 \[\boxed{s^2=\hat{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2}\]

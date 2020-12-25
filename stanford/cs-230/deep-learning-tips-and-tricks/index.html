@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Глубокое обучение</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Tips and tricks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#data-processing>Data processing</a></div> <div class=dropdown-container> <a href=#data-processing><span>Data augmentation</span></a> <a href=#data-processing><span>Batch normalization</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#running-nn>Обучение нейронной сети</a></div> <div class=dropdown-container> <a href=#running-nn><span>Epoch</span></a> <a href=#running-nn><span>Mini-batch</span></a> <a href=#running-nn><span>Cross-entropy loss</span></a> <a href=#running-nn><span>Backpropagation</span></a> <a href=#running-nn><span>Gradient descent</span></a> <a href=#running-nn><span>Updating weights</span></a> <a href=#running-nn><span>Gradient checking</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#parameter-tuning>Parameter tuning</a></div> <div class=dropdown-container> <a href=#parameter-tuning><span>Xavier initialization</span></a> <a href=#parameter-tuning><span>Transfer learning</span></a> <a href=#parameter-tuning><span>Learning rate</span></a> <a href=#parameter-tuning><span>Adaptive learning rates</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#regularization>Regularization</a></div> <div class=dropdown-container> <a href=#regularization><span>Dropout</span></a> <a href=#regularization><span>Weight regularization</span></a> <a href=#regularization><span>Early stopping</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#good-practices>Good practices</a></div> <div class=dropdown-container> <a href=#good-practices><span>Overfitting small batch</span></a> <a href=#good-practices><span>Gradient checking</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-deep-learning-tips-tricks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Глубокое обучение</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Tips and tricks</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#data-processing>Обработка данных</a></div> <div class=dropdown-container> <a href=#data-processing><span>Увеличение данных</span></a> <a href=#data-processing><span>Пакетная нормировка</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#running-nn>Обучение нейронной сети</a></div> <div class=dropdown-container> <a href=#running-nn><span>Эпоха</span></a> <a href=#running-nn><span>Мини-пакет</span></a> <a href=#running-nn><span>Функция потерь на основе перекрестной энтропии</span></a> <a href=#running-nn><span>Обратное распространение</span></a> <a href=#running-nn><span>Градиентный спуск</span></a> <a href=#running-nn><span>Обновление весов</span></a> <a href=#running-nn><span>Проверка градиента</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#parameter-tuning>Настройка параметров</a></div> <div class=dropdown-container> <a href=#parameter-tuning><span>Инициализация Xavier</span></a> <a href=#parameter-tuning><span>Трансферное обучение</span></a> <a href=#parameter-tuning><span>Скорость обучения</span></a> <a href=#parameter-tuning><span>Адаптивная скорость обучения</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#regularization>Регуляризация</a></div> <div class=dropdown-container> <a href=#regularization><span>Прореживание</span></a> <a href=#regularization><span>Регуляризация веса</span></a> <a href=#regularization><span>Ранняя остановка</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#good-practices>Хорошие практики</a></div> <div class=dropdown-container> <a href=#good-practices><span>Переобучение на небольших пакетах</span></a> <a href=#good-practices><span>Проверка градиента</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-deep-learning-tips-tricks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -63,7 +63,7 @@
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-230-deep-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-230-deep-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
-<h2><a aria-hidden=true class=anchor href=#data-processing id=data-processing></a>Data processing</h2>
+<h2><a aria-hidden=true class=anchor href=#data-processing id=data-processing></a>Обработка данных</h2>
 <p><span class="new-item item-r">Увеличение данных (augmentation)</span> Для правильного обучения моделям глубокого обучения обычно требуется много данных. Часто бывает полезно получить больше данных из существующих, используя методы увеличения данных. Основные из них приведены в таблице ниже. Точнее, с учетом следующего входного изображения, вот методы, которые мы можем применить:</p>
 <div class=mobile-container>
 <center>
@@ -76,10 +76,10 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Original</b></td>
-<td align=center><b>Flip</b></td>
-<td align=center><b>Rotation</b></td>
-<td align=center><b>Random crop</b></td>
+<td align=center><b>Оригинал</b></td>
+<td align=center><b>Отражение</b></td>
+<td align=center><b>Поворот</b></td>
+<td align=center><b>Случайное кадрирование</b></td>
 </tr>
 <tr>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=augmentation-original.jpg?fa9abcd4dce13c776d7d10b3a1ec8fad></td>
@@ -110,10 +110,10 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Color shift</b></td>
-<td align=center><b>Noise addition</b></td>
-<td align=center><b>Information loss</b></td>
-<td align=center><b>Contrast change</b></td>
+<td align=center><b>Сдвиг цвета</b></td>
+<td align=center><b>Добавление шума</b></td>
+<td align=center><b>Потеря информации</b></td>
+<td align=center><b>Изменение контраста</b></td>
 </tr>
 <tr>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=augmentation-shift.jpg?fca805477d241c88166819240ab65ba4></td>
@@ -125,12 +125,12 @@
 <td align=left valign=top>• Немного изменены нюансы RGB<br>
                  • Получает возникающий при изменении освещения шум
 </td>
-<td align=left valign=top>• Addition of noise<br>
+<td align=left valign=top>• Добавление шума<br>
                  • Толерантнее к качеству изображения
 </td>
 <td align=left valign=top>• Части изображения игнорируются<br>
                               • Имитирует потенциальную потерю частей изображения</td>
-<td align=left valign=top>• Luminosity changes<br>
+<td align=left valign=top>• Изменяется яркость<br>
                               • Контролирует разницу в экспозиции в зависимости от времени суток</td>
 </tr>
 </tbody>
@@ -146,7 +146,7 @@
 Обычно это делается после полносвязного/сверточного слоя и до уровня нелинейности и направлено на повышение скорости обучения и уменьшение сильной зависимости от инициализации.<p></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#running-nn id=running-nn></a>Обучение нейронной сети</h2>
-<h3>Definitions</h3>
+<h3>Определения</h3>
 <p><span class="new-item item-b">Эпоха</span> в контексте обучения модели эпоха - это термин, используемый для обозначения одной итерации, когда модель видит весь обучающий набор для обновления своих весов.</p>
 <br>
 <p><span class="new-item item-r">Мини-пакетный градиентный спуск</span> на этапе обучения обновление весов обычно не основывается на всем обучающем наборе сразу из-за сложности вычислений или одной точки данных из-за проблем с шумом. Вместо этого этап обновления выполняется для мини-пакетов, где количество точек данных в пакете является гиперпараметром, который мы можем настроить.</p>
@@ -158,7 +158,7 @@
 \[\boxed{L(z,y)=-\Big[y\log(z)+(1-y)\log(1-z)\Big]}\]
 </div>
 <br>
-<h3>Finding optimal weights</h3>
+<h3>Поиск оптимальных весов</h3>
 <p><span class="new-item item-b">Обратное распространение</span> это метод обновления весов в нейронной сети с учетом фактического и желаемого выходных данных. Производная по каждому весу $w$ вычисляется с использованием цепного правила.</p>
 <div class=mobile-container>
 <center>
@@ -181,8 +181,8 @@
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#parameter-tuning id=parameter-tuning></a>Parameter tuning</h2>
-<h3>Weights initialization</h3>
+<h2><a aria-hidden=true class=anchor href=#parameter-tuning id=parameter-tuning></a>Настройка параметров</h2>
+<h3>Инициализация весов</h3>
 <p><span class="new-item item-b">Метод инициализации Завьера (Xavier)</span> вместо того, чтобы инициализировать веса чисто случайным образом, инициализация Xavier позволяет иметь начальные веса, которые учитывают характеристики, уникальные для архитектуры.</p>
 <br>
 <p><span class="new-item item-r">Трансферное обучение</span> для обучения модели глубокого обучения требуется много данных и, что ещё более важно, много времени. Часто бывает полезно воспользоваться предварительно обученными весами для огромных наборов данных, обучение которых занимало дни/недели, и использовать их в нашем случае использования. В зависимости от того, сколько данных у нас под рукой, есть несколько способов использовать это:</p>
@@ -194,22 +194,22 @@
 <col width=30%>
 </colgroup><tbody>
 <tr>
-<td align=center><b>Training size</b></td>
-<td align=center><b>Illustration</b></td>
-<td align=center><b>Explanation</b></td>
+<td align=center><b>Размер тренировки</b></td>
+<td align=center><b>Иллюстрация</b></td>
+<td align=center><b>Пояснение</b></td>
 </tr>
 <tr>
-<td align=center>Small</td>
+<td align=center>Маленький</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=transfer-learning-small-ltr.png?bee5e73de8fb2c6297a3a88804fabf5e></td>
 <td align=left>Freezes all layers, тренирует веса на softmax</td>
 </tr>
 <tr>
-<td align=center>Medium</td>
+<td align=center>Средний</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=transfer-learning-medium-ltr.png?650eae780cff79a9ff0123d62e5812ad></td>
 <td align=left>Freezes most layers, тренирует веса на последних слоях и softmax</td>
 </tr>
 <tr>
-<td align=center>Large</td>
+<td align=center>Большой</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=transfer-learning-large-ltr.png?ccdc27259583a57319e0bc39f5d858df></td>
 <td align=left>Тренирует веса на слоях и softmax инициализирует веса на предварительно обученных</td>
 </tr>
@@ -218,7 +218,7 @@
 </center>
 </div>
 <br>
-<h3>Optimizing convergence</h3>
+<h3>Оптимизация сходимости</h3>
 <p><span class="new-item item-b">Learning rate</span> The learning rate, often noted $\alpha$ or sometimes $\eta$, indicates at which pace the weights get updated. It can be fixed or adaptively changed. The current most popular method is called Adam, which is a method that adapts the learning rate.</p>
 <br>
 <p><span class="new-item item-g">Адаптивная скорость обучения</span> Изменение скорости обучения при обучении модели может сократить время обучения и улучшить численное оптимальное решение. Хотя оптимизатор Адама является наиболее часто используемым методом, другие также могут быть полезны. Они приведены в таблице ниже:</p>
@@ -233,30 +233,30 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Method</b></td>
-<td align=center><b>Explanation</b></td>
+<td align=center><b>Метод</b></td>
+<td align=center><b>Пояснение</b></td>
 <td align=center><b>Update of $w$</b></td>
 <td align=center><b>Update of $b$</b></td>
 </tr>
 <tr>
 <td align=center>Momentum</td>
-<td align=left>• Dampens oscillations<br>
-                 • Improvement to SGD<br>
+<td align=left>• Гасит колебания<br>
+                 • Улучшение SGD<br>
                  • 2 параметра для настройки</td>
 <td align=center>$\displaystyle w-\alpha v_{dw}$</td>
 <td align=center>$\displaystyle b-\alpha v_{db}$</td>
 </tr>
 <tr>
 <td align=center>RMSprop</td>
-<td align=left>• Среднеквадратичное распространение (Среднеквадратичное распространение (Среднеквадратичное распространение (Среднеквадратичное распространение (Среднеквадратичное распространение (Root Mean Square propagation)))))<br>
+<td align=left>• Среднеквадратичное распространение<br>
                  • Ускоряет алгоритм обучения за счет управления колебаниями</td>
 <td align=center>$\displaystyle w-\alpha\frac{dw}{\sqrt{s_{dw}}}$</td>
 <td align=center>$\displaystyle b\longleftarrow b-\alpha\frac{db}{\sqrt{s_{db}}}$</td>
 </tr>
 <tr>
 <td align=center>Adam</td>
-<td align=left>• Adaptive Moment estimation<br>
-                 • Most popular method<br>
+<td align=left>• Оценка адаптивного момента<br>
+                 • Самый популярный метод<br>
                  • 4 параметра для настройки</td>
 <td align=center>$\displaystyle w-\alpha\frac{v_{dw}}{\sqrt{s_{dw}}+\epsilon}$</td>
 <td align=center>$\displaystyle b\longleftarrow b-\alpha\frac{v_{db}}{\sqrt{s_{db}}+\epsilon}$</td>
@@ -267,7 +267,7 @@
 </div>
 <p><span class=remark>Примечание: другие методы включают Adadelta, Adagrad и SGD.</span></p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#regularization id=regularization></a>Regularization</h2>
+<h2><a aria-hidden=true class=anchor href=#regularization id=regularization></a>Регуляризация</h2>
 <p><span class="new-item item-r">Dropout</span> Dropout is a technique used in neural networks to prevent overfitting the training data by dropping out neurons with probability $p &gt;0$. It forces the model to avoid relying too much on particular sets of features.</p>
 <div class=mobile-container>
 <center>
@@ -293,7 +293,7 @@
 </tr>
 <tr>
 <td align=left>• Уменьшает коэффициенты до 0<br>• Подходит для выбора переменных</td>
-<td align=left>Makes coefficients smaller</td>
+<td align=left>Делает коэффициенты меньше</td>
 <td align=left>Компромисс между выбором переменных и небольшими коэффициентами</td>
 </tr>
 <tr>
@@ -318,7 +318,7 @@
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#good-practices id=good-practices></a>Good practices</h2>
+<h2><a aria-hidden=true class=anchor href=#good-practices id=good-practices></a>Хорошие практики</h2>
 <p><span class="new-item item-g">Переобучение на небольших пакетах</span> При отладке модели часто бывает полезно провести быстрые тесты, чтобы увидеть, есть ли какие-либо серьезные проблемы с архитектурой самой модели. В частности, чтобы убедиться, что модель может быть должным образом обучена, внутри сети передается мини-пакет, чтобы увидеть, может ли он переобучиться. Если это невозможно, это означает, что модель либо слишком сложна, либо недостаточно сложна, чтобы даже переобучиться на небольшой партии, не говоря уже об обучающем наборе нормального размера.</p>
 <br>
 <p><span class="new-item item-r">Проверка градиента</span> это метод, используемый во время реализации обратного прохода нейронной сети. Он сравнивает значение аналитического градиента с числовым градиентом в заданных точках и играет роль проверки правильности.</p>
@@ -332,22 +332,22 @@
 </colgroup>
 <tbody>
 <tr>
-<td align=center><b>Type</b></td>
-<td align=center><b>Numerical gradient</b></td>
-<td align=center><b>Analytical gradient</b></td>
+<td align=center><b>Тип</b></td>
+<td align=center><b>Числовой градиент</b></td>
+<td align=center><b>Аналитический градиент</b></td>
 </tr>
 <tr>
-<td align=center>Formula</td>
+<td align=center>Формула</td>
 <td align=center>$\displaystyle\frac{df}{dx}(x) \approx \frac{f(x+h) - f(x-h)}{2h}$</td>
 <td align=center>$\displaystyle\frac{df}{dx}(x) = f'(x)$</td>
 </tr>
 <tr>
-<td align=center>Comments</td>
+<td align=center>Комментарии</td>
 <td align=left valign=top>• Дорого; потери должны вычисляться два раза для каждого измерения<br>
                               • Используется для проверки правильности аналитической реализации<br>
                               • Компромисс при выборе $h$ не слишком малого (числовая нестабильность) или слишком большого (плохое приближение градиента)</td>
-<td align=left valign=top>• 'Exact' result<br>
-                              • Direct computation<br>
+<td align=left valign=top>• 'Точный' результат<br>
+                              • Прямое вычисление<br>
                               • Используемое в окончательной реализации</td>
 </tr>
 </tbody>
