@@ -45,7 +45,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button>CS 221 - Artificial Intelligence</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><b>CS 229 - Machine Learning</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><B>CS 229 - Machine Learning</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>CS 230 - Deep Learning</button>
@@ -67,7 +67,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-229/unsupervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-unsupervised-learning'" type=button>Unsupervised Learning</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-229/deep-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-deep-learning'" type=button><b>Deep Learning</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/deep-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-deep-learning'" type=button><B>Deep Learning</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-229/machine-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks'" type=button>Tips and tricks</button>
@@ -80,7 +80,7 @@
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
 <h2><a aria-hidden=true class=anchor href=#nn id=nn></a>Neural Networks</h2>
 <p>Neural networks are a class of models that are built with layers. Commonly used types of neural networks include convolutional and recurrent neural networks.</p>
-<p><span class="new-item item-g">Architecture</span> The vocabulary around neural networks architectures is described in the figure below:</p>
+<p><span class="new-item item-g">Архитектура</span> Словарь архитектур нейронных сетей описан на рисунке ниже:</p>
 <center>
   <img alt=Illustration class=img-responsive netsrc=teaching/cs-229/illustrations/ src=neural-network-en.png?835862d448ad85bc5a038848d7d7df0b style=width:100%;max-width:700px>
 </center>
@@ -90,7 +90,7 @@
 </div>
 <p>where we note $w$, $b$, $z$ the weight, bias and output respectively.</p>
 <br>
-<p><span class="new-item item-b">Activation function</span> Activation functions are used at the end of a hidden unit to introduce non-linear complexities to the model. Here are the most common ones:</p>
+<p><span class="new-item item-b">Функция активации</span> используются в конце скрытого блока, чтобы внести в модель нелинейность. Вот самые распространенные:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -146,7 +146,7 @@
 \[\boxed{w\longleftarrow w-\alpha\frac{\partial L(z,y)}{\partial w}}\]
 </div>
 <br>
-<p><span class="new-item item-g">Updating weights</span> In a neural network, weights are updated as follows:
+<p><span class="new-item item-g">Обновление весов</span> В нейронной сети веса обновляются следующим образом:
 </p><ul>
 <li><u>Step 1</u>: Take a batch of training data.
 </li><li><u>Step 2</u>: Perform forward propagation to obtain the corresponding loss.
@@ -170,7 +170,7 @@
 It is usually done after a fully connected/convolutional layer and before a non-linearity layer and aims at allowing higher learning rates and reducing the strong dependence on initialization.<p></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#rnn id=rnn></a>Recurrent Neural Networks</h2>
-<p><span class="new-item item-r">Types of gates</span> Here are the different types of gates that we encounter in a typical recurrent neural network:</p>
+<p><span class="new-item item-r">Типы вентилей</span> Вот различные типы вентилей, с которыми мы сталкиваемся в типичной рекуррентной нейронной сети:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -196,7 +196,7 @@ It is usually done after a fully connected/convolutional layer and before a non-
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">LSTM</span> A long short-term memory (LSTM) network is a type of RNN model that avoids the vanishing gradient problem by adding 'forget' gates.</p>
+<p><span class="new-item item-b">LSTM</span> Сеть с долгой кратковременной памятью (LSTM) - это тип модели RNN, которая позволяет избежать проблемы исчезающего градиента, добавляя вентиль «забывания».</p>
 <br>
 <div class="alert alert-warning" role=alert>For a more detailed overview of the concepts above, check out the <a class=alert-link nethref=teaching/cs-230 href=../../cs-230/recurrent-neural-networks/index.html onclick=trackOutboundLink(this);>Deep Learning cheatsheets</a>!</div>
 <br>
@@ -229,7 +229,7 @@ It is usually done after a fully connected/convolutional layer and before a non-
 \[\boxed{\pi^*(s)=\underset{a\in\mathcal{A}}{\textrm{argmax}}\sum_{s'\in\mathcal{S}}P_{sa}(s')V^*(s')}\]
 </div>
 <br>
-<p><span class="new-item item-g">Value iteration algorithm</span> The value iteration algorithm is in two steps:</p>
+<p><span class="new-item item-g">Алгоритм итерации ценностей</span> алгоритм итерации ценностей состоит из двух этапов:</p>
 <p>1) We initialize the value:</p>
 <div class=mobile-container>
 \[\boxed{V_0(s)=0}\]
@@ -239,7 +239,7 @@ It is usually done after a fully connected/convolutional layer and before a non-
 \[\boxed{V_{i+1}(s)=R(s)+\max_{a\in\mathcal{A}}\left[\sum_{s'\in\mathcal{S}}\gamma P_{sa}(s')V_i(s')\right]}\]
 </div>
 <br>
-<p><span class="new-item item-r">Maximum likelihood estimate</span> The maximum likelihood estimates for the state transition probabilities are as follows:</p>
+<p><span class="new-item item-r">Оценка максимального правдоподобия</span> оценки максимального правдоподобия для вероятностей перехода между состояниями следующие:</p>
 <div class=mobile-container>
 \[\boxed{P_{sa}(s')=\frac{\#\textrm{times took action }a\textrm{ in state }s\textrm{ and got to }s'}{\#\textrm{times took action }a\textrm{ in state }s}}\]
 </div>

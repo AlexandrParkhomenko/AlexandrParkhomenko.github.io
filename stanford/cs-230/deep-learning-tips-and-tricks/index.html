@@ -43,7 +43,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><b>CS 230 - Deep Learning</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><B>CS 230 - Deep Learning</B></BUTTON>
   </div>
 </div>
 <div aria-label=... class="btn-group btn-group-justified" role=group>
@@ -54,7 +54,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-230/recurrent-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-recurrent-neural-networks'" type=button>Recurrent Neural Networks</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-230/deep-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks'" type=button><b>Tips and tricks</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-230/deep-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks'" type=button><B>Tips and tricks</B></BUTTON>
   </div>
 </div>
 
@@ -64,7 +64,7 @@
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
 <h2><a aria-hidden=true class=anchor href=#data-processing id=data-processing></a>Data processing</h2>
-<p><span class="new-item item-r">Data augmentation</span> Deep learning models usually need a lot of data to be properly trained. It is often useful to get more data from the existing ones using data augmentation techniques. The main ones are summed up in the table below. More precisely, given the following input image, here are the techniques that we can apply:</p>
+<p><span class="new-item item-r">Увеличение данных (augmentation)</span> Для правильного обучения моделям глубокого обучения обычно требуется много данных. Часто бывает полезно получить больше данных из существующих, используя методы увеличения данных. Основные из них приведены в таблице ниже. Точнее, с учетом следующего входного изображения, вот методы, которые мы можем применить:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:500px;">
@@ -147,9 +147,9 @@ It is usually done after a fully connected/convolutional layer and before a non-
 <br>
 <h2><a aria-hidden=true class=anchor href=#running-nn id=running-nn></a>Training a neural network</h2>
 <h3>Definitions</h3>
-<p><span class="new-item item-b">Epoch</span> In the context of training a model, epoch is a term used to refer to one iteration where the model sees the whole training set to update its weights.</p>
+<p><span class="new-item item-b">Эпоха</span> в контексте обучения модели эпоха - это термин, используемый для обозначения одной итерации, когда модель видит весь обучающий набор для обновления своих весов.</p>
 <br>
-<p><span class="new-item item-r">Mini-batch gradient descent</span> During the training phase, updating weights is usually not based on the whole training set at once due to computation complexities or one data point due to noise issues. Instead, the update step is done on mini-batches, where the number of data points in a batch is a hyperparameter that we can tune.</p>
+<p><span class="new-item item-r">Мини-пакетный градиентный спуск</span> на этапе обучения обновление весов обычно не основывается на всем обучающем наборе сразу из-за сложности вычислений или одной точки данных из-за проблем с шумом. Вместо этого этап обновления выполняется для мини-пакетов, где количество точек данных в пакете является гиперпараметром, который мы можем настроить.</p>
 <br>
 <p><span class="new-item item-b">Loss function</span> In order to quantify how a given model performs, the loss function $L$ is usually used to evaluate to what extent the actual outputs $y$ are correctly predicted by the model outputs $z$.</p>
 <br>
@@ -171,7 +171,7 @@ It is usually done after a fully connected/convolutional layer and before a non-
 \[\boxed{w\longleftarrow w-\alpha\frac{\partial L(z,y)}{\partial w}}\]
 </div>
 <br>
-<p><span class="new-item item-g">Updating weights</span> In a neural network, weights are updated as follows:</p>
+<p><span class="new-item item-g">Обновление весов</span> В нейронной сети веса обновляются следующим образом:</p>
 <p>• Step 1: Take a batch of training data and perform forward propagation to compute the loss.
 <br>• Step 2: Backpropagate the loss to get the gradient of the loss with respect to each weight.
 <br>• Step 3: Use the gradients to update the weights of the network.</p>
@@ -183,9 +183,9 @@ It is usually done after a fully connected/convolutional layer and before a non-
 <br>
 <h2><a aria-hidden=true class=anchor href=#parameter-tuning id=parameter-tuning></a>Parameter tuning</h2>
 <h3>Weights initialization</h3>
-<p><span class="new-item item-b">Xavier initialization</span> Instead of initializing the weights in a purely random manner, Xavier initialization enables to have initial weights that take into account characteristics that are unique to the architecture.</p>
+<p><span class="new-item item-b">Метод инициализации Завьера (Xavier)</span> вместо того, чтобы инициализировать веса чисто случайным образом, инициализация Xavier позволяет иметь начальные веса, которые учитывают характеристики, уникальные для архитектуры.</p>
 <br>
-<p><span class="new-item item-r">Transfer learning</span> Training a deep learning model requires a lot of data and more importantly a lot of time. It is often useful to take advantage of pre-trained weights on huge datasets that took days/weeks to train, and leverage it towards our use case. Depending on how much data we have at hand, here are the different ways to leverage this:</p>
+<p><span class="new-item item-r">Трансферное обучение</span> для обучения модели глубокого обучения требуется много данных и, что ещё более важно, много времени. Часто бывает полезно воспользоваться предварительно обученными весами для огромных наборов данных, обучение которых занимало дни/недели, и использовать их в нашем случае использования. В зависимости от того, сколько данных у нас под рукой, есть несколько способов использовать это:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -221,7 +221,7 @@ It is usually done after a fully connected/convolutional layer and before a non-
 <h3>Optimizing convergence</h3>
 <p><span class="new-item item-b">Learning rate</span> The learning rate, often noted $\alpha$ or sometimes $\eta$, indicates at which pace the weights get updated. It can be fixed or adaptively changed. The current most popular method is called Adam, which is a method that adapts the learning rate.</p>
 <br>
-<p><span class="new-item item-g">Adaptive learning rates</span> Letting the learning rate vary when training a model can reduce the training time and improve the numerical optimal solution. While Adam optimizer is the most commonly used technique, others can also be useful. They are summed up in the table below:</p>
+<p><span class="new-item item-g">Адаптивная скорость обучения</span> Изменение скорости обучения при обучении модели может сократить время обучения и улучшить численное оптимальное решение. Хотя оптимизатор Адама является наиболее часто используемым методом, другие также могут быть полезны. Они приведены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:660px;">
@@ -276,7 +276,7 @@ It is usually done after a fully connected/convolutional layer and before a non-
 </div>
 <p><span class=remark>Remark: most deep learning frameworks parametrize dropout through the 'keep' parameter $1-p$.</span></p>
 <br>
-<p><span class="new-item item-r">Weight regularization</span> In order to make sure that the weights are not too large and that the model is not overfitting the training set, regularization techniques are usually performed on the model weights. The main ones are summed up in the table below:</p>
+<p><span class="new-item item-r">Регуляризация веса</span> Чтобы убедиться, что веса не слишком велики и что модель не переобучается на обучающей выборке, обычно выполняются методы регуляризации для весов модели. Основные из них приведены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:760px;">
@@ -311,7 +311,7 @@ It is usually done after a fully connected/convolutional layer and before a non-
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Early stopping</span> This regularization technique stops the training process as soon as the validation loss reaches a plateau or starts to increase.</p>
+<p><span class="new-item item-g">Ранняя остановка</span> Этот метод регуляризации останавливает процесс обучения, как только потеря валидации достигает плато или начинает увеличиваться.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=early-stopping-en.png?a8aacdfe0c39776d86764857222e19dd style="width:100%; max-width: 500px;">
@@ -319,9 +319,9 @@ It is usually done after a fully connected/convolutional layer and before a non-
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#good-practices id=good-practices></a>Good practices</h2>
-<p><span class="new-item item-g">Overfitting small batch</span> When debugging a model, it is often useful to make quick tests to see if there is any major issue with the architecture of the model itself. In particular, in order to make sure that the model can be properly trained, a mini-batch is passed inside the network to see if it can overfit on it. If it cannot, it means that the model is either too complex or not complex enough to even overfit on a small batch, let alone a normal-sized training set.</p>
+<p><span class="new-item item-g">Переобучение на небольших пакетах</span> При отладке модели часто бывает полезно провести быстрые тесты, чтобы увидеть, есть ли какие-либо серьезные проблемы с архитектурой самой модели. В частности, чтобы убедиться, что модель может быть должным образом обучена, внутри сети передается мини-пакет, чтобы увидеть, может ли он переобучиться. Если это невозможно, это означает, что модель либо слишком сложна, либо недостаточно сложна, чтобы даже переобучиться на небольшой партии, не говоря уже об обучающем наборе нормального размера.</p>
 <br>
-<p><span class="new-item item-r">Gradient checking</span> Gradient checking is a method used during the implementation of the backward pass of a neural network. It compares the value of the analytical gradient to the numerical gradient at given points and plays the role of a sanity-check for correctness.</p>
+<p><span class="new-item item-r">Проверка градиента</span> это метод, используемый во время реализации обратного прохода нейронной сети. Он сравнивает значение аналитического градиента с числовым градиентом в заданных точках и играет роль проверки правильности.</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:650px; max-width:900px;">

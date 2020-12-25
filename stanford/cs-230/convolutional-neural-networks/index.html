@@ -43,12 +43,12 @@
     <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><b>CS 230 - Deep Learning</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><B>CS 230 - Deep Learning</B></BUTTON>
   </div>
 </div>
 <div aria-label=... class="btn-group btn-group-justified" role=group>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><b>Convolutional Neural Networks</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><B>Convolutional Neural Networks</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-230/recurrent-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-recurrent-neural-networks'" type=button>Recurrent Neural Networks</button>
@@ -64,7 +64,7 @@
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
 <h2><a aria-hidden=true class=anchor href=#overview id=overview></a>Overview</h2>
-<p><span class="new-item item-r">Architecture of a traditional CNN</span> Convolutional neural networks, also known as CNNs, are a specific type of neural networks that are generally composed of the following layers:</p>
+<p><span class="new-item item-r">Архитектура традиционного</span> Сверточные нейронные сети, также известные как (Convolutional neural networks, CNN), представляют собой особый тип нейронных сетей, которые обычно состоят из следующих слоев:</p>
 <div class=mobile-container>
 <center>
   <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=architecture-cnn-en.jpeg?3b7fccd728e29dc619e1bd8022bf71cf style=width:100%;max-width:900px>
@@ -83,7 +83,7 @@
 <br>
 <p><span class=remark>Remark: the convolution step can be generalized to the 1D and 3D cases as well.</span></p>
 <br>
-<p><span class="new-item item-b">Pooling (POOL)</span> The pooling layer (POOL) is a downsampling operation, typically applied after a convolution layer, which does some spatial invariance. In particular, max and average pooling are special kinds of pooling where the maximum and average value is taken, respectively.</p>
+<p><span class="new-item item-b">Слой Пулинга</span> Pooling (POOL) - это операция понижающей дискретизации, обычно применяемая после сверточного слоя, который обеспечивает некоторую пространственную инвариантность. В частности, max-пулинг и усредненный пулинг - это особые виды пулинга, в которых берется максимальное и среднее значение соответственно.</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:400px; max-width:720px;">
@@ -119,7 +119,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Fully Connected (FC)</span> The fully connected layer (FC) operates on a flattened input where each input is connected to all neurons. If present, FC layers are usually found towards the end of CNN architectures and can be used to optimize objectives such as class scores.</p>
+<p><span class="new-item item-b">Полносвязный</span> Fully Connected (FC) слой работает на сглаженном входе, где каждый вход подключен ко всем нейронам. Уровни FC, если они присутствуют, обычно находятся ближе к концу архитектур CNN и могут использоваться для оптимизации целей, таких как оценки классов.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=fully-connected-ltr.png?32caf9e07c79d652faa292812579d063 style="width:100%; max-width:500px;">
@@ -198,7 +198,7 @@
 <br>
 <p><span class=remark>Remark: often times, $P_\text{start} = P_\text{end} \triangleq P$, in which case we can replace $P_\text{start} + P_\text{end}$ by $2P$ in the formula above.</span></p>
 <br>
-<p><span class="new-item item-r">Understanding the complexity of the model</span> In order to assess the complexity of a model, it is often useful to determine the number of parameters that its architecture will have. In a given layer of a convolutional neural network, it is done as follows:</p>
+<p><span class="new-item item-r">Понимание сложности модели</span> Чтобы оценить сложность модели, часто бывает полезно определить количество параметров, которые будет иметь её архитектура. В данном слое сверточной нейронной сети это делается следующим образом:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:680px; max-width:900px;">
@@ -311,7 +311,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#object-detection id=object-detection></a>Object detection</h2>
-<p><span class="new-item item-r">Types of models</span> There are 3 main types of object recognition algorithms, for which the nature of what is predicted is different. They are described in the table below:</p>
+<p><span class="new-item item-r">Виды моделей</span> Существует 3 основных типа алгоритмов распознавания объектов, для которых характер предсказаний различен. Они описаны в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:600px; max-width:780px;">
@@ -349,7 +349,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Detection</span> In the context of object detection, different methods are used depending on whether we just want to locate the object or detect a more complex shape in the image. The two main ones are summed up in the table below:</p>
+<p><span class="new-item item-g">Обнаружение</span> В контексте обнаружения объекта используются разные методы в зависимости от того, хотим ли мы просто найти объект или обнаружить более сложную форму на изображении (ориентир, Landmark, Reference point). Два основных из них суммированы в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:300px; max-width:800px;">
@@ -391,9 +391,9 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Anchor boxes</span> Anchor boxing is a technique used to predict overlapping bounding boxes. In practice, the network is allowed to predict more than one box simultaneously, where each box prediction is constrained to have a given set of geometrical properties. For instance, the first prediction can potentially be a rectangular box of a given form, while the second will be another rectangular box of a different geometrical form.</p>
+<p><span class="new-item item-b">Якорные рамки</span> Anchor box - это метод, используемый для прогнозирования перекрывающихся ограничивающих рамок. На практике сети позволяют прогнозировать более одной рамки одновременно, причем каждое предсказание рамки ограничивается заданным набором геометрических свойств. Например, первый прогноз потенциально может быть прямоугольной рамкой заданной формы, а второй будет другой прямоугольной рамкой с другими параметрами.</p>
 <br>
-<p><span class="new-item item-b">Non-max suppression</span> The non-max suppression technique aims at removing duplicate overlapping bounding boxes of a same object by selecting the most representative ones. After having removed all boxes having a probability prediction lower than 0.6, the following steps are repeated while there are boxes remaining:</p>
+<p><span class="new-item item-b">Подавление немаксимума</span> Non-max suppression - Техника подавления немаксимальных направлена на удаление дублирующих перекрывающихся ограничивающих рамок одного и того же объекта путем выбора наиболее репрезентативных. После удаления всех рамок, имеющих прогноз вероятности ниже 0.6, следующие шаги повторяются, пока остаются рамки:</p>
 <p>For a given class,
 <br>• Step 1: Pick the box with the largest prediction probability.
 <br>• Step 2: Discard any box having an $\textrm{IoU}\geqslant0.5$ with the previous box.</p>
@@ -403,7 +403,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">YOLO</span> You Only Look Once (YOLO) is an object detection algorithm that performs the following steps:</p>
+<p><span class="new-item item-r">YOLO</span> You Only Look Once (YOLO) - это алгоритм обнаружения объектов, который выполняет следующие шаги:</p>
 <p>• Step 1: Divide the input image into a $G\times G$ grid.
 <br>• Step 2: For each grid cell, run a CNN that predicts $y$ of the following form:
 </p><div class=mobile-container>
@@ -419,7 +419,7 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 <br>
 <p><span class=remark>Remark: when $p_c=0$, then the network does not detect any object. In that case, the corresponding predictions $b_x, ..., c_p$ have to be ignored.</span></p>
 <br>
-<p><span class="new-item item-r">R-CNN</span> Region with Convolutional Neural Networks (R-CNN) is an object detection algorithm that first segments the image to find potential relevant bounding boxes and then run the detection algorithm to find most probable objects in those bounding boxes.</p>
+<p><span class="new-item item-r">R-CNN</span> Region with Convolutional Neural Networks (R-CNN) - это алгоритм обнаружения объектов, который сначала сегментирует изображение, чтобы найти потенциально релевантные ограничивающие рамки, а затем запускает алгоритм обнаружения, чтобы найти наиболее вероятные объекты в этих ограничивающих рамках.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=r-cnn-en.jpeg?5bb82ac3b9da8171d5c8a741861c3aa6 style=width:100%;>
@@ -429,7 +429,7 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 <p><span class=remark>Remark: although the original algorithm is computationally expensive and slow, newer architectures enabled the algorithm to run faster, such as Fast R-CNN and Faster R-CNN.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#face id=face></a>Face verification and recognition</h2>
-<p><span class="new-item item-g">Types of models</span> Two main types of model are summed up in table below:</p>
+<p><span class="new-item item-g">Типы моделей</span> В таблице ниже приведены два основных типа моделей:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:300px; max-width: 700px;">
@@ -505,14 +505,14 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 <p><span class=remark>Remark: a higher value of $\alpha$ will make the model care more about the content while a higher value of $\beta$ will make it care more about the style.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#ct-architectures id=ct-architectures></a>Architectures using computational tricks</h2>
-<p><span class="new-item item-r">Generative Adversarial Network</span> Generative adversarial networks, also known as GANs, are composed of a generative and a discriminative model, where the generative model aims at generating the most truthful output that will be fed into the discriminative which aims at differentiating the generated and true image.</p>
+<p><span class="new-item item-r">Генеративные состязательные сети</span> Generative adversarial networks, также известные как GANs, состоят из генеративной и дискриминативной моделей, где генеративная модель направлена на генерирование наиболее правдивого вывода, который будет передан дискриминативной модели, направленной на различение созданного и истинного изображения.</p>
 <div class=mobile-container>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=discriminator-generator-en.jpeg?850896147a318376ce537812fbefe3a8>
 </div>
 <br>
 <p><span class=remark>Remark: use cases using variants of GANs include text to image, music generation and synthesis.</span></p>
 <br>
-<p><span class="new-item item-r">ResNet</span> The Residual Network architecture (also called ResNet) uses residual blocks with a high number of layers meant to decrease the training error. The residual block has the following characterizing equation:</p>
+<p><span class="new-item item-r">Residual Network architecture</span> (также называется ResNet) использует остаточные блоки с большим количеством слоев, чтобы уменьшить ошибку обучения. Остаточный блок имеет следующее характеристическое уравнение:</p>
 <div class=mobile-container>
 \[\boxed{a^{[l+2]}=g(a^{[l]}+z^{[l+2]})}\]
 </div>

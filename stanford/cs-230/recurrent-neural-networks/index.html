@@ -43,7 +43,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><b>CS 230 - Deep Learning</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button><B>CS 230 - Deep Learning</B></BUTTON>
   </div>
 </div>
 <div aria-label=... class="btn-group btn-group-justified" role=group>
@@ -51,7 +51,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>Convolutional Neural Networks</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-230/recurrent-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-recurrent-neural-networks'" type=button><b>Recurrent Neural Networks</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-230/recurrent-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-recurrent-neural-networks'" type=button><B>Recurrent Neural Networks</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-230/deep-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks'" type=button>Tips and tricks</button>
@@ -64,7 +64,7 @@
 </h1>
 <i>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></i>
 <h2><a aria-hidden=true class=anchor href=#overview id=overview></a>Overview</h2>
-<p><span class="new-item item-r">Architecture of a traditional RNN</span> Recurrent neural networks, also known as RNNs, are a class of neural networks that allow previous outputs to be used as inputs while having hidden states. They are typically as follows:</p>
+<p><span class="new-item item-r">Архитектура традиционной RNN</span> Рекуррентные нейронные сети, также известные как RNN, представляют собой класс нейронных сетей, которые позволяют использовать предыдущие выходы в качестве входов, имея скрытые состояния. Обычно они следующие:</p>
 <div class=mobile-container>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=architecture-rnn-ltr.png?9ea4417fc145b9346a3e288801dbdfdc style="width:100%; max-width:700px;">
 </div>
@@ -105,7 +105,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Applications of RNNs</span> RNN models are mostly used in the fields of natural language processing and speech recognition. The different applications are summed up in the table below:</p>
+<p><span class="new-item item-g">Применение RNN</span> Модели RNN в основном используются в области обработки естественного языка и распознавания речи. Различные приложения приведены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -159,7 +159,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#architecture id=architecture></a>Handling long term dependencies</h2>
-<p><span class="new-item item-b">Commonly used activation functions</span> The most common activation functions used in RNN modules are described below:</p>
+<p><span class="new-item item-b">Часто используемые функции активации</span> Наиболее распространенные функции активации, используемые в модулях RNN, описаны ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:450px;">
@@ -189,9 +189,9 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Vanishing/exploding gradient</span> The vanishing and exploding gradient phenomena are often encountered in the context of RNNs. The reason why they happen is that it is difficult to capture long term dependencies because of multiplicative gradient that can be exponentially decreasing/increasing with respect to the number of layers.</p>
+<p><span class="new-item item-b">Исчезающий/взрывающийся градиент</span> Явления исчезающих и взрывных градиентов часто встречаются в контексте RNN. Причина, по которой они происходят, заключается в том, что трудно зафиксировать долгосрочные зависимости из-за мультипликативного градиента, который может экспоненциально уменьшаться/увеличиваться по отношению к количеству слоев.</p>
 <br>
-<p><span class="new-item item-b">Gradient clipping</span> It is a technique used to cope with the exploding gradient problem sometimes encountered when performing backpropagation. By capping the maximum value for the gradient, this phenomenon is controlled in practice.</p>
+<p><span class="new-item item-b">Отсечение градиента</span> это метод, используемый для решения проблемы взрывных градиентов, иногда возникающей при выполнении обратного распространения ошибки. Ограничивая максимальное значение градиента, это явление контролируется на практике.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=gradient-clipping-en.png?6c3de441dc56aad634dc1a91accb48f2 style="width:100%; max-width:375px;">
@@ -240,7 +240,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">GRU/LSTM</span> Gated Recurrent Unit (GRU) and Long Short-Term Memory units (LSTM) deal with the vanishing gradient problem encountered by traditional RNNs, with LSTM being a generalization of GRU. Below is a table summing up the characterizing equations of each architecture:</p>
+<p><span class="new-item item-r">GRU/LSTM</span> Вентильный Рекуррентный Блок (Gated Recurrent Unit, GRU) и Блок с Долгой Краткосрочной Памятью (Long Short-Term Memory units, LSTM) имеет дело с проблемой исчезающего градиента, с которой сталкиваются традиционные RNN, причем LSTM является обобщением GRU. Ниже представлена таблица, в которой перечислены характеризующие уравнения каждой архитектуры:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:725px;">
@@ -281,7 +281,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </div>
 <p><span class=remark>Remark: the sign $\star$ denotes the element-wise multiplication between two vectors.</span></p>
 <br>
-<p><span class="new-item item-r">Variants of RNNs</span> The table below sums up the other commonly used RNN architectures:</p>
+<p><span class="new-item item-r">Варианты RNN</span> В таблице ниже перечислены другие часто используемые архитектуры RNN:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -304,7 +304,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 <h2><a aria-hidden=true class=anchor href=#word-representation id=word-representation></a>Learning word representation</h2>
 <p>In this section, we note $V$ the vocabulary and $|V|$ its size.</p>
 <h3>Motivation and notations</h3>
-<p><span class="new-item item-g">Representation techniques</span> The two main ways of representing words are summed up in the table below:</p>
+<p><span class="new-item item-g">Методы представления</span> два основных способа представления слов подытожены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -337,7 +337,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 <p><span class=remark>Remark: learning the embedding matrix can be done using target/context likelihood models.</span></p>
 <br>
 <h3>Word embeddings</h3>
-<p><span class="new-item item-r">Word2vec</span> Word2vec is a framework aimed at learning word embeddings by estimating the likelihood that a given word is surrounded by other words. Popular models include skip-gram, negative sampling and CBOW.</p>
+<p><span class="new-item item-r">Word2vec</span> это фреймворк, предназначенный для изучения встраивания слов путем оценки вероятности того, что данное слово окружено другими словами. Популярные модели включают скип-грамм, отрицательную выборку и CBOW.</p>
 <br>
 <div class=mobile-container>
 <center>
@@ -420,7 +420,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 <br>
 <p><span class="new-item item-r">Beam width</span> The beam width $B$ is a parameter for beam search. Large values of $B$ yield to better result but with slower performance and increased memory. Small values of $B$ lead to worse results but is less computationally intensive. A standard value for $B$ is around 10.</p>
 <br>
-<p><span class="new-item item-r">Length normalization</span> In order to improve numerical stability, beam search is usually applied on the following normalized objective, often called the normalized log-likelihood objective, defined as:</p>
+<p><span class="new-item item-r">Нормализация длины</span> Чтобы улучшить численную стабильность, лучевой поиск обычно применяется к следующей нормализованной цели, часто называемой нормализованной целью логарифмического правдоподобия, определяемой как:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{Objective } = \frac{1}{T_y^\alpha}\sum_{t=1}^{T_y}\log\Big[p(y^{&lt; t &gt;}|x,y^{&lt; 1 &gt;}, ..., y^{&lt; t-1 &gt;})\Big]}\]
 </div>

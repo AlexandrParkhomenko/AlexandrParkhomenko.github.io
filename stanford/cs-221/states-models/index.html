@@ -34,7 +34,7 @@
 <br>
 <div aria-label=... class="btn-group btn-group-justified" role=group>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button><b>CS 221 - Artificial Intelligence</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button><B>CS 221 - Artificial Intelligence</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
@@ -48,7 +48,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button>Reflex</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-221/states-models/index.html'; oldhref='teaching/cs-221/cheatsheet-states-models'" type=button><b>States</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/states-models/index.html'; oldhref='teaching/cs-221/cheatsheet-states-models'" type=button><B>States</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-221/variables-models/index.html'; oldhref='teaching/cs-221/cheatsheet-variables-models'" type=button>Variables</button>
@@ -72,7 +72,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Search problem</span> A search problem is defined with:
+<p><span class="new-item item-g">Задача поиска</span> определяется с помощью:
 </p><ul>
   <li>a starting state $s_{\textrm{start}}$
   </li><li>possible actions $\textrm{Actions}(s)$ from state $s$
@@ -88,7 +88,7 @@
 </div>
 <p>The objective is to find a path that minimizes the cost.</p>
 <br>
-<p><span class="new-item item-r">Backtracking search</span> Backtracking search is a naive recursive algorithm that tries all possibilities to find the minimum cost path. Here, action costs can be either positive or negative.</p>
+<p><span class="new-item item-r">Backtracking</span> Поиск с возвратом - это наивный рекурсивный алгоритм, который пробует все возможности, чтобы найти путь с минимальной стоимостью. Здесь затраты на действия могут быть как положительными, так и отрицательными.</p>
 <br>
 <p><span class="new-item item-b">Breadth-first search (BFS)</span> Breadth-first search is a graph search algorithm that does a level-by-level traversal. We can implement it iteratively with the help of a queue that stores at each step future nodes to be visited. For this algorithm, we can assume action costs to be equal to a constant $c\geqslant0$.</p>
 <div class=mobile-container>
@@ -97,7 +97,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Depth-first search (DFS)</span> Depth-first search is a search algorithm that traverses a graph by following each path as deep as it can. We can implement it recursively, or iteratively with the help of a stack that stores at each step future nodes to be visited. For this algorithm, action costs are assumed to be equal to 0.</p>
+<p><span class="new-item item-b">Depth-first search (DFS)</span> Поиск в глубину - это алгоритм поиска, который просматривает граф, прослеживая каждый путь как можно глубже. Мы можем реализовать это рекурсивно или итеративно с помощью стека, в котором на каждом шаге хранятся будущие узлы, которые необходимо посетить. Для этого алгоритма предполагается, что затраты на действия равны 0.</p>
 <div class=mobile-container>
 <center>
   <img alt=DFS class=img-responsive netsrc=teaching/cs-221/illustrations/ src=dfs-stack.png?5616ba59bd361e621870e036829b95d9 style=width:100%;max-width:420px>
@@ -162,7 +162,7 @@
 </div>
 <p><span class=remark>Remark: a graph is said to be acylic when there is no cycle.</span></p>
 <br>
-<p><span class="new-item item-r">State</span> A state is a summary of all past actions sufficient to choose future actions optimally.</p>
+<p><span class="new-item item-r">Состояние</span> это совокупность всех прошлых действий, достаточная для оптимального выбора будущих действий.</p>
 <br>
 <p><span class="new-item item-b">Dynamic programming</span> Dynamic programming (DP) is a backtracking search algorithm with memoization (i.e. partial results are saved) whose goal is to find a minimum cost path from state $s$ to an end state $s_\textrm{end}$. It can potentially have exponential savings compared to traditional graph search algorithms, and has the property to only work for acyclic graphs. For any given state $s$, the future cost is computed as follows:</p>
 <div class=mobile-container>
@@ -175,7 +175,7 @@
 </div>
 <p><span class=remark>Remark: the figure above illustrates a bottom-to-top approach whereas the formula provides the intuition of a top-to-bottom problem resolution.</span></p>
 <br>
-<p><span class="new-item item-g">Types of states</span> The table below presents the terminology when it comes to states in the context of uniform cost search:</p>
+<p><span class="new-item item-g">Типы состояний</span> В таблице ниже представлена терминология, когда речь идет о состояниях в контексте поиска по единой стоимости:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:350px;">
@@ -253,7 +253,7 @@
 <br>
 <h3><a aria-hidden=true class=anchor href=#learning-costs id=learning-costs></a>Learning costs</h3>
 <p>Suppose we are not given the values of $\textrm{Cost}(s,a)$, we want to estimate these quantities from a training set of minimizing-cost-path sequence of actions $(a_1, a_2, ..., a_k)$.</p>
-<p><span class="new-item item-g">Structured perceptron</span> The structured perceptron is an algorithm aiming at iteratively learning the cost of each state-action pair. At each step, it:
+<p><span class="new-item item-g">Структурированный перцептрон</span> Структурированный перцептрон - это алгоритм итеративного изучения стоимости каждой пары состояние-действие. На каждом шагу, it:
 </p><ul>
 <li> decreases the estimated cost of each state-action of the true minimizing path $y$ given by the training data,
 </li><li> increases the estimated cost of each state-action of the current predicted path $y'$ inferred from the learned weights.
@@ -335,7 +335,7 @@
 \[\boxed{h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)\Longrightarrow h(s)\textrm{ consistent}}\]
 </div>
 <br>
-<p><span class="new-item item-g">Tradeoff when choosing heuristic</span> We have to balance two aspects in choosing a heuristic:
+<p><span class="new-item item-g">Компромисс при выборе эвристики</span> При выборе эвристики необходимо уравновесить два аспекта:
 </p><ul>
 <li>Computational efficiency: $h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)$ must be easy to compute. It has to produce a closed form, easier search and independent subproblems.
 </li><li>Good enough approximation: the heuristic $h(s)$ should be close to $\textrm{FutureCost}(s)$ and we have thus to not remove too many constraints.
@@ -349,7 +349,7 @@
 <h2><a aria-hidden=true class=anchor href=#markov-decision-processes id=markov-decision-processes></a>Markov decision processes</h2>
 <p>In this section, we assume that performing action $a$ from state $s$ can lead to several states $s_1',s_2',...$ in a probabilistic manner. In order to find our way between an initial state and an end state, our objective will be to find the maximum value policy by using Markov decision processes that help us cope with randomness and uncertainty.</p>
 <h3>Notations</h3>
-<p><span class="new-item item-b">Definition</span> The objective of a Markov decision process is to maximize rewards. It is defined with:
+<p><span class="new-item item-b">Определение</span> Цель марковского процесса принятия решений - максимизировать вознаграждение. Он определяется с помощью:
   </p><ul>
     <li>a starting state $s_{\textrm{start}}$
     </li><li>possible actions $\textrm{Actions}(s)$ from state $s$
@@ -495,9 +495,9 @@ as well as a stochastic gradient formulation:
 <br>
 <h2><a aria-hidden=true class=anchor href=#game-playing id=game-playing></a>Game playing</h2>
 <p>In games (e.g. chess, backgammon, Go), other agents are present and need to be taken into account when constructing our policy.</p>
-<p><span class="new-item item-b">Game tree</span> A game tree is a tree that describes the possibilities of a game. In particular, each node is a decision point for a player and each root-to-leaf path is a possible outcome of the game.</p>
+<p><span class="new-item item-b">Дерево игры</span> Дерево игры - это дерево, которое описывает возможности игры. В частности, каждый узел является точкой принятия решения для игрока, а каждый путь от корня к листу - это возможный результат игры.</p>
 <br>
-<p><span class="new-item item-b">Two-player zero-sum game</span> It is a game where each state is fully observed and such that players take turns. It is defined with:
+<p><span class="new-item item-b">Игра для двух игроков с нулевой суммой</span> это игра; в которой полностью соблюдается каждое состояние и игроки ходят по очереди. Она определяется с помощью:
 </p><ul>
   <li>a starting state $s_{\textrm{start}}$
   </li><li>possible actions $\textrm{Actions}(s)$ from state $s$
@@ -508,7 +508,7 @@ as well as a stochastic gradient formulation:
 </li></ul><p></p>
 <p><span class=remark>Remark: we will assume that the utility of the agent has the opposite sign of the one of the opponent.</span></p>
 <br>
-<p><span class="new-item item-g">Types of policies</span> There are two types of policies:
+<p><span class="new-item item-g">Типы политик</span> Есть два типа политик:
 </p><ul>
 <li>Deterministic policies, denoted $\pi_p(s)$, which are actions that player $p$ takes in state $s$.
 </li><li>Stochastic policies, denoted $\pi_p(s,a)\in[0,1]$, which are probabilities that player $p$ takes action $a$ in state $s$.
@@ -525,7 +525,7 @@ as well as a stochastic gradient formulation:
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Minimax</span> The goal of minimax policies is to find an optimal policy against an adversary by assuming the worst case, i.e. that the opponent is doing everything to minimize the agent's utility. It is done as follows:</p>
+<p><span class="new-item item-b">Minimax</span> Цель минимаксных политик - найти оптимальную политику против противника, предполагая наихудший случай, то есть то, что противник делает все, чтобы минимизировать полезность агента. Делается это следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{V_{\textrm{minimax}}(s)=\left\{\begin{array}{ll}\textrm{Utility}(s) &amp; \textrm{IsEnd}(s)\\\underset{a\in\textrm{Actions}(s)}{\textrm{max}}V_{\textrm{minimax}}(\textrm{Succ}(s,a)) &amp; \textrm{Player}(s)=\textrm{agent}\\\underset{a\in\textrm{Actions}(s)}{\textrm{min}}V_{\textrm{minimax}}(\textrm{Succ}(s,a)) &amp; \textrm{Player}(s)=\textrm{opp}\end{array}\right.}\]
 </div>
@@ -578,7 +578,7 @@ In the end, we have the following relationship:
 <br>
 <p><span class="new-item item-g">Single-move simultaneous game</span> Let there be two players $A$ and $B$, with given possible actions. We note $V(a,b)$ to be $A$'s utility if $A$ chooses action $a$, $B$ chooses action $b$. $V$ is called the payoff matrix.</p>
 <br>
-<p><span class="new-item item-r">Strategies</span> There are two main types of strategies:
+<p><span class="new-item item-r">Стратегии</span> Есть два основных типа стратегий:
 </p><ul>
 <li>A pure strategy is a single action:
 <div class=mobile-container>

@@ -45,7 +45,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button>CS 221 - Artificial Intelligence</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><b>CS 229 - Machine Learning</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><B>CS 229 - Machine Learning</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>CS 230 - Deep Learning</button>
@@ -70,7 +70,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-229/deep-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-deep-learning'" type=button>Deep Learning</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-229/machine-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks'" type=button><b>Tips and tricks</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/machine-learning-tips-and-tricks/index.html'; oldhref='teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks'" type=button><B>Tips and tricks</B></BUTTON>
   </div>
 </div>
 <h1>
@@ -80,7 +80,7 @@
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
 <h2><a aria-hidden=true class=anchor href=#classification-metrics id=classification-metrics></a>Classification metrics</h2>
 <p>In a context of a binary classification, here are the main metrics that are important to track in order to assess the performance of the model.</p>
-<p><span class="new-item item-b">Confusion matrix</span> The confusion matrix is used to have a more complete picture when assessing the performance of a model. It is defined as follows:</p>
+<p><span class="new-item item-b">Матрица ошибок</span> Матрица ошибок используется для получения более полной картины при оценке производительности модели. Она определяется следующим образом:</p>
 <div class=mobile-container>
 <table style="margin-left: 10%">
 <colgroup><col width=120px>
@@ -111,7 +111,7 @@
 </table>
 </div>
 <br>
-<p><span class="new-item item-r">Main metrics</span> The following metrics are commonly used to assess the performance of classification models:</p>
+<p><span class="new-item item-r">Основные метрики</span> Для оценки эффективности моделей классификации обычно используются следующие показатели:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -151,7 +151,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">ROC</span> The receiver operating curve, also noted ROC, is the plot of TPR versus FPR by varying the threshold. These metrics are are summed up in the table below:</p>
+<p><span class="new-item item-r">Receiver Operating (characteristic) Curve (ROC)</span> Кривая рабочей характеристики приемника, также обозначенная как ROC, представляет собой график зависимости TPR от FPR при изменении порога. Эти показатели приведены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -176,7 +176,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">AUC</span> The area under the receiving operating curve, also noted AUC or AUROC, is the area below the ROC as shown in the following figure:</p>
+<p><span class="new-item item-r">Area Under ROC Curve (AUC)</span> Площадь под ROC кривой, также обозначаемая как AUC или AUROC, является областью под ROC, как показано на следующем рисунке:</p>
 <br>
 <div class=mobile-container>
 <center>
@@ -239,7 +239,7 @@
 <p>where $L$ is the likelihood and $\widehat{\sigma}^2$ is an estimate of the variance associated with each response.</p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#model-selection id=model-selection></a>Model selection</h2>
-<p><span class="new-item item-b">Vocabulary</span> When selecting a model, we distinguish 3 different parts of the data that we have as follows:</p>
+<p><span class="new-item item-b">Словарь</span> При выборе модели мы выделяем 3 разные части имеющихся у нас данных:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -272,7 +272,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Cross-validation</span> Cross-validation, also noted CV, is a method that is used to select a model that does not rely too much on the initial training set. The different types are summed up in the table below:</p>
+<p><span class="new-item item-g">Кросс-валидация (CV)</span> Перекрестная проверка - это метод, который используется для выбора модели, которая не слишком полагается на исходный обучающий набор. Различные типы суммированы в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -300,7 +300,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Regularization</span> The regularization procedure aims at avoiding the model to overfit the data and thus deals with high variance issues. The following table sums up the different types of commonly used regularization techniques:</p>
+<p><span class="new-item item-r">Регуляризация</span> Процедура регуляризации направлена на то, чтобы модель не переобучалась на данных, и, таким образом, решает проблемы с высокой дисперсией. В следующей таблице суммированы различные типы широко используемых методов регуляризации:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:760px;">
@@ -336,11 +336,11 @@
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#diagnostics id=diagnostics></a>Diagnostics</h2>
-<p><span class="new-item item-b">Bias</span> The bias of a model is the difference between the expected prediction and the correct model that we try to predict for given data points.</p>
+<p><span class="new-item item-b">Смещение (Bias)</span> Смещение модели - это разница между ожидаемым прогнозом и правильной моделью, которую мы пытаемся предсказать для заданных точек данных.</p>
 <br>
-<p><span class="new-item item-b">Variance</span> The variance of a model is the variability of the model prediction for given data points.</p>
+<p><span class="new-item item-b">Дисперсия (Variance)</span> Дисперсия модели - это изменчивость прогноза модели для заданных точек данных.</p>
 <br>
-<p><span class="new-item item-r">Bias/variance tradeoff</span> The simpler the model, the higher the bias, and the more complex the model, the higher the variance.</p>
+<p><span class="new-item item-r">Компромисс смещения/дисперсии</span> Чем проще модель, тем выше смещение, а чем сложнее модель, тем выше дисперсия.</p>
 <div class=mobile-container>
 <center>
 <br>
@@ -393,8 +393,8 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Error analysis</span> Error analysis is analyzing the root cause of the difference in performance between the current and the perfect models.</p>
+<p><span class="new-item item-b">Анализ ошибок</span> Анализ ошибок - это анализ основной причины разницы в производительности между текущей и идеальной моделями.</p>
 <br>
-<p><span class="new-item item-b">Ablative analysis</span> Ablative analysis is analyzing the root cause of the difference in performance between the current and the baseline models.</p>
+<p><span class="new-item item-b">Абляционный анализ</span> Абляционный анализ анализирует первопричину разницы в производительности между текущей и базовой моделями.</p>
 <br>
 </article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>

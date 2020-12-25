@@ -34,7 +34,7 @@
 <br>
 <div aria-label=... class="btn-group btn-group-justified" role=group>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button><b>CS 221 - Artificial Intelligence</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button><B>CS 221 - Artificial Intelligence</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
@@ -54,7 +54,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-221/variables-models/index.html'; oldhref='teaching/cs-221/cheatsheet-variables-models'" type=button>Variables</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-221/logic-models/index.html'; oldhref='teaching/cs-221/cheatsheet-logic-models'" type=button><b>Logic</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/logic-models/index.html'; oldhref='teaching/cs-221/cheatsheet-logic-models'" type=button><B>Logic</B></BUTTON>
   </div>
 </div>
 <h1>
@@ -268,10 +268,10 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 <br>
 <p><span class="new-item item-g">Completeness</span> Modus ponens is complete with respect to Horn clauses if we suppose that $\textrm{KB}$ contains only Horn clauses and $p$ is an entailed propositional symbol. Applying modus ponens will then derive $p$.</p>
 <br>
-<p><span class="new-item item-g">Conjunctive normal form</span> A conjunctive normal form (CNF) formula is a conjunction of clauses, where each clause is a disjunction of atomic formulas.</p>
+<p><span class="new-item item-g">Конъюнктивная нормальная форма (CNF)</span> Формула конъюнктивной нормальной формы - это конъюнкция предложений, где каждое предложение является дизъюнкцией атомарных формул.</p>
 <p><span class=remark>Remark: in other words, CNFs are $\wedge$ of $\vee$.</span></p>
 <br>
-<p><span class="new-item item-r">Equivalent representation</span> Every formula in propositional logic can be written into an equivalent CNF formula. The table below presents general conversion properties:</p>
+<p><span class="new-item item-r">Эквивалентное представление</span> Каждую формулу логики высказываний можно записать в эквивалентную формулу CNF. В таблице ниже представлены общие свойства преобразования:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; min-width:600px;">
@@ -330,7 +330,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </div>
 <p><span class=remark>Remark: it can take exponential time to apply this rule, as each application generates a clause that has a subset of the propositional symbols.</span></p>
 <br>
-<p><span class="new-item item-b">Resolution-based inference</span> The resolution-based inference algorithm follows the following steps:
+<p><span class="new-item item-b">Вывод на основе разрешения</span> Алгоритм вывода на основе разрешении. Включает следующие шаги:
 </p><ul>
 <li><u>Step 1</u>: Convert all formulas into CNF
 </li><li><u>Step 2</u>: Repeatedly apply resolution rule
@@ -363,14 +363,14 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 \[\boxed{\frac{a'_1,...,a'_k\quad\forall x_1,...,\forall x_n (a_1\wedge...\wedge a_k)\rightarrow b}{\textrm{Subst}[\theta, b]}}\]
 </div>
 <br>
-<p><span class="new-item item-r">Completeness</span> Modus ponens is complete for first-order logic with only Horn clauses.</p>
+<p><span class="new-item item-r">Полнота</span> Modus ponens полон для логики первого порядка только с Хорновскими дизъюнктами.</p>
 <br>
 <p><span class="new-item item-r">Resolution rule</span> By noting $f_1, ..., f_n$, $g_1, ..., g_m$, $p$, $q$ formulas and by calling $\theta=\textrm{Unify}(p,q)$, the first-order logic version of the resolution rule can be written:</p>
 <div class=mobile-container>
 \[\boxed{\frac{f_1\vee...\vee f_n\vee p,\quad\neg q\vee g_1\vee...\vee g_m}{\textrm{Subst}[\theta,f_1\vee...\vee f_n\vee g_1\vee...\vee g_m]}}\]
 </div>
 <br>
-<p><span class="new-item item-b">Semi-decidability</span> First-order logic, even restricted to only Horn clauses, is semi-decidable.
+<p><span class="new-item item-b">Полуразрешимость</span> Логика первого порядка, even restricted to only Horn clauses, is semi-decidable.
 </p><ul>
 <li>if $\textrm{KB}\models f$, forward inference on complete inference rules will prove $f$ in finite time
 </li><li>if $\textrm{KB}\not\models f$, no algorithm can show this in finite time

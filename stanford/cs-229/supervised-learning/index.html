@@ -45,7 +45,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button>CS 221 - Artificial Intelligence</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><b>CS 229 - Machine Learning</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><B>CS 229 - Machine Learning</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-230/convolutional-neural-networks/index.html'; oldhref='teaching/cs-230/cheatsheet-convolutional-neural-networks'" type=button>CS 230 - Deep Learning</button>
@@ -61,7 +61,7 @@
 </div>
 <div aria-label=... class="btn-group btn-group-justified" role=group>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><b>Supervised Learning</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button><B>Supervised Learning</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-229/unsupervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-unsupervised-learning'" type=button>Unsupervised Learning</button>
@@ -80,7 +80,7 @@
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
 <h2><a aria-hidden=true class=anchor href=#introduction id=introduction></a>Introduction to Supervised Learning</h2>
 <p>Given a set of data points $\{x^{(1)}, ..., x^{(m)}\}$ associated to a set of outcomes $\{y^{(1)}, ..., y^{(m)}\}$, we want to build a classifier that learns how to predict $y$ from $x$.</p>
-<p><span class="new-item item-b">Type of prediction</span> The different types of predictive models are summed up in the table below:</p>
+<p><span class="new-item item-b">Тип предсказания</span> Различные типы прогнозных моделей перечислены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -105,7 +105,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Type of model</span> The different models are summed up in the table below:</p>
+<p><span class="new-item item-b">Тип модели</span> Различные модели перечислены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:300px;">
@@ -330,7 +330,7 @@
 </center>
 <p><span class=remark>Remark: the decision boundary is defined as $\boxed{w^Tx-b=0}$.</span></p>
 <br>
-<p><span class="new-item item-b">Hinge loss</span> The hinge loss is used in the setting of SVMs and is defined as follows:</p>
+<p><span class="new-item item-b">Hinge loss</span> Потери на шарнирах используются при настройке SVM и определяются следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{L(z,y)=[1-yz]_+=\max(0,1-yz)}\]
 </div>
@@ -362,7 +362,7 @@
  <div class=col-sm-4>$(3)\quad\boxed{x|y=1\sim\mathcal{N}(\mu_1,\Sigma)}$</div>
 </div>
 <br>
-<p><span class="new-item item-b">Estimation</span> The following table sums up the estimates that we find when maximizing the likelihood:</p>
+<p><span class="new-item item-b">Оценка</span> В следующей таблице суммированы оценки, которые мы находим при максимизации правдоподобия:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -383,7 +383,7 @@
 </div>
 <br>
 <h3>Naive Bayes</h3>
-<p><span class="new-item item-b">Assumption</span> The Naive Bayes model supposes that the features of each data point are all independent:</p>
+<p><span class="new-item item-b">Допущение</span> Наивная байесовская модель предполагает, что все характеристики каждой точки данных независимы:</p>
 <div class=mobile-container>
 \[\boxed{P(x|y)=P(x_1,x_2,...|y)=P(x_1|y)P(x_2|y)...=\prod_{i=1}^nP(x_i|y)}\]
 </div>
@@ -397,12 +397,12 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#tree id=tree></a>Tree-based and ensemble methods</h2>
 <p>These methods can be used for both regression and classification problems.</p>
-<p><span class="new-item item-b">CART</span> Classification and Regression Trees (CART), commonly known as decision trees, can be represented as binary trees. They have the advantage to be very interpretable.</p>
+<p><span class="new-item item-b">Classification and Regression Trees (CART)</span> Деревья классификации и регрессии, широко известные как деревья решений, могут быть представлены как двоичные деревья. Их преимущество в том, что они легко интерпретируемы.</p>
 <br>
-<p><span class="new-item item-b">Random forest</span> It is a tree-based technique that uses a high number of decision trees built out of randomly selected sets of features. Contrary to the simple decision tree, it is highly uninterpretable but its generally good performance makes it a popular algorithm.</p>
+<p><span class="new-item item-b">Случайный лес</span> это метод, основанный на деревьях, который использует большое количество деревьев решений, построенных из случайно выбранных наборов функций. В отличие от простого дерева решений, его трудно интерпретировать, но в целом хорошая производительность делает его популярным алгоритмом.</p>
 <p><span class=remark>Remark: random forests are a type of ensemble methods.</span></p>
 <br>
-<p><span class="new-item item-b">Boosting</span> The idea of boosting methods is to combine several weak learners to form a stronger one. The main ones are summed up in the table below:</p>
+<p><span class="new-item item-b">Boosting (усиление)</span> идея методов усиления заключается в объединении нескольких слабых учеников, чтобы сформировать более сильного. Основные из них приведены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:760px;">
@@ -455,7 +455,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 \[\boxed{\widehat{\epsilon}(h)=\frac{1}{m}\sum_{i=1}^m1_{\{h(x^{(i)})\neq y^{(i)}\}}}\]
 </div>
 <br>
-<p><span class="new-item item-g">Probably Approximately Correct (PAC)</span> PAC is a framework under which numerous results on learning theory were proved, and has the following set of assumptions:</p>
+<p><span class="new-item item-g">Probably Approximately Correct (PAC)</span> Вероятно приближённо корректное обучение - эта схема, в рамках которой были доказаны многочисленные результаты по теории обучения, и имеет следующий набор предположений:</p>
 <ul>
 	<li>the training and testing sets follow the same distribution</li>
 	<li>the training examples are drawn independently</li>

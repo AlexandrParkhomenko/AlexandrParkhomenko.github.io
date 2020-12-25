@@ -33,7 +33,7 @@
 <br>
 <div aria-label=... class="btn-group btn-group-justified" role=group>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button><b>CS 221 - Artificial Intelligence</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/reflex-models/index.html'; oldhref='teaching/cs-221/cheatsheet-reflex-models'" type=button><B>CS 221 - Artificial Intelligence</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-229/supervised-learning/index.html'; oldhref='teaching/cs-229/cheatsheet-supervised-learning'" type=button>CS 229 - Machine Learning</button>
@@ -50,7 +50,7 @@
     <button class="btn btn-default" onclick="location.href='../../cs-221/states-models/index.html'; oldhref='teaching/cs-221/cheatsheet-states-models'" type=button>States</button>
   </div>
   <div class=btn-group role=group>
-    <button class="btn btn-default active" onclick="location.href='../../cs-221/variables-models/index.html'; oldhref='teaching/cs-221/cheatsheet-variables-models'" type=button><b>Variables</b></button>
+    <button class="btn btn-default active" onclick="location.href='../../cs-221/variables-models/index.html'; oldhref='teaching/cs-221/cheatsheet-variables-models'" type=button><B>Variables</B></BUTTON>
   </div>
   <div class=btn-group role=group>
     <button class="btn btn-default" onclick="location.href='../../cs-221/logic-models/index.html'; oldhref='teaching/cs-221/cheatsheet-logic-models'" type=button>Logic</button>
@@ -79,7 +79,7 @@
 \[\boxed{\textrm{Weight}(x)=\prod_{j=1}^mf_j(x)}\]
 </div>
 <br>
-<p><span class="new-item item-g">Constraint satisfaction problem</span> A constraint satisfaction problem (CSP) is a factor graph where all factors are binary; we call them to be constraints:
+<p><span class="new-item item-g">Задачи удовлетворения ограничений</span> Сonstraint satisfaction problem (CSP) - факторный граф, в котором все факторы бинарны; мы называем их ограничениями:
 </p><div class=mobile-container>
 \[\boxed{\forall j\in[\![1,m]\!],\quad f_j(x)\in\{0,1\}}\]
 </div>
@@ -97,16 +97,16 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <br>
 <p><span class="new-item item-r">Backtracking search</span> Backtracking search is an algorithm used to find maximum weight assignments of a factor graph. At each step, it chooses an unassigned variable and explores its values by recursion. Dynamic ordering (<i>i.e.</i> choice of variables and values) and lookahead (<i>i.e.</i> early elimination of inconsistent options) can be used to explore the graph more efficiently, although the worst-case runtime stays exponential: $O(|\text{Domain}|^n)$.</p>
 <br>
-<p><span class="new-item item-b">Forward checking</span> It is a one-step lookahead heuristic that preemptively removes inconsistent values from the domains of neighboring variables. It has the following characteristics:
+<p><span class="new-item item-b">Прямая проверка</span> это эвристика упреждающего просмотра за один шаг. Она упреждающе удаляет несогласованные значения из доменов соседних переменных. Она имеет следующие характеристики:
 </p><ul>
 <li>After assigning a variable $X_i$, it eliminates inconsistent values from the domains of all its neighbors.
 </li><li>If any of these domains becomes empty, we stop the local backtracking search.
 </li><li>If we un-assign a variable $X_i$, we have to restore the domain of its neighbors.
 </li></ul><p></p>
 <br>
-<p><span class="new-item item-g">Most constrained variable</span> It is a variable-level ordering heuristic that selects the next unassigned variable that has the fewest consistent values. This has the effect of making inconsistent assignments to fail earlier in the search, which enables more efficient pruning.</p>
+<p><span class="new-item item-g">Наиболее ограниченная переменная</span> Это эвристика упорядочения на уровне переменных, которая выбирает следующую неназначенную переменную, которая имеет наименьшее количество согласованных значений. Это приводит к тому, что непоследовательные присвоения терпят неудачу раньше при поиске, что обеспечивает более эффективное сокращение.</p>
 <br>
-<p><span class="new-item item-g">Least constrained value</span> It is a value-level ordering heuristic that assigns the next value that yields the highest number of consistent values of neighboring variables. Intuitively, this procedure chooses first the values that are most likely to work.</p>
+<p><span class="new-item item-g">Наименее ограниченное значение</span> Это эвристика упорядочивания на уровне значений, которая назначает следующее значение, которое дает наибольшее количество согласованных значений соседних переменных. Интуитивно эта процедура сначала выбирает значения, которые с наибольшей вероятностью будут работать.</p>
 <p><span class=remark>Remark: in practice, this heuristic is useful when all factors are constraints.</span></p>
 <div class=mobile-container>
 <center>
@@ -122,7 +122,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </li></ul>
 <p></p>
 <br>
-<p><span class="new-item item-r">AC-3</span> The AC-3 algorithm is a multi-step lookahead heuristic that applies forward checking to all relevant variables. After a given assignment, it performs forward checking and then successively enforces arc consistency with respect to the neighbors of variables for which the domain change during the process.</p>
+<p><span class="new-item item-r">AC-3</span> Алгоритм AC-3 - это многоэтапная эвристика упреждающего просмотра, которая применяет упреждающую проверку ко всем соответствующим переменным. После заданного присвоения она выполняет прямую проверку, а затем последовательно обеспечивает согласованность дуги по отношению к соседям переменных, для которых домен изменяется во время процесса.</p>
 <p><span class=remark>Remark: AC-3 can be implemented both iteratively and recursively.</span></p>
 <br>
 <h3><a aria-hidden=true class=anchor href=#approximate-methods id=approximate-methods></a>Approximate methods</h3>
@@ -191,7 +191,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </div>
 </li></ul><p></p>
 <br>
-<p><span class="new-item item-b">Treewidth</span> The treewidth of a factor graph is the maximum arity of any factor created by variable elimination with the best variable ordering. In other words,</p>
+<p><span class="new-item item-b">Ширина дерева</span> Древовидная ширина факторного графа - это максимальная арность любого фактора, созданного путем исключения переменных с наилучшим порядком переменных. Другими словами,</p>
 <div class=mobile-container>
 \[\boxed{\textrm{Treewidth} = \min_{\textrm{orderings}} \max_{i\in \{1,...,n\}} \textrm{arity}(f_{\textrm{new},i})}\]
 </div>
@@ -208,7 +208,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <h3>Introduction</h3>
 <p><span class="new-item item-g">Explaining away</span> Suppose causes $C_1$ and $C_2$ influence an effect $E$. Conditioning on the effect $E$ and on one of the causes (say $C_1$) changes the probability of the other cause (say $C_2$). In this case, we say that $C_1$ has explained away $C_2$.</p>
 <br>
-<p><span class="new-item item-g">Directed acyclic graph</span> A directed acyclic graph (DAG) is a finite directed graph with no directed cycles.</p>
+<p><span class="new-item item-g">Направленный ациклический граф</span> Directed acyclic graph (DAG) - это конечный ориентированный граф без ориентированных циклов.</p>
 <br>
 <p><span class="new-item item-r">Bayesian network</span> A Bayesian network is a directed acyclic graph (DAG) that specifies a joint distribution over random variables $X=(X_1,...,X_n)$ as a product of local conditional distributions, one for each node:</p>
 <div class=mobile-container>
@@ -228,13 +228,13 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <p>As a result, sub-Bayesian networks and conditional distributions are consistent.</p>
 <p><span class=remark>Remark: local conditional distributions are the true conditional distributions.</span></p>
 <br>
-<p><span class="new-item item-g">Marginalization</span> The marginalization of a leaf node yields a Bayesian network without that node.</p>
+<p><span class="new-item item-g">Маргинализация</span> маргинализация листового узла приводит к байесовской сети без этого узла.</p>
 <br>
 <h3><a aria-hidden=true class=anchor href=#probabilistic-program id=probabilistic-program></a>Probabilistic programs</h3>
-<p><span class="new-item item-b">Concept</span> A probabilistic program randomizes variables assignment. That way, we can write down complex Bayesian networks that generate assignments without us having to explicitly specify associated probabilities.</p>
+<p><span class="new-item item-b">Концепция</span> вероятностная программа рандомизирует присвоение переменных. Таким образом, мы можем записывать сложные байесовские сети, которые генерируют назначения, без необходимости явно указывать связанные вероятности.</p>
 <p><span class=remark>Remark: examples of probabilistic programs include Hidden Markov model (HMM), factorial HMM, naive Bayes, latent Dirichlet allocation, diseases and symptoms and stochastic block models.</span></p>
 <br>
-<p><span class="new-item item-g">Summary</span> The table below summarizes the common probabilistic programs as well as their applications:</p>
+<p><span class="new-item item-g">Сводка</span> В таблице ниже приведены общие вероятностные программы, а также их приложения:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:700px; max-width:850px;">
@@ -332,7 +332,7 @@ with the convention $F_0 = B_{L+1} = 1$. From this procedure and these notations
 </li></ul><p></p>
 <p><span class=remark>Remark: a more expensive version of this algorithm also keeps track of past particles in the proposal step.</span></p>
 <br>
-<p><span class="new-item item-g">Maximum likelihood</span> If we don't know the local conditional distributions, we can learn them using maximum likelihood.</p>
+<p><span class="new-item item-g">Максимальное правдоподобие</span> Если мы не знаем локальных условных распределений, мы можем изучить их, используя максимальное правдоподобие.</p>
 <div class=mobile-container>
 \[\boxed{\max_\theta\prod_{x\in\mathcal{D}_{\textrm{train}}}p(X=x;\theta)}\]
 </div>
