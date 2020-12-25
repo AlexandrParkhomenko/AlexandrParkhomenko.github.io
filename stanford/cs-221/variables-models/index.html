@@ -295,10 +295,10 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <p><span class="new-item item-g">General probabilistic inference strategy</span> The strategy to compute the probability $P(Q | E=e)$ of query $Q$ given evidence $E=e$ is as follows:
 </p><ul>
 <li><u>Step 1</u>: Remove variables that are not ancestors of the query $Q$ or the evidence $E$ by marginalization
-</li><li><u>Step 2</u>: Convert Bayesian network to factor graph
+</li><li><u>Шаг 2</u>: Преобразовать байесовскую сеть в факторный граф
 </li><li><u>Step 3</u>: Condition on the evidence $E=e$
 </li><li><u>Step 4</u>: Remove nodes disconnected from the query $Q$ by marginalization
-</li><li><u>Step 5</u>: Run a probabilistic inference algorithm (manual, variable elimination, Gibbs sampling, particle filtering)
+</li><li><u>Шаг 5</u>: Запустить вероятностный алгоритм вывода (вручную, variable elimination, Gibbs sampling, particle filtering)
 </li></ul><p></p>
 <br>
 <p><span class="new-item item-r">Forward-backward algorithm</span> This algorithm computes the exact value of $P(H = h_k | E = e)$ (smoothing query) for any $k \in \{1, ..., L\}$ in the case of an HMM of size $L$. To do so, we proceed in 3 steps:
