@@ -139,7 +139,7 @@
 <p><span class="new-item item-b">Итерированные условные режимы</span> Iterated conditional modes (ICM) представляет собой итерационный приближенный алгоритм, который изменяет присвоение факторному графу одной переменной за раз до сходимости. На шаге $i$ мы присваиваем $X_i$ значение $v$, которое максимизирует произведение всех факторов, связанных с этой переменной.</p>
 <p><span class=remark>Примечание: ICM может застрять в локальных минимумах.</span></p>
 <br>
-<p><span class="new-item item-b">Gibbs sampling</span> Gibbs sampling is an iterative approximate method that modifies the assignment of a factor graph one variable at a time until convergence. At step $i$:
+<p><span class="new-item item-b">Выборка по Гиббсу</span> это итеративный приближенный метод; который изменяет присвоение факторному графу одной переменной за раз до сходимости. На шаге $i$:
 </p><ul>
 <li> we assign to each element $u \in \textrm{Domain}_i$ a weight $w(u)$ that is the product of all factors connected to that variable,
 </li><li> мы выбираем $v$ из индуцированного $w$ распределения вероятностей и присваиваем его $X_i$.
@@ -294,14 +294,14 @@
 <h3><a aria-hidden=true class=anchor href=#inference id=inference></a>Байесовский вывод</h3>
 <p><span class="new-item item-g">Общая стратегия вероятностного вывода</span> Стратегия вычисления вероятности $P(Q | E=e)$ запроса $Q$ при наличии свидетельства (англ: evidence) $E=e$ следующая:
 </p><ul>
-<li><u>Step 1</u>: Remove variables that are not ancestors of the query $Q$ or the evidence $E$ by marginalization
+<li><u>Шаг 1</u>: Удалить неявляющиеся предками запроса $Q$ или свидетельства $E$ переменные путем маргинализации
 </li><li><u>Шаг 2</u>: Преобразовать байесовскую сеть в факторный граф
-</li><li><u>Step 3</u>: Condition on the evidence $E=e$
-</li><li><u>Step 4</u>: Remove nodes disconnected from the query $Q$ by marginalization
+</li><li><u>Шаг 3</u>: Улучшить состояние свидетельства $E=e$
+</li><li><u>Шаг 4</u>: Удалить отключенные от запроса $Q$ узлы путем маргинализации
 </li><li><u>Шаг 5</u>: Запустить вероятностный алгоритм вывода (вручную, variable elimination, Gibbs sampling, particle filtering)
 </li></ul><p></p>
 <br>
-<p><span class="new-item item-r">Алгоритм прямого-обратного хода - этот алгоритм вычисляет точное значение $P(H = h_k | E = e)$ (запрос сглаживания) для любого $k \in \{1, ..., L\}$ в случае HMM размера $L$. Чтобы сделать так, мы выполняем 3 шага:
+<p><span class="new-item item-r">Алгоритм прямого-обратного хода</span> этот алгоритм вычисляет точное значение $P(H = h_k | E = e)$ (запрос сглаживания) для любого $k \in \{1, ..., L\}$ в случае HMM размера $L$. Чтобы сделать так, мы выполняем 3 шага:
 </p><div class=mobile-container>
 <ul>
 <li><u>Step 1</u>: for $i \in \{1,..., L\}$, compute $F_i(h_i) = \sum_{h_{i-1}} F_{i-1}(h_{i-1})p(h_{i}|h_{i-1})p(e_i|h_i)$
@@ -316,9 +316,9 @@
 <p></p>
 <p><span class=remark>Примечание: этот алгоритм интерпретирует каждое присвоение как путь, в котором каждое ребро $h_{i-1} \rightarrow h_i$ имеет вес $p(h_{i}|h_{i-1})p(e_i|h_i)$.</span></p>
 <br>
-<p><span class="new-item item-b">Gibbs sampling</span> This algorithm is an iterative approximate method that uses a small set of assignments (particles) to represent a large probability distribution. From a random assignment $x$, Gibbs sampling performs the following steps for $i\in \{1,...,n\}$ until convergence:
+<p><span class="new-item item-b">Выборка по Гиббсу</span> Этот алгоритм представляет собой итеративный приближенный метод. Он использует небольшой набор назначений (частиц) для представления большого распределения вероятностей. Из случайного присвоения $x$, Выборка по Гиббсу выполняет следующие шаги для $i\in \{1,...,n\}$ до сходимости:
 </p><ul>
-<li> For all $u \in \textrm{Domain}_i$, compute the weight $w(u)$ of assignment $x$ where $X_i = u$
+<li> Для всех $u \in \textrm{Domain}_i$, вычислить вес $w(u)$ присвоения $x$, где $X_i = u$
 </li><li> Sample $v$ from the probability distribution induced by $w$: $v \sim P(X_i = v | X_{-i} = x_{-i})$
 </li><li> Установить $X_i = v$
 </li></ul><p></p>
@@ -341,10 +341,10 @@
 <br>
 <p><span class="new-item item-r">Алгоритм Expectation-Maximization (EM)</span> алгоритм максимизации ожидания дает эффективный метод оценки параметра $\theta$ посредством оценки максимального правдоподобия путем многократного построения нижней границы правдоподобия (E-шаг) и оптимизации этой нижней границы (M-шаг) следующим образом:
 </p><ul>
-<li><u>E-step</u>: Evaluate the posterior probability $q(h)$ that each data point $e$ came from a particular cluster $h$ as follows:
+<li>Шаг E: Оценить апостериорную вероятность $q(h)$ прихода каждой точки данных $e$ из определенного кластера $h$ следующим образом:
 <div class=mobile-container>
 \[\boxed{q(h)=P(H=h|E=e;\theta)}\]
 </div>
-</li><li><u>M-step</u>: Use the posterior probabilities $q(h)$ as cluster specific weights on data points $e$ to determine $\theta$ through maximum likelihood.
+</li><li>M-step: Use the posterior probabilities $q(h)$ as cluster specific weights on data points $e$ to determine $\theta$ through maximum likelihood.
 </li></ul><p></p>
 </article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>

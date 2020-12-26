@@ -118,11 +118,11 @@
 <br>
 <p><span class="new-item item-g">Алгоритм</span> Алгоритм ожидания-максимизации (Expectation-Maximization, EM) дает эффективный метод оценки параметра $\theta$ посредством оценки максимального правдоподобия путем многократного построения нижней границы правдоподобия (E-шаг) и оптимизации этой нижней границы (M-шаг) следующим образом:
 </p><ul>
-<li><u>E-step</u>: Evaluate the posterior probability $Q_{i}(z^{(i)})$ that each data point $x^{(i)}$ came from a particular cluster $z^{(i)}$ as follows:
+<li>E-step: Evaluate the posterior probability $Q_{i}(z^{(i)})$ that each data point $x^{(i)}$ came from a particular cluster $z^{(i)}$ as follows:
 <div class=mobile-container>
 \[\boxed{Q_i(z^{(i)})=P(z^{(i)}|x^{(i)};\theta)}\]
 </div>
-</li><li><u>M-step</u>: Use the posterior probabilities $Q_i(z^{(i)})$ as cluster specific weights on data points $x^{(i)}$ to separately re-estimate each cluster model as follows:
+</li><li>M-step: Use the posterior probabilities $Q_i(z^{(i)})$ as cluster specific weights on data points $x^{(i)}$ to separately re-estimate each cluster model as follows:
 <div class=mobile-container>
 \[\boxed{\theta_i=\underset{\theta}{\textrm{argmax }}\sum_i\int_{z^{(i)}}Q_i(z^{(i)})\log\left(\frac{P(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}\right)dz^{(i)}}\]<p></p>
 </div>

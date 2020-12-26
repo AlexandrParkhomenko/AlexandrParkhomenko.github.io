@@ -194,7 +194,7 @@
 </div>
 <p>где мы обозначаем $w$, $b$, $x$, $z$ вес, смещение, вход и неактивированный выход нейрона соответственно.</p>
 <br>
-<div class="alert alert-warning" role=alert>Для более подробного обзора приведенных выше концепций ознакомьтесь с <a class=alert-link nethref=teaching/cs-229/cheatsheet-supervised-learning  href=../../cs-229/supervised-learning/index.html onclick=trackOutboundLink(this);>Supervised Learning cheatsheets</a>!</div>
+<div class="alert alert-warning" role=alert>Для более подробного обзора приведенных выше концепций ознакомьтесь с <a class=alert-link nethref=teaching/cs-229/cheatsheet-supervised-learning  href=../../cs-229/supervised-learning/index.html onclick=trackOutboundLink(this);>Шпаргалками по контролируемому обучению</a>!</div>
 <h2><a aria-hidden=true class=anchor href=#stochastic-gradient-descent id=stochastic-gradient-descent></a>Стохастический градиентный спуск</h2>
 <p><span class="new-item item-g">Градиентный спуск</span> Gradient descent - Обозначим $\eta\in\mathbb{R}$ скорость обучения (также называемую размером шага), правило обновления для градиентного спуска выражается с помощью скорости обучения и функции потерь $\textrm{Loss}(x,y,w)$ следующим образом:</p>
 <div class=mobile-container>
@@ -212,7 +212,7 @@
 <p><span class="new-item item-b">Пакетные обновления</span> Batch gradient descent (BGD) обновляет параметры модели по одной партии примеров (например, половина обучающего набора) за раз. Этот метод вычисляет стабильные направления обновления с большими вычислительными затратами.</p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#fine-tuning-models id=fine-tuning-models></a>Доводка моделей</h2>
-<p><span class="new-item item-g">Hypothesis class</span> A hypothesis class $\mathcal{F}$ is the set of possible predictors with a fixed $\phi(x)$ and varying $w$:</p>
+<p><span class="new-item item-g">Класс гипотез</span> Класс гипотез $\mathcal{F}$ - это набор возможных предикторов с фиксированным $\phi(x)$ и изменяющимся $w$:</p>
 <div class=mobile-container>
 \[\boxed{\mathcal{F}=\left\{f_w:w\in\mathbb{R}^d\right\}}\]
 </div>
