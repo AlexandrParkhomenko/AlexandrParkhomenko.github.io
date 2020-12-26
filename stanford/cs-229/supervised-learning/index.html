@@ -146,7 +146,7 @@
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#notations id=notations></a>Обозначения и основные понятия</h2>
-<p><span class="new-item item-b">Hypothesis</span> The hypothesis is noted $h_\theta$ and is the model that we choose. For a given input data $x^{(i)}$ the model prediction output is $h_\theta(x^{(i)})$.</p>
+<p><span class="new-item item-b">Гипотеза</span> Гипотеза обозначена $h_\theta$ и является выбранной нами моделью. Для заданных входных данных $x^{(i)}$ предсказанный результат модели обозначен $h_\theta(x^{(i)})$.</p>
 <br>
 <p><span class="new-item item-r">Функция потерь</span> это функция $L:(z,y)\in\mathbb{R}\times Y\longmapsto L(z,y)\in\mathbb{R}$ которая принимает в качестве входных данных прогнозируемое значение $z$, соответствующее значению реальных данных $y$, и выводит, насколько они различны. Общие функции потерь приведены в таблице ниже:</p>
 <div class=mobile-container>
@@ -339,7 +339,7 @@
 <div class=mobile-container>
 \[\boxed{K(x,z)=\phi(x)^T\phi(z)}\]
 </div>
-<p>In practice, the kernel $K$ defined by $K(x,z)=\exp\left(-\frac{||x-z||^2}{2\sigma^2}\right)$ is called the Gaussian kernel and is commonly used.</p>
+<p>На практике ядро $K$ определяется как $K(x,z)=\exp\left(-\frac{||x-z||^2}{2\sigma^2}\right)$ называется ядром Гаусса и обычно используется оно.</p>
 <center>
   <img alt="SVM kernel" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=svm-kernel-en.png?43f2af419ba926948a5bbf3289f2cf39>
 </center>
@@ -444,7 +444,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 <img alt="Union bound" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=union-bound.png?aab917859fa8e260e865def69a2889b8 style=width:100%;max-width:700px>
 </center>
 <br>
-<p><span class="new-item item-r">Hoeffding inequality</span> Let $Z_1, .., Z_m$ be $m$ iid variables drawn from a Bernoulli distribution of parameter $\phi$. Let $\widehat{\phi}$ be their sample mean and $\gamma&gt;0$ fixed. We have:</p>
+<p><span class="new-item item-r">Неравенство Хёфдинга</span> Пусть $Z_1, .., Z_m$ - $m$ независимых и одинаково распределенных переменных, взятых из распределения Бернулли для параметра $\phi$. Пусть $\widehat{\phi}$ их выборочное среднее, а $\gamma&gt;0$ фиксированное. У нас есть:</p>
 <div class=mobile-container>
 \[\boxed{P(|\phi-\widehat{\phi}|&gt;\gamma)\leqslant2\exp(-2\gamma^2m)}\]
 </div>
@@ -461,7 +461,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 	<li>обучающие примеры строятся независимо</li>
 </ul>
 <br>
-<p><span class="new-item item-g">Shattering</span> Given a set $S=\{x^{(1)},...,x^{(d)}\}$, and a set of classifiers $\mathcal{H}$, we say that $\mathcal{H}$ shatters $S$ if for any set of labels $\{y^{(1)}, ..., y^{(d)}\}$, we have:</p>
+<p><span class="new-item item-g">Разрушение (Shattering)</span> Для набора $S=\{x^{(1)},...,x^{(d)}\}$ и набора классификаторов $\mathcal{H}$ мы говорим, что $\mathcal{H}$ разрушает $S$, если для любого набора меток $\{y^{(1)}, ..., y^{(d)}\}$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\exists h\in\mathcal{H}, \quad \forall i\in[\![1,d]\!],\quad h(x^{(i)})=y^{(i)}}\]
 </div>

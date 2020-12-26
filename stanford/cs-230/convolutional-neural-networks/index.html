@@ -128,7 +128,7 @@
 <br>
 <h2><a aria-hidden=true class=anchor href=#filter id=filter></a>Фильтрация гиперпараметров</h2>
 <p>Слой свертки содержит фильтры, для которых важно знать значение его гиперпараметров.</p>
-<p><span class="new-item item-b">Dimensions of a filter</span> A filter of size $F\times F$ applied to an input containing $C$ channels is a $F \times F \times C$ volume that performs convolutions on an input of size $I \times I \times C$ and produces an output feature map (also called activation map) of size $O \times O \times 1$.
+<p><span class="new-item item-b">Размеры фильтра</span> Фильтр размера $F\times F$, применяемый к входу, содержащему каналы $C$, представляет собой объём $F \times F \times C$, который выполняет свертки на входе размера $I \times I \times C$ и создает карту выходных характеристик (также называемую картой активации) размера $O \times O \times 1$.
 </p><div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=dimensions-filter-en.png?7ce161e129a392a1804a231536b59f45 style=width:100%;>
@@ -409,7 +409,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </p><div class=mobile-container>
 \[\boxed{y=\big[\underbrace{p_c,b_x,b_y,b_h,b_w,c_1,c_2,...,c_p}_{\textrm{repeated }k\textrm{ times}},...\big]^T\in\mathbb{R}^{G\times G\times k\times(5+p)}}\]
 </div>
-where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the properties of the detected bouding box, $c_1,...,c_p$ is a one-hot representation of which of the $p$ classes were detected, and $k$ is the number of anchor boxes.
+где $p_c$ - вероятность обнаружения объекта, $b_x,b_y,b_h,b_w$ - свойства обнаруженной ограничивающий рамки, $c_1,...,c_p$ - one-hot представление того, какой из $p$ классов был обнаружен, а $k$ количество якорных рамок.
 <br>• Шаг 3: Запустить алгоритм подавления немаксимальных значений, чтобы удалить любые потенциально повторяющиеся перекрывающиеся ограничивающие рамки.<p></p>
 <div class=mobile-container>
 <center>
@@ -480,7 +480,7 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Activation</span> In a given layer $l$, the activation is noted $a^{[l]}$ and is of dimensions $n_H\times n_w\times n_c$</p>
+<p><span class="new-item item-b">Активация</span> В данном слое $l$ активация обозначена $a^{[l]}$ и имеет размеры $n_H\times n_w\times n_c$</p>
 <br>
 <p><span class="new-item item-r">Функция стоимости контента</span> Функция стоимости контента $J_{\textrm{content}}(C,G)$ используется для определения того, как сгенерированное изображение $G$ отличается от исходного изображения $C$ контента. Оно определяется следующим образом:</p>
 <div class=mobile-container>

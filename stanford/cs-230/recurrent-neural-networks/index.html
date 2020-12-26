@@ -330,7 +330,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Embedding matrix</span> For a given word $w$, the embedding matrix $E$ is a matrix that maps its 1-hot representation $o_w$ to its embedding $e_w$ as follows:</p>
+<p><span class="new-item item-b">Матрица представления (embedding matrix)</span> для данного слова $w$ матрица представления $E$ является матрицей, которая отображает свое 1-hot представление $o_w$ на его представления $e_w$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{e_w=Eo_w}\]
 </div>
@@ -345,19 +345,19 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Skip-gram</span> The skip-gram word2vec model is a supervised learning task that learns word embeddings by assessing the likelihood of any given target word $t$ happening with a context word $c$. By noting $\theta_t$ a parameter associated with $t$, the probability $P(t|c)$ is given by:</p>
+<p><span class="new-item item-r">Skip-gram</span> Модель word2vec с пропуском граммы - это задача с контролем учителем, которая изучает встраивание слов, оценивая правдоподобие того, что любое заданное целевое слово $t$ встречается с контекстным словом $c$. Обозначим $\theta_t$ параметр, связанный с $t$, вероятность $P(t|c)$ определяется выражением:</p>
 <div class=mobile-container>
 \[\boxed{P(t|c)=\frac{\exp(\theta_t^Te_c)}{\displaystyle\sum_{j=1}^{|V|}\exp(\theta_j^Te_c)}}\]
 </div>
 <p><span class=remark>Примечание: суммирование по всему словарю в знаменателе части softmax делает эту модель дорогостоящей в вычислительном отношении. CBOW - это еще одна модель word2vec, использующая окружающие слова для предсказания данного слова.</span></p>
 <br>
-<p><span class="new-item item-b">Negative sampling</span> It is a set of binary classifiers using logistic regressions that aim at assessing how a given context and a given target words are likely to appear simultaneously, with the models being trained on sets of $k$ negative examples and 1 positive example. Given a context word $c$ and a target word $t$, the prediction is expressed by:</p>
+<p><span class="new-item item-b">Отрицательная выборка</span> это набор бинарных классификаторов, использующих логистические регрессии, целью которых является оценка того, как данный контекст и заданные целевые слова могут появляться одновременно, при этом модели обучаются на наборах из $k$ отрицательных примеров и 1 положительного примера. Учитывая контекстное слово $c$ и целевое слово $t$, прогноз выражается следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{P(y=1|c,t)=\sigma(\theta_t^Te_c)}\]
 </div>
 <p><span class=remark>Примечание: этот метод менее затратен с точки зрения вычислений, чем модель скип-граммы.</span></p>
 <br>
-<p><span class="new-item item-r">GloVe</span> The GloVe model, short for global vectors for word representation, is a word embedding technique that uses a co-occurence matrix $X$ where each $X_{i,j}$ denotes the number of times that a target $i$ occurred with a context $j$. Its cost function $J$ is as follows:</p>
+<p><span class="new-item item-r">GloVe</span> Модель GloVe, сокращение от глобальных векторов для представления слов, представляет собой метод встраивания слов, который использует матрицу совпадения $X$, где каждый $X_{i,j}$ обозначает количество раз, когда цель $i$ встречалась с контекстом $j$. Его функция стоимости $J$ выглядит следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{J(\theta)=\frac{1}{2}\sum_{i,j=1}^{|V|}f(X_{ij})(\theta_i^Te_j+b_i+b_j'-\log(X_{ij}))^2}\]
 </div>
@@ -392,7 +392,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 <br>
 <p><span class="new-item item-r">Модель $n$</span> граммы - эта модель представляет собой наивный подход, направленный на количественную оценку вероятности того, что выражение появляется в корпусе, путем подсчета его количества появлений в обучающих данных.</p>
 <br>
-<p><span class="new-item item-b">Perplexity</span> Language models are commonly assessed using the perplexity metric, also known as PP, which can be interpreted as the inverse probability of the dataset normalized by the number of words $T$. The perplexity is such that the lower, the better and is defined as follows:</p>
+<p><span class="new-item item-b">Недоумение</span> Perplexity - языковые модели обычно оцениваются с помощью метрики недоумения, также известной как PP, которую можно интерпретировать как обратную вероятность набора данных, нормализованную на количество слов $T$. Недоумение таково, что чем ниже, тем лучше и определяется как следует:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{PP}=\prod_{t=1}^T\left(\frac{1}{\sum_{j=1}^{|V|}y_j^{(t)}\cdot \widehat{y}_j^{(t)}}\right)^{\frac{1}{T}}}\]
 </div>

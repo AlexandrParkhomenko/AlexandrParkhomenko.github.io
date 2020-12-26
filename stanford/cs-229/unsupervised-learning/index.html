@@ -192,12 +192,12 @@
 <h2><a aria-hidden=true class=anchor href=#dimension-reduction id=dimension-reduction></a>Уменьшение размерности</h2>
 <h3>Метод главных компонент</h3>
 <p>Это метод уменьшения размерности, который находит направления максимизации дисперсии для проецирования данных.</p>
-<p><span class="new-item item-b">Eigenvalue, eigenvector</span> Given a matrix $A\in\mathbb{R}^{n\times n}$, $\lambda$ is said to be an eigenvalue of $A$ if there exists a vector $z\in\mathbb{R}^n\backslash\{0\}$, called eigenvector, such that we have:</p>
+<p><span class="new-item item-b">Собственное значение, собственный вектор</span> Для матрицы $A\in\mathbb{R}^{n\times n}$ $\lambda$ называется собственным значением $A$, если существует вектор $z\in\mathbb{R}^n\backslash\{0\}$, называемый собственным вектором, так что у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{Az=\lambda z}\]
 </div>
 <br>
-<p><span class="new-item item-r">Spectral theorem</span> Let $A\in\mathbb{R}^{n\times n}$. If $A$ is symmetric, then $A$ is diagonalizable by a real orthogonal matrix $U\in\mathbb{R}^{n\times n}$. By noting $\Lambda=\textrm{diag}(\lambda_1,...,\lambda_n)$, we have:</p>
+<p><span class="new-item item-r">Спектральная теорема</span> Пусть $A\in\mathbb{R}^{n\times n}$. Если $A$ симметрична, то $A$ диагонализуема вещественной ортогональной матрицей $U\in\mathbb{R}^{n\times n}$. Обозначим $\Lambda=\textrm{diag}(\lambda_1,...,\lambda_n)$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\exists\Lambda\textrm{ diagonal},\quad A=U\Lambda U^T}\]
 </div>

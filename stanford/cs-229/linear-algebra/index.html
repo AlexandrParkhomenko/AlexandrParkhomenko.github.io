@@ -81,12 +81,12 @@
 <i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
 <h2><a aria-hidden=true class=anchor href=#notations id=notations></a>Общие обозначения</h2>
 <h3>Определения</h3>
-<p><span class="new-item item-b">Vector</span> We note $x\in\mathbb{R}^n$ a vector with $n$ entries, where $x_i\in\mathbb{R}$ is the $i^{th}$ entry:</p>
+<p><span class="new-item item-b">Вектор</span> Мы обозначаем $x\in\mathbb{R}^n$ вектор с $n$ элементами, где $x_i\in\mathbb{R}$∈ i-й элемент:</p>
 <div class=mobile-container>
 \[x=\left(\begin{array}{c}x_1\\x_2\\\vdots\\x_n\end{array}\right)\in\mathbb{R}^n\]
 </div>
 <br>
-<p><span class="new-item item-b">Matrix</span> We note $A\in\mathbb{R}^{m\times n}$ a matrix with $m$ rows and $n$ columns, where $A_{i,j}\in\mathbb{R}$ is the entry located in the $i^{th}$ row and $j^{th}$ column:</p>
+<p><span class="new-item item-b">Матрица</span> Мы обозначаем $A\in\mathbb{R}^{m\times n}$ матрица с $m$ строками и $n$ столбцами, где $A_{i,j}\in\mathbb{R}$ - запись, расположенная в i-й строке и j-м столбце:</p>
 <div class=mobile-container>
 \[A=\left(\begin{array}{ccc}A_{1,1}&amp; \cdots&amp;A_{1,n}\\\vdots&amp;&amp; \vdots\\A_{m,1}&amp; \cdots&amp;A_{m,n}\end{array}\right)\in\mathbb{R}^{m\times n}\]
 </div>
@@ -139,7 +139,7 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 </div><br>
 <p><span class=remark>Remark: for matrices $A,B$, we have $(AB)^T=B^TA^T$.</span></p>
 <br>
-<p><span class="new-item item-g">Inverse</span> The inverse of an invertible square matrix $A$ is noted $A^{-1}$ and is the only matrix such that:</p>
+<p><span class="new-item item-g">Обращение</span> Обратная квадратная матрица $A$ обозначается как $A^{-1}$ и является единственной матрицей, такой что:</p>
 <div class=mobile-container>
 \[\boxed{AA^{-1}=A^{-1}A=I}\]
 </div>
@@ -155,7 +155,7 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 <div class=mobile-container>
 \[\boxed{\textrm{det}(A)=|A|=\sum_{j=1}^n(-1)^{i+j}A_{i,j}|A_{\backslash i,\backslash j}|}\]
 </div>
-<p><span class=remark>Remark: $A$ is invertible if and only if $|A|\neq0$. Also, $|AB|=|A||B|$ and $|A^T|=|A|$.</span></p>
+<p><span class=remark>Примечание: $A$ обратима тогда и только тогда, когда $|A|\neq0$. Также, $|AB|=|A||B|$ и $|A^T|=|A|$.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#properties id=properties></a>Свойства матрицы</h2>
 <h3>Определения</h3>
@@ -218,14 +218,14 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 <div class=mobile-container>
 \[\boxed{A=A^T}\quad\textrm{ and }\quad\boxed{\forall x\in\mathbb{R}^n,\quad x^TAx\geqslant0}\]
 </div>
-<p><span class=remark>Remark: similarly, a matrix $A$ is said to be positive definite, and is noted $A\succ0$, if it is a PSD matrix which satisfies for all non-zero vector $x$, $x^TAx&gt;0$.</span></p>
+<p><span class=remark>Примечание: аналогично, матрица $A$ называется положительно определенной и обозначается как $A\succ0$, если это матрица PSD, которая удовлетворяет всем ненулевым векторам $x$, $x^TAx&gt;0$.</span></p>
 <br>
-<p><span class="new-item item-b">Eigenvalue, eigenvector</span> Given a matrix $A\in\mathbb{R}^{n\times n}$, $\lambda$ is said to be an eigenvalue of $A$ if there exists a vector $z\in\mathbb{R}^n\backslash\{0\}$, called eigenvector, such that we have:</p>
+<p><span class="new-item item-b">Собственное значение, собственный вектор</span> Для матрицы $A\in\mathbb{R}^{n\times n}$ $\lambda$ называется собственным значением $A$, если существует вектор $z\in\mathbb{R}^n\backslash\{0\}$, называемый собственным вектором, такой, что у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{Az=\lambda z}\]
 </div>
 <br>
-<p><span class="new-item item-r">Spectral theorem</span> Let $A\in\mathbb{R}^{n\times n}$. If $A$ is symmetric, then $A$ is diagonalizable by a real orthogonal matrix $U\in\mathbb{R}^{n\times n}$. By noting $\Lambda=\textrm{diag}(\lambda_1,...,\lambda_n)$, we have:</p>
+<p><span class="new-item item-r">Спектральная теорема</span> Пусть $A\in\mathbb{R}^{n\times n}$. Если $A$ симметрична, то $A$ диагонализуема действительной ортогональной матрицей $U\in\mathbb{R}^{n\times n}$. Обозначим $\Lambda=\textrm{diag}(\lambda_1,...,\lambda_n)$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\exists\Lambda\textrm{ diagonal},\quad A=U\Lambda U^T}\]
 </div>
@@ -236,7 +236,7 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#calculus id=calculus></a>Матричное исчисление</h2>
-<p><span class="new-item item-b">Gradient</span> Let $f:\mathbb{R}^{m\times n}\rightarrow\mathbb{R}$ be a function and $A\in\mathbb{R}^{m\times n}$ be a matrix. The gradient of $f$ with respect to $A$ is a $m\times n$ matrix, noted $\nabla_A f(A)$, such that:</p>
+<p><span class="new-item item-b">Градиент</span> Пусть $f:\mathbb{R}^{m\times n}\rightarrow\mathbb{R}$ - функция, а $A\in\mathbb{R}^{m\times n}$ - матрица. Градиент $f$ относительно $A$ представляет собой матрицу размера $m\times n$, отмеченную как $\nabla_A f(A)$, такую, что:</p>
 <div class=mobile-container>
 \[\boxed{\Big(\nabla_A f(A)\Big)_{i,j}=\frac{\partial f(A)}{\partial A_{i,j}}}\]
 </div>

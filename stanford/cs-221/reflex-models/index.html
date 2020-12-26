@@ -69,13 +69,13 @@
 \[\boxed{\phi(x)=\left[\begin{array}{c}\phi_1(x)\\\vdots\\\phi_d(x)\end{array}\right]\in\mathbb{R}^d}\]
 </div>
 <br>
-<p><span class="new-item item-r">Score</span> The score $s(x,w)$ of an example $(\phi(x),y) \in \mathbb{R}^d \times \mathbb{R}$ associated to a linear model of weights $w \in \mathbb{R}^d$ is given by the inner product:</p>
+<p><span class="new-item item-r">Оценка</span> Оценка $s(x,w)$ примера $(\phi(x),y) \in \mathbb{R}^d \times \mathbb{R}$, связанного с линейной моделью весов $w \in \mathbb{R}^d$, дается внутренним произведением:</p>
 <div class=mobile-container>
 \[\boxed{s(x,w)=w\cdot\phi(x)}\]
 </div>
 <br>
 <h3>Классификация</h3>
-<p><span class="new-item item-b">Linear classifier</span> Given a weight vector $w\in\mathbb{R}^d$ and a feature vector $\phi(x)\in\mathbb{R}^d$, the binary linear classifier $f_w$ is given by:</p>
+<p><span class="new-item item-b">Линейный классификатор</span> Для вектора весов $w\in\mathbb{R}^d$ и вектора признаков $\phi(x)\in\mathbb{R}^d$ двоичный линейный классификатор $f_w$ имеет вид:</p>
 <div class=mobile-container>
 \[\boxed{f_w(x)=\textrm{sign}(s(x,w))=\left\{
   \begin{array}{cr}
@@ -90,25 +90,25 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Margin</span> The margin $m(x,y,w) \in \mathbb{R}$ of an example $(\phi(x),y) \in \mathbb{R}^d \times \{-1,+1\}$ associated to a linear model of weights $w\in \mathbb{R}^d$ quantifies the confidence of the prediction: larger values are better. It is given by:</p>
+<p><span class="new-item item-g">Отступ</span> Отступ $m(x,y,w) \in \mathbb{R}$ примера $(\phi(x),y) \in \mathbb{R}^d \times \{-1,+1\}$, связанная с линейной моделью весов $w\in \mathbb{R}^d$, количественно оценивает уверенность прогноз: большие значения лучше. Задается:</p>
 <div class=mobile-container>
 \[\boxed{m(x,y,w)=s(x,w)\times y}\]
 </div>
 <br>
 <h3>Регрессия</h3>
-<p><span class="new-item item-g">Linear regression</span> Given a weight vector $w\in\mathbb{R}^d$ and a feature vector $\phi(x)\in\mathbb{R}^d$, the output of a linear regression of weights $w$ denoted as $f_w$ is given by:</p>
+<p><span class="new-item item-g">Линейная регрессия</span> Для данного вектора весов $w\in\mathbb{R}^d$ и вектора признаков $\phi(x)\in\mathbb{R}^d$ результат линейной регрессии весов $w$, обозначенный как $f_w$, определяется выражением:</p>
 <div class=mobile-container>
 \[\boxed{f_w(x)=s(x,w)}\]
 </div>
-<p><span class="new-item item-g">Residual</span> The residual $\textrm{res}(x,y,w) \in \mathbb{R}$ is defined as being the amount by which the prediction $f_w(x)$ overshoots the target $y$:</p>
+<p><span class="new-item item-g">Разность</span> Residual $\textrm{res}(x,y,w) \in \mathbb{R}$ определяется как величина, на которую прогноз $f_w(x)$ превышает целевой $y$:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{res}(x,y,w)=f_w(x)-y}\]
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#loss-minimization id=loss-minimization></a>Минимизация потерь</h2>
-<p><span class="new-item item-g">Loss function</span> A loss function $\textrm{Loss}(x,y,w)$ quantifies how unhappy we are with the weights $w$ of the model in the prediction task of output $y$ from input $x$. It is a quantity we want to minimize during the training process.</p><p>
+<p><span class="new-item item-g">Функция потерь</span> Функция потерь $\textrm{Loss}(x,y,w)$ количественно определяет, насколько мы недовольны весами $w$ модели в задаче прогнозирования выхода $y$ из входа $x$. Это количество, которое мы хотим минимизировать во время тренировочного процесса.</p><p>
 <br>
-</p><p><span class="new-item item-r">Classification case</span> The classification of a sample $x$ of true label $y\in \{-1,+1\}$ with a linear model of weights $w$ can be done with the predictor $f_w(x) \triangleq \textrm{sign}(s(x,w))$. In this situation, a metric of interest quantifying the quality of the classification is given by the margin $m(x,y,w)$, and can be used with the following loss functions:</p>
+</p><p><span class="new-item item-r">Классификационный случай</span> Классификация выборки $x$ истинной метки $y\in \{-1,+1\}$ с линейной моделью весов $w$ может быть выполнена с помощью предиктора $f_w(x) \triangleq \textrm{sign}(s(x,w))$. В этой ситуации интересующий показатель, определяющий качество классификации, задается отступом $m(x,y,w)$ и может использоваться со следующими функциями потерь:</p>
 <div class=mobile-container>
   <table style="table-layout:fixed; width:100%; min-width:725px; max-width:800px;">
     <colgroup>
@@ -140,7 +140,7 @@
 </table>
 </div>
 <br>
-<p><span class="new-item item-b">Regression case</span> The prediction of a sample $x$ of true label $y \in \mathbb{R}$ with a linear model of weights $w$ can be done with the predictor $f_w(x) \triangleq s(x,w)$. In this situation, a metric of interest quantifying the quality of the regression is given by the margin $\textrm{res}(x,y,w)$ and can be used with the following loss functions:</p>
+<p><span class="new-item item-b">Случай регрессии</span> Предсказание выборки $x$ истинной метки $y \in \mathbb{R}$ с помощью линейной модели весов $w$ может быть выполнено с помощью предиктора $f_w(x) \triangleq s(x,w)$. В этой ситуации интересующий показатель, количественно оценивающий качество регрессии, задается отступом $\textrm{res}(x,y,w)$ и может использоваться со следующими функциями потерь:</p>
 <div class=mobile-container>
   <table style="table-layout:fixed; width:100%; min-width:525px; max-width:575px;">
     <colgroup>
@@ -188,7 +188,7 @@
 <img alt="Neural network" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=neural-network-en.png?835862d448ad85bc5a038848d7d7df0b style=width:100%;max-width:600px>
 </center>
 </div>
-<p>By noting $i$ the $i^{th}$ layer of the network and $j$ the $j^{th}$ hidden unit of the layer, we have:</p>
+<p>Обозначим $i$ - это $i$-й уровень сети, а $j$ - $j$-й скрытый блок слоя, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{z_j^{[i]}={w_j^{[i]}}^Tx+b_j^{[i]}}\]
 </div>
@@ -196,7 +196,7 @@
 <br>
 <div class="alert alert-warning" role=alert>Для более подробного обзора приведенных выше концепций ознакомьтесь с <a class=alert-link nethref=teaching/cs-229/cheatsheet-supervised-learning  href=../../cs-229/supervised-learning/index.html onclick=trackOutboundLink(this);>Supervised Learning cheatsheets</a>!</div>
 <h2><a aria-hidden=true class=anchor href=#stochastic-gradient-descent id=stochastic-gradient-descent></a>Стохастический градиентный спуск</h2>
-<p><span class="new-item item-g">Gradient descent</span> By noting $\eta\in\mathbb{R}$ the learning rate (also called step size), the update rule for gradient descent is expressed with the learning rate and the loss function $\textrm{Loss}(x,y,w)$ as follows:</p>
+<p><span class="new-item item-g">Градиентный спуск</span> Gradient descent - Обозначим $\eta\in\mathbb{R}$ скорость обучения (также называемую размером шага), правило обновления для градиентного спуска выражается с помощью скорости обучения и функции потерь $\textrm{Loss}(x,y,w)$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{w\longleftarrow w-\eta\nabla_w \textrm{Loss}(x,y,w)}\]
 </div>
@@ -207,7 +207,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Stochastic updates</span> Stochastic gradient descent (SGD) updates the parameters of the model one training example $(\phi(x),y)\in\mathcal{D}_{\textrm{train}}$ at a time. This method leads to sometimes noisy, but fast updates.</p>
+<p><span class="new-item item-r">Стохастические обновления</span> Stochastic gradient descent (SGD) обновляет параметры модели по одному обучающему примеру $(\phi(x),y)\in\mathcal{D}_{\textrm{train}}$ за раз. Этот метод приводит к иногда шумным, но быстрым обновлениям.</p>
 <br>
 <p><span class="new-item item-b">Пакетные обновления</span> Batch gradient descent (BGD) обновляет параметры модели по одной партии примеров (например, половина обучающего набора) за раз. Этот метод вычисляет стабильные направления обновления с большими вычислительными затратами.</p>
 <br>
@@ -217,13 +217,13 @@
 \[\boxed{\mathcal{F}=\left\{f_w:w\in\mathbb{R}^d\right\}}\]
 </div>
 <br>
-<p><span class="new-item item-r">Logistic function</span> The logistic function $\sigma$, also called the sigmoid function, is defined as:</p>
+<p><span class="new-item item-r">Логистическая функция</span> Логистическая функция $\sigma$, также называемая сигмовидной функцией, определяется как:</p>
 <div class=mobile-container>
 \[\boxed{\forall z\in]-\infty,+\infty[,\quad\sigma(z)=\frac{1}{1+e^{-z}}}\]
 </div>
 <p><span class=remark>Remark: we have $\sigma'(z)=\sigma(z)(1-\sigma(z))$.</span></p>
 <br>
-<p><span class="new-item item-b">Backpropagation</span> The forward pass is done through $f_i$, which is the value for the subexpression rooted at $i$, while the backward pass is done through $g_i=\frac{\partial\textrm{out}}{\partial f_i}$ and represents how $f_i$ influences the output.</p>
+<p><span class="new-item item-b">Обратное распространение</span> Backpropagation - Прямой проход выполняется через $f_i$, которое является значением подвыражения с индексом $i$, а обратный проход выполняется через $g_i=\frac{\partial\textrm{out}}{\partial f_i}$ и представляет, как $f_i$ влияет на вывод.</p>
 <div class=mobile-container>
 <center>
 <img alt=Backpropagation class=img-responsive netsrc=teaching/cs-221/illustrations/ src=backpropagation.png?24671572de19eb4f92606f950c21409d style=width:100%;max-width:450px>

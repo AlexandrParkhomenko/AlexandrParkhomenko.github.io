@@ -164,7 +164,7 @@
 <br>
 <p><span class="new-item item-r">Состояние</span> это совокупность всех прошлых действий, достаточная для оптимального выбора будущих действий.</p>
 <br>
-<p><span class="new-item item-b">Dynamic programming</span> Dynamic programming (DP) is a backtracking search algorithm with memoization (i.e. partial results are saved) whose goal is to find a minimum cost path from state $s$ to an end state $s_\textrm{end}$. It can potentially have exponential savings compared to traditional graph search algorithms, and has the property to only work for acyclic graphs. For any given state $s$, the future cost is computed as follows:</p>
+<p><span class="new-item item-b">Динамическое программирование (DP)</span> это алгоритм поиска с возвратом и запоминанием (то есть частичные результаты сохраняются), цель которого - найти путь с минимальной стоимостью от состояния $s$ в конечное состояние $s_\textrm{end}$. Он потенциально может иметь экспоненциальную экономию по сравнению с традиционными алгоритмами поиска по графу и имеет свойство работать только для ациклических графов. Для любого заданного состояния $s$ будущая стоимость рассчитывается следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{FutureCost}(s)=\left\{\begin{array}{lc}0 &amp; \textrm{if IsEnd}(s)\\\underset{a\in\textrm{Actions}(s)}{\textrm{min}}\big[\textrm{Cost}(s,a)+\textrm{FutureCost(Succ}(s,a))\big] &amp; \textrm{otherwise}\end{array}\right.}\]
 </div>
@@ -205,7 +205,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Uniform cost search</span> Uniform cost search (UCS) is a search algorithm that aims at finding the shortest path from a state $s_\textrm{start}$ to an end state $s_\textrm{end}$. It explores states $s$ in increasing order of $\textrm{PastCost}(s)$ and relies on the fact that all action costs are non-negative.</p>
+<p><span class="new-item item-g">Uniform cost search (UCS)</span> Поиск по единой стоимости - это алгоритм поиска, который направлен на поиск кратчайшего пути от состояния $s_\textrm{start}$ до конечного состояния $s_\textrm{end}$. Он исследует состояния в порядке возрастания $\textrm{PastCost}(s)$ и полагается на тот факт, что все затраты на действия неотрицательны.</p>
 <div class=mobile-container>
 <center>
   <img alt="Uniform Cost Search" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=ucs-example.png?e565704b2370d49fa14f56f8259d3515 style=width:100%;max-width:450px>
@@ -214,9 +214,9 @@
 <p><span class=remark>Замечание 1: алгоритм UCS логически эквивалентен алгоритму Дейкстры.</span></p>
 <p><span class=remark>Замечание 2: алгоритм не будет работать для задачи с отрицательными затратами действий, и добавление положительной константы, чтобы сделать их неотрицательными, не решит проблему, так как в конечном итоге это будет другой проблемой.</span></p>
 <br>
-<p><span class="new-item item-r">Correctness theorem</span> When a state $s$ is popped from the frontier $\mathcal{F}$ and moved to explored set $\mathcal{E}$, its priority is equal to $\textrm{PastCost}(s)$ which is the minimum cost path from $s_\textrm{start}$ to $s$.</p>
+<p><span class="new-item item-r">Теорема корректности</span> Когда состояние $s$ выталкивается из границы $\mathcal{F}$ и перемещается в исследуемый набор $\mathcal{E}$, его приоритет равен $\textrm{PastCost}(s)$, который представляет собой путь с минимальной стоимостью от $s_\textrm{start}$ до $s$.</p>
 <br>
-<p><span class="new-item item-b">Graph search algorithms summary</span> By noting $N$ the number of total states, $n$ of which are explored before the end state $s_\textrm{end}$, we have:</p>
+<p><span class="new-item item-b">Сводка алгоритмов поиска по графу</span> Обозначим $N$ общее количество состояний, $n$ из которых исследуются до конечного состояния $s_\textrm{end}$, у нас есть:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:500px;">
@@ -261,7 +261,7 @@
 <p><span class=remark>Remark: there are several versions of the algorithm, one of which simplifies the problem to only learning the cost of each action $a$, and the other parametrizes $\textrm{Cost}(s,a)$ to a feature vector of learnable weights.</span></p>
 <br>
 <h3><a aria-hidden=true class=anchor href=#a-star id=a-star></a>$\textrm{A}^{\star}$ search</h3>
-<p><span class="new-item item-g">Heuristic function</span> A heuristic is a function $h$ over states $s$, where each $h(s)$ aims at estimating $\textrm{FutureCost}(s)$, the cost of the path from $s$ to $s_\textrm{end}$.</p>
+<p><span class="new-item item-g">Эвристическая функция</span> эвристика - это функция $h$ по состояниям $s$, где каждый $h(s)$ направлен на оценку $\textrm{FutureCost}(s)$, стоимость пути от $s$ до $s_\textrm{end}$.</p>
 <div class=mobile-container>
 <center>
   <img alt="A star" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=a-star.png?e4f6b57d6b77c9ecf9bdd5d7d491e703 style=width:100%;max-width:465px>
@@ -309,7 +309,7 @@
 \[\boxed{h(s)\textrm{ consistent}\Longrightarrow h(s)\textrm{ admissible}}\]
 </div>
 <br>
-<p><span class="new-item item-r">Efficiency</span> $A^*$ explores all states $s$ satisfying the following equation:</p>
+<p><span class="new-item item-r">Эффективность</span> $A^*$ исследует все состояния $s$, удовлетворяющие следующему уравнению:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{PastCost}(s)\leqslant\textrm{PastCost}(s_{\textrm{end}})-h(s)}\]
 </div>
@@ -328,7 +328,7 @@
 \[\boxed{\textrm{Cost}_{\textrm{rel}}(s,a)\leqslant\textrm{Cost}(s,a)}\]
 </div>
 <br>
-<p><span class="new-item item-r">Relaxed heuristic</span> Given a relaxed search problem $P_{\textrm{rel}}$, we define the relaxed heuristic $h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)$ as the minimum cost path from $s$ to an end state in the graph of costs $\textrm{Cost}_{\textrm{rel}}(s,a)$.</p>
+<p><span class="new-item item-r">Ослабленная эвристика</span> Задана упрощенная задача поиска $P_{\textrm{rel}}$, мы определяем ослабленную эвристику $h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)$ как путь с минимальной стоимостью от $s$ до конечного состояния в графе затрат $\textrm{Cost}_{\textrm{rel}}(s,a)$.</p>
 <br>
 <p><span class="new-item item-b">Консистентность ослабленной эвристики</span> Пусть $P_{\textrm{rel}}$ - заданная ослабленная задача. По теореме у нас есть:</p>
 <div class=mobile-container>
@@ -395,7 +395,7 @@
 <div class=mobile-container>
 \[\boxed{V_\pi(s)=Q_\pi(s,\pi(s))}\]
 </div>
-<p><span class=remark>Remark: $V_\pi(s)$ is equal to 0 if $s$ is an end state.</span></p>
+<p><span class=remark>Примечание: $V_\pi(s)$ равно 0, если $s$ - конечное состояние.</span></p>
 <br>
 <h3>Приложения</h3>
 <p><span class="new-item item-r">Policy evaluation</span> Given a policy $\pi$, policy evaluation is an iterative algorithm that aims at estimating $V_\pi$. It is done as follows:
@@ -420,7 +420,7 @@ with
 \[\boxed{Q_{\textrm{opt}}(s,a)=\sum_{s'\in\textrm{ States}}T(s,a,s')\left[\textrm{Reward}(s,a,s')+\gamma V_\textrm{opt}(s')\right]}\]
 </div>
 <br>
-<p><span class="new-item item-b">Optimal value</span> The optimal value $V_{\textrm{opt}}(s)$ of state $s$ is defined as being the maximum value attained by any policy. It is computed as follows:</p>
+<p><span class="new-item item-b">Оптимальная ценность</span> Оптимальная ценность $V_{\textrm{opt}}(s)$ состояния $s$ определяется как максимальное ценность, достигаемая любой политикой. Она рассчитывается следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{V_{\textrm{opt}}(s)=\underset{a\in\textrm{ Actions}(s)}{\textrm{max}}Q_\textrm{opt}(s,a)}\]
 </div>
@@ -457,7 +457,7 @@ and
 <div class=mobile-container>
 \[\boxed{\widehat{\textrm{Reward}}(s,a,s')=r\textrm{ in }(s,a,r,s')}\]
 </div>
-These estimations will be then used to deduce $Q$-values, including $Q_\pi$ and $Q_\textrm{opt}.$<p></p>
+Эти оценки затем будут использоваться для вывода $Q$-ценностей, включая $Q_\pi$ и $Q_\textrm{opt}.$<p></p>
 <p><span class=remark>Примечание: Основанный на модели Монте-Карло считается вне политики, потому что оценка не зависит от конкретной политики.</span></p>
 <br>
 <p><span class="new-item item-r">Безмодельный Монте-Карло</span> Безмодельный метод Монте-Карло направлен на прямую оценку $Q_{\pi}$ следующим образом:
@@ -488,7 +488,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 \[\boxed{\widehat{Q}_{\textrm{opt}}(s,a)\leftarrow(1-\eta)\widehat{Q}_{\textrm{opt}}(s,a)+\eta\Big[r+\gamma\underset{a'\in\textrm{ Actions}(s')}{\textrm{max}}\widehat{Q}_{\textrm{opt}}(s',a')\Big]}\]
 </div>
 <br>
-<p><span class="new-item item-g">Epsilon-greedy</span> The epsilon-greedy policy is an algorithm that balances exploration with probability $\epsilon$ and exploitation with probability $1-\epsilon$. For a given state $s$, the policy $\pi_{\textrm{act}}$ is computed as follows:</p>
+<p><span class="new-item item-g">Эпсилон-жадная</span> Эпсилон-жадная политика - это алгоритм, который уравновешивает исследование с вероятностью $\epsilon$ и использование с вероятностью $1-\epsilon$. Для заданного состояния $s$ политика $\pi_{\textrm{act}}$ вычисляется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\pi_\textrm{act}(s)=\left\{\begin{array}{ll}\underset{a\in\textrm{ Actions}}{\textrm{argmax }}\widehat{Q}_\textrm{opt}(s,a) &amp; \textrm{with proba }1-\epsilon\\\textrm{random from Actions}(s) &amp; \textrm{with proba }\epsilon\end{array}\right.}\]
 </div>
@@ -514,7 +514,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 </li><li>Stochastic policies, denoted $\pi_p(s,a)\in[0,1]$, which are probabilities that player $p$ takes action $a$ in state $s$.
 </li></ul><p></p>
 <br>
-<p><span class="new-item item-g">Expectimax</span> For a given state $s$, the expectimax value $V_{\textrm{exptmax}}(s)$ is the maximum expected utility of any agent policy when playing with respect to a fixed and known opponent policy $\pi_{\textrm{opp}}$. It is computed as follows:</p>
+<p><span class="new-item item-g">Expectimax</span> Для данного состояния $s$ значение expectimax $V_{\textrm{exptmax}}(s)$ является максимальной ожидаемой полезностью любой политики агента при игре относительно фиксированной и известной политики противника $\pi_{\textrm{opp}}$. Он рассчитывается следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{V_{\textrm{exptmax}}(s)=\left\{\begin{array}{ll}\textrm{Utility}(s) &amp; \textrm{IsEnd}(s)\\\underset{a\in\textrm{Actions}(s)}{\textrm{max}}V_{\textrm{exptmax}}(\textrm{Succ}(s,a)) &amp; \textrm{Player}(s)=\textrm{agent}\\\displaystyle\sum_{a\in\textrm{Actions}(s)}\pi_{\textrm{opp}}(s,a)V_{\textrm{exptmax}}(\textrm{Succ}(s,a)) &amp; \textrm{Player}(s)=\textrm{opp}\end{array}\right.}\]
 </div>
@@ -561,7 +561,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <p><span class="new-item item-g">Evaluation function</span> An evaluation function is a domain-specific and approximate estimate of the value $V_{\textrm{minimax}}(s)$. It is denoted $\textrm{Eval}(s)$.</p>
 <p><span class=remark>Примечание: $\textrm{FutureCost}(s)$ - аналог задачи поиска.</span></p>
 <br>
-<p><span class="new-item item-b">Alpha-beta pruning</span> Alpha-beta pruning is a domain-general exact method optimizing the minimax algorithm by avoiding the unnecessary exploration of parts of the game tree. To do so, each player keeps track of the best value they can hope for (stored in $\alpha$ for the maximizing player and in $\beta$ for the minimizing player). At a given step, the condition $\beta &lt; \alpha$ means that the optimal path is not going to be in the current branch as the earlier player had a better option at their disposal.</p>
+<p><span class="new-item item-b">Альфа-бета обрезка</span> Alpha-beta pruning - это общий для предметной области точный метод, оптимизирующий алгоритм минимакса, избегая ненужного исследования частей игрового дерева. Для этого каждый игрок отслеживает наилучшее значение, на которое он может надеяться (сохраняется в $\alpha$ для максимизирующего игрока и в $\beta$ для минимизирующего игрока). На данном шаге условие $\beta &lt; \alpha$ означает, что оптимальный путь не будет в текущей ветви, поскольку у более раннего игрока был лучший вариант в своем распоряжении.</p>
 <div class=mobile-container>
 <center>
   <img alt="Alpha beta pruning" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=alpha-beta-pruning.png?30f2f19c5b0621ca55fcce4bdb6f914c style=width:100%;max-width:600px>
@@ -601,7 +601,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 </div>
 <br>
 <h3>Игры с ненулевой суммой</h3>
-<p><span class="new-item item-b">Payoff matrix</span> We define $V_p(\pi_A,\pi_B)$ to be the utility for player $p$.</p>
+<p><span class="new-item item-b">Матрица выигрыша</span> Мы определяем $V_p(\pi_A,\pi_B)$ как полезность для игрока $p$.</p>
 <br>
 <p><span class="new-item item-r">Nash equilibrium</span> A Nash equilibrium is $(\pi_A^*,\pi_B^*)$ such that no player has an incentive to change its strategy. We have:</p>
 <div class=mobile-container>

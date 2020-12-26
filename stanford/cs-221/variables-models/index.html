@@ -126,7 +126,7 @@
 <p><span class=remark>Примечание: AC-3 может быть реализован как итеративно, так и рекурсивно.</span></p>
 <br>
 <h3><a aria-hidden=true class=anchor href=#approximate-methods id=approximate-methods></a>Аппроксимационные методы</h3>
-<p><span class="new-item item-r">Beam search</span> Beam search is an approximate algorithm that extends partial assignments of $n$ variables of branching factor $b=|\textrm{Domain}|$ by exploring the $K$ top paths at each step. The beam size $K \in \{1,...,b^n\}$ controls the tradeoff between efficiency and accuracy. This algorithm has a time complexity of $O(n \cdot Kb\log(Kb))$.</p>
+<p><span class="new-item item-r">Лучевой поиск</span> (примечание переводчика: оптимизированный Поиск по первому наилучшему совпадению) - это приближенный алгоритм, расширяющий частичные присвоения $n$ переменных коэффициента ветвления $b=|\textrm{Domain}|$ исследуя $K$ лучших путей на каждом этапе. Размер луча $K \in \{1,...,b^n\}$ определяет компромисс между эффективностью и точностью. Этот алгоритм имеет временную сложность $O(n \cdot Kb\log(Kb))$.</p>
 <p><i>Пример ниже иллюстрирует возможный лучевой поиск при параметрах $K = 2$, $b = 3$ и $n = 5$.</i></p>
 <div class=mobile-container>
 <center>
@@ -136,7 +136,7 @@
 <br>
 <p><span class=remark>Примечание: $K=1$ соответствует жадному поиску, тогда как $K\rightarrow+\infty$ эквивалентно поиску по дереву BFS.</span></p>
 <br>
-<p><span class="new-item item-b">Iterated conditional modes</span> Iterated conditional modes (ICM) is an iterative approximate algorithm that modifies the assignment of a factor graph one variable at a time until convergence. At step $i$, we assign to $X_i$ the value $v$ that maximizes the product of all factors connected to that variable.</p>
+<p><span class="new-item item-b">Итерированные условные режимы</span> Iterated conditional modes (ICM) представляет собой итерационный приближенный алгоритм, который изменяет присвоение факторному графу одной переменной за раз до сходимости. На шаге $i$ мы присваиваем $X_i$ значение $v$, которое максимизирует произведение всех факторов, связанных с этой переменной.</p>
 <p><span class=remark>Примечание: ICM может застрять в локальных минимумах.</span></p>
 <br>
 <p><span class="new-item item-b">Gibbs sampling</span> Gibbs sampling is an iterative approximate method that modifies the assignment of a factor graph one variable at a time until convergence. At step $i$:
@@ -148,7 +148,7 @@
 <p><span class=remark>Примечание: Выборка по Гиббсу можно рассматривать как вероятностный аналог ICM. Преимущество этого метода заключается в возможности избежать локальных минимумов в большинстве случаев.</span></p>
 <br>
 <h3><a aria-hidden=true class=anchor href=#factor-graph-transformations id=factor-graph-transformations></a>Преобразования факторных графов</h3>
-<p><span class="new-item item-g">Independence</span> Let $A,B$ be a partitioning of the variables $X$. We say that $A$ and $B$ are independent if there are no edges between $A$ and $B$ and we write:</p>
+<p><span class="new-item item-g">Независимость</span> Пусть $A,B$ - разбиение переменных $X$. Мы говорим, что $A$ и $B$ независимы, если между $A$ и $B$ нет ребер, и пишем:</p>
 <div class=mobile-container>
 \[\boxed{A\perp\!\!\!\!\perp B}\]
 </div>
@@ -221,7 +221,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Локально нормализованные - для каждого $x_{\textrm{Parents}(i)}$ все факторы являются локальными условными распределениями. Следовательно, они должны удовлетворить:</p>
+<p><span class="new-item item-b">Локально нормализованные</span> для каждого $x_{\textrm{Parents}(i)}$ все факторы являются локальными условными распределениями. Следовательно, они должны удовлетворить:</p>
 <div class=mobile-container>
 \[\boxed{\sum_{x_i}p(x_i|x_{\textrm{Parents}(i)})=1}\]
 </div>
@@ -337,7 +337,7 @@
 \[\boxed{\max_\theta\prod_{x\in\mathcal{D}_{\textrm{train}}}p(X=x;\theta)}\]
 </div>
 <br>
-<p><span class="new-item item-g">Laplace smoothing</span> For each distribution $d$ and partial assignment $(x_{\textrm{Parents}(i)},x_i)$, add $\lambda$ to $\textrm{count}_d(x_{\textrm{Parents}(i)},x_i)$, then normalize to get probability estimates.</p>
+<p><span class="new-item item-g">Сглаживание Лапласа</span> для каждого распределения $d$ и частичного присвоения $(x_{\textrm{Parents}(i)},x_i)$ добавьте $\lambda$ к $\textrm{count}_d(x_{\textrm{Parents}(i)},x_i)$, затем нормализуйте, чтобы получить оценки вероятности.</p>
 <br>
 <p><span class="new-item item-r">Алгоритм Expectation-Maximization (EM)</span> алгоритм максимизации ожидания дает эффективный метод оценки параметра $\theta$ посредством оценки максимального правдоподобия путем многократного построения нижней границы правдоподобия (E-шаг) и оптимизации этой нижней границы (M-шаг) следующим образом:
 </p><ul>

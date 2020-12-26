@@ -84,7 +84,7 @@
 <center>
   <img alt=Illustration class=img-responsive netsrc=teaching/cs-229/illustrations/ src=neural-network-en.png?835862d448ad85bc5a038848d7d7df0b style=width:100%;max-width:700px>
 </center>
-<p>By noting $i$ the $i^{th}$ layer of the network and $j$ the $j^{th}$ hidden unit of the layer, we have:</p>
+<p>Отметив $i$-й слой сети и $j$-ю скрытую единицу слоя, мы имеем:</p>
 <div class=mobile-container>
 \[\boxed{z_j^{[i]}={w_j^{[i]}}^Tx+b_j^{[i]}}\]
 </div>
@@ -212,10 +212,10 @@
 </li><li>$R:\mathcal{S}\times\mathcal{A}\longrightarrow\mathbb{R}$ or $R:\mathcal{S}\longrightarrow\mathbb{R}$ is the reward function that the algorithm wants to maximize
 </li></ul><p></p>
 <br>
-<p><span class="new-item item-b">Policy</span> A policy $\pi$ is a function $\pi:\mathcal{S}\longrightarrow\mathcal{A}$ that maps states to actions.</p>
-<p><span class=remark>Remark: we say that we execute a given policy $\pi$ if given a state $s$ we take the action $a=\pi(s)$.</span></p>
+<p><span class="new-item item-b">Политика</span> Политика $\pi$ - это функция $\pi:\mathcal{S}\longrightarrow\mathcal{A}$, которая отображает состояния в действия.</p>
+<p><span class=remark>Примечание: мы говорим, что выполняем данную политику $\pi$, если для данного состояния $s$ мы предпринимаем действие $a=\pi(s)$.</span></p>
 <br>
-<p><span class="new-item item-g">Value function</span> For a given policy $\pi$ and a given state $s$, we define the value function $V^{\pi}$ as follows:</p>
+<p><span class="new-item item-g">Функция ценности</span> для данной политики $\pi$ и данного состояния $s$ мы определяем функцию ценности $V^{\pi}$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{V^\pi(s)=E\Big[R(s_0)+\gamma R(s_1)+\gamma^2 R(s_2)+...|s_0=s,\pi\Big]}\]
 </div>
