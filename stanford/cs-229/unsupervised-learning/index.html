@@ -206,13 +206,13 @@
 <br>
 <p><span class="new-item item-g">Алгоритм</span> Principal Component Analysis (PCA) - это метод уменьшения размерности, который проецирует данные на $k$ измерений, максимизируя дисперсию данных следующим образом:
 </p><ul>
-<li><u>Step 1</u>: Normalize the data to have a mean of 0 and standard deviation of 1.
+<li><u>Шаг 1</u>: Нормализовать данные, чтобы получить среднее значение 0 и стандартное отклонение 1.
 <div class=mobile-container>
 \[\boxed{x_j^{(i)}\leftarrow\frac{x_j^{(i)}-\mu_j}{\sigma_j}}\quad\textrm{where}\quad\boxed{\mu_j = \frac{1}{m}\sum_{i=1}^mx_j^{(i)}}\quad\textrm{and}\quad\boxed{\sigma_j^2=\frac{1}{m}\sum_{i=1}^m(x_j^{(i)}-\mu_j)^2}\]
 </div>
 </li><li><u>Step 2</u>: Compute $\displaystyle\Sigma=\frac{1}{m}\sum_{i=1}^mx^{(i)}{x^{(i)}}^T\in\mathbb{R}^{n\times n}$, which is symmetric with real eigenvalues.
 </li><li><u>Step 3</u>: Compute $u_1, ..., u_k\in\mathbb{R}^n$ the $k$ orthogonal principal eigenvectors of $\Sigma$, i.e. the orthogonal eigenvectors of the $k$ largest eigenvalues.
-</li><li><u>Step 4</u>: Project the data on $\textrm{span}_\mathbb{R}(u_1,...,u_k)$.
+</li><li><u>Шаг 4</u>: Спроецировать данные на $\textrm{span}_\mathbb{R}(u_1,...,u_k)$.
 </li></ul><p></p>
 <p>Эта процедура максимизирует дисперсию всех $k$-мерных пространств.</p>
 <center>

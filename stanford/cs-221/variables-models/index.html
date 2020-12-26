@@ -64,7 +64,7 @@
 <h2>Задачи удовлетворения ограничений</h2>
 <p>В этом разделе наша цель - найти максимальное присвоение веса моделям на основе переменных. Одно из преимуществ по сравнению с моделями, основанными на состояниях, состоит в том, что эти алгоритмы более удобны для кодирования специфичных для задачи ограничений.</p>
 <h3><a aria-hidden=true class=anchor href=#factor-graphs id=factor-graphs></a>Факторные графы</h3>
-<p><span class="new-item item-b">Definition</span> A factor graph, also referred to as a Markov random field, is a set of variables $X=(X_1,...,X_n)$ where $X_i\in\textrm{Domain}_i$ and $m$ factors $f_1,...,f_m$ with each $f_j(X)\geqslant 0$.</p>
+<p><span class="new-item item-b">Определение</span> Фактор-граф, также называемый марковским случайным полем, представляет собой набор переменных $X=(X_1,...,X_n)$, где $X_i\in\textrm{Domain}_i$ и $m$ факторов $f_1,...,f_m$ с каждым $f_j(X)\geqslant 0$.</p>
 <div class=mobile-container>
 <center>
   <img alt="Factor graph" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=factor-graph.png?6889f9b0508e74da8aaddcaf898b57ef style=width:100%;max-width:400px>
@@ -319,7 +319,7 @@
 <p><span class="new-item item-b">Выборка по Гиббсу</span> Этот алгоритм представляет собой итеративный приближенный метод. Он использует небольшой набор назначений (частиц) для представления большого распределения вероятностей. Из случайного присвоения $x$, Выборка по Гиббсу выполняет следующие шаги для $i\in \{1,...,n\}$ до сходимости:
 </p><ul>
 <li> Для всех $u \in \textrm{Domain}_i$, вычислить вес $w(u)$ присвоения $x$, где $X_i = u$
-</li><li> Sample $v$ from the probability distribution induced by $w$: $v \sim P(X_i = v | X_{-i} = x_{-i})$
+</li><li> Произвести выборку $v$ из индуцированного $w$ распределения вероятностей: $v \sim P(X_i = v | X_{-i} = x_{-i})$
 </li><li> Установить $X_i = v$
 </li></ul><p></p>
 <p><span class=remark>Примечание: $X_{-i}$ обозначает $X \backslash \{X_i\}$, а $x_{-i}$ представляет соответствующее присвоение.</span></p>

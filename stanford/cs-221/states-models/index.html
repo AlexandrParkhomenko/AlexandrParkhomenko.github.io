@@ -63,7 +63,7 @@
 <i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
 <h2>Оптимизация поиска</h2>
-<p>In this section, we assume that by accomplishing action $a$ from state $s$, we deterministically arrive in state $\textrm{Succ}(s,a)$. The goal here is to determine a sequence of actions $(a_1,a_2,a_3,a_4,...)$ that starts from an initial state and leads to an end state. In order to solve this kind of problem, our objective will be to find the minimum cost path by using states-based models.</p>
+<p>В этом разделе мы предполагаем, что, выполняя действие $a$ из состояния $s$, мы детерминированно приходим в состояние $\textrm{Succ}(s,a)$. Здесь цель - определить последовательность действий $(a_1,a_2,a_3,a_4,...)$ которая начинается из начального состояния и приводит к конечному состоянию. Для решения задачи нам надо найти путь с минимальными затратами, с помощью моделей на основе состояний.</p>
 <h3><a aria-hidden=true class=anchor href=#tree-search id=ts></a>Поиск по дереву</h3>
 <p>Эта категория алгоритмов на основе состояний исследует все возможные состояния и действия. Он довольно эффективен с точки зрения памяти и подходит для огромных пространств состояний, но в худших случаях время выполнения может стать экспоненциальным.</p>
 <div class=mobile-container>
@@ -76,8 +76,8 @@
 </p><ul>
   <li>начальное состояние $s_{\textrm{start}}$
   </li><li>возможные действия $\textrm{Actions}(s)$ из состояния $s$
-  </li><li>action cost $\textrm{Cost}(s,a)$ from state $s$ with action $a$
-  </li><li>successor $\textrm{Succ}(s,a)$ of state $s$ after action $a$
+  </li><li>стоимость действия $\textrm{Cost}(s,a)$ из состояния $s$ с действием $a$
+  </li><li>преемник $\textrm{Succ}(s,a)$ состояния $s$ после действия $a$
   </li><li>было ли достигнуто конечное состояние $\textrm{IsEnd}(s)$
 </li></ul>
 <p></p>
@@ -90,7 +90,7 @@
 <br>
 <p><span class="new-item item-r">Backtracking</span> Поиск с возвратом - это наивный рекурсивный алгоритм, который пробует все возможности, чтобы найти путь с минимальной стоимостью. Здесь затраты на действия могут быть как положительными, так и отрицательными.</p>
 <br>
-<p><span class="new-item item-b">Breadth-first search (BFS)</span> Breadth-first search is a graph search algorithm that does a level-by-level traversal. We can implement it iteratively with the help of a queue that stores at each step future nodes to be visited. For this algorithm, we can assume action costs to be equal to a constant $c\geqslant0$.</p>
+<p><span class="new-item item-b">Breadth-first search (BFS)</span> Поиск в ширину - это алгоритм поиска по графу, который выполняет обход уровня за уровнем. Мы можем реализовать это итеративно с помощью очереди, в которой на каждом шаге хранятся будущие узлы, которые нужно посетить. Для этого алгоритма можно считать, что затраты на действия равны константе $c\geqslant0$.</p>
 <div class=mobile-container>
 <center>
   <img alt=BFS class=img-responsive netsrc=teaching/cs-221/illustrations/ src=bfs-stack.png?28d6deef49cde3d173b8dc167e28ad4a style=width:100%;max-width:420px>
@@ -104,7 +104,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Iterative deepening</span> The iterative deepening trick is a modification of the depth-first search algorithm so that it stops after reaching a certain depth, which guarantees optimality when all action costs are equal. Here, we assume that action costs are equal to a constant $c\geqslant0$.</p>
+<p><span class="new-item item-b">Iterative deepening</span> Поиск в глубину с итеративным углублением - это модификация алгоритма поиска в глубину, так что он останавливается после достижения определенной глубины, что гарантирует оптимальность, когда все затраты на действия равны. Здесь мы предполагаем, что затраты на действия равны константе $c\geqslant0$.</p>
 <br>
 <p><span class="new-item item-r">Сводка алгоритмов поиска по дереву</span> отметив $b$ количество действий на состояние, $d$ глубину решения и $D$ максимальную глубину, которую мы имеем:</p>
 <div class=mobile-container>
@@ -255,10 +255,10 @@
 <p>Предположим, нам не даны значения $\textrm{Cost}(s,a)$, мы хотим оценить эти количества из обучающего набора  последовательности действий $(a_1, a_2, ..., a_k)$ с минимизацией затрат пути.</p>
 <p><span class="new-item item-g">Структурированный перцептрон</span> Структурированный перцептрон - это алгоритм итеративного изучения стоимости каждой пары состояние-действие. На каждом шагу, it:
 </p><ul>
-<li> decreases the estimated cost of each state-action of the true minimizing path $y$ given by the training data,
+<li> уменьшает оценочную стоимость каждого действия состояния истинного пути минимизации $y$ (заданного обучающими данными),
 </li><li> увеличивает оценочную стоимость каждого действия состояния текущего прогнозируемого пути $y'$ (выведенную из изученных весов).
 </li></ul><p></p>
-<p><span class=remark>Remark: there are several versions of the algorithm, one of which simplifies the problem to only learning the cost of each action $a$, and the other parametrizes $\textrm{Cost}(s,a)$ to a feature vector of learnable weights.</span></p>
+<p><span class=remark>Примечание: существует несколько версий алгоритма, одна из которых упрощает задачу до изучения только стоимости каждого действия $a$, другая параметризует $\textrm{Cost}(s,a)$ вектором характеристик обучаемых весов.</span></p>
 <br>
 <h3><a aria-hidden=true class=anchor href=#a-star id=a-star></a>$\textrm{A}^{\star}$ search</h3>
 <p><span class="new-item item-g">Эвристическая функция</span> эвристика - это функция $h$ по состояниям $s$, где каждый $h(s)$ направлен на оценку $\textrm{FutureCost}(s)$, стоимость пути от $s$ до $s_\textrm{end}$.</p>
@@ -268,7 +268,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Algorithm</span> $A^{*}$ is a search algorithm that aims at finding the shortest path from a state $s$ to an end state $s_\textrm{end}$. It explores states $s$ in increasing order of $\textrm{PastCost}(s) + h(s)$. It is equivalent to a uniform cost search with edge costs $\textrm{Cost}'(s,a)$ given by:</p>
+<p><span class="new-item item-r">Алгоритм</span> $A^{*}$ - это алгоритм поиска, цель которого - найти кратчайший путь от состояния $s$ до конечного состояния $s_\textrm{end}$. Он исследует состояния в порядке возрастания $\textrm{PastCost}(s) + h(s)$. Это эквивалентно поиску по единой стоимости с краевыми затратами $\textrm{Cost}'(s,a)$, задаваемыми выражением:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{Cost}'(s,a)=\textrm{Cost}(s,a)+h(\textrm{Succ}(s,a))-h(s)}\]
 </div>
@@ -276,7 +276,7 @@
 <br>
 <p><span class="new-item item-b">Консистентность</span> Эвристика $h$ называется согласованной (консистентной) при удовлетворении двух следующих свойств:
 </p><ul>
-<li>For all states $s$ and actions $a$,
+<li>Для всех состояний $s$ и действий $a$,
 <div class=mobile-container>
 \[\boxed{h(s) \leqslant \textrm{Cost}(s,a)+h(\textrm{Succ}(s,a))}\]
 </div>
@@ -297,7 +297,7 @@
 </li></ul>
 <p></p>
 <br>
-<p><span class="new-item item-r">Correctness</span> If $h$ is consistent, then $A^*$ returns the minimum cost path.</p>
+<p><span class="new-item item-r">Корректность</span> Если $h$ согласован, то $A^*$ возвращает путь с минимальной стоимостью.</p>
 <br>
 <p><span class="new-item item-g">Допустимость</span> Говорят, что эвристика $h$ допустима, если у нас есть:</p>
 <div class=mobile-container>
@@ -323,7 +323,7 @@
 <h3><a aria-hidden=true class=anchor href=#relaxation id=relaxation></a>Ослабление ограничений</h3>
 <p>Это основа для создания последовательной эвристики. Идея состоит в том, чтобы найти сокращенные затраты в аналитическом виде, удалив ограничения и используя их в качестве эвристики.</p>
 <br>
-<p><span class="new-item item-g">Relaxed search problem</span> The relaxation of search problem $P$ with costs $\textrm{Cost}$ is denoted $P_{\textrm{rel}}$ with costs $\textrm{Cost}_{\textrm{rel}}$, and satisfies the identity:</p>
+<p><span class="new-item item-g">Задача с ослабленными ограничениями поиска</span> Ослабление задачи поиска $P$ с затратами $\textrm{Cost}$ обозначается $P_{\textrm{rel}}$ с затратами $\textrm{Cost}_{\textrm{rel}}$ и удовлетворяет тождеству:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{Cost}_{\textrm{rel}}(s,a)\leqslant\textrm{Cost}(s,a)}\]
 </div>
@@ -337,7 +337,7 @@
 <br>
 <p><span class="new-item item-g">Компромисс при выборе эвристики</span> При выборе эвристики необходимо уравновесить два аспекта:
 </p><ul>
-<li>Computational efficiency: $h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)$ must be easy to compute. It has to produce a closed form, более легкий поиск и независимые подзадачи.
+<li>Вычислительная эффективность: $h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)$ должно быть легко вычислить. Она должна создать аналитический вид, более легкий поиск и независимые подзадачи.
 </li><li>Достаточно хорошее приближение: эвристика $h(s)$ должна быть близка к $\textrm{FutureCost}(s)$ ; и мы не должны удалять слишком много ограничений.
 </li></ul><p></p>
 <br>
@@ -347,16 +347,16 @@
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#markov-decision-processes id=markov-decision-processes></a>Марковские процессы принятия решений</h2>
-<p>In this section, we assume that performing action $a$ from state $s$ can lead to several states $s_1',s_2',...$ in a probabilistic manner. In order to find our way between an initial state and an end state, our objective will be to find the maximum value policy by using Markov decision processes that help us cope with randomness and uncertainty.</p>
+<p>В этом разделе мы предполагаем, что выполнение действия $a$ из состояния $s$ может привести к нескольким состояниям $s_1',s_2',...$ вероятностным образом. Чтобы найти путь между начальным и конечным состояниями, наша цель будет заключаться в том, чтобы найти политику максимальной ценности с помощью марковских процессов принятия решений, которые помогают нам справляться со случайностью и неопределенностью.</p>
 <h3>Обозначения</h3>
 <p><span class="new-item item-b">Определение</span> Цель марковского процесса принятия решений - максимизировать вознаграждение. Он определяется с помощью:
   </p><ul>
     <li>начальное состояние $s_{\textrm{start}}$
     </li><li>возможные действия $\textrm{Actions}(s)$ из состояния $s$
-    </li><li>transition probabilities $T(s,a,s')$ from $s$ to $s'$ with action $a$
-    </li><li>rewards $\textrm{Reward}(s,a,s')$ from $s$ to $s'$ with action $a$
+    </li><li>вероятности перехода $T(s,a,s')$ из $s$ в $s'$ с действием $a$
+    </li><li>награды $\textrm{Reward}(s,a,s')$ из $s$ в $s'$ с действием $a$
     </li><li>было ли достигнуто конечное состояние $\textrm{IsEnd}(s)$
-    </li><li>a discount factor $0\leqslant\gamma\leqslant1$
+    </li><li>коэффициент дисконтирования $0\leqslant\gamma\leqslant1$
   </li></ul>
 <p></p>
 <div class=mobile-container>
@@ -365,12 +365,12 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Transition probabilities</span> The transition probability $T(s,a,s')$ specifies the probability of going to state $s'$ after action $a$ is taken in state $s$. Each $s' \mapsto T(s,a,s')$ is a probability distribution, which means that:</p>
+<p><span class="new-item item-r">Вероятности перехода</span> Вероятность перехода $T(s,a,s')$ определяет вероятность перехода в состояние $s'$ после того, как действие $a$ будет выполнено в состоянии $s$. Каждый $s' \mapsto T(s,a,s')$ представляет собой распределение вероятностей, что означает, что:</p>
 <div class=mobile-container>
 \[\forall s,a,\quad\boxed{\displaystyle\sum_{s'\in\textrm{ States}}T(s,a,s')=1}\]
 </div>
 <br>
-<p><span class="new-item item-b">Policy</span> A policy $\pi$ is a function that maps each state $s$ to an action $a$, i.e.</p>
+<p><span class="new-item item-b">Политика</span> Политика $\pi$ - это функция, которая сопоставляет каждое состояние $s$ с действием $a$, то есть</p>
 <div class=mobile-container>
 \[\boxed{\pi : s \mapsto a}\]
 </div>
@@ -386,19 +386,19 @@
 </div>
 <p><i>На рисунке выше показан случай $k=4$.</i></p>
 <br>
-<p><span class="new-item item-g">Q-value</span> The $Q$-value of a policy $\pi$ at state $s$ with action $a$, also denoted $Q_{\pi}(s,a)$, is the expected utility from state $s$ after taking action $a$ and then following policy $\pi$. It is defined as follows:</p>
+<p><span class="new-item item-g">Q-value</span> The $Q$-value of policy $\pi$ at state $s$ with action $a$, also denoted $Q_{\pi}(s,a)$, is the expected utility from state $s$ after taking action $a$ and then following policy $\pi$. It is defined as follows:</p>
 <div class=mobile-container>
 \[\boxed{Q_{\pi}(s,a)=\sum_{s'\in\textrm{ States}}T(s,a,s')\left[\textrm{Reward}(s,a,s')+\gamma V_\pi(s')\right]}\]
 </div>
 <br>
-<p><span class="new-item item-g">Value of a policy</span> The value of a policy $\pi$ from state $s$, also denoted $V_{\pi}(s)$, is the expected utility by following policy $\pi$ from state $s$ over random paths. It is defined as follows:</p>
+<p><span class="new-item item-g">Value of policy</span> The value of policy $\pi$ from state $s$, also denoted $V_{\pi}(s)$, is the expected utility by following policy $\pi$ from state $s$ over random paths. It is defined as follows:</p>
 <div class=mobile-container>
 \[\boxed{V_\pi(s)=Q_\pi(s,\pi(s))}\]
 </div>
 <p><span class=remark>Примечание: $V_\pi(s)$ равно 0, если $s$ - конечное состояние.</span></p>
 <br>
 <h3>Приложения</h3>
-<p><span class="new-item item-r">Policy evaluation</span> Given a policy $\pi$, policy evaluation is an iterative algorithm that aims at estimating $V_\pi$. It is done as follows:
+<p><span class="new-item item-r">Policy evaluation</span> Given policy $\pi$, policy evaluation is an iterative algorithm that aims at estimating $V_\pi$. It is done as follows:
 </p><ul>
 <li><u>Initialization</u>: for all states $s$, we have
 <div class=mobile-container>
@@ -413,7 +413,7 @@ with
 \[\boxed{Q_\pi^{(t-1)}(s,\pi(s))=\sum_{s'\in\textrm{ States}}T(s,\pi(s),s')\Big[\textrm{Reward}(s,\pi(s),s')+\gamma V_\pi^{(t-1)}(s')\Big]}\]
 </div>
 </li></ul><p></p>
-<p><span class=remark>Remark: by noting $S$ the number of states, $A$ the number of actions per state, $S'$ the number of successors and $T$ the number of iterations, then the time complexity is of $\mathcal{O}(T_{\textrm{PE}}SS')$.</span></p>
+<p><span class=remark>Примечание: обозначим $S$ - количество состояний, $A$ - количество действий на состояние, $S'$ - количество преемников и $T$ - количество итераций, то временная сложность равна $\mathcal{O}(T_{\textrm{PE}}SS')$.</span></p>
 <br>
 <p><span class="new-item item-b">Optimal Q-value</span> The optimal $Q$-value $Q_{\textrm{opt}}(s,a)$ of state $s$ with action $a$ is defined to be the maximum $Q$-value attained by any policy. It is computed as follows:</p>
 <div class=mobile-container>
@@ -477,7 +477,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 </div>
 <p></p>
 <br>
-<p><span class="new-item item-g">SARSA</span> State-action-reward-state-action (SARSA) is a boostrapping method estimating $Q_\pi$ by using both raw data and estimates as part of the update rule. For each $(s,a,r,s',a')$, we have:</p>
+<p><span class="new-item item-g">State-action-reward-state-action (SARSA)</span> Состояние-действие-награда-состояние-действие - это оценка $Q_\pi$ метода начальной загрузки с использованием как необработанных данных, так и оценок как части правила обновления. Для каждого $(s,a,r,s',a')$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\widehat{Q}_\pi(s,a)\longleftarrow(1-\eta)\widehat{Q}_\pi(s,a)+\eta\Big[r+\gamma\widehat{Q}_\pi(s',a')\Big]}\]
 </div>
@@ -568,7 +568,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">TD learning</span> Temporal difference (TD) learning is used when we don't know the transitions/rewards. The value is based on exploration policy. To be able to use it, we need to know rules of the game $\textrm{Succ}(s,a)$. For each $(s,a,r,s')$, the update is done as follows:</p>
+<p><span class="new-item item-b">Обучение временной разнице</span> Обучение Temporal difference (TD) используется, когда мы не знаем переходов/наград. Значение основано на политике разведки. Чтобы использовать его, нам необходимо знать правила игры $\textrm{Succ}(s,a)$. Для каждого $(s,a,r,s')$ обновление выполняется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{w\longleftarrow w-\eta\big[V(s,w)-(r+\gamma V(s',w))\big]\nabla_wV(s,w)}\]
 </div>

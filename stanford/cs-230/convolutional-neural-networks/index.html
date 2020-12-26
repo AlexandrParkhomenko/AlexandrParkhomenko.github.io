@@ -384,7 +384,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 <div class=mobile-container>
 \[\boxed{\textrm{IoU}(B_p,B_a)=\frac{B_p\cap B_a}{B_p\cup B_a}}\]
 </div>
-<p><span class=remark>Remark: we always have $\textrm{IoU}\in[0,1]$. By convention, a predicted bounding box $B_p$ is considered as being reasonably good if $\textrm{IoU}(B_p,B_a)\geqslant0.5$.</span></p>
+<p><span class=remark>Примечание: у нас всегда есть $\textrm{IoU}\in[0,1]$. По соглашению, прогнозируемая ограничивающая рамка $B_p$ считается достаточно хорошей, если $\textrm{IoU}(B_p,B_a)\geqslant0.5$.</span></p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=intersection-over-union.jpeg?43dc827ff1461e0391da237a455d69ef style="width:100%; max-width:750px;">
@@ -396,7 +396,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 <p><span class="new-item item-b">Подавление немаксимума</span> Non-max suppression - Техника подавления немаксимальных направлена на удаление дублирующих перекрывающихся ограничивающих рамок одного и того же объекта путем выбора наиболее репрезентативных. После удаления всех рамок, имеющих прогноз вероятности ниже 0.6, следующие шаги повторяются, пока остаются рамки:</p>
 <p>Для данного класса,
 <br>• Шаг 1: Выберите рамку с наибольшей вероятностью прогноза.
-<br>• Step 2: Discard any box having an $\textrm{IoU}\geqslant0.5$ with the previous box.</p>
+<br>• Шаг 2: Отбросьте любую рамку с $\textrm{IoU}\geqslant0.5$ по сравнению с предыдущей рамкой.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=non-max-suppression-en.jpeg?9cca7cb1256642553de7ffeba7fe0577 style=width:100%;>

@@ -340,12 +340,12 @@
 <p><span class=remark>Примечание: собственный вектор, связанный с наибольшим собственным значением, называется главным собственным вектором матрицы $A$. (примечание переводчика: Смотри минимизацию нормы Фробениуса матрицы ошибок)</span></p>
 <br>
 <p><span class="new-item item-r">Алгоритм</span> процедура метода главных компонент - это метод уменьшения размерности, который проецирует данные по $k$ измерениям, максимизируя дисперсию данных следующим образом:
-<br>- <u>Step 1</u>: Normalize the data to have a mean of 0 and standard deviation of 1.
+<br>- <u>Шаг 1</u>: Нормализовать данные, чтобы получить среднее значение 0 и стандартное отклонение 1.
 </p><div class=mobile-container>
 \[\boxed{\phi_j(x_i)\leftarrow\frac{\phi_j(x_i)-\mu_j}{\sigma_j}}\quad\textrm{where}\quad\boxed{\mu_j = \frac{1}{n}\sum_{i=1}^n\phi_j(x_i)}\quad\textrm{and}\quad\boxed{\sigma_j^2=\frac{1}{n}\sum_{i=1}^n(\phi_j(x_i)-\mu_j)^2}\]
 </div>
-<br>- <u>Step 2</u>: Compute $\displaystyle\Sigma=\frac{1}{n}\sum_{i=1}^n\phi(x_i){\phi(x_i)}^T\in\mathbb{R}^{d\times d}$, которая симметрична действительным собственным значениям.
-<br>- <u>Step 3</u>: Compute $u_1, ..., u_k\in\mathbb{R}^d$ the $k$ orthogonal principal eigenvectors of $\Sigma$, т.е. ортогональные собственные векторы $k$ наибольших собственных значений.
+<br>- <u>Step 2</u>: Вычислить $\displaystyle\Sigma=\frac{1}{n}\sum_{i=1}^n\phi(x_i){\phi(x_i)}^T\in\mathbb{R}^{d\times d}$, которая симметрична действительным собственным значениям.
+<br>- <u>Step 3</u>: Вычислить $u_1, ..., u_k\in\mathbb{R}^d$ $k$ ортогональных главных собственных векторов $\Sigma$, т.е. ортогональные собственные векторы $k$ наибольших собственных значений.
 <br>- <u>Шаг 4</u>: Спроецировать данные на $\textrm{span}_\mathbb{R}(u_1,...,u_k)$.<p></p>
 <p>Эта процедура максимизирует дисперсию всех $k$-мерных пространств.</p>
 <center>
