@@ -139,7 +139,7 @@
 </div>
 <p><span class=remark>Примечание: данные обычно пополняются на лету во время обучения.</span></p>
 <br>
-<p><span class="new-item item-b">Batch normalization</span> It is a step of hyperparameter $\gamma, \beta$ that normalizes the batch $\{x_i\}$. By noting $\mu_B, \sigma_B^2$ the mean and variance of that we want to correct to the batch, it is done as follows:
+<p><span class="new-item item-b">Пакетная нормировка</span> метод адаптивной перепараметризации $\gamma, \beta$, который нормирует пакет $\{x_i\}$. Обозначим $\mu_B, \sigma_B^2$ как среднее значение и дисперсию, которые мы хотим скорректировать для пакета, это делается следующим образом:
 </p><div class=mobile-container>
 \[\boxed{x_i\longleftarrow\gamma\frac{x_i-\mu_B}{\sqrt{\sigma_B^2+\epsilon}}+\beta}\]
 </div>
@@ -151,9 +151,9 @@
 <br>
 <p><span class="new-item item-r">Мини-пакетный градиентный спуск</span> на этапе обучения обновление весов обычно не основывается на всем обучающем наборе сразу из-за сложности вычислений или одной точки данных из-за проблем с шумом. Вместо этого этап обновления выполняется для мини-пакетов, где количество точек данных в пакете является гиперпараметром, который мы можем настроить.</p>
 <br>
-<p><span class="new-item item-b">Loss function</span> In order to quantify how a given model performs, the loss function $L$ is usually used to evaluate to what extent the actual outputs $y$ are correctly predicted by the model outputs $z$.</p>
+<p><span class="new-item item-b">Функция потерь</span> чтобы количественно оценить, как работает данная модель, функция потерь $L$ обычно используется для оценки того, в какой степени фактические выходные данные $y$ правильно предсказываются выходными данными модели $z$.</p>
 <br>
-<p><span class="new-item item-b">Cross-entropy loss</span> In the context of binary classification in neural networks, the cross-entropy loss $L(z,y)$ is commonly used and is defined as follows:</p>
+<p><span class="new-item item-b">Функция потерь на основе перекрестной энтропии</span> В контексте бинарной классификации в нейронных сетях обычно используется потеря кросс-энтропии $L(z,y)$, которая определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{L(z,y)=-\Big[y\log(z)+(1-y)\log(1-z)\Big]}\]
 </div>
@@ -219,7 +219,7 @@
 </div>
 <br>
 <h3>Оптимизация сходимости</h3>
-<p><span class="new-item item-b">Learning rate</span> The learning rate, often noted $\alpha$ or sometimes $\eta$, indicates at which pace the weights get updated. It can be fixed or adaptively changed. The current most popular method is called Adam, which is a method that adapts the learning rate.</p>
+<p><span class="new-item item-b">Скорость обучения</span> Скорость обучения, часто обозначаемая $\alpha$ или иногда $\eta$, указывает, с какой скоростью обновляются веса. Её можно исправить или адаптивно изменить. Самый популярный в настоящее время метод называется Адам, он адаптирует скорость обучения.</p>
 <br>
 <p><span class="new-item item-g">Адаптивная скорость обучения</span> Изменение скорости обучения при обучении модели может сократить время обучения и улучшить численное оптимальное решение. Хотя оптимизатор Адама является наиболее часто используемым методом, другие также могут быть полезны. Они приведены в таблице ниже:</p>
 <div class=mobile-container>
@@ -268,13 +268,13 @@
 <p><span class=remark>Примечание: другие методы включают Adadelta, Adagrad и SGD.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#regularization id=regularization></a>Регуляризация</h2>
-<p><span class="new-item item-r">Dropout</span> Dropout is a technique used in neural networks to prevent overfitting the training data by dropping out neurons with probability $p &gt;0$. It forces the model to avoid relying too much on particular sets of features.</p>
+<p><span class="new-item item-r">Прореживание</span> Dropout - это метод, используемый в нейронных сетях для предотвращения переобучения обучающих данных путем выпадения нейронов с вероятностью $p &gt;0$. Это заставляет модель не слишком полагаться на определенные наборы функций.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=dropout-ltr.png?27ab877c24a915d22e598fb772fcdc96 style="width:100%; max-width: 500px;">
 </center>
 </div>
-<p><span class=remark>Remark: most deep learning frameworks parametrize dropout through the 'keep' parameter $1-p$.</span></p>
+<p><span class=remark>Примечание: большинство фреймворков глубокого обучения параметризуют исключение с помощью параметра 'keep' $1-p$.</span></p>
 <br>
 <p><span class="new-item item-r">Регуляризация веса</span> Чтобы убедиться, что веса не слишком велики и что модель не переобучается на обучающей выборке, обычно выполняются методы регуляризации для весов модели. Основные из них приведены в таблице ниже:</p>
 <div class=mobile-container>

@@ -79,7 +79,7 @@
 </h1>
 <p>By <a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> and <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a></p>
 <h2><a aria-hidden=true class=anchor href=#introduction id=introduction></a>Введение в обучение с учителем</h2>
-<p>Given a set of data points $\{x^{(1)}, ..., x^{(m)}\}$ associated to a set of outcomes $\{y^{(1)}, ..., y^{(m)}\}$, we want to build a classifier that learns how to predict $y$ from $x$.</p>
+<p>Задан набор точек данных $\{x^{(1)}, ..., x^{(m)}\}$ связанный с набором результатов $\{y^{(1)}, ..., y^{(m)}\}$, мы хотим создать классификатор, который научится предсказывать $y$ по $x$.</p>
 <p><span class="new-item item-b">Тип предсказания</span> Различные типы прогнозных моделей перечислены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
@@ -148,7 +148,7 @@
 <h2><a aria-hidden=true class=anchor href=#notations id=notations></a>Обозначения и основные понятия</h2>
 <p><span class="new-item item-b">Hypothesis</span> The hypothesis is noted $h_\theta$ and is the model that we choose. For a given input data $x^{(i)}$ the model prediction output is $h_\theta(x^{(i)})$.</p>
 <br>
-<p><span class="new-item item-r">Loss function</span> A loss function is a function $L:(z,y)\in\mathbb{R}\times Y\longmapsto L(z,y)\in\mathbb{R}$ that takes as inputs the predicted value $z$ corresponding to the real data value $y$ and outputs how different they are. The common loss functions are summed up in the table below:</p>
+<p><span class="new-item item-r">Функция потерь</span> это функция $L:(z,y)\in\mathbb{R}\times Y\longmapsto L(z,y)\in\mathbb{R}$ которая принимает в качестве входных данных прогнозируемое значение $z$, соответствующее значению реальных данных $y$, и выводит, насколько они различны. Общие функции потерь приведены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
   <table style="table-layout:fixed; width:100%; min-width:820px;">
@@ -193,7 +193,7 @@
 \[\boxed{J(\theta)=\sum_{i=1}^mL(h_\theta(x^{(i)}), y^{(i)})}\]
 </div>
 <br>
-<p><span class="new-item item-r">Gradient descent</span> By noting $\alpha\in\mathbb{R}$ the learning rate, the update rule for gradient descent is expressed with the learning rate and the cost function $J$ as follows:</p>
+<p><span class="new-item item-r">Градиентный спуск</span> правило обновления для градиентного спуска выражается скоростью обучения $\alpha\in\mathbb{R}$ и функцией стоимости $J$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\theta\longleftarrow\theta-\alpha\nabla J(\theta)}\]
 </div>
@@ -221,19 +221,19 @@
 <br>
 <h2><a aria-hidden=true class=anchor href=#linear-models id=linear-models></a>Линейные модели</h2>
 <h3>Линейная регрессия</h3>
-<p>We assume here that $y|x;\theta\sim\mathcal{N}(\mu,\sigma^2)$</p>
+<p>Мы предполагаем здесь что $y|x;\theta\sim\mathcal{N}(\mu,\sigma^2)$</p>
 <p><span class="new-item item-g">Normal equations</span> By noting $X$ the design matrix, the value of $\theta$ that minimizes the cost function is a closed-form solution such that:</p>
 <div class=mobile-container>
 \[\boxed{\theta=(X^TX)^{-1}X^Ty}\]
 </div>
 <br>
-<p><span class="new-item item-g">LMS algorithm</span> By noting $\alpha$ the learning rate, the update rule of the Least Mean Squares (LMS) algorithm for a training set of $m$ data points, which is also known as the Widrow-Hoff learning rule, is as follows:</p>
+<p><span class="new-item item-g">Алгоритм LMS</span> обозначим $\alpha$ скорость обучения, правило обновления алгоритма наименьших средних квадратов (LMS) для обучающего набора из $m$ точек данных, которое также известно как правило обучения Уидроу-Хоффа, выглядит следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\forall j,\quad \theta_j \leftarrow \theta_j+\alpha\sum_{i=1}^m\left[y^{(i)}-h_\theta(x^{(i)})\right]x_j^{(i)}}\]
 </div>
 <p><span class=remark>Примечание: правило обновления - это частный случай градиентного подъема.</span></p>
 <br>
-<p><span class="new-item item-b">LWR</span> Locally Weighted Regression, also known as LWR, is a variant of linear regression that weights each training example in its cost function by $w^{(i)}(x)$, which is defined with parameter $\tau\in\mathbb{R}$ as:</p>
+<p><span class="new-item item-b">LWR</span> Locally Weighted Regression - Локально взвешенная регрессия, представляет собой вариант линейной регрессии, который взвешивает каждый обучающий пример в его функции стоимости по $w^{(i)}(x)$, которая определяется параметром $\tau\in\mathbb{R}$ как:</p>
 <div class=mobile-container>
 \[\boxed{w^{(i)}(x)=\exp\left(-\frac{(x^{(i)}-x)^2}{2\tau^2}\right)}\]
 </div>
@@ -244,7 +244,7 @@
 \[\forall z\in\mathbb{R},\quad\boxed{g(z)=\frac{1}{1+e^{-z}}\in]0,1[}\]
 </div>
 <br>
-<p><span class="new-item item-b">Logistic regression</span> We assume here that $y|x;\theta\sim\textrm{Bernoulli}(\phi)$. We have the following form:</p>
+<p><span class="new-item item-b">Логистическая регрессия</span> Мы предполагаем здесь $y|x;\theta\sim\textrm{Bernoulli}(\phi)$. Имеем следующий вид:</p>
 <div class=mobile-container>
 \[\boxed{\phi=p(y=1|x;\theta)=\frac{1}{1+\exp(-\theta^Tx)}=g(\theta^Tx)}\]
 </div>
@@ -256,11 +256,11 @@
 </div>
 <br>
 <h3>Обобщенные линейные модели</h3>
-<p><span class="new-item item-r">Exponential family</span> A class of distributions is said to be in the exponential family if it can be written in terms of a natural parameter, also called the canonical parameter or link function, $\eta$, a sufficient statistic $T(y)$ and a log-partition function $a(\eta)$ as follows:</p>
+<p><span class="new-item item-r">Экспоненциальное семейство</span> класс распределений называется экспоненциальным семейством, если его можно записать в терминах естественного параметра, также называемого каноническим параметром или функцией связи, $\eta$, достаточной статистикой $T(y)$ и лог-статистическую сумму $a(\eta)$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{p(y;\eta)=b(y)\exp(\eta T(y)-a(\eta))}\]
 </div>
-<p><span class=remark>Remark: we will often have $T(y)=y$. Also, $\exp(-a(\eta))$ can be seen as a normalization parameter that will make sure that the probabilities sum to one.</span></p>
+<p><span class=remark>Примечание: у нас будет часто $T(y)=y$. Также, $\exp(-a(\eta))$ можно рассматривать как параметр нормализации, который гарантирует, что сумма вероятностей равна единице.</span></p>
 <p>The most common exponential distributions are summed up in the following table:</p>
 <div class=mobile-container>
 <center>
@@ -321,7 +321,7 @@
 <div class=mobile-container>
 \[\boxed{h(x)=\textrm{sign}(w^Tx-b)}\]
 </div>
-<p>where $(w, b)\in\mathbb{R}^n\times\mathbb{R}$ is the solution of the following optimization problem:</p>
+<p>где $(w, b)\in\mathbb{R}^n\times\mathbb{R}$ является решением следующей задачи оптимизации:</p>
 <div class=mobile-container>
 \[\boxed{\min\frac{1}{2}||w||^2}\quad\quad\textrm{such that }\quad \boxed{y^{(i)}(w^Tx^{(i)}-b)\geqslant1}\]
 </div>
@@ -344,13 +344,13 @@
   <img alt="SVM kernel" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=svm-kernel-en.png?43f2af419ba926948a5bbf3289f2cf39>
 </center>
 <br>
-<p><span class=remark>Remark: we say that we use the "kernel trick" to compute the cost function using the kernel because we actually don't need to know the explicit mapping $\phi$, which is often very complicated. Instead, only the values $K(x,z)$ are needed.</span></p>
+<p><span class=remark>Примечание: мы говорим, что используем "трюк с ядром" для вычисления функции стоимости с использованием ядра, потому что нам фактически не нужно знать явное отображение $\phi$, которое часто бывает очень сложным. Вместо этого нужны только значения $K(x,z)$.</span></p>
 <br>
-<p><span class="new-item item-r">Lagrangian</span> We define the Lagrangian $\mathcal{L}(w,b)$ as follows:</p>
+<p><span class="new-item item-r">Лагранжиан</span> Определим лагранжиан $\mathcal{L}(w,b)$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\mathcal{L}(w,b)=f(w)+\sum_{i=1}^l\beta_ih_i(w)}\]
 </div>
-<p><span class=remark>Remark: the coefficients $\beta_i$ are called the Lagrange multipliers.</span></p>
+<p><span class=remark>Примечание: коэффициенты $\beta_i$ называются множителями Лагранжа.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#generative-learning id=generative-learning></a>Генеративное обучение</h2>
 <p>Генеративная модель сначала пытается узнать, как генерируются данные, оценивая $P(x|y)$, которое мы затем можем использовать для оценки $P(y|x)$ с помощью правила Байеса.</p>
@@ -436,7 +436,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#learning-theory id=learning-theory></a>Теория вычислительного обучения</h2>
-<p><span class="new-item item-r">Union bound</span> Let $A_1, ..., A_k$ be $k$ events. We have:</p>
+<p><span class="new-item item-r">Связанный союз</span> Пусть $A_1, ..., A_k$ есть $k$ событий. Мы имеем:</p>
 <div class=mobile-container>
 \[\boxed{P(A_1\cup ...\cup A_k)\leqslant P(A_1)+...+P(A_k)}\]
 </div>
@@ -450,7 +450,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 </div>
 <p><span class=remark>Примечание: это неравенство также известно как граница Чернова.</span></p>
 <br>
-<p><span class="new-item item-g">Training error</span> For a given classifier $h$, we define the training error $\widehat{\epsilon}(h)$, also known as the empirical risk or empirical error, to be as follows:</p>
+<p><span class="new-item item-g">Ошибка тренировки</span> Для данного классификатора $h$ мы определяем ошибку обучения $\widehat{\epsilon}(h)$, также известную как эмпирический риск или эмпирическая ошибка, следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\widehat{\epsilon}(h)=\frac{1}{m}\sum_{i=1}^m1_{\{h(x^{(i)})\neq y^{(i)}\}}}\]
 </div>
@@ -466,13 +466,13 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 \[\boxed{\exists h\in\mathcal{H}, \quad \forall i\in[\![1,d]\!],\quad h(x^{(i)})=y^{(i)}}\]
 </div>
 <br>
-<p><span class="new-item item-r">Upper bound theorem</span> Let $\mathcal{H}$ be a finite hypothesis class such that $|\mathcal{H}|=k$ and let $\delta$ and the sample size $m$ be fixed. Then, with probability of at least $1-\delta$, we have:</p>
+<p><span class="new-item item-r">Теорема о верхней оценке</span> Пусть $\mathcal{H}$ - конечный класс гипотез, такой что $|\mathcal{H}|=k$, и пусть $\delta$ и размер выборки $m$ фиксированы. Тогда с вероятностью не менее $1-\delta$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\epsilon(\widehat{h})\leqslant\left(\min_{h\in\mathcal{H}}\epsilon(h)\right)+2\sqrt{\frac{1}{2m}\log\left(\frac{2k}{\delta}\right)}}\]
 </div>
 <br>
-<p><span class="new-item item-g">VC dimension</span> The Vapnik-Chervonenkis (VC) dimension of a given infinite hypothesis class $\mathcal{H}$, noted $\textrm{VC}(\mathcal{H})$ is the size of the largest set that is shattered by $\mathcal{H}$.</p>
-<p><span class=remark>Remark: the VC dimension of ${\small\mathcal{H}=\{\textrm{set of linear classifiers in 2 dimensions}\}}$ is 3.</span></p>
+<p><span class="new-item item-g">VC размерность</span> Размерность Вапника-Червоненкиса (VC) данного бесконечного класса гипотез $\mathcal{H}$, отмеченное как $\textrm{VC}(\mathcal{H})$, - это размер самого большого множества, которое разрушается $\mathcal{H}$.</p>
+<p><span class=remark>Примечание: VC размерность ${\small\mathcal{H}=\{\textrm{набор линейных классификаторов в 2-х измерениях}\}}$ это 3.</span></p>
 <center>
   <img alt="VC dimension" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=vc-dimension.png?73859dedcc66a0e47526936f801b7b56>
 </center>
