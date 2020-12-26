@@ -90,21 +90,21 @@
 <br>
 <p><span class="new-item item-r">Backtracking</span> Поиск с возвратом - это наивный рекурсивный алгоритм, который пробует все возможности, чтобы найти путь с минимальной стоимостью. Здесь затраты на действия могут быть как положительными, так и отрицательными.</p>
 <br>
-<p><span class="new-item item-b">Breadth-first search (BFS)</span> Поиск в ширину - это алгоритм поиска по графу, который выполняет обход уровня за уровнем. Мы можем реализовать это итеративно с помощью очереди, в которой на каждом шаге хранятся будущие узлы, которые нужно посетить. Для этого алгоритма можно считать, что затраты на действия равны константе $c\geqslant0$.</p>
+<p><span class="new-item item-b">Поиск в ширину (BFS)</span> Поиск в ширину - это алгоритм поиска по графу, который выполняет обход уровня за уровнем. Мы можем реализовать это итеративно с помощью очереди, в которой на каждом шаге хранятся будущие узлы, которые нужно посетить. Для этого алгоритма можно считать, что затраты на действия равны константе $c\geqslant0$.</p>
 <div class=mobile-container>
 <center>
   <img alt=BFS class=img-responsive netsrc=teaching/cs-221/illustrations/ src=bfs-stack.png?28d6deef49cde3d173b8dc167e28ad4a style=width:100%;max-width:420px>
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Depth-first search (DFS)</span> Поиск в глубину - это алгоритм поиска, который просматривает граф, прослеживая каждый путь как можно глубже. Мы можем реализовать это рекурсивно или итеративно с помощью стека, в котором на каждом шаге хранятся будущие узлы, которые необходимо посетить. Для этого алгоритма предполагается, что затраты на действия равны 0.</p>
+<p><span class="new-item item-b">Поиск в глубину (DFS)</span> Поиск в глубину - это алгоритм поиска, который просматривает граф, прослеживая каждый путь как можно глубже. Мы можем реализовать это рекурсивно или итеративно с помощью стека, в котором на каждом шаге хранятся будущие узлы, которые необходимо посетить. Для этого алгоритма предполагается, что затраты на действия равны 0.</p>
 <div class=mobile-container>
 <center>
   <img alt=DFS class=img-responsive netsrc=teaching/cs-221/illustrations/ src=dfs-stack.png?5616ba59bd361e621870e036829b95d9 style=width:100%;max-width:420px>
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Iterative deepening</span> Поиск в глубину с итеративным углублением - это модификация алгоритма поиска в глубину, так что он останавливается после достижения определенной глубины, что гарантирует оптимальность, когда все затраты на действия равны. Здесь мы предполагаем, что затраты на действия равны константе $c\geqslant0$.</p>
+<p><span class="new-item item-b">С итеративным углублением</span> Поиск в глубину с итеративным углублением - это модификация алгоритма поиска в глубину, так что он останавливается после достижения определенной глубины, что гарантирует оптимальность, когда все затраты на действия равны. Здесь мы предполагаем, что затраты на действия равны константе $c\geqslant0$.</p>
 <br>
 <p><span class="new-item item-r">Сводка алгоритмов поиска по дереву</span> отметив $b$ количество действий на состояние, $d$ глубину решения и $D$ максимальную глубину, которую мы имеем:</p>
 <div class=mobile-container>
@@ -124,25 +124,25 @@
 <td align=center><b>Время</b></td>
 </tr>
 <tr>
-<td align=center valign=top>Backtracking search</td>
+<td align=center valign=top>Поиск с возвратом</td>
 <td align=center valign=top>any</td>
 <td align=center valign=top>$\mathcal{O}(D)$</td>
 <td align=center valign=top>$\mathcal{O}(b^D)$</td>
 </tr>
 <tr>
-<td align=center valign=top>Breadth-first search</td>
+<td align=center valign=top>Поиск в ширину</td>
 <td align=center valign=top>$c\geqslant0$</td>
 <td align=center valign=top>$\mathcal{O}(b^d)$</td>
 <td align=center valign=top>$\mathcal{O}(b^d)$</td>
 </tr>
 <tr>
-<td align=center valign=top>Depth-first search</td>
+<td align=center valign=top>Поиск в глубину</td>
 <td align=center valign=top>0</td>
 <td align=center valign=top>$\mathcal{O}(D)$</td>
 <td align=center valign=top>$\mathcal{O}(b^D)$</td>
 </tr>
 <tr>
-<td align=center valign=top>DFS-Iterative deepening</td>
+<td align=center valign=top>Поиск в глубину с итеративным углублением</td>
 <td align=center valign=top>$c\geqslant0$</td>
 <td align=center valign=top>$\mathcal{O}(d)$</td>
 <td align=center valign=top>$\mathcal{O}(b^d)$</td>
@@ -205,7 +205,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Uniform cost search (UCS)</span> Поиск по единой стоимости - это алгоритм поиска, который направлен на поиск кратчайшего пути от состояния $s_\textrm{start}$ до конечного состояния $s_\textrm{end}$. Он исследует состояния в порядке возрастания $\textrm{PastCost}(s)$ и полагается на тот факт, что все затраты на действия неотрицательны.</p>
+<p><span class="new-item item-g">Поиск по единой стоимости (UCS)</span> Поиск по единой стоимости - это алгоритм поиска, который направлен на поиск кратчайшего пути от состояния $s_\textrm{start}$ до конечного состояния $s_\textrm{end}$. Он исследует состояния в порядке возрастания $\textrm{PastCost}(s)$ и полагается на тот факт, что все затраты на действия неотрицательны.</p>
 <div class=mobile-container>
 <center>
   <img alt="Uniform Cost Search" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=ucs-example.png?e565704b2370d49fa14f56f8259d3515 style=width:100%;max-width:450px>
@@ -234,13 +234,13 @@
 <td align=center><b>Время/пространство</b></td>
 </tr>
 <tr>
-<td align=center valign=top>Dynamic programming</td>
+<td align=center valign=top>Динамическое программирование</td>
 <td align=center valign=top>yes</td>
 <td align=center valign=top>any</td>
 <td align=center valign=top>$\mathcal{O}(N)$</td>
 </tr>
 <tr>
-<td align=center valign=top>Uniform cost search</td>
+<td align=center valign=top>Поиск по единой стоимости</td>
 <td align=center valign=top>no</td>
 <td align=center valign=top>$c\geqslant0$</td>
 <td align=center valign=top>$\mathcal{O}(n\log(n))$</td>
@@ -386,36 +386,36 @@
 </div>
 <p><i>На рисунке выше показан случай $k=4$.</i></p>
 <br>
-<p><span class="new-item item-g">Q-value</span> The $Q$-value of policy $\pi$ at state $s$ with action $a$, also denoted $Q_{\pi}(s,a)$, is the expected utility from state $s$ after taking action $a$ and then following policy $\pi$. It is defined as follows:</p>
+<p><span class="new-item item-g">$Q$-ценность</span> $Q$-ценность политики $\pi$ в состоянии $s$ с действием $a$, также отмеченное $Q_{\pi}(s,a)$, является ожидаемой полезностью из состояния $s$ после выполнения действия $a$ и последующего следования политике $\pi$. Это определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{Q_{\pi}(s,a)=\sum_{s'\in\textrm{ States}}T(s,a,s')\left[\textrm{Reward}(s,a,s')+\gamma V_\pi(s')\right]}\]
 </div>
 <br>
-<p><span class="new-item item-g">Value of policy</span> The value of policy $\pi$ from state $s$, also denoted $V_{\pi}(s)$, is the expected utility by following policy $\pi$ from state $s$ over random paths. It is defined as follows:</p>
+<p><span class="new-item item-g">Ценность политики</span> Ценность политики $\pi$ из состояния $s$, также обозначаемое как $V_{\pi}(s)$, является ожидаемой полезностью при следовании политике $\pi$ из состояния $s$ по случайным путям. Это определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{V_\pi(s)=Q_\pi(s,\pi(s))}\]
 </div>
 <p><span class=remark>Примечание: $V_\pi(s)$ равно 0, если $s$ - конечное состояние.</span></p>
 <br>
 <h3>Приложения</h3>
-<p><span class="new-item item-r">Policy evaluation</span> Given policy $\pi$, policy evaluation is an iterative algorithm that aims at estimating $V_\pi$. It is done as follows:
+<p><span class="new-item item-r">Оценка политики</span> Задана политика $\pi$, оценка политики представляет собой итеративный алгоритм. Он нацелен на оценку $V_\pi$. Делается это следующим образом:
 </p><ul>
-<li><u>Initialization</u>: for all states $s$, we have
+<li>Инициализация: для всех состояний $s$, имеем
 <div class=mobile-container>
 \[\boxed{V_\pi^{(0)}(s)\longleftarrow0}\]
 </div>
-</li><li><u>Iteration</u>: for $t$ from 1 to $T_{\textrm{PE}}$, we have
+</li><li>Итерация: для $t$ от 1 до $T_{\textrm{PE}}$, имеем
 <div class=mobile-container>
 \[\forall s,\quad\boxed{V_\pi^{(t)}(s)\longleftarrow Q_\pi^{(t-1)}(s,\pi(s))}\]
 </div>
-with
+с
 <div class=mobile-container>
 \[\boxed{Q_\pi^{(t-1)}(s,\pi(s))=\sum_{s'\in\textrm{ States}}T(s,\pi(s),s')\Big[\textrm{Reward}(s,\pi(s),s')+\gamma V_\pi^{(t-1)}(s')\Big]}\]
 </div>
 </li></ul><p></p>
 <p><span class=remark>Примечание: обозначим $S$ - количество состояний, $A$ - количество действий на состояние, $S'$ - количество преемников и $T$ - количество итераций, то временная сложность равна $\mathcal{O}(T_{\textrm{PE}}SS')$.</span></p>
 <br>
-<p><span class="new-item item-b">Optimal Q-value</span> The optimal $Q$-value $Q_{\textrm{opt}}(s,a)$ of state $s$ with action $a$ is defined to be the maximum $Q$-value attained by any policy. It is computed as follows:</p>
+<p><span class="new-item item-b">Оптимальная $Q$-ценность</span> Оптимальная $Q$-ценность $Q_{\textrm{opt}}(s,a)$ состояния $s$ с действием $a$ определяется как максимальная $Q$-ценность, достигаемая при любой стратегии. Она рассчитывается следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{Q_{\textrm{opt}}(s,a)=\sum_{s'\in\textrm{ States}}T(s,a,s')\left[\textrm{Reward}(s,a,s')+\gamma V_\textrm{opt}(s')\right]}\]
 </div>
@@ -432,15 +432,15 @@ with
 <br>
 <p><span class="new-item item-r">Итерация ценности</span> Итерация ценности - это ищущий оптимальное значение $V_{\textrm{opt}}$ и оптимальную политику $\pi_{\textrm{opt}}$ алгоритм. Делается это следующим образом:
 </p><ul>
-<li><u>Initialization</u>: for all states $s$, we have
+<li>Инициализация: для всех состояний $s$, имеем
 <div class=mobile-container>
 \[\boxed{V_{\textrm{opt}}^{(0)}(s)\longleftarrow0}\]
 </div>
-</li><li><u>Iteration</u>: for $t$ from 1 to $T_{\textrm{VI}}$, we have
+</li><li>Итерация: для $t$ от 1 до $T_{\textrm{VI}}$, имеем
 <div class=mobile-container>
 \[\forall s,\quad\boxed{V_\textrm{opt}^{(t)}(s)\longleftarrow \underset{a\in\textrm{ Actions}(s)}{\textrm{max}}Q_\textrm{opt}^{(t-1)}(s,a)}\]
 </div>
-with
+с
 <div class=mobile-container>
 \[\boxed{Q_\textrm{opt}^{(t-1)}(s,a)=\sum_{s'\in\textrm{ States}}T(s,a,s')\Big[\textrm{Reward}(s,a,s')+\gamma V_\textrm{opt}^{(t-1)}(s')\Big]}\]
 </div>
@@ -449,11 +449,11 @@ with
 <br>
 <h3>Когда неизвестны переходы и награды</h3>
 <p>Теперь предположим, что вероятности перехода и награды неизвестны.</p>
-<p><span class="new-item item-r">Model-based Monte Carlo</span> The model-based Monte Carlo method aims at estimating $T(s,a,s')$ and $\textrm{Reward}(s,a,s')$ using Monte Carlo simulation with:
+<p><span class="new-item item-r">Основанный на модели Монте-Карло</span> Основанный на модели метод Монте-Карло направлен на оценку $T(s,a,s')$ и $\textrm{Reward}(s,a,s')$ с использованием моделирования Монте-Карло с:
 </p><div class=mobile-container>
 \[\boxed{\widehat{T}(s,a,s')=\frac{\#\textrm{ times }(s,a,s')\textrm{ occurs}}{\#\textrm{ times }(s,a)\textrm{ occurs}}}\]
 </div>
-and
+и
 <div class=mobile-container>
 \[\boxed{\widehat{\textrm{Reward}}(s,a,s')=r\textrm{ in }(s,a,r,s')}\]
 </div>
@@ -464,10 +464,10 @@ and
 </p><div class=mobile-container>
 \[\boxed{\widehat{Q}_\pi(s,a)=\textrm{average of }u_t\textrm{ where }s_{t-1}=s, a_t=a}\]
 </div>
-where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
+где $u_t$ обозначает полезность, начиная с шага $t$ данного эпизода.<p></p>
 <p><span class=remark>Примечание: Безмодельный Монте-Карло считается действующим в соответствии с политикой, поскольку оценочное значение зависит от политики $\pi$, используемой для генерации данных.</span></p>
 <br>
-<p><span class="new-item item-r">Equivalent formulation</span> By introducing the constant $\eta=\frac{1}{1+(\#\textrm{updates to }(s,a))}$ and for each $(s,a,u)$ of the training set, the update rule of model-free Monte Carlo has a convex combination formulation:
+<p><span class="new-item item-r">Эквивалентная формулировка</span> Путем введения константы $\eta=\frac{1}{1+(\#\textrm{updates to }(s,a))}$ и для каждого $(s,a,u)$ обучающего набора, правило обновления безмодельного Монте-Карло имеет формулировку выпуклой комбинации:
 </p><div class=mobile-container>
 \[\boxed{\widehat{Q}_\pi(s,a)\leftarrow(1-\eta)\widehat{Q}_\pi(s,a)+\eta u}\]
 </div>
@@ -483,7 +483,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 </div>
 <p><span class=remark>Примечание: оценка SARSA обновляется "на лету", в отличие от оценки Монте-Карло без использования модели, где оценка может быть обновлена только в конце эпизода.</span></p>
 <br>
-<p><span class="new-item item-b">Q-learning</span> $Q$-learning is an off-policy algorithm that produces an estimate for $Q_\textrm{opt}$. On each $(s,a,r,s',a')$, we have:</p>
+<p><span class="new-item item-b">$Q$-обучение</span> $Q$-обучение - это алгоритм вне политики, который производит оценку $Q_\textrm{opt}$. На каждой $(s,a,r,s',a')$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\widehat{Q}_{\textrm{opt}}(s,a)\leftarrow(1-\eta)\widehat{Q}_{\textrm{opt}}(s,a)+\eta\Big[r+\gamma\underset{a'\in\textrm{ Actions}(s')}{\textrm{max}}\widehat{Q}_{\textrm{opt}}(s',a')\Big]}\]
 </div>
@@ -501,7 +501,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 </p><ul>
   <li>начальное состояние $s_{\textrm{start}}$
   </li><li>возможные действия $\textrm{Actions}(s)$ из состояния $s$
-  </li><li>successors $\textrm{Succ}(s,a)$ from states $s$ with actions $a$
+  </li><li>преемники $\textrm{Succ}(s,a)$ из состояния $s$ с действиями $a$
   </li><li>было ли достигнуто конечное состояние $\textrm{IsEnd}(s)$
   </li><li>полезность агента $\textrm{Utility}(s)$ в конечном состоянии $s$
   </li><li>игрок $\textrm{Player}(s)$ контролирует состояние $s$
@@ -510,8 +510,8 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <br>
 <p><span class="new-item item-g">Типы политик</span> Есть два типа политик:
 </p><ul>
-<li>Deterministic policies, denoted $\pi_p(s)$, which are actions that player $p$ takes in state $s$.
-</li><li>Stochastic policies, denoted $\pi_p(s,a)\in[0,1]$, which are probabilities that player $p$ takes action $a$ in state $s$.
+<li>Детерминистские политики, обозначаются $\pi_p(s)$, действия игрока $p$ в состоянии $s$.
+</li><li>Стохастические политики, denoted $\pi_p(s,a)\in[0,1]$, вероятности совершения игроком $p$ действия $a$ в состоянии $s$.
 </li></ul><p></p>
 <br>
 <p><span class="new-item item-g">Expectimax</span> Для данного состояния $s$ значение expectimax $V_{\textrm{exptmax}}(s)$ является максимальной ожидаемой полезностью любой политики агента при игре относительно фиксированной и известной политики противника $\pi_{\textrm{opp}}$. Он рассчитывается следующим образом:</p>
@@ -538,15 +538,15 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <br>
 <p><span class="new-item item-r">Свойства minimax</span> Обозначим $V$ как функцию ценности, необходимо иметь в виду 3 свойства вокруг минимакса:
 </p><ul>
-<li><i>Property 1</i>: if the agent were to change its policy to any $\pi_{\textrm{agent}}$, then the agent would be no better off.
+<li>Свойство 1: если агент изменит свою политику на какой-либо $\pi_{\textrm{agent}}$, то ему не будет лучше.
 <div class=mobile-container>
 \[\boxed{\forall \pi_{\textrm{agent}},\quad V(\pi_{\textrm{max}},\pi_{\textrm{min}})\geqslant V(\pi_{\textrm{agent}},\pi_{\textrm{min}})}\]
 </div>
-</li><li><i>Property 2</i>: if the opponent changes its policy from $\pi_{\textrm{min}}$ to $\pi_{\textrm{opp}}$, then he will be no better off.
+</li><li>Свойство 2: если противник изменит свою политику с $\pi_{\textrm{min}}$ на $\pi_{\textrm{opp}}$, то ему не станет лучше.
 <div class=mobile-container>
 \[\boxed{\forall \pi_{\textrm{opp}},\quad V(\pi_{\textrm{max}},\pi_{\textrm{min}})\leqslant V(\pi_{\textrm{max}},\pi_{\textrm{opp}})}\]
 </div>
-</li><li><i>Property 3</i>: if the opponent is known to be not playing the adversarial policy, then the minimax policy might not be optimal for the agent.
+</li><li>Свойство 3: если известно, что противник не использует состязательную политику, то минимаксная политика может быть неоптимальной для агента.
 <div class=mobile-container>
 \[\boxed{\forall \pi,\quad V(\pi_{\textrm{max}},\pi)\leqslant V(\pi_{\textrm{exptmax}},\pi)}\]
 </div>
@@ -558,7 +558,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <p></p>
 <br>
 <h3>Ускорение minimax</h3>
-<p><span class="new-item item-g">Evaluation function</span> An evaluation function is a domain-specific and approximate estimate of the value $V_{\textrm{minimax}}(s)$. It is denoted $\textrm{Eval}(s)$.</p>
+<p><span class="new-item item-g">Функция оценки</span> Функция оценки - это зависящая от предметной области и приблизительная оценка значения $V_{\textrm{minimax}}(s)$. Обозначается $\textrm{Eval}(s)$.</p>
 <p><span class=remark>Примечание: $\textrm{FutureCost}(s)$ - аналог задачи поиска.</span></p>
 <br>
 <p><span class="new-item item-b">Альфа-бета обрезка</span> Alpha-beta pruning - это общий для предметной области точный метод, оптимизирующий алгоритм минимакса, избегая ненужного исследования частей игрового дерева. Для этого каждый игрок отслеживает наилучшее значение, на которое он может надеяться (сохраняется в $\alpha$ для максимизирующего игрока и в $\beta$ для минимизирующего игрока). На данном шаге условие $\beta &lt; \alpha$ означает, что оптимальный путь не будет в текущей ветви, поскольку у более раннего игрока был лучший вариант в своем распоряжении.</p>
@@ -576,7 +576,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <h3>Одновременные игры</h3>
 <p>Это полная противоположность пошаговым играм, где нет упорядочивания ходов игрока.</p>
 <br>
-<p><span class="new-item item-g">Single-move simultaneous game</span> Let there be two players $A$ and $B$, with given possible actions. We note $V(a,b)$ to be $A$'s utility if $A$ chooses action $a$, $B$ chooses action $b$. $V$ is called the payoff matrix.</p>
+<p><span class="new-item item-g">Одновременная игра с одним ходом</span> пусть есть два игрока $A$ и $B$ с заданными возможными действиями. Мы обозначаем, что $V(a,b)$ является полезностью $A$, если $A$ выбирает действие $a$, $B$ выбирает действие $b$. $V$ называется матрицей выигрыша.</p>
 <br>
 <p><span class="new-item item-r">Стратегии</span> Есть два основных типа стратегий:
 </p><ul>
@@ -603,7 +603,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <h3>Игры с ненулевой суммой</h3>
 <p><span class="new-item item-b">Матрица выигрыша</span> Мы определяем $V_p(\pi_A,\pi_B)$ как полезность для игрока $p$.</p>
 <br>
-<p><span class="new-item item-r">Nash equilibrium</span> A Nash equilibrium is $(\pi_A^*,\pi_B^*)$ such that no player has an incentive to change its strategy. We have:</p>
+<p><span class="new-item item-r">Nash equilibrium</span> Равновесие по Нэшу - это $(\pi_A^*,\pi_B^*)$ такое, что ни у одного игрока нет стимула изменить свою стратегию, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\forall \pi_A, V_A(\pi_A^*,\pi_B^*)\geqslant V_A(\pi_A,\pi_B^*)}\quad\textrm{and}\quad\boxed{\forall \pi_B, V_B(\pi_A^*,\pi_B^*)\geqslant V_B(\pi_A^*,\pi_B)}\]
 </div>

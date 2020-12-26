@@ -117,7 +117,7 @@
 <br>
 <p><span class="new-item item-g">Согласованность дуги</span> Мы говорим о непротиворечивости дуги переменной $X_l$ относительно $X_k$ при обеспечении для каждого $x_l \in \textrm{Domain}_l$:
 </p><ul>
-<li> unary factors of $X_l$ are non-zero,
+<li> унарные множители $X_l$ не равны нулю,
 </li><li> существует по крайней мере один $x_k \in \textrm{Domain}_k$. Для него любой множитель между $X_l$ и $X_k$ отличен от нуля.
 </li></ul>
 <p></p>
@@ -159,7 +159,7 @@
 \[\boxed{A\perp\!\!\!\!\perp B|C}\]
 </div>
 <br>
-<p><span class="new-item item-b">Conditioning</span> Conditioning is a transformation aiming at making variables independent that breaks up a factor graph into smaller pieces that can be solved in parallel and can use backtracking. In order to condition on a variable $X_i=v$, делать так:
+<p><span class="new-item item-b">Кондиционирование</span> это преобразование переменных в независимые. Факторный граф разбивается на более мелкие части. Их можно решать параллельно и использовать обратный поиск. Чтобы поставить условие на переменную $X_i=v$, делать так:
 </p><ul>
 <li>Рассмотреть все зависящие от $X_i$ множители $f_1,...,f_k$
 </li><li>Удалить $X_i$ и $f_1,...,f_k$
@@ -169,7 +169,7 @@
 </div>
 </li></ul><p></p>
 <br>
-<p><span class="new-item item-b">Markov blanket</span> Let $A\subseteq X$ be a subset of variables. We define $\textrm{MarkovBlanket}(A)$ to be the neighbors of $A$ that are not in $A$.</p>
+<p><span class="new-item item-b">Марковское ограждение</span> Пусть $A\subseteq X$ - подмножество переменных. Мы определяем $\textrm{MarkovBlanket}(A)$ как соседей $A$, которые не находятся в $A$.</p>
 <br>
 <p><span class="new-item item-r">Утверждение</span> Пусть $C=\textrm{MarkovBlanket}(A)$ и $B=X\backslash(A\cup C)$. Тогда у нас есть:</p>
 <div class=mobile-container>
@@ -183,9 +183,9 @@
 <br>
 <p><span class="new-item item-g">Устранение</span> Исключение - это преобразование факторного графа с удалением $X_i$ из графа и решением небольшой подзадачи с условием марковского ограждения:
 </p><ul>
-<li>Consider all factors $f_{i,1},...,f_{i,k}$ that depend on $X_i$
-</li><li>Remove $X_i$ and $f_{i,1},...,f_{i,k}$
-</li><li>Add $f_{\textrm{new},i}(x)$ defined as:
+<li>Рассмотреть все факторы $f_{i,1},...,f_{i,k}$ с зависимостью от $X_i$
+</li><li>Удалить $X_i$ и $f_{i,1},...,f_{i,k}$
+</li><li>Добавить $f_{\textrm{new},i}(x)$ по определению:
 <div class=mobile-container>
 \[\boxed{f_{\textrm{new},i}(x)=\max_{x_i}\prod_{l=1}^kf_{i,l}(x)}\]
 </div>
@@ -304,9 +304,9 @@
 <p><span class="new-item item-r">Алгоритм прямого-обратного хода</span> этот алгоритм вычисляет точное значение $P(H = h_k | E = e)$ (запрос сглаживания) для любого $k \in \{1, ..., L\}$ в случае HMM размера $L$. Чтобы сделать так, мы выполняем 3 шага:
 </p><div class=mobile-container>
 <ul>
-<li><u>Step 1</u>: for $i \in \{1,..., L\}$, compute $F_i(h_i) = \sum_{h_{i-1}} F_{i-1}(h_{i-1})p(h_{i}|h_{i-1})p(e_i|h_i)$
-</li><li><u>Step 2</u>: for $i \in \{L,..., 1\}$, compute $B_i(h_i) = \sum_{h_{i+1}} B_{i+1}(h_{i+1})p(h_{i+1}|h_i)p(e_{i+1}|h_{i+1})$
-</li><li><u>Step 3</u>: for $i \in \{1,...,L\}$, compute $S_i(h_i) = \frac{F_i(h_i)B_i(h_i)}{\sum_{h_i}F_i(h_i)B_i(h_i)}$
+<li><u>Шаг 1</u>: для $i \in \{1,..., L\}$, посчитать $F_i(h_i) = \sum_{h_{i-1}} F_{i-1}(h_{i-1})p(h_{i}|h_{i-1})p(e_i|h_i)$
+</li><li><u>Шаг 2</u>: для $i \in \{L,..., 1\}$, посчитать $B_i(h_i) = \sum_{h_{i+1}} B_{i+1}(h_{i+1})p(h_{i+1}|h_i)p(e_{i+1}|h_{i+1})$
+</li><li><u>Шаг 3</u>: для $i \in \{1,...,L\}$, посчитать $S_i(h_i) = \frac{F_i(h_i)B_i(h_i)}{\sum_{h_i}F_i(h_i)B_i(h_i)}$
 </li></ul>
 </div>
 с условием $F_0 = B_{L+1} = 1$. Из этой процедуры и этих обозначений мы получаем это
@@ -324,11 +324,11 @@
 </li></ul><p></p>
 <p><span class=remark>Примечание: $X_{-i}$ обозначает $X \backslash \{X_i\}$, а $x_{-i}$ представляет соответствующее присвоение.</span></p>
 <br>
-<p><span class="new-item item-g">Particle filtering</span> This algorithm approximates the posterior density of state variables given the evidence of observation variables by keeping track of $K$ particles at a time. Starting from a set of particles $C$ of size $K$, мы итеративно выполняем следующие 3 шага:
+<p><span class="new-item item-g">Фильтрация частиц</span> Этот алгоритм аппроксимирует апостериорную плотность переменных состояния с учетом данных наблюдений путем отслеживания $K$ частиц за раз. Начиная с набора частиц $C$ размера $K$, мы итеративно выполняем следующие 3 шага:
 </p><ul>
-<li><u>Step 1</u>: proposal - For each old particle $x_{t-1} \in C$, sample $x$ from the transition probability distribution $p(x | x_{t-1})$ and add $x$ to a set $C'$.
-</li><li><u>Step 2</u>: weighting - Weigh each $x$ of the set $C'$ by $w(x)=p(e_t|x)$, where $e_t$ is the evidence observed at time $t$.
-</li><li><u>Step 3</u>: resampling - Sample $K$ elements from the set $C'$ using the probability distribution induced by $w$ and store them in $C$: these are the current particles $x_t$.
+<li><u>Шаг 1</u>: предложение - Для каждой старой частицы $x_{t-1} \in C$, выбрать $x$ из распределения вероятности перехода $p(x | x_{t-1})$ и добавить $x$ к множеству $C'$.
+</li><li><u>Шаг 2</u>: взвешивание - Взвесить каждый $x$ из множества $C'$ как $w(x)=p(e_t|x)$, где $e_t$ - свидетельство в момент времени $t$.
+</li><li><u>Шаг 3</u>: повторная выборка - выборка $K$ элементов из множества $C'$ с использованием индуцированного $w$ распределения вероятностей и сохранение их в $C$: это текущие частицы $x_t$.
 </li></ul><p></p>
 <p><span class=remark>Примечание: более дорогая версия этого алгоритма также отслеживает прошлые частицы на этапе предложения.</span></p>
 <br>
