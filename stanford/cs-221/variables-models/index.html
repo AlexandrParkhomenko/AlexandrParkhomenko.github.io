@@ -161,9 +161,9 @@
 <br>
 <p><span class="new-item item-b">Conditioning</span> Conditioning is a transformation aiming at making variables independent that breaks up a factor graph into smaller pieces that can be solved in parallel and can use backtracking. In order to condition on a variable $X_i=v$, делать так:
 </p><ul>
-<li>Consider all factors $f_1,...,f_k$ that depend on $X_i$
-</li><li>Remove $X_i$ and $f_1,...,f_k$
-</li><li>Add $g_j(x)$ for $j \in \{1,...,k\}$ defined as:
+<li>Рассмотреть все зависящие от $X_i$ множители $f_1,...,f_k$
+</li><li>Удалить $X_i$ и $f_1,...,f_k$
+</li><li>Добавить $g_j(x)$ для $j \in \{1,...,k\}$ по определению:
 <div class=mobile-container>
 \[\boxed{g_j(x)=f_j(x\cup \{X_i:v\})}\]
 </div>
@@ -345,6 +345,6 @@
 <div class=mobile-container>
 \[\boxed{q(h)=P(H=h|E=e;\theta)}\]
 </div>
-</li><li>M-step: Use the posterior probabilities $q(h)$ as cluster specific weights on data points $e$ to determine $\theta$ through maximum likelihood.
+</li><li>M-шаг: использовать апостериорные вероятности $q(h)$ в качестве весовых коэффициентов для конкретных кластеров точек данных $e$ и определить $\theta$ через максимальное правдоподобие.
 </li></ul><p></p>
 </article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>

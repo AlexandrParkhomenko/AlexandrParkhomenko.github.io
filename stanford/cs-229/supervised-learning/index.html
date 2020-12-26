@@ -427,7 +427,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#other id=other></a>Другие непараметрические подходы</h2>
-<p><span class="new-item item-b">$k$-nearest neighbors</span> The $k$-nearest neighbors algorithm, commonly known as $k$-NN, is a non-parametric approach where the response of a data point is determined by the nature of its $k$ neighbors from the training set. It can be used in both classification and regression settings.</p>
+<p><span class="new-item item-b">$k$-ближайшие соседи</span> Алгоритм $k$-ближайших соседей, широко известный как $k$-NN, представляет собой непараметрический подход, в котором ответ точки данных определяется природой её $k$ соседей из обучающего набора. Его можно использовать как для классификации, так и для настройки регрессии.</p>
 <p><span class=remark>Remark: the higher the parameter $k$, the higher the bias, and the lower the parameter $k$, the higher the variance.</span></p>
 <div class=mobile-container>
 <center>
@@ -477,7 +477,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
   <img alt="VC dimension" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=vc-dimension.png?73859dedcc66a0e47526936f801b7b56>
 </center>
 <br>
-<p><span class="new-item item-r">Theorem (Vapnik)</span> Let $\mathcal{H}$ be given, with $\textrm{VC}(\mathcal{H})=d$ and $m$ the number of training examples. With probability at least $1-\delta$, we have:</p>
+<p><span class="new-item item-r">Теорема (Вапника)</span> Пусть задано $\mathcal{H}$, $\textrm{VC}(\mathcal{H})=d$ и $m$ - количество обучающих примеров. По крайней мере, с вероятностью $1-\delta$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\epsilon(\widehat{h})\leqslant \left(\min_{h\in\mathcal{H}}\epsilon(h)\right) + O\left(\sqrt{\frac{d}{m}\log\left(\frac{m}{d}\right)+\frac{1}{m}\log\left(\frac{1}{\delta}\right)}\right)}\]
 </div>

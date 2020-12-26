@@ -75,7 +75,7 @@
 <p><span class="new-item item-g">Задача поиска</span> определяется с помощью:
 </p><ul>
   <li>начальное состояние $s_{\textrm{start}}$
-  </li><li>possible actions $\textrm{Actions}(s)$ from state $s$
+  </li><li>возможные действия $\textrm{Actions}(s)$ из состояния $s$
   </li><li>action cost $\textrm{Cost}(s,a)$ from state $s$ with action $a$
   </li><li>successor $\textrm{Succ}(s,a)$ of state $s$ after action $a$
   </li><li>было ли достигнуто конечное состояние $\textrm{IsEnd}(s)$
@@ -352,7 +352,7 @@
 <p><span class="new-item item-b">Определение</span> Цель марковского процесса принятия решений - максимизировать вознаграждение. Он определяется с помощью:
   </p><ul>
     <li>начальное состояние $s_{\textrm{start}}$
-    </li><li>possible actions $\textrm{Actions}(s)$ from state $s$
+    </li><li>возможные действия $\textrm{Actions}(s)$ из состояния $s$
     </li><li>transition probabilities $T(s,a,s')$ from $s$ to $s'$ with action $a$
     </li><li>rewards $\textrm{Reward}(s,a,s')$ from $s$ to $s'$ with action $a$
     </li><li>было ли достигнуто конечное состояние $\textrm{IsEnd}(s)$
@@ -500,11 +500,11 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <p><span class="new-item item-b">Игра для двух игроков с нулевой суммой</span> это игра; в которой полностью соблюдается каждое состояние и игроки ходят по очереди. Она определяется с помощью:
 </p><ul>
   <li>начальное состояние $s_{\textrm{start}}$
-  </li><li>possible actions $\textrm{Actions}(s)$ from state $s$
+  </li><li>возможные действия $\textrm{Actions}(s)$ из состояния $s$
   </li><li>successors $\textrm{Succ}(s,a)$ from states $s$ with actions $a$
   </li><li>было ли достигнуто конечное состояние $\textrm{IsEnd}(s)$
-  </li><li>the agent's utility $\textrm{Utility}(s)$ at end state $s$
-  </li><li>the player $\textrm{Player}(s)$ who controls state $s$
+  </li><li>полезность агента $\textrm{Utility}(s)$ в конечном состоянии $s$
+  </li><li>игрок $\textrm{Player}(s)$ контролирует состояние $s$
 </li></ul><p></p>
 <p><span class=remark>Примечание: предположим, что полезность агента противоположна полезности оппонента.</span></p>
 <br>
