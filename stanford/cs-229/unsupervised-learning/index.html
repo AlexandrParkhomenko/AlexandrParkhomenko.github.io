@@ -79,7 +79,7 @@
 </h1>
 <i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
 <h2><a aria-hidden=true class=anchor href=#intro id=intro></a>Введение в обучение без учителя</h2>
-<p><span class="new-item item-b">Motivation</span> The goal of unsupervised learning is to find hidden patterns in unlabeled data $\{x^{(1)},...,x^{(m)}\}$.</p>
+<p><span class="new-item item-b">Мотивация</span> цель обучения без учителя - найти скрытые закономерности в неразмеченных данных $\{x^{(1)},...,x^{(m)}\}$.</p>
 <br>
 <p><span class="new-item item-r">Неравенство Йенсена</span> Пусть $f$ - выпуклая функция, а $X$ - случайная величина. $E$ - математическое ожидание. Имеем следующее неравенство:</p>
 <div class=mobile-container>
@@ -116,7 +116,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Algorithm</span> The Expectation-Maximization (EM) algorithm gives an efficient method at estimating the parameter $\theta$ through maximum likelihood estimation by repeatedly constructing a lower-bound on the likelihood (E-step) and optimizing that lower bound (M-step) as follows:
+<p><span class="new-item item-g">Алгоритм</span> Алгоритм ожидания-максимизации (Expectation-Maximization, EM) дает эффективный метод оценки параметра $\theta$ посредством оценки максимального правдоподобия путем многократного построения нижней границы правдоподобия (E-шаг) и оптимизации этой нижней границы (M-шаг) следующим образом:
 </p><ul>
 <li><u>E-step</u>: Evaluate the posterior probability $Q_{i}(z^{(i)})$ that each data point $x^{(i)}$ came from a particular cluster $z^{(i)}$ as follows:
 <div class=mobile-container>
@@ -132,9 +132,9 @@
 </center>
 <br>
 <h3>$k$-means clustering</h3>
-<p>We note $c^{(i)}$ the cluster of data point $i$ and $\mu_j$ the center of cluster $j$.</p>
+<p>Мы обозначаем $c^{(i)}$ кластер точки данных $i$ и $\mu_j$ центр кластера $j$.</p>
 <br>
-<p><span class="new-item item-g">Algorithm</span> After randomly initializing the cluster centroids $\mu_1,\mu_2,...,\mu_k\in\mathbb{R}^n$, the $k$-means algorithm repeats the following step until convergence:</p>
+<p><span class="new-item item-g">Алгоритм</span> после случайной инициализации центроидов кластера $\mu_1,\mu_2,...,\mu_k\in\mathbb{R}^n$ алгоритм $k$-средних повторяет следующий шаг до сходимости:</p>
 <div class=mobile-container>
 \[\boxed{c^{(i)}=\underset{j}{\textrm{arg min}}||x^{(i)}-\mu_j||^2}\quad\textrm{and}\quad\boxed{\mu_j=\frac{\displaystyle\sum_{i=1}^m1_{\{c^{(i)}=j\}}x^{(i)}}{\displaystyle\sum_{i=1}^m1_{\{c^{(i)}=j\}}}}\]
 </div>
@@ -180,7 +180,7 @@
 \[\boxed{s=\frac{b-a}{\max(a,b)}}\]
 </div>
 <br>
-<p><span class="new-item item-b">Calinski-Harabaz index</span> By noting $k$ the number of clusters, $B_k$ and $W_k$ the between and within-clustering dispersion matrices respectively defined as
+<p><span class="new-item item-b">Индекс Калински-Харабаза</span> Обозначим $k$ количество кластеров, $B_k$ и $W_k$ матрицы дисперсии между кластерами и внутри кластеров, соответственно определяемые как
 </p><div class=mobile-container>
 \[B_k=\sum_{j=1}^kn_{c^{(i)}}(\mu_{c^{(i)}}-\mu)(\mu_{c^{(i)}}-\mu)^T,\quad\quad W_k=\sum_{i=1}^m(x^{(i)}-\mu_{c^{(i)}})(x^{(i)}-\mu_{c^{(i)}})^T\]
 </div>
@@ -202,7 +202,7 @@
 \[\boxed{\exists\Lambda\textrm{ diagonal},\quad A=U\Lambda U^T}\]
 </div>
 <br>
-<p><span class=remark>Remark: the eigenvector associated with the largest eigenvalue is called principal eigenvector of matrix $A$.</span></p>
+<p><span class=remark>Примечание: собственный вектор, связанный с наибольшим собственным значением, называется главным собственным вектором матрицы $A$.</span></p>
 <br>
 <p><span class="new-item item-g">Алгоритм</span> Principal Component Analysis (PCA) - это метод уменьшения размерности, который проецирует данные на $k$ измерений, максимизируя дисперсию данных следующим образом:
 </p><ul>
@@ -225,11 +225,11 @@
 <div class=mobile-container>
 \[\boxed{x=As}\]
 </div>
-<p>The goal is to find the unmixing matrix $W=A^{-1}$.</p>
+<p>Цель состоит в том, чтобы найти матрицу разложения $W=A^{-1}$.</p>
 <br>
-<p><span class="new-item item-g">Bell and Sejnowski ICA algorithm</span> This algorithm finds the unmixing matrix $W$ by following the steps below:
+<p><span class="new-item item-g">Алгоритм анализа независимых компонент Белла и Сейновского</span> Bell and Sejnowski Independent Component Analysis, ICA - Этот алгоритм находит матрицу разложения $W$, выполнив следующие шаги:
 </p><ul>
-<li>Write the probability of $x=As=W^{-1}s$ as:
+<li>Записать вероятность $x=As=W^{-1}s$ как:
 <div class=mobile-container>
 \[p(x)=\prod_{i=1}^np_s(w_i^Tx)\cdot|W|\]
 </div>

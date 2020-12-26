@@ -79,12 +79,12 @@
 </h1>
 <i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
 <h2><a aria-hidden=true class=anchor href=#introduction id=introduction></a>Введение в вероятность и комбинаторику</h2>
-<p><span class="new-item item-g">Sample space</span> The set of all possible outcomes of an experiment is known as the sample space of the experiment and is denoted by $S$.</p>
+<p><span class="new-item item-g">Пространство выборки</span> Набор всех возможных результатов эксперимента известен как пространство выборки эксперимента и обозначается $S$.</p>
 <br>
 <p><span class="new-item item-g">Событие</span> Любое подмножество $E$ пространства выборки известно как событие. То есть событие - это набор, состоящий из возможных результатов эксперимента. Если результат эксперимента содержится в $E$, то мы говорим, что $E$ произошло.</p>
 <br>
 <p><span class="new-item item-g">Axioms of probability</span> For each event $E$, we denote $P(E)$ as the probability of event $E$ occurring.</p>
-<p><i>Axiom 1</i> ― Every probability is between 0 and 1 included, i.e:</p>
+<p><span class="new-item item-b">Аксиома 1</span> Каждая вероятность находится в диапазоне от 0 до 1, то есть:</p>
 <div class=mobile-container>
 \[\boxed{0\leqslant P(E)\leqslant 1}\]
 </div>
@@ -93,7 +93,7 @@
 <img alt="Axiom 1" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=probability-axiom-1.png?20e52e95618c88a4c10a5232c2c60ed0 style=width:100%;max-width:600px>
 </center>
 </div>
-<p><i>Axiom 2</i> ― The probability that at least one of the elementary events in the entire sample space will occur is 1, i.e:</p>
+<p><span class="new-item item-b">Аксиома 2</span> Вероятность того, что произойдет хотя бы одно из элементарных событий во всем пространстве выборки, равна 1, то есть:</p>
 <div class=mobile-container>
 \[\boxed{P(S)=1}\]
 </div>
@@ -102,7 +102,7 @@
 <img alt="Axiom 2" class=img-responsive netsrc=teaching/cme-106/illustrations/ src=probability-axiom-2.png?b1295ceda8ee7aa3202488a1ecb6133d style=width:100%;max-width:600px>
 </center>
 </div>
-<p><i>Axiom 3</i> ― For any sequence of mutually exclusive events $E_1, ..., E_n$, we have:</p>
+<p><span class="new-item item-b">Аксиома 3</span> Для любой последовательности взаимоисключающих событий $E_1, ..., E_n$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{P\left(\bigcup_{i=1}^nE_i\right)=\sum_{i=1}^nP(E_i)}\]
 </div>
@@ -124,7 +124,7 @@
 <p><span class=remark>Remark: we note that for $0\leqslant r\leqslant n$, we have $P(n,r)\geqslant C(n,r)$.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#conditional-probability id=conditional-probability></a>Условная вероятность</h2>
-<p><span class="new-item item-r">Bayes' rule</span> For events $A$ and $B$ such that $P(B)&gt;0$, we have:</p>
+<p><span class="new-item item-r">Правило Байеса</span> Для событий $A$ и $B$ таких, что $P(B)&gt;0$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{P(A|B)=\frac{P(B|A)P(A)}{P(B)}}\]
 </div>
@@ -199,7 +199,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Expectation and Moments of the Distribution</span> Here are the expressions of the expected value $E[X]$, generalized expected value $E[g(X)]$, $k^{th}$ moment $E[X^k]$ and characteristic function $\psi(\omega)$ for the discrete and continuous cases:
+<p><span class="new-item item-b">Ожидание и моменты распределения</span> вот выражения ожидаемого значения $E[X]$, обобщенного ожидаемого значения $E[g(X)]$, k-го момента $E[X^k]$ и характеристической функции $\psi(\omega)$ для дискретного и непрерывного случаев:
 </p>
 <div class=mobile-container>
 <center>
@@ -236,7 +236,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 \[\boxed{\textrm{Var}(X)=E[(X-E[X])^2]=E[X^2]-E[X]^2}\]
 </div>
 <br>
-<p><span class="new-item item-g">Standard deviation</span> The standard deviation of a random variable, often noted $\sigma$, is a measure of the spread of its distribution function which is compatible with the units of the actual random variable. It is determined as follows:</p>
+<p><span class="new-item item-g">Среднеквадратическое отклонение</span> Стандартное отклонение случайной величины (Standard deviation), часто обозначаемой $\sigma$, является мерой разброса её функции распределения, которая совместима с единицами измерения фактической случайной величины. Оно определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\sigma=\sqrt{\textrm{Var}(X)}}\]
 </div>
@@ -246,18 +246,18 @@ in the discrete (D) and the continuous (C) cases.</p>
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Transformation of random variables</span> Let the variables $X$ and $Y$ be linked by some function. By noting $f_X$ and $f_Y$ the distribution function of $X$ and $Y$ respectively, we have:</p>
+<p><span class="new-item item-r">Преобразование случайных величин</span> пусть переменные $X$ и $Y$ связаны некоторой функцией. Обозначим $f_X$ и $f_Y$ функцию распределения $X$ и $Y$ соответственно у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{f_Y(y)=f_X(x)\left|\frac{dx}{dy}\right|}\]
 </div>
 <br>
-<p><span class="new-item item-b">Leibniz integral rule</span> Let $g$ be a function of $x$ and potentially $c$, and $a, b$ boundaries that may depend on $c$. We have:</p>
+<p><span class="new-item item-b">Интегральное правило Лейбница</span> Пусть $g$ является функцией $x$ и потенциально $c$, и границы $a, b$ могут зависеть от $c$. У нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\frac{\partial}{\partial c}\left(\int_a^bg(x)dx\right)=\frac{\partial b}{\partial c}\cdot g(b)-\frac{\partial a}{\partial c}\cdot g(a)+\int_a^b\frac{\partial g}{\partial c}(x)dx}\]
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#probability-distributions id=probability-distributions></a>Распределения вероятностей</h2>
-<p><span class="new-item item-r">Chebyshev's inequality</span> Let $X$ be a random variable with expected value $\mu$. For $k, \sigma&gt;0$, we have the following inequality:</p>
+<p><span class="new-item item-r">Неравенство Чебышева</span> Пусть $X$ - случайная величина с математическим ожиданием $\mu$. Для $k, \sigma&gt;0$ имеет место неравенство:</p>
 <div class=mobile-container>
 \[\boxed{P(|X-\mu|\geqslant k\sigma)\leqslant\frac{1}{k^2}}\]
 </div>
@@ -336,7 +336,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#joint-rv id=joint-rv></a>Совместно распределенные случайные переменные</h2>
-<p><span class="new-item item-g">Marginal density and cumulative distribution</span> From the joint density probability function $f_{XY}$ , we have</p>
+<p><span class="new-item item-g">Предельная плотность и кумулятивное распределение</span> Из функции вероятности совместной плотности $f_{XY}$ мы имеем</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -361,7 +361,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Conditional density</span> The conditional density of $X$ with respect to $Y$, often noted $f_{X|Y}$, is defined as follows:</p>
+<p><span class="new-item item-g">Условная плотность</span> Условная плотность $X$ по отношению к $Y$, часто обозначаемая как $f_{X|Y}$, определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{f_{X|Y}(x)=\frac{f_{XY}(x,y)}{f_Y(y)}}\]
 </div>
@@ -376,12 +376,12 @@ in the discrete (D) and the continuous (C) cases.</p>
 \[\boxed{\textrm{Cov}(X,Y)\triangleq\sigma_{XY}^2=E[(X-\mu_X)(Y-\mu_Y)]=E[XY]-\mu_X\mu_Y}\]
 </div>
 <br>
-<p><span class="new-item item-g">Correlation</span> By noting $\sigma_X, \sigma_Y$ the standard deviations of $X$ and $Y$, we define the correlation between the random variables $X$ and $Y$, noted $\rho_{XY}$, as follows:</p>
+<p><span class="new-item item-g">Корреляция</span> Обозначим $\sigma_X, \sigma_Y$ стандартных отклонений $X$ и $Y$, мы определяем корреляцию между случайными величинами $X$ и $Y$, отмеченными $\rho_{XY}$, следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\rho_{XY}=\frac{\sigma_{XY}^2}{\sigma_X\sigma_Y}}\]
 </div>
-<p><span class=remark>Remark 1: we note that for any random variables $X, Y$, we have $\rho_{XY}\in[-1,1]$.</span></p>
-<p><span class=remark>Remark 2: If X and Y are independent, then $\rho_{XY} = 0$.</span></p>
+<p><span class=remark>Замечание 1: отметим, что для любых случайных величин $X, Y$ мы имеем $\rho_{XY}\in[-1,1]$.</span></p>
+<p><span class=remark>Замечание 2: Если X и Y независимы, то $\rho_{XY} = 0$.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#parameter-estimation id=parameter-estimation></a>Оценка параметров</h2>
 <h3>Определения</h3>
@@ -396,13 +396,13 @@ in the discrete (D) and the continuous (C) cases.</p>
 <p><span class=remark>Remark: an estimator is said to be unbiased when we have $E[\hat{\theta}]=\theta$.</span></p>
 <br>
 <h3>Оценка среднего</h3>
-<p><span class="new-item item-b">Sample mean</span> The sample mean of a random sample is used to estimate the true mean $\mu$ of a distribution, is often noted $\overline{X}$ and is defined as follows:</p>
+<p><span class="new-item item-b">Среднее значение выборки</span> Среднее значение случайной выборки используется для оценки истинного среднего $\mu$ распределения, часто обозначается как $\overline{X}$ и определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i}\]
 </div>
-<p><span class=remark>Remark: the sample mean is unbiased, i.e $E[\overline{X}]=\mu$.</span></p>
+<p><span class=remark>Примечание: выборочное среднее несмещенное, т. е $E[\overline{X}]=\mu$.</span></p>
 <br>
-<p><span class="new-item item-r">Central Limit Theorem</span> Let us have a random sample $X_1, ..., X_n$ following a given distribution with mean $\mu$ and variance $\sigma^2$, then we have:</p>
+<p><span class="new-item item-r">Центральная предельная теорема</span> Возьмем случайную выборку $X_1, ..., X_n$ следуя заданному распределению со средним $\mu$ и дисперсией $\sigma^2$, тогда у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\overline{X}\underset{n\rightarrow+\infty}{\sim}\mathcal{N}\left(\mu, \frac{\sigma}{\sqrt{n}}\right)}\]
 </div>
@@ -412,7 +412,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 <div class=mobile-container>
 \[\boxed{s^2=\hat{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2}\]
 </div>
-<p><span class=remark>Remark: the sample variance is unbiased, i.e $E[s^2]=\sigma^2$.</span></p>
+<p><span class=remark>Примечание: дисперсия выборки несмещенная, то есть $E[s^2]=\sigma^2$.</span></p>
 <br>
 <p><span class="new-item item-r">Chi-Squared relation with sample variance</span> Let $s^2$ be the sample variance of a random sample. We have:</p>
 <div class=mobile-container>

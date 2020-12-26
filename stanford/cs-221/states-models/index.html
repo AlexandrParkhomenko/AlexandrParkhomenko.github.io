@@ -74,11 +74,11 @@
 <br>
 <p><span class="new-item item-g">Задача поиска</span> определяется с помощью:
 </p><ul>
-  <li>a starting state $s_{\textrm{start}}$
+  <li>начальное состояние $s_{\textrm{start}}$
   </li><li>possible actions $\textrm{Actions}(s)$ from state $s$
   </li><li>action cost $\textrm{Cost}(s,a)$ from state $s$ with action $a$
   </li><li>successor $\textrm{Succ}(s,a)$ of state $s$ after action $a$
-  </li><li>whether an end state was reached $\textrm{IsEnd}(s)$
+  </li><li>было ли достигнуто конечное состояние $\textrm{IsEnd}(s)$
 </li></ul>
 <p></p>
 <div class=mobile-container>
@@ -154,7 +154,7 @@
 <br>
 <h3><a aria-hidden=true class=anchor href=#graph-search id=graph-search></a>Поиск по графу</h3>
 <p>Эта категория алгоритмов на основе состояний направлена на построение оптимальных путей, обеспечивающих экспоненциальную экономию. В этом разделе мы сосредоточимся на динамическом программировании и поиске по единой стоимости.</p>
-<p><span class="new-item item-g">Graph</span> A graph is comprised of a set of vertices $V$ (also called nodes) as well as a set of edges $E$ (also called links).</p>
+<p><span class="new-item item-g">Граф</span> граф состоит из набора вершин $V$ (также называемых узлами) и набора ребер $E$ (также называемых связями).</p>
 <div class=mobile-container>
 <center>
   <img alt=Graph class=img-responsive netsrc=teaching/cs-221/illustrations/ src=graph.png?76351911a7eff56d9f7de999bd7997ab style=width:100%;max-width:450px>
@@ -252,11 +252,11 @@
 <p><span class=remark>Примечание: обратный отсчет сложности предполагает, что количество возможных действий для каждого состояния будет постоянным.</span></p>
 <br>
 <h3><a aria-hidden=true class=anchor href=#learning-costs id=learning-costs></a>Стоимость обучения</h3>
-<p>Suppose we are not given the values of $\textrm{Cost}(s,a)$, we want to estimate these quantities from a training set of minimizing-cost-path sequence of actions $(a_1, a_2, ..., a_k)$.</p>
+<p>Предположим, нам не даны значения $\textrm{Cost}(s,a)$, мы хотим оценить эти количества из обучающего набора  последовательности действий $(a_1, a_2, ..., a_k)$ с минимизацией затрат пути.</p>
 <p><span class="new-item item-g">Структурированный перцептрон</span> Структурированный перцептрон - это алгоритм итеративного изучения стоимости каждой пары состояние-действие. На каждом шагу, it:
 </p><ul>
 <li> decreases the estimated cost of each state-action of the true minimizing path $y$ given by the training data,
-</li><li> increases the estimated cost of each state-action of the current predicted path $y'$ inferred from the learned weights.
+</li><li> увеличивает оценочную стоимость каждого действия состояния текущего прогнозируемого пути $y'$ (выведенную из изученных весов).
 </li></ul><p></p>
 <p><span class=remark>Remark: there are several versions of the algorithm, one of which simplifies the problem to only learning the cost of each action $a$, and the other parametrizes $\textrm{Cost}(s,a)$ to a feature vector of learnable weights.</span></p>
 <br>
@@ -330,7 +330,7 @@
 <br>
 <p><span class="new-item item-r">Relaxed heuristic</span> Given a relaxed search problem $P_{\textrm{rel}}$, we define the relaxed heuristic $h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)$ as the minimum cost path from $s$ to an end state in the graph of costs $\textrm{Cost}_{\textrm{rel}}(s,a)$.</p>
 <br>
-<p><span class="new-item item-b">Consistency of relaxed heuristics</span> Let $P_{\textrm{rel}}$ be a given relaxed problem. By theorem, we have:</p>
+<p><span class="new-item item-b">Консистентность ослабленной эвристики</span> Пусть $P_{\textrm{rel}}$ - заданная ослабленная задача. По теореме у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)\Longrightarrow h(s)\textrm{ consistent}}\]
 </div>
@@ -338,10 +338,10 @@
 <p><span class="new-item item-g">Компромисс при выборе эвристики</span> При выборе эвристики необходимо уравновесить два аспекта:
 </p><ul>
 <li>Computational efficiency: $h(s)=\textrm{FutureCost}_{\textrm{rel}}(s)$ must be easy to compute. It has to produce a closed form, более легкий поиск и независимые подзадачи.
-</li><li>Good enough approximation: the heuristic $h(s)$ should be close to $\textrm{FutureCost}(s)$ and we have thus to not remove too many constraints.
+</li><li>Достаточно хорошее приближение: эвристика $h(s)$ должна быть близка к $\textrm{FutureCost}(s)$ ; и мы не должны удалять слишком много ограничений.
 </li></ul><p></p>
 <br>
-<p><span class="new-item item-g">Max heuristic</span> Let $h_1(s)$, $h_2(s)$ be two heuristics. We have the following property:</p>
+<p><span class="new-item item-g">Max эвристика</span> пусть $h_1(s)$, $h_2(s)$ - две эвристики. У нас есть следующее свойство:</p>
 <div class=mobile-container>
 \[\boxed{h_1(s),\textrm{ }h_2(s)\textrm{ consistent}\Longrightarrow h(s)=\max\{h_1(s),\textrm{ }h_2(s)\}\textrm{ consistent}}\]
 </div>
@@ -351,11 +351,11 @@
 <h3>Обозначения</h3>
 <p><span class="new-item item-b">Определение</span> Цель марковского процесса принятия решений - максимизировать вознаграждение. Он определяется с помощью:
   </p><ul>
-    <li>a starting state $s_{\textrm{start}}$
+    <li>начальное состояние $s_{\textrm{start}}$
     </li><li>possible actions $\textrm{Actions}(s)$ from state $s$
     </li><li>transition probabilities $T(s,a,s')$ from $s$ to $s'$ with action $a$
     </li><li>rewards $\textrm{Reward}(s,a,s')$ from $s$ to $s'$ with action $a$
-    </li><li>whether an end state was reached $\textrm{IsEnd}(s)$
+    </li><li>было ли достигнуто конечное состояние $\textrm{IsEnd}(s)$
     </li><li>a discount factor $0\leqslant\gamma\leqslant1$
   </li></ul>
 <p></p>
@@ -375,7 +375,7 @@
 \[\boxed{\pi : s \mapsto a}\]
 </div>
 <br>
-<p><span class="new-item item-g">Utility</span> The utility of a path $(s_0, ..., s_k)$ is the discounted sum of the rewards on that path. In other words,</p>
+<p><span class="new-item item-g">Полезность</span> Полезность пути $(s_0, ..., s_k)$ - это дисконтированная сумма вознаграждений на этом пути. Другими словами,</p>
 <div class=mobile-container>
 \[\boxed{u(s_0,...,s_k)=\sum_{i=1}^{k}r_i\gamma^{i-1}}\]
 </div>
@@ -384,7 +384,7 @@
   <img alt=Utility class=img-responsive netsrc=teaching/cs-221/illustrations/ src=utility.png?858a1983bd7bb62a99dcbdad079e57c7 style=width:100%;max-width:465px>
 </center>
 </div>
-<p><i>The figure above is an illustration of the case $k=4$.</i></p>
+<p><i>На рисунке выше показан случай $k=4$.</i></p>
 <br>
 <p><span class="new-item item-g">Q-value</span> The $Q$-value of a policy $\pi$ at state $s$ with action $a$, also denoted $Q_{\pi}(s,a)$, is the expected utility from state $s$ after taking action $a$ and then following policy $\pi$. It is defined as follows:</p>
 <div class=mobile-container>
@@ -425,12 +425,12 @@ with
 \[\boxed{V_{\textrm{opt}}(s)=\underset{a\in\textrm{ Actions}(s)}{\textrm{max}}Q_\textrm{opt}(s,a)}\]
 </div>
 <br>
-<p><span class="new-item item-b">Optimal policy</span> The optimal policy $\pi_{\textrm{opt}}$ is defined as being the policy that leads to the optimal values. It is defined by:</p>
+<p><span class="new-item item-b">Оптимальная политика</span> Оптимальная политика $\pi_{\textrm{opt}}$ определяется как политика, которая приводит к оптимальным ценностям. Она определяется:</p>
 <div class=mobile-container>
 \[\forall s,\quad\boxed{\pi_{\textrm{opt}}(s)=\underset{a\in\textrm{ Actions}(s)}{\textrm{argmax}}Q_\textrm{opt}(s,a)}\]
 </div>
 <br>
-<p><span class="new-item item-r">Value iteration</span> Value iteration is an algorithm that finds the optimal value $V_{\textrm{opt}}$ as well as the optimal policy $\pi_{\textrm{opt}}$. It is done as follows:
+<p><span class="new-item item-r">Итерация ценности</span> Итерация ценности - это ищущий оптимальное значение $V_{\textrm{opt}}$ и оптимальную политику $\pi_{\textrm{opt}}$ алгоритм. Делается это следующим образом:
 </p><ul>
 <li><u>Initialization</u>: for all states $s$, we have
 <div class=mobile-container>
@@ -445,7 +445,7 @@ with
 \[\boxed{Q_\textrm{opt}^{(t-1)}(s,a)=\sum_{s'\in\textrm{ States}}T(s,a,s')\Big[\textrm{Reward}(s,a,s')+\gamma V_\textrm{opt}^{(t-1)}(s')\Big]}\]
 </div>
 </li></ul><p></p>
-<p><span class=remark>Remark: if we have either $\gamma &lt; 1$ or the MDP graph being acyclic, then the value iteration algorithm is guaranteed to converge to the correct answer.</span></p>
+<p><span class=remark>Примечание: если у нас либо $\gamma &lt; 1$, либо граф MDP ацикличен, то алгоритм итерации значений гарантированно сходится к правильному ответу.</span></p>
 <br>
 <h3>Когда неизвестны переходы и награды</h3>
 <p>Теперь предположим, что вероятности перехода и награды неизвестны.</p>
@@ -460,12 +460,12 @@ and
 These estimations will be then used to deduce $Q$-values, including $Q_\pi$ and $Q_\textrm{opt}.$<p></p>
 <p><span class=remark>Примечание: Основанный на модели Монте-Карло считается вне политики, потому что оценка не зависит от конкретной политики.</span></p>
 <br>
-<p><span class="new-item item-r">Model-free Monte Carlo</span> The model-free Monte Carlo method aims at directly estimating $Q_{\pi}$, as follows:
+<p><span class="new-item item-r">Безмодельный Монте-Карло</span> Безмодельный метод Монте-Карло направлен на прямую оценку $Q_{\pi}$ следующим образом:
 </p><div class=mobile-container>
 \[\boxed{\widehat{Q}_\pi(s,a)=\textrm{average of }u_t\textrm{ where }s_{t-1}=s, a_t=a}\]
 </div>
 where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
-<p><span class=remark>Remark: model-free Monte Carlo is said to be on-policy, because the estimated value is dependent on the policy $\pi$ used to generate the data.</span></p>
+<p><span class=remark>Примечание: Безмодельный Монте-Карло считается действующим в соответствии с политикой, поскольку оценочное значение зависит от политики $\pi$, используемой для генерации данных.</span></p>
 <br>
 <p><span class="new-item item-r">Equivalent formulation</span> By introducing the constant $\eta=\frac{1}{1+(\#\textrm{updates to }(s,a))}$ and for each $(s,a,u)$ of the training set, the update rule of model-free Monte Carlo has a convex combination formulation:
 </p><div class=mobile-container>
@@ -499,10 +499,10 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <br>
 <p><span class="new-item item-b">Игра для двух игроков с нулевой суммой</span> это игра; в которой полностью соблюдается каждое состояние и игроки ходят по очереди. Она определяется с помощью:
 </p><ul>
-  <li>a starting state $s_{\textrm{start}}$
+  <li>начальное состояние $s_{\textrm{start}}$
   </li><li>possible actions $\textrm{Actions}(s)$ from state $s$
   </li><li>successors $\textrm{Succ}(s,a)$ from states $s$ with actions $a$
-  </li><li>whether an end state was reached $\textrm{IsEnd}(s)$
+  </li><li>было ли достигнуто конечное состояние $\textrm{IsEnd}(s)$
   </li><li>the agent's utility $\textrm{Utility}(s)$ at end state $s$
   </li><li>the player $\textrm{Player}(s)$ who controls state $s$
 </li></ul><p></p>
@@ -529,14 +529,14 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <div class=mobile-container>
 \[\boxed{V_{\textrm{minimax}}(s)=\left\{\begin{array}{ll}\textrm{Utility}(s) &amp; \textrm{IsEnd}(s)\\\underset{a\in\textrm{Actions}(s)}{\textrm{max}}V_{\textrm{minimax}}(\textrm{Succ}(s,a)) &amp; \textrm{Player}(s)=\textrm{agent}\\\underset{a\in\textrm{Actions}(s)}{\textrm{min}}V_{\textrm{minimax}}(\textrm{Succ}(s,a)) &amp; \textrm{Player}(s)=\textrm{opp}\end{array}\right.}\]
 </div>
-<p><span class=remark>Remark: we can extract $\pi_{\textrm{max}}$ and $\pi_{\textrm{min}}$ from the minimax value $V_{\textrm{minimax}}$.</span></p>
+<p><span class=remark>Примечание: мы можем извлечь $\pi_{\textrm{max}}$ и $\pi_{\textrm{min}}$ из минимаксного значения $V_{\textrm{minimax}}$.</span></p>
 <div class=mobile-container>
 <center>
   <img alt=Minimax class=img-responsive netsrc=teaching/cs-221/illustrations/ src=minimax.png?a10b34193ca7a93d1c7a764ee19de949 style=width:100%;max-width:600px>
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Minimax properties</span> By noting $V$ the value function, there are 3 properties around minimax to have in mind:
+<p><span class="new-item item-r">Свойства minimax</span> Обозначим $V$ как функцию ценности, необходимо иметь в виду 3 свойства вокруг минимакса:
 </p><ul>
 <li><i>Property 1</i>: if the agent were to change its policy to any $\pi_{\textrm{agent}}$, then the agent would be no better off.
 <div class=mobile-container>
@@ -559,7 +559,7 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 <br>
 <h3>Ускорение minimax</h3>
 <p><span class="new-item item-g">Evaluation function</span> An evaluation function is a domain-specific and approximate estimate of the value $V_{\textrm{minimax}}(s)$. It is denoted $\textrm{Eval}(s)$.</p>
-<p><span class=remark>Remark: $\textrm{FutureCost}(s)$ is an analogy for search problems.</span></p>
+<p><span class=remark>Примечание: $\textrm{FutureCost}(s)$ - аналог задачи поиска.</span></p>
 <br>
 <p><span class="new-item item-b">Alpha-beta pruning</span> Alpha-beta pruning is a domain-general exact method optimizing the minimax algorithm by avoiding the unnecessary exploration of parts of the game tree. To do so, each player keeps track of the best value they can hope for (stored in $\alpha$ for the maximizing player and in $\beta$ for the minimizing player). At a given step, the condition $\beta &lt; \alpha$ means that the optimal path is not going to be in the current branch as the earlier player had a better option at their disposal.</p>
 <div class=mobile-container>
@@ -590,12 +590,12 @@ where $u_t$ denotes the utility starting at step $t$ of a given episode.<p></p>
 </div>
 </li></ul><p></p>
 <br>
-<p><span class="new-item item-b">Game evaluation</span> The value of the game $V(\pi_A,\pi_B)$ when player $A$ follows $\pi_A$ and player $B$ follows $\pi_B$ is such that:</p>
+<p><span class="new-item item-b">Оценка игры</span> Ценность игры $V(\pi_A,\pi_B)$, когда игрок $A$ следует за $\pi_A$, а игрок $B$ следует за $\pi_B$, такова, что:</p>
 <div class=mobile-container>
 \[\boxed{V(\pi_A,\pi_B)=\sum_{a,b}\pi_A(a)\pi_B(b)V(a,b)}\]
 </div>
 <br>
-<p><span class="new-item item-r">Minimax theorem</span> By noting $\pi_A,\pi_B$ ranging over mixed strategies, for every simultaneous two-player zero-sum game with a finite number of actions, we have:</p>
+<p><span class="new-item item-r">Minimax теорема</span> Положим, что $\pi_A,\pi_B$ пробегают по смешанным стратегиям для любой одновременной игры двух игроков с нулевой суммой и конечного числа действий, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\max_{\pi_A}\min_{\pi_B}V(\pi_A,\pi_B)=\min_{\pi_B}\max_{\pi_A}V(\pi_A,\pi_B)}\]
 </div>

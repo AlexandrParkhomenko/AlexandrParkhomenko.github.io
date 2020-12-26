@@ -135,9 +135,9 @@
 </center>
 </div>
 <br>
-<i>Remark: the application of $K$ filters of size $F\times F$ results in an output feature map of size $O \times O \times K$.</i>
+<i>Примечание: применение $K$ фильтров размера $F\times F$ приводит к выходной карте признаков размером $O \times O \times K$.</i>
 <br><br>
-<p><span class="new-item item-b">Stride</span> For a convolutional or a pooling operation, the stride $S$ denotes the number of pixels by which the window moves after each operation.
+<p><span class="new-item item-b">Шаг</span> $S$tride - Для сверточной операции или операции пулинга шаг $S$ обозначает количество пикселей, на которое окно перемещается после каждой операции.
 </p><div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=stride.png?36b5b2e02f7e02c3c4075a9d836c048c style=width:100%;max-width:700px>
@@ -145,7 +145,7 @@
 </div>
 <br>
 <br>
-<p><span class="new-item item-b">Zero-padding</span> Zero-padding denotes the process of adding $P$ zeroes to each side of the boundaries of the input. This value can either be manually specified or automatically set through one of the three modes detailed below:</p>
+<p><span class="new-item item-b">Дополнение нулями</span> Zero-padding означает процесс добавления $P$ нулей к каждой стороне границ ввода. Это значение можно указать вручную или автоматически в одном из трех режимов, описанных ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:700px;">
@@ -196,7 +196,7 @@
 </center>
 </div>
 <br>
-<p><span class=remark>Remark: often times, $P_\text{start} = P_\text{end} \triangleq P$, in which case we can replace $P_\text{start} + P_\text{end}$ by $2P$ in the formula above.</span></p>
+<p><span class=remark>Примечание: часто $P_\text{start} = P_\text{end} \triangleq P$, и в этом случае мы можем заменить $P_\text{start} + P_\text{end}$ на $2P$ в формуле выше.</span></p>
 <br>
 <p><span class="new-item item-r">Понимание сложности модели</span> Чтобы оценить сложность модели, часто бывает полезно определить количество параметров, которые будет иметь её архитектура. В данном слое сверточной нейронной сети это делается следующим образом:</p>
 <div class=mobile-container>
@@ -260,7 +260,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </p><div class=mobile-container>
 \[\boxed{R_k = 1 + \sum_{j=1}^{k} (F_j - 1) \prod_{i=0}^{j-1} S_i}\]
 </div>
-<p><i>In the example below, we have $F_1 = F_2 = 3$ and $S_1 = S_2 = 1$, which gives $R_2 = 1 + 2\cdot 1 + 2\cdot 1 = 5$.</i></p>
+<p><i>В приведенном ниже примере у нас есть $F_1 = F_2 = 3$ и $S_1 = S_2 = 1$, который дает $R_2 = 1 + 2\cdot 1 + 2\cdot 1 = 5$.</i></p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=receptive-field-a.png?3f718275d9c2de56f2255b2a4797ea87 style=width:100%;max-width:450px>
@@ -305,7 +305,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Softmax</span> The softmax step can be seen as a generalized logistic function that takes as input a vector of scores $x\in\mathbb{R}^n$ and outputs a vector of output probability $p\in\mathbb{R}^n$ through a softmax function at the end of the architecture. It is defined as follows:</p>
+<p><span class="new-item item-g">Softmax</span> Шаг softmax можно рассматривать как обобщенную логистическую функцию, которая принимает на вход вектор оценок $x\in\mathbb{R}^n$ и выводит вектор выходной вероятности $p\in\mathbb{R}^n$ через функцию softmax в конце архитектуры. Это определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{p=\begin{pmatrix}p_1\\\vdots\\p_n\end{pmatrix}}\quad\textrm{where}\quad\boxed{p_i=\frac{e^{x_i}}{\displaystyle\sum_{j=1}^ne^{x_j}}}\]
 </div>
@@ -380,7 +380,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Intersection over Union</span> Intersection over Union, also known as $\textrm{IoU}$, is a function that quantifies how correctly positioned a predicted bounding box $B_p$ is over the actual bounding box $B_a$. It is defined as:</p>
+<p><span class="new-item item-g">Пересечение по объединению</span> Intersection over Union (IoU) - это функция, которая количественно определяет, насколько правильно расположена предсказанная ограничивающая рамка $B_p$ над фактической ограничительной рамкой $B_a$. Она определяется как:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{IoU}(B_p,B_a)=\frac{B_p\cap B_a}{B_p\cup B_a}}\]
 </div>
@@ -404,7 +404,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </div>
 <br>
 <p><span class="new-item item-r">YOLO</span> You Only Look Once (YOLO) - это алгоритм обнаружения объектов, который выполняет следующие шаги:</p>
-<p>• Step 1: Divide the input image into a $G\times G$ grid.
+<p>• Шаг 1: Разделить входное изображение на сетку $G\times G$.
 <br>• Шаг 2: Для каждой ячейки сетки запустите CNN, которая предсказывает $y$ в следующей форме:
 </p><div class=mobile-container>
 \[\boxed{y=\big[\underbrace{p_c,b_x,b_y,b_h,b_w,c_1,c_2,...,c_p}_{\textrm{repeated }k\textrm{ times}},...\big]^T\in\mathbb{R}^{G\times G\times k\times(5+p)}}\]
@@ -417,7 +417,7 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 </center>
 </div>
 <br>
-<p><span class=remark>Remark: when $p_c=0$, then the network does not detect any object. In that case, the corresponding predictions $b_x, ..., c_p$ have to be ignored.</span></p>
+<p><span class=remark>Примечание: когда $p_c=0$, сеть не обнаруживает никаких объектов. В этом случае соответствующие прогнозы $b_x, ..., c_p$ следует игнорировать.</span></p>
 <br>
 <p><span class="new-item item-r">R-CNN</span> Region with Convolutional Neural Networks (R-CNN) - это алгоритм обнаружения объектов, который сначала сегментирует изображение, чтобы найти потенциально релевантные ограничивающие рамки, а затем запускает алгоритм обнаружения, чтобы найти наиболее вероятные объекты в этих ограничивающих рамках.</p>
 <div class=mobile-container>
@@ -459,9 +459,9 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 <br>
 <p><span class="new-item item-b">One Shot Learning</span> One Shot Learning is a face verification algorithm that uses a limited training set to learn a similarity function that quantifies how different two given images are. The similarity function applied to two images is often noted $d(\textrm{image 1}, \textrm{image 2}).$</p>
 <br>
-<p><span class="new-item item-r">Siamese Network</span> Siamese Networks aim at learning how to encode images to then quantify how different two images are. For a given input image $x^{(i)}$, the encoded output is often noted as $f(x^{(i)})$.</p>
+<p><span class="new-item item-r">Сиамские сети</span> Siamese Network стремятся научиться кодировать изображения, чтобы затем количественно оценить, насколько два изображения отличаются друг от друга. Для заданного входного изображения $x^{(i)}$ закодированный вывод часто обозначается как $f(x^{(i)})$.</p>
 <br>
-<p><span class="new-item item-g">Triplet loss</span> The triplet loss $\ell$ is a loss function computed on the embedding representation of a triplet of images $A$ (anchor), $P$ (positive) and $N$ (negative). The anchor and the positive example belong to a same class, while the negative example to another one. By calling $\alpha\in\mathbb{R}^+$ the margin parameter, this loss is defined as follows:</p>
+<p><span class="new-item item-g">Потеря триплета</span> Triplet loss $\ell$ - это функция потерь, вычисленная на представлении триплета изображений $A$ (anchor), $P$ (positive) и $N$ (negative). Якорь (anchor) и положительный пример относятся к одному классу, а отрицательный пример - к другому. Называя $\alpha\in\mathbb{R}^+$ параметром отступа, этот потеря определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\ell(A,P,N)=\max\left(d(A,P)-d(A,N)+\alpha,0\right)}\]
 </div>
@@ -473,7 +473,7 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 </center>
 <br>
 <h2><a aria-hidden=true class=anchor href=#style-transfer id=style-transfer></a>Перенос нейронного стиля</h2>
-<p><span class="new-item item-g">Motivation</span> The goal of neural style transfer is to generate an image $G$ based on a given content $C$ and a given style $S$.</p>
+<p><span class="new-item item-g">Мотивация</span> цель переноса нейронного стиля - создать изображение $G$ на основе заданного контента $C$ и заданного стиля $S$.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=neural-style-motivation-en.jpeg?6b66c6e6a11a720c49301837f7834a61 style=width:100%;>
@@ -482,7 +482,7 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 <br>
 <p><span class="new-item item-b">Activation</span> In a given layer $l$, the activation is noted $a^{[l]}$ and is of dimensions $n_H\times n_w\times n_c$</p>
 <br>
-<p><span class="new-item item-r">Content cost function</span> The content cost function $J_{\textrm{content}}(C,G)$ is used to determine how the generated image $G$ differs from the original content image $C$. It is defined as follows:</p>
+<p><span class="new-item item-r">Функция стоимости контента</span> Функция стоимости контента $J_{\textrm{content}}(C,G)$ используется для определения того, как сгенерированное изображение $G$ отличается от исходного изображения $C$ контента. Оно определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{J_{\textrm{content}}(C,G)=\frac{1}{2}||a^{[l](C)}-a^{[l](G)}||^2}\]
 </div>
@@ -493,16 +493,16 @@ where $p_c$ is the probability of detecting an object, $b_x,b_y,b_h,b_w$ are the
 </div>
 <p><span class=remark>Remark: the style matrix for the style image and the generated image are noted $G^{[l](S)}$ and $G^{[l](G)}$ respectively.</span></p>
 <br>
-<p><span class="new-item item-r">Style cost function</span> The style cost function $J_{\textrm{style}}(S,G)$ is used to determine how the generated image $G$ differs from the style $S$. It is defined as follows:</p>
+<p><span class="new-item item-r">Функция стоимости стиля</span> функция стоимости стиля $J_{\textrm{style}}(S,G)$ используется для определения того, как сгенерированное изображение $G$ отличается от стиля $S$. Он определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{J_{\textrm{style}}^{[l]}(S,G)=\frac{1}{(2n_Hn_wn_c)^2}||G^{[l](S)}-G^{[l](G)}||_F^2=\frac{1}{(2n_Hn_wn_c)^2}\sum_{k,k'=1}^{n_c}\Big(G_{kk'}^{[l](S)}-G_{kk'}^{[l](G)}\Big)^2}\]
 </div>
 <br>
-<p><span class="new-item item-b">Overall cost function</span> The overall cost function is defined as being a combination of the content and style cost functions, weighted by parameters $\alpha,\beta$, as follows:</p>
+<p><span class="new-item item-b">Функция общей стоимости</span> функция общей стоимости определяется как комбинация функций стоимости контента и стиля, взвешенных параметрами $\alpha,\beta$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{J(G)=\alpha J_{\textrm{content}}(C,G)+\beta J_{\textrm{style}}(S,G)}\]
 </div>
-<p><span class=remark>Remark: a higher value of $\alpha$ will make the model care more about the content while a higher value of $\beta$ will make it care more about the style.</span></p>
+<p><span class=remark>Примечание: более высокое значение $\alpha$ заставит модель больше заботиться о контенте, а более высокое значение $\beta$ заставит её больше заботиться о стиле.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#ct-architectures id=ct-architectures></a>Архитектуры с использованием вычислительных трюков</h2>
 <p><span class="new-item item-r">Генеративные состязательные сети</span> Generative adversarial networks, также известные как GANs, состоят из генеративной и дискриминативной моделей, где генеративная модель направлена на генерирование наиболее правдивого вывода, который будет передан дискриминативной модели, направленной на различение созданного и истинного изображения.</p>

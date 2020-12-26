@@ -130,12 +130,12 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Cross-entropy loss</span> In the context of neural networks, the cross-entropy loss $L(z,y)$ is commonly used and is defined as follows:</p>
+<p><span class="new-item item-b">Функция потерь на основе перекрестной энтропии</span> в контексте нейронных сетей обычно используются потери кросс-энтропии $L(z,y)$, которые определяются следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{L(z,y)=-\Big[y\log(z)+(1-y)\log(1-z)\Big]}\]
 </div>
 <br>
-<p><span class="new-item item-b">Learning rate</span> The learning rate, often noted $\alpha$ or sometimes $\eta$, indicates at which pace the weights get updated. This can be fixed or adaptively changed. The current most popular method is called Adam, which is a method that adapts the learning rate.</p>
+<p><span class="new-item item-b">Скорость обучения - часто обозначаемая как $\alpha$ или иногда $\eta$, указывает, с какой скоростью обновляются веса. Её можно исправить или адаптивно изменить. Самый популярный в настоящее время метод называется Adam (адаптивные моменты), он адаптирует скорость обучения.</p>
 <br>
 <p><span class="new-item item-r">Обратное распространение</span> это метод обновления весов в нейронной сети с учетом фактического и желаемого результата. Производная по весу $w$ вычисляется с использованием цепного правила и имеет следующий вид:</p>
 <div class=mobile-container>
@@ -203,7 +203,7 @@
 <h2><a aria-hidden=true class=anchor href=#reinforcement id=reinforcement></a>Обучение с подкреплением и контроль</h2>
 <p>Цель обучения с подкреплением - научить агента развиваться в окружающей среде.</p>
 <h3>Определения</h3>
-<p><span class="new-item item-b">Markov decision processes</span> A Markov decision process (MDP) is a 5-tuple $(\mathcal{S},\mathcal{A},\{P_{sa}\},\gamma,R)$ where:
+<p><span class="new-item item-b">Марковские процессы принятия решений</span> Марковский процесс принятия решений (MDP) представляет собой кортеж из 5 составляющих $(\mathcal{S},\mathcal{A},\{P_{sa}\},\gamma,R)$, где :
 </p><ul>
 <li>$\mathcal{S}$ is the set of states
 </li><li>$\mathcal{A}$ is the set of actions
@@ -244,7 +244,7 @@
 \[\boxed{P_{sa}(s')=\frac{\#\textrm{times took action }a\textrm{ in state }s\textrm{ and got to }s'}{\#\textrm{times took action }a\textrm{ in state }s}}\]
 </div>
 <br>
-<p><span class="new-item item-g">Q-learning</span> $Q$-learning is a model-free estimation of $Q$, which is done as follows:</p>
+<p><span class="new-item item-g">Q-обучение</span> это безмодельная оценка $Q$, которая выполняется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{Q(s,a)\leftarrow Q(s,a)+\alpha\Big[R(s,a,s')+\gamma\max_{a'}Q(s',a')-Q(s,a)\Big]}\]
 </div>

@@ -73,7 +73,7 @@
 </p><div class=mobile-container>
 \[\boxed{a^{&lt; t &gt;}=g_1(W_{aa}a^{&lt; t-1 &gt;}+W_{ax}x^{&lt; t &gt;}+b_a)}\quad\textrm{and}\quad\boxed{y^{&lt; t &gt;}=g_2(W_{ya}a^{&lt; t &gt;}+b_y)}\]
 </div>
-where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared temporally and $g_1, g_2$ activation functions.<br>
+где $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ являются коэффициентами, которые разделяются по времени, и функциями активации $g_1, g_2$ .<br>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=description-block-rnn-ltr.png?74e25518f882f8758439bcb3637715e5 style="width:100%; max-width:630px;">
@@ -148,12 +148,12 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Loss function</span> In the case of a recurrent neural network, the loss function $\mathcal{L}$ of all time steps is defined based on the loss at every time step as follows:</p>
+<p><span class="new-item item-b">Функция потерь</span> В случае рекуррентной нейронной сети функция потерь $\mathcal{L}$ всех временных шагов определяется на основе потерь на каждом временном шаге следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\mathcal{L}(\widehat{y},y)=\sum_{t=1}^{T_y}\mathcal{L}(\widehat{y}^{&lt; t &gt;},y^{&lt; t &gt;})}\]
 </div>
 <br>
-<p><span class="new-item item-b">Backpropagation through time</span> Backpropagation is done at each point in time. At timestep $T$, the derivative of the loss $\mathcal{L}$ with respect to weight matrix $W$ is expressed as follows:</p>
+<p><span class="new-item item-b">Обратное распространение во времени</span> Обратное распространение выполняется в каждый момент времени. На временном шаге $T$ производная потерь $\mathcal{L}$ по весовой матрице $W$ выражается следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\frac{\partial \mathcal{L}^{(T)}}{\partial W}=\sum_{t=1}^T\left.\frac{\partial\mathcal{L}^{(T)}}{\partial W}\right|_{(t)}}\]
 </div>
@@ -198,11 +198,11 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Types of gates</span> In order to remedy the vanishing gradient problem, specific gates are used in some types of RNNs and usually have a well-defined purpose. They are usually noted $\Gamma$ and are equal to:</p>
+<p><span class="new-item item-g">Типы вентилей</span> чтобы решить проблему исчезающего градиента, в некоторых типах RNN используются определенные вентили, которые обычно имеют четко определенную цель. Обычно они обозначаются $\Gamma$ и равны:</p>
 <div class=mobile-container>
 \[\boxed{\Gamma=\sigma(Wx^{&lt; t &gt;}+Ua^{&lt; t-1 &gt;}+b)}\]
 </div>
-<p>where $W, U, b$ are coefficients specific to the gate and $\sigma$ is the sigmoid function. The main ones are summed up in the table below:</p>
+<p>где $W, U, b$ ― коэффициенты, относящиеся к вентилю, а $\sigma$ - сигмовидная функция. Основные из них приведены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -279,7 +279,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </table>
 </center>
 </div>
-<p><span class=remark>Remark: the sign $\star$ denotes the element-wise multiplication between two vectors.</span></p>
+<p><span class=remark>Примечание: знак $\star$ означает поэлементное умножение двух векторов.</span></p>
 <br>
 <p><span class="new-item item-r">Варианты RNN</span> В таблице ниже перечислены другие часто используемые архитектуры RNN:</p>
 <div class=mobile-container>
@@ -302,7 +302,7 @@ where $W_{ax}, W_{aa}, W_{ya}, b_a, b_y$ are coefficients that are shared tempor
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#word-representation id=word-representation></a>Обучение представления слов</h2>
-<p>In this section, we note $V$ the vocabulary and $|V|$ its size.</p>
+<p>В этом разделе мы обозначаем словарь $V$ и его размер $|V|$.</p>
 <h3>Мотивация и обозначения</h3>
 <p><span class="new-item item-g">Методы представления</span> два основных способа представления слов подытожены в таблице ниже:</p>
 <div class=mobile-container>
@@ -369,11 +369,11 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 <p><span class=remark>Примечание: отдельные компоненты представления слов не обязательно поддаются интерпретации.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#comparing-words id=comparing-words></a>Сравнение слов</h2>
-<p><span class="new-item item-b">Cosine similarity</span> The cosine similarity between words $w_1$ and $w_2$ is expressed as follows:</p>
+<p><span class="new-item item-b">Косинусное сходство</span> косинусное сходство между словами $w_1$ и $w_2$ выражается следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{similarity}=\frac{w_1\cdot w_2}{||w_1||\textrm{ }||w_2||}=\cos(\theta)}\]
 </div>
-<p><span class=remark>Remark: $\theta$ is the angle between words $w_1$ and $w_2$.</span></p>
+<p><span class=remark>Примечание: $\theta$ - угол между словами $w_1$ и $w_2$.</span></p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=cosine-similarity.png?58c75740dd02237336f5883328d050e9 style="width:100%; max-width:250px;">
@@ -388,7 +388,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#language-model id=language-model></a>Языковая модель</h2>
-<p><span class="new-item item-r">Overview</span> A language model aims at estimating the probability of a sentence $P(y)$.</p>
+<p><span class="new-item item-r">Обзор</span> языковая модель предназначена для оценки вероятности предложения $P(y)$.</p>
 <br>
 <p><span class="new-item item-r">Модель $n$</span> граммы - эта модель представляет собой наивный подход, направленный на количественную оценку вероятности того, что выражение появляется в корпусе, путем подсчета его количества появлений в обучающих данных.</p>
 <br>
@@ -396,7 +396,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 <div class=mobile-container>
 \[\boxed{\textrm{PP}=\prod_{t=1}^T\left(\frac{1}{\sum_{j=1}^{|V|}y_j^{(t)}\cdot \widehat{y}_j^{(t)}}\right)^{\frac{1}{T}}}\]
 </div>
-<p><span class=remark>Remark: PP is commonly used in $t$-SNE.</span></p>
+<p><span class=remark>Примечание: PP обычно используется в $t$-SNE.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#machine-translation id=machine-translation></a>Машинный перевод</h2>
 <p><span class="new-item item-r">Overview</span> A machine translation model is similar to a language model except it has an encoder network placed before. For this reason, it is sometimes referred as a conditional language model.</p>
@@ -405,8 +405,8 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 \[\boxed{y=\underset{y^{&lt; 1 &gt;}, ..., y^{&lt; T_y &gt;}}{\textrm{arg max}}P(y^{&lt; 1 &gt;},...,y^{&lt; T_y &gt;}|x)}\]
 </div>
 <br>
-<p><span class="new-item item-g">Beam search</span> It is a heuristic search algorithm used in machine translation and speech recognition to find the likeliest sentence $y$ given an input $x$.</p>
-<p>• Step 1: Find top $B$ likely words $y^{&lt; 1 &gt;}$
+<p><span class="new-item item-g">Лучевой поиск</span> это алгоритм эвристического поиска, используемый в машинном переводе и распознавании речи для поиска наиболее вероятного предложения $y$ при вводе $x$.</p>
+<p>• Шаг 1: Найти top $B$ наиболее вероятных слов $y^{&lt; 1 &gt;}$
 <br>• Step 2: Compute conditional probabilities $y^{&lt; k &gt;}|x,y^{&lt; 1 &gt;},...,y^{&lt; k-1 &gt;}$
 <br>• Step 3: Keep top $B$ combinations $x,y^{&lt; 1&gt;},...,y^{&lt; k &gt;}$</p>
 <br>
@@ -424,7 +424,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 <div class=mobile-container>
 \[\boxed{\textrm{Objective } = \frac{1}{T_y^\alpha}\sum_{t=1}^{T_y}\log\Big[p(y^{&lt; t &gt;}|x,y^{&lt; 1 &gt;}, ..., y^{&lt; t-1 &gt;})\Big]}\]
 </div>
-<p><span class=remark>Remark: the parameter $\alpha$ can be seen as a softener, and its value is usually between 0.5 and 1.</span></p>
+<p><span class=remark>Примечание: параметр $\alpha$ можно рассматривать как смягчитель, и его значение обычно составляет от 0.5 до 1.</span></p>
 <br>
 <p><span class="new-item item-b">Error analysis</span> When obtaining a predicted translation $\widehat{y}$ that is bad, one can wonder why we did not get a good translation $y^*$ by performing the following error analysis:</p>
 <div class=mobile-container>
@@ -456,11 +456,11 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Bleu score</span> The bilingual evaluation understudy (bleu) score quantifies how good a machine translation is by computing a similarity score based on $n$-gram precision. It is defined as follows:
+<p><span class="new-item item-b">Оценка Bleu</span> оценка дублера для двуязычной оценки (bilingual evaluation understudy, bleu) количественно определяет, насколько хорош машинный перевод, путем вычисления оценки сходства на основе точности $n$-граммов. Это определяется следующим образом:
 </p><div class=mobile-container>
 \[\boxed{\textrm{bleu score}=\exp\left(\frac{1}{n}\sum_{k=1}^np_k\right)}\]
 </div>
-where $p_n$ is the bleu score on $n$-gram only defined as follows:
+где $p_n$ - это оценка по $n$-грамму, определяемая только следующим образом:
 <div class=mobile-container>
 \[p_n=\frac{\displaystyle\sum_{\textrm{n-gram}\in\widehat{y}}\textrm{count}_{\textrm{clip}}(\textrm{n-gram})}{\displaystyle\sum_{\textrm{n-gram}\in\widehat{y}}\textrm{count}(\textrm{n-gram})}\]
 </div>

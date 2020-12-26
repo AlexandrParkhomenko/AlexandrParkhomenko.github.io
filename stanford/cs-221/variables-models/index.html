@@ -71,10 +71,10 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Scope and arity</span> The scope of a factor $f_j$ is the set of variables it depends on. The size of this set is called the arity.</p>
+<p><span class="new-item item-r">Объем и арность</span> Объем фактора $f_j$ - это набор переменных, от которых он зависит. Размер этого набора называется арностью.</p>
 <p><span class=remark>Примечание: факторы арности 1 и 2 называются соответственно унарными и бинарными.</span></p>
 <br>
-<p><span class="new-item item-b">Assignment weight</span> Each assignment $x=(x_1,...,x_n)$ yields a weight $\textrm{Weight}(x)$ defined as being the product of all factors $f_j$ applied to that assignment. Its expression is given by:</p>
+<p><span class="new-item item-b">Вес присвоения</span> каждое присвоение $x=(x_1,...,x_n)$ дает весовой коэффициент $\textrm{Weight}(x)$, определяемый как произведение всех факторов $f_j$, примененных к этому назначению. Его выражение опредляется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{Weight}(x)=\prod_{j=1}^mf_j(x)}\]
 </div>
@@ -83,9 +83,9 @@
 </p><div class=mobile-container>
 \[\boxed{\forall j\in[\![1,m]\!],\quad f_j(x)\in\{0,1\}}\]
 </div>
-Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only if $f_j(x)=1$.<p></p>
+Здесь ограничение $j$ с присвоением $x$ считается выполненным тогда и только тогда, когда $f_j(x)=1$.<p></p>
 <br>
-<p><span class="new-item item-g">Consistent assignment</span> An assignment $x$ of a CSP is said to be consistent if and only if $\textrm{Weight}(x)=1$, i.e. all constraints are satisfied.</p>
+<p><span class="new-item item-g">Непротиворечивое присвоение</span> Присвоение $x$ CSP называется непротиворечивым тогда и только тогда, когда $\textrm{Weight}(x)=1$, т.е. все ограничения выполняются.</p>
 <div class=mobile-container>
 <center>
   <img alt="Consistent assignment" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=consistent-assignment.png?b00b47ff7756953951802408a27cc818 style=width:100%;max-width:400px>
@@ -93,15 +93,15 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </div>
 <br>
 <h3><a aria-hidden=true class=anchor href=#dynamic-ordering id=dynamic-ordering></a>Динамическое упорядочивание</h3>
-<p><span class="new-item item-g">Dependent factors</span> The set of dependent factors of variable $X_i$ with partial assignment $x$ is called $D(x,X_i)$, and denotes the set of factors that link $X_i$ to already assigned variables.</p>
+<p><span class="new-item item-g">Зависимые факторы</span> Набор зависимых факторов переменной $X_i$ с частичным присвоением $x$ называется $D(x,X_i)$ и обозначает набор факторов, которые связывают $X_i$ с уже присвоенными переменными.</p>
 <br>
 <p><span class="new-item item-r">Backtracking search</span> Backtracking search is an algorithm used to find maximum weight assignments of a factor graph. At each step, it chooses an unassigned variable and explores its values by recursion. Dynamic ordering (<i>i.e.</i> choice of variables and values) and lookahead (<i>i.e.</i> early elimination of inconsistent options) can be used to explore the graph more efficiently, although the worst-case runtime stays exponential: $O(|\text{Domain}|^n)$.</p>
 <br>
 <p><span class="new-item item-b">Прямая проверка</span> это эвристика упреждающего просмотра за один шаг. Она упреждающе удаляет несогласованные значения из доменов соседних переменных. Она имеет следующие характеристики:
 </p><ul>
-<li>After assigning a variable $X_i$, она удаляет несовместимые значения из доменов всех своих соседей.
+<li>После присвоения переменной $X_i$, она удаляет несовместимые значения из доменов всех своих соседей.
 </li><li>Если какой-либо из этих доменов становится пустым, мы останавливаем локальный поиск с возвратом.
-</li><li>If we un-assign a variable $X_i$, мы должны восстановить домен её соседей.
+</li><li>Если мы отменим присвоение переменной $X_i$, мы должны восстановить домен её соседей.
 </li></ul><p></p>
 <br>
 <p><span class="new-item item-g">Наиболее ограниченная переменная</span> Это эвристика упорядочения на уровне переменных, которая выбирает следующую неназначенную переменную, которая имеет наименьшее количество согласованных значений. Это приводит к тому, что непоследовательные присвоения терпят неудачу раньше при поиске, что обеспечивает более эффективное сокращение.</p>
@@ -115,10 +115,10 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </div>
 <p><i>Приведенный выше пример является иллюстрацией задачи о трех цветах с поиском с возвратом в сочетании с наиболее ограниченным исследованием переменных и эвристикой наименее ограниченного значения, а также прямой проверкой на каждом шаге.</i></p>
 <br>
-<p><span class="new-item item-g">Arc consistency</span> We say that arc consistency of variable $X_l$ with respect to $X_k$ is enforced when for each $x_l \in \textrm{Domain}_l$:
+<p><span class="new-item item-g">Согласованность дуги</span> Мы говорим о непротиворечивости дуги переменной $X_l$ относительно $X_k$ при обеспечении для каждого $x_l \in \textrm{Domain}_l$:
 </p><ul>
 <li> unary factors of $X_l$ are non-zero,
-</li><li> there exists at least one $x_k \in \textrm{Domain}_k$ such that any factor between $X_l$ and $X_k$ is non-zero.
+</li><li> существует по крайней мере один $x_k \in \textrm{Domain}_k$. Для него любой множитель между $X_l$ и $X_k$ отличен от нуля.
 </li></ul>
 <p></p>
 <br>
@@ -127,14 +127,14 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <br>
 <h3><a aria-hidden=true class=anchor href=#approximate-methods id=approximate-methods></a>Аппроксимационные методы</h3>
 <p><span class="new-item item-r">Beam search</span> Beam search is an approximate algorithm that extends partial assignments of $n$ variables of branching factor $b=|\textrm{Domain}|$ by exploring the $K$ top paths at each step. The beam size $K \in \{1,...,b^n\}$ controls the tradeoff between efficiency and accuracy. This algorithm has a time complexity of $O(n \cdot Kb\log(Kb))$.</p>
-<p><i>The example below illustrates a possible beam search of parameters $K = 2$, $b = 3$ and $n = 5$.</i></p>
+<p><i>Пример ниже иллюстрирует возможный лучевой поиск при параметрах $K = 2$, $b = 3$ и $n = 5$.</i></p>
 <div class=mobile-container>
 <center>
   <img alt="Beam search" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=beam-search.png?146370731c85c0c07bab7eced4259779 style=width:100%;max-width:450px>
 </center>
 </div>
 <br>
-<p><span class=remark>Remark: $K=1$ corresponds to greedy search whereas $K\rightarrow+\infty$ is equivalent to BFS tree search.</span></p>
+<p><span class=remark>Примечание: $K=1$ соответствует жадному поиску, тогда как $K\rightarrow+\infty$ эквивалентно поиску по дереву BFS.</span></p>
 <br>
 <p><span class="new-item item-b">Iterated conditional modes</span> Iterated conditional modes (ICM) is an iterative approximate algorithm that modifies the assignment of a factor graph one variable at a time until convergence. At step $i$, we assign to $X_i$ the value $v$ that maximizes the product of all factors connected to that variable.</p>
 <p><span class=remark>Примечание: ICM может застрять в локальных минимумах.</span></p>
@@ -142,7 +142,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <p><span class="new-item item-b">Gibbs sampling</span> Gibbs sampling is an iterative approximate method that modifies the assignment of a factor graph one variable at a time until convergence. At step $i$:
 </p><ul>
 <li> we assign to each element $u \in \textrm{Domain}_i$ a weight $w(u)$ that is the product of all factors connected to that variable,
-</li><li> we sample $v$ from the probability distribution induced by $w$ and assign it to $X_i$.
+</li><li> мы выбираем $v$ из индуцированного $w$ распределения вероятностей и присваиваем его $X_i$.
 </li></ul>
 <p></p>
 <p><span class=remark>Примечание: Выборка по Гиббсу можно рассматривать как вероятностный аналог ICM. Преимущество этого метода заключается в возможности избежать локальных минимумов в большинстве случаев.</span></p>
@@ -171,7 +171,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <br>
 <p><span class="new-item item-b">Markov blanket</span> Let $A\subseteq X$ be a subset of variables. We define $\textrm{MarkovBlanket}(A)$ to be the neighbors of $A$ that are not in $A$.</p>
 <br>
-<p><span class="new-item item-r">Proposition</span> Let $C=\textrm{MarkovBlanket}(A)$ and $B=X\backslash(A\cup C)$. Then we have:</p>
+<p><span class="new-item item-r">Утверждение</span> Пусть $C=\textrm{MarkovBlanket}(A)$ и $B=X\backslash(A\cup C)$. Тогда у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{A \perp\!\!\!\!\perp B|C}\]
 </div>
@@ -181,7 +181,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Elimination</span> Elimination is a factor graph transformation that removes $X_i$ from the graph and solves a small subproblem conditioned on its Markov blanket as follows:
+<p><span class="new-item item-g">Устранение</span> Исключение - это преобразование факторного графа с удалением $X_i$ из графа и решением небольшой подзадачи с условием марковского ограждения:
 </p><ul>
 <li>Consider all factors $f_{i,1},...,f_{i,k}$ that depend on $X_i$
 </li><li>Remove $X_i$ and $f_{i,1},...,f_{i,k}$
@@ -206,11 +206,11 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 <h2><a aria-hidden=true class=anchor href=#bayesian-networks id=bayesian-networks></a>Байесовские сети</h2>
 <p>В этом разделе нашей целью будет вычисление условных вероятностей. Какова вероятность того, что запрос предоставит доказательства?</p>
 <h3>Введение</h3>
-<p><span class="new-item item-g">Explaining away</span> Suppose causes $C_1$ and $C_2$ influence an effect $E$. Conditioning on the effect $E$ and on one of the causes (say $C_1$) changes the probability of the other cause (say $C_2$). In this case, we say that $C_1$ has explained away $C_2$.</p>
+<p><span class="new-item item-g">Объяснение</span> Предположим, что причины $C_1$ и $C_2$ влияют на эффект $E$. Обусловление эффекта $E$ и одной из причин (скажем, $C_1$) изменяет вероятность другой причины (скажем, $C_2$). В этом случае мы говорим, что $C_1$ объяснил $C_2$.</p>
 <br>
 <p><span class="new-item item-g">Направленный ациклический граф</span> Directed acyclic graph (DAG) - это конечный ориентированный граф без ориентированных циклов.</p>
 <br>
-<p><span class="new-item item-r">Bayesian network</span> A Bayesian network is a directed acyclic graph (DAG) that specifies a joint distribution over random variables $X=(X_1,...,X_n)$ as a product of local conditional distributions, one for each node:</p>
+<p><span class="new-item item-r">Байесовская сеть</span> Байесовская сеть - это ориентированный ациклический граф (DAG), который определяет совместное распределение по случайным величинам $X=(X_1,...,X_n)$ как произведение локальных условных распределений, по одному для каждого узла:</p>
 <div class=mobile-container>
 \[\boxed{P(X_1=x_1,...,X_n=x_n)\triangleq\prod_{i=1}^np(x_i|x_{\textrm{Parents}(i)})}\]
 </div>
@@ -221,7 +221,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Locally normalized</span> For each $x_{\textrm{Parents}(i)}$, all factors are local conditional distributions. Hence they have to satisfy:</p>
+<p><span class="new-item item-b">Локально нормализованные - для каждого $x_{\textrm{Parents}(i)}$ все факторы являются локальными условными распределениями. Следовательно, они должны удовлетворить:</p>
 <div class=mobile-container>
 \[\boxed{\sum_{x_i}p(x_i|x_{\textrm{Parents}(i)})=1}\]
 </div>
@@ -292,7 +292,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </div>
 <br>
 <h3><a aria-hidden=true class=anchor href=#inference id=inference></a>Байесовский вывод</h3>
-<p><span class="new-item item-g">General probabilistic inference strategy</span> The strategy to compute the probability $P(Q | E=e)$ of query $Q$ given evidence $E=e$ is as follows:
+<p><span class="new-item item-g">Общая стратегия вероятностного вывода</span> Стратегия вычисления вероятности $P(Q | E=e)$ запроса $Q$ при наличии свидетельства (англ: evidence) $E=e$ следующая:
 </p><ul>
 <li><u>Step 1</u>: Remove variables that are not ancestors of the query $Q$ or the evidence $E$ by marginalization
 </li><li><u>Шаг 2</u>: Преобразовать байесовскую сеть в факторный граф
@@ -301,7 +301,7 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </li><li><u>Шаг 5</u>: Запустить вероятностный алгоритм вывода (вручную, variable elimination, Gibbs sampling, particle filtering)
 </li></ul><p></p>
 <br>
-<p><span class="new-item item-r">Forward-backward algorithm</span> This algorithm computes the exact value of $P(H = h_k | E = e)$ (smoothing query) for any $k \in \{1, ..., L\}$ in the case of an HMM of size $L$. To do so, we proceed in 3 steps:
+<p><span class="new-item item-r">Алгоритм прямого-обратного хода - этот алгоритм вычисляет точное значение $P(H = h_k | E = e)$ (запрос сглаживания) для любого $k \in \{1, ..., L\}$ в случае HMM размера $L$. Чтобы сделать так, мы выполняем 3 шага:
 </p><div class=mobile-container>
 <ul>
 <li><u>Step 1</u>: for $i \in \{1,..., L\}$, compute $F_i(h_i) = \sum_{h_{i-1}} F_{i-1}(h_{i-1})p(h_{i}|h_{i-1})p(e_i|h_i)$
@@ -309,20 +309,20 @@ Here, the constraint $j$ with assignment $x$ is said to be satisfied if and only
 </li><li><u>Step 3</u>: for $i \in \{1,...,L\}$, compute $S_i(h_i) = \frac{F_i(h_i)B_i(h_i)}{\sum_{h_i}F_i(h_i)B_i(h_i)}$
 </li></ul>
 </div>
-with the convention $F_0 = B_{L+1} = 1$. From this procedure and these notations, we get that
+с условием $F_0 = B_{L+1} = 1$. Из этой процедуры и этих обозначений мы получаем это
 <div class=mobile-container>
 \[\boxed{P(H = h_k | E = e) = S_k(h_k)}\]
 </div>
 <p></p>
-<p><span class=remark>Remark: this algorithm interprets each assignment to be a path where each edge $h_{i-1} \rightarrow h_i$ is of weight $p(h_{i}|h_{i-1})p(e_i|h_i)$.</span></p>
+<p><span class=remark>Примечание: этот алгоритм интерпретирует каждое присвоение как путь, в котором каждое ребро $h_{i-1} \rightarrow h_i$ имеет вес $p(h_{i}|h_{i-1})p(e_i|h_i)$.</span></p>
 <br>
 <p><span class="new-item item-b">Gibbs sampling</span> This algorithm is an iterative approximate method that uses a small set of assignments (particles) to represent a large probability distribution. From a random assignment $x$, Gibbs sampling performs the following steps for $i\in \{1,...,n\}$ until convergence:
 </p><ul>
 <li> For all $u \in \textrm{Domain}_i$, compute the weight $w(u)$ of assignment $x$ where $X_i = u$
 </li><li> Sample $v$ from the probability distribution induced by $w$: $v \sim P(X_i = v | X_{-i} = x_{-i})$
-</li><li> Set $X_i = v$
+</li><li> Установить $X_i = v$
 </li></ul><p></p>
-<p><span class=remark>Remark: $X_{-i}$ denotes $X \backslash \{X_i\}$ and $x_{-i}$ represents the corresponding assignment.</span></p>
+<p><span class=remark>Примечание: $X_{-i}$ обозначает $X \backslash \{X_i\}$, а $x_{-i}$ представляет соответствующее присвоение.</span></p>
 <br>
 <p><span class="new-item item-g">Particle filtering</span> This algorithm approximates the posterior density of state variables given the evidence of observation variables by keeping track of $K$ particles at a time. Starting from a set of particles $C$ of size $K$, мы итеративно выполняем следующие 3 шага:
 </p><ul>
@@ -339,7 +339,7 @@ with the convention $F_0 = B_{L+1} = 1$. From this procedure and these notations
 <br>
 <p><span class="new-item item-g">Laplace smoothing</span> For each distribution $d$ and partial assignment $(x_{\textrm{Parents}(i)},x_i)$, add $\lambda$ to $\textrm{count}_d(x_{\textrm{Parents}(i)},x_i)$, then normalize to get probability estimates.</p>
 <br>
-<p><span class="new-item item-r">Algorithm</span> The Expectation-Maximization (EM) algorithm gives an efficient method at estimating the parameter $\theta$ through maximum likelihood estimation by repeatedly constructing a lower-bound on the likelihood (E-step) and optimizing that lower bound (M-step) as follows:
+<p><span class="new-item item-r">Алгоритм Expectation-Maximization (EM)</span> алгоритм максимизации ожидания дает эффективный метод оценки параметра $\theta$ посредством оценки максимального правдоподобия путем многократного построения нижней границы правдоподобия (E-шаг) и оптимизации этой нижней границы (M-шаг) следующим образом:
 </p><ul>
 <li><u>E-step</u>: Evaluate the posterior probability $q(h)$ that each data point $e$ came from a particular cluster $h$ as follows:
 <div class=mobile-container>
