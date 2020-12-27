@@ -63,7 +63,7 @@
 <i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
 <h2><a aria-hidden=true class=anchor href=#basics id=basics></a>Основы</h2>
-<p><span class="new-item item-b">Syntax of propositional logic</span> By noting $f,g$ formulas, and $\neg, \wedge, \vee, \rightarrow, \leftrightarrow$ connectives, we can write the following logical expressions:</p>
+<p><span class="new-item item-b">Синтаксис логики высказываний</span> Обозначим формулы $f,g$ и $\neg, \wedge, \vee, \rightarrow, \leftrightarrow$ связки, мы можем написать следующие логические выражения:</p>
 <div class=mobile-container>
 <center>
 <table style=table-layout:fixed;>
@@ -123,20 +123,20 @@
 <p><span class=remark>Примечание: формулы могут быть построены рекурсивно из этих связок.</span></p>
 <br>
 <p><span class="new-item item-r">Модель</span> Модель $w$ обозначает присвоение двоичных весов символам высказываний (пропозициональным).</p>
-<p><i>Example: the set of truth values $w = \{A:0, B:1, C:0\}$ is one possible model to the propositional symbols $A$, $B$ and $C$.</i></p>
+<p><i>Пример: набор значений истинности $w = \{A:0, B:1, C:0\}$ является одной из возможных моделей символов высказываний $A$, $B$ и $C$.</i></p>
 <br&lt;span class="new-item item-b">
-<p><span class="new-item item-b">Interpretation function</span> The interpretation function $\mathcal{I}(f,w)$ outputs whether model $w$ satisfies formula $f$:</p>
+<p><span class="new-item item-b">Функция интерпретации</span> Функция интерпретации $\mathcal{I}(f,w)$ выводит, удовлетворяет ли модель $w$ формуле $f$:</p>
 <div class=mobile-container>
 \[\boxed{\mathcal{I}(f,w)\in\{0,1\}}\]
 </div>
 <br>
-<p><span class="new-item item-g">Set of models</span> $\mathcal{M}(f)$ denotes the set of models $w$ that satisfy formula $f$. Mathematically speaking, we define it as follows:</p>
+<p><span class="new-item item-g">Набор моделей</span> $\mathcal{M}(f)$ обозначает множество моделей $w$, удовлетворяющих формуле $f$. С математической точки зрения мы определяем это следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\mathcal{M}(f) = \{w\, |\, \mathcal{I}(f,w)=1\}}\]
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#knowledge-base id=knowledge-base></a>База знаний</h2>
-<p><span class="new-item item-g">Definition</span> The knowledge base $\textrm{KB}$ is the conjunction of all formulas that have been considered so far. The set of models of the knowledge base is the intersection of the set of models that satisfy each formula. In other words:</p>
+<p><span class="new-item item-g">Определение</span> Knowledge base (KB) - База знаний - это совокупность всех рассмотренных формул. Набор моделей базы знаний - это пересечение набора моделей, удовлетворяющих каждой формуле. Другими словами:</p>
 <div class=mobile-container>
 \[\boxed{\mathcal{M}(\textrm{KB})=\bigcap_{f\in\textrm{KB}}\mathcal{M}(f)}\]
 </div>
@@ -146,19 +146,19 @@
 </center>
 </div>
 <br&lt;span class="new-item item-b">
-<p><span class="new-item item-b">Probabilistic interpretation</span> The probability that query $f$ is evaluated to $1$ can be seen as the proportion of models $w$ of the knowledge base $\textrm{KB}$ that satisfy $f$, <i>i.e.</i>:</p>
+<p><span class="new-item item-b">Вероятностная интерпретация</span> Вероятность того, что запрос $f$ будет оценен как $1$, можно рассматривать как долю моделей $w$ в базе знаний $\textrm{KB}$, которые удовлетворяют $f$, то есть:</p>
 <div class=mobile-container>
 \[\boxed{P(f\,|\,\textrm{KB})=\frac{\displaystyle\sum_{w\in\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)}P(W=w)}{\displaystyle\sum_{w\in\mathcal{M}(\textrm{KB})}P(W=w)}}\]
 </div>
 <br>
-<p><span class="new-item item-g">Satisfiability</span> The knowledge base $\textrm{KB}$ is said to be satisfiable if at least one model $w$ satisfies all its constraints. In other words:</p>
+<p><span class="new-item item-g">Выполнимость</span> База знаний $\textrm{KB}$ называется выполнимой, если хотя бы одна модель $w$ удовлетворяет всем её ограничениям. Другими словами:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{KB satisfiable}\Longleftrightarrow\mathcal{M}(\textrm{KB})\neq\varnothing}\]
 </div>
 <br>
-<p><span class=remark>Remark: $\mathcal{M}(\textrm{KB})$ denotes the set of models compatible with all the constraints of the knowledge base.</span></p>
+<p><span class=remark>Примечание: $\mathcal{M}(\textrm{KB})$ обозначает набор моделей, совместимых со всеми ограничениями базы знаний.</span></p>
 <br>
-<p><span class="new-item item-r">Relation between formulas and knowledge base</span> We define the following properties between the knowledge base $\textrm{KB}$ and a new formula $f$:</p>
+<p><span class="new-item item-r">Связь между формулами и базой знаний</span> Мы определяем следующие свойства между базой знаний $\textrm{KB}$ и новой формулой $f$:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:675px;">
@@ -180,25 +180,25 @@
 <td align=center valign=center>$\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)=\mathcal{M}(\textrm{KB})$</td>
 <td align=center><img alt=Entailment class=img-responsive netsrc=teaching/cs-221/illustrations/ src=entailment.png?7510add6bfb4c6c84aa619042e8d6a59></td>
 <td align=left>• $f$ не несет никакой новой информации
-<br>• Also written $\textrm{KB}\models f$</td>
+<br>• Также пишут $\textrm{KB}\models f$</td>
 </tr>
 <tr>
 <td align=center valign=center>$\textrm{KB}$ contradicts $f$</td>
 <td align=center valign=center>$\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)=\varnothing$</td>
 <td align=center><img alt=Contradiction class=img-responsive netsrc=teaching/cs-221/illustrations/ src=contradiction.png?402da0d087ef53e1650035d69aa34af3></td>
-<td align=left>• No model satisfies the constraints after adding $f$
-<br>• Equivalent to $\textrm{KB}\models\neg f$</td>
+<td align=left>• После добавления $f$ ни одна модель не удовлетворяет ограничениям
+<br>• Эквивалентно $\textrm{KB}\models\neg f$</td>
 </tr>
 <tr>
-<td align=center valign=center>$f$ contingent to $\textrm{KB}$</td>
+<td align=center valign=center>$f$ зависит от $\textrm{KB}$</td>
 <td align=center valign=center>
 $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f) \neq \varnothing$
-<br>and<br>
+<br>и<br>
 $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </td>
 <td align=center><img alt=Contingency class=img-responsive netsrc=teaching/cs-221/illustrations/ src=contingency.png?8e14754f4a779083ac8453302a72f52e></td>
-<td align=left>• $f$ does not contradict $\textrm{KB}$
-<br>• $f$ adds a non-trivial amount of information to $\textrm{KB}$
+<td align=left>• $f$ не противоречит $\textrm{KB}$
+<br>• $f$ добавляет в КБ нетривиальное количество информации
 </td>
 </tr>
 </tbody>
@@ -206,19 +206,19 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Model checking</span> A model checking algorithm takes as input a knowledge base $\textrm{KB}$ and outputs whether it is satisfiable or not.</p>
+<p><span class="new-item item-b">Проверка модели</span> Алгоритм проверки модели принимает в качестве входных данных базу знаний $\textrm{KB}$ и выводит, выполнима она или нет.</p>
 <p><span class=remark>Примечание: популярные алгоритмы проверки моделей включают DPLL и WalkSat.</span></p>
 <br>
-<p><span class="new-item item-r">Inference rule</span> An inference rule of premises $f_1,...,f_k$ and conclusion $g$ is written:</p>
+<p><span class="new-item item-r">Правило вывода</span> Записывается правило вывода посылок $f_1,...,f_k$ и заключения $g$:</p>
 <div class=mobile-container>
 \[\boxed{\frac{f_1,...,f_k}{g}}\]
 </div>
 <br>
-<p><span class="new-item item-r">Forward inference algorithm</span> From a set of inference rules $\textrm{Rules}$, this algorithm goes through all possible $f_1, ..., f_k$ and adds $g$ to the knowledge base $\textrm{KB}$ if a matching rule exists. This process is repeated until no more additions can be made to $\textrm{KB}$.</p>
+<p><span class="new-item item-r">Алгоритм прямого вывода</span> Из набора правил вывода $\textrm{Rules}$ этот алгоритм перебирает все возможные $f_1, ..., f_k$ и добавляет $g$ в базу знаний $\textrm{KB}$, если существует правило сопоставления. Этот процесс повторяется до тех пор, пока не перестанут поступать дополнения в базу знаний.</p>
 <br>
-<p><span class="new-item item-g">Derivation</span> We say that $\textrm{KB}$ derives $f$ (written $\textrm{KB}\vdash f$) with rules $\textrm{Rules}$ if $f$ already is in $\textrm{KB}$ or gets added during the forward inference algorithm using the set of rules $\textrm{Rules}$.</p>
+<p><span class="new-item item-g">Вывод</span> Мы говорим, что $\textrm{KB}$ выводит $f$ (записывается как $\textrm{KB}\vdash f$) с помощью правил $\textrm{Rules}$, если $f$ уже находится в $\textrm{KB}$ или добавляется во время алгоритма прямого вывода с использованием набора правил $\textrm{Rules}$.</p>
 <br>
-<p><span class="new-item item-g">Properties of inference rules</span> A set of inference rules $\textrm{Rules}$ can have the following properties:</p>
+<p><span class="new-item item-g">Свойства правил вывода</span> Набор правил вывода. Правила могут иметь следующие свойства:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; min-width:600px;">
@@ -236,15 +236,15 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 <tr>
 <td align=center>Обоснованность</td>
 <td align=center>$\{f \, | \, \textrm{KB}\vdash f\}\subseteq\{f \, | \, \textrm{KB}\models f\}$</td>
-<td align=left>• Inferred formulas are entailed by $\textrm{KB}$<br>
+<td align=left>• Предполагаемые формулы вытекают из $\textrm{KB}$<br>
 • Можно проверить одно правило за раз<br>
 • <i>"Ничего кроме правды"</i></td>
 </tr>
 <tr>
 <td align=center>Полнота</td>
 <td align=center>$\{f \, | \, \textrm{KB}\vdash f\}\supseteq\{f \, | \, \textrm{KB}\models f\}$</td>
-<td align=left>• Formulas entailing $\textrm{KB}$ are either already in the knowledge base or inferred from it<br>
-• <i>"The whole truth"</i>
+<td align=left>• Влекущие за собой КБ формулы уже есть в базе знаний либо выведены из неё<br>
+• <i>"Полная правда"</i>
 </td>
 </tr>
 </tbody>
@@ -254,22 +254,22 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 <br>
 <h2><a aria-hidden=true class=anchor href=#propositional-logic id=propositional-logic></a>Логика высказываний</h2>
 <p>В этом разделе мы рассмотрим модели на основе логики, в которых используются логические формулы и правила вывода. Идея состоит в том, чтобы сбалансировать выразительность и вычислительную эффективность.</p>
-<p><span class="new-item item-r">Horn clause</span> By noting $p_1,...,p_k$ and $q$ propositional symbols, a Horn clause has the form:</p>
+<p><span class="new-item item-r">Хорновский дизъюнкт</span> Обозначим $p_1,...,p_k$ и $q$ пропозициональные символы, Хорновский дизъюнкт имеет вид:</p>
 <div class=mobile-container>
 \[\boxed{(p_1\wedge...\wedge p_k)\longrightarrow q}\]
 </div>
-<p><span class=remark>Remark: when $q=\textrm{false}$, it is called a "goal clause", otherwise we denote it as a "definite clause".</span></p>
+<p><span class=remark>Примечание: когда $q=\textrm{false}$, это называется "целевой дизъюнкт", в противном случае обозначим его как "определенный дизъюнкт".</span></p>
 <br>
-<p><span class="new-item item-r">Modus ponens</span> For propositional symbols $f_1,...,f_k$ and $p$, the modus ponens rule is written:</p>
+<p><span class="new-item item-r">Modus ponens</span> Правило вывода - Для пропозициональных символов $f_1,...,f_k$ и $p$ записывается правило вывода:</p>
 <div class=mobile-container>
 \[\boxed{\frac{f_1,...,f_k,\quad (f_1\wedge...\wedge f_k)\longrightarrow p}{p}}\]
 </div>
 <p><span class=remark>Примечание: для применения этого правила требуется линейное время, так как каждое приложение генерирует предложение, содержащее один пропозициональный символ.</span></p>
 <br>
-<p><span class="new-item item-g">Completeness</span> Modus ponens is complete with respect to Horn clauses if we suppose that $\textrm{KB}$ contains only Horn clauses and $p$ is an entailed propositional symbol. Applying modus ponens will then derive $p$.</p>
+<p><span class="new-item item-g">Полнота</span> Modus ponens полон относительно Хорновских дизъюнктов, если предположить, что КБ содержит только Хорновские дизъюнкты а $p$ - подразумеваемый пропозициональный символ. После применения modus ponens будет получено $p$.</p>
 <br>
 <p><span class="new-item item-g">Конъюнктивная нормальная форма (CNF)</span> Формула конъюнктивной нормальной формы - это конъюнкция предложений, где каждое предложение является дизъюнкцией атомарных формул.</p>
-<p><span class=remark>Remark: in other words, CNFs are $\wedge$ of $\vee$.</span></p>
+<p><span class=remark>Примечание: другими словами, CNF-ы составляют $\wedge$ из $\vee$.</span></p>
 <br>
 <p><span class="new-item item-r">Эквивалентное представление</span> Каждую формулу логики высказываний можно записать в эквивалентную формулу CNF. В таблице ниже представлены общие свойства преобразования:</p>
 <div class=mobile-container>
@@ -324,7 +324,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Resolution rule</span> For propositional symbols $f_1,...,f_n$, and $g_1,...,g_m$ as well as $p$, the resolution rule is written:</p>
+<p><span class="new-item item-g">Правило разрешения</span> Для пропозициональных символов $f_1,...,f_n$, и $g_1,...,g_m$ так же, как и $p$, правило разрешения записывается:</p>
 <div class=mobile-container>
 \[\boxed{\frac{f_1\vee...\vee f_n\vee p,\quad\neg p\vee g_1\vee...\vee g_m}{f_1\vee...\vee f_n\vee g_1\vee...\vee g_m}}\]
 </div>
@@ -334,7 +334,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </p><ul>
 <li><u>Шаг 1</u>: Преобразовать все формулы в CNF
 </li><li><u>Шаг 2</u>: Повторно применить правило разрешения
-</li><li><u>Step 3</u>: Return unsatisfiable if and only if $\text{False}$ is derived<p></p>
+</li><li><u>Шаг 3</u>: Вернуть неудовлетворительно; если и только если $\text{False}$ is derived<p></p>
 </li></ul>
 <br>
 <h2><a aria-hidden=true class=anchor href=#first-order-logic id=first-order-logic></a>Логика первого порядка</h2>
@@ -345,27 +345,27 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </li><li>предикатные символы на кортеж объектов<p></p>
 </li></ul>
 <br>
-<p><span class="new-item item-r">Horn clause</span> By noting $x_1,...,x_n$ variables and $a_1,...,a_k,b$ atomic formulas, the first-order logic version of a horn clause has the form:</p>
+<p><span class="new-item item-r">Хорновский дизъюнкт</span> Обозначим переменные $x_1,...,x_n$ и атомарные формулы $a_1,...,a_k,b$, логическая версия Хорновского дизъюнкт первого порядка имеет вид:</p>
 <div class=mobile-container>
 \[\boxed{\forall x_1,...,\forall x_n,\quad(a_1\wedge...\wedge a_k)\rightarrow b}\]
 </div>
 <br>
-<p><span class="new-item item-g">Substitution</span> A substitution $\theta$ maps variables to terms and $\textrm{Subst}[\theta,f]$ denotes the result of substitution $\theta$ on $f$.</p>
+<p><span class="new-item item-g">Подстановка</span> Замена $\theta$ отображает переменные в термы, а $\textrm{Subst}[\theta,f]$ обозначает результат замены $\theta$ на $f$.</p>
 <br>
-<p><span class="new-item item-g">Unification</span> Unification takes two formulas $f$ and $g$ and returns the most general substitution $\theta$ that makes them equal:</p>
+<p><span class="new-item item-g">Объединение</span> Объединение берет две формулы $f$ и $g$ и возвращает наиболее общую замену $\theta$, которая уравнивает их:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{Unify}[f,g]=\theta}\quad\textrm{ s.t. }\quad\boxed{\textrm{Subst}[\theta,f]=\textrm{Subst}[\theta,g]}\]
 </div>
-<p><i>Note: $\textrm{Unify}[f,g]$ returns $\textrm{Fail}$ if no such $\theta$ exists.</i></p>
+<p><i>Примечание: $\textrm{Unify}[f,g]$ возвращает $\textrm{Fail}$, если такой $\theta$ не существует.</i></p>
 <br>
-<p><span class="new-item item-b">Modus ponens</span> By noting $x_1,...,x_n$ variables, $a_1, ..., a_k$ and $a'_1,...,a'_k$ atomic formulas and by calling $\theta = \textrm{Unify}(a'_1\wedge ...\wedge a'_k, a_1\wedge ...\wedge a_k)$, the first-order logic version of modus ponens can be written:</p>
+<p><span class="new-item item-b">Modus ponens</span> Обозначим переменные $x_1,...,x_n$, атомарные формулы $a_1, ..., a_k$ и a′1,...,a′k и вызвав θ=Unify(a′1∧...∧a′k,a1∧...∧ak) логическая версия modus ponens первого порядка может быть записана:</p>
 <div class=mobile-container>
 \[\boxed{\frac{a'_1,...,a'_k\quad\forall x_1,...,\forall x_n (a_1\wedge...\wedge a_k)\rightarrow b}{\textrm{Subst}[\theta, b]}}\]
 </div>
 <br>
 <p><span class="new-item item-r">Полнота</span> Modus ponens полон для логики первого порядка только с Хорновскими дизъюнктами.</p>
 <br>
-<p><span class="new-item item-r">Resolution rule</span> By noting $f_1, ..., f_n$, $g_1, ..., g_m$, $p$, $q$ formulas and by calling $\theta=\textrm{Unify}(p,q)$, the first-order logic version of the resolution rule can be written:</p>
+<p><span class="new-item item-r">Правило разрешения</span> Обозначим формулы $f_1, ..., f_n$, $g_1, ..., g_m$, $p$, $q$ и вызовем $\theta=\textrm{Unify}(p,q)$, логическая версия первого порядка правила разрешения может быть записана:</p>
 <div class=mobile-container>
 \[\boxed{\frac{f_1\vee...\vee f_n\vee p,\quad\neg q\vee g_1\vee...\vee g_m}{\textrm{Subst}[\theta,f_1\vee...\vee f_n\vee g_1\vee...\vee g_m]}}\]
 </div>
