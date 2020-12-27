@@ -83,7 +83,7 @@
 <br>
 <p><span class="new-item item-g">Событие</span> Любое подмножество $E$ пространства выборки известно как событие. То есть событие - это набор, состоящий из возможных результатов эксперимента. Если результат эксперимента содержится в $E$, то мы говорим, что $E$ произошло.</p>
 <br>
-<p><span class="new-item item-g">Axioms of probability</span> For each event $E$, we denote $P(E)$ as the probability of event $E$ occurring.</p>
+<p><span class="new-item item-g">Аксиомы вероятности</span> Для каждого события $E$ мы обозначаем $P(E)$ как вероятность наступления события $E$.</p>
 <p><span class="new-item item-b">Аксиома 1</span> Каждая вероятность находится в диапазоне от 0 до 1, то есть:</p>
 <div class=mobile-container>
 \[\boxed{0\leqslant P(E)\leqslant 1}\]
@@ -132,7 +132,7 @@
 <p><span class=remark>Remark: we have $P(A\cap B)=P(A)P(B|A)=P(A|B)P(B)$.</span></p>
 </div>
 <br>
-<p><span class="new-item item-g">Partition</span> Let $\{A_i, i\in[\![1,n]\!]\}$ be such that for all $i$, $A_i\neq\varnothing$. We say that $\{A_i\}$ is a partition if we have:</p>
+<p><span class="new-item item-g">Разбиение</span> Пусть $\{A_i, i\in[\![1,n]\!]\}$ таково, что для всех $i$ $A_i\neq\varnothing$. Мы говорим, что $\{A_i\}$ - разбиение, если у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{\forall i\neq j, A_i\cap A_j=\emptyset\quad\textrm{ and }\quad\bigcup_{i=1}^nA_i=S}\]
 </div>
@@ -141,9 +141,9 @@
 <img alt=Partition class=img-responsive netsrc=teaching/cme-106/illustrations/ src=partition.png?1e98f377294dced2c2ebbb59ce1f6188 style=width:100%;max-width:600px>
 </center>
 </div>
-<p><span class=remark>Remark: for any event $B$ in the sample space, we have $\displaystyle P(B)=\sum_{i=1}^nP(B|A_i)P(A_i)$.</span></p>
+<p><span class=remark>Примечание: для любого события $B$ в пространстве выборки мы имеем $\displaystyle P(B)=\sum_{i=1}^nP(B|A_i)P(A_i)$.</span></p>
 <br>
-<p><span class="new-item item-r">Extended form of Bayes' rule</span> Let $\{A_i, i\in[\![1,n]\!]\}$ be a partition of the sample space. We have:</p>
+<p><span class="new-item item-r">Расширенная форма правила Байеса</span> Пусть $\{A_i, i\in[\![1,n]\!]\}$ - раздел пространства выборки. У нас есть:</p>
 <div class=mobile-container>
 \[\boxed{P(A_k|B)=\frac{P(B|A_k)P(A_k)}{\displaystyle\sum_{i=1}^nP(B|A_i)P(A_i)}}\]
 </div>
@@ -157,7 +157,7 @@
 <h3>Определения</h3>
 <p><span class="new-item item-g">Случайная величина</span> случайная величина, которую часто называют $X$, представляет собой функцию, которая отображает каждый элемент в пространстве выборки на действительную линию.</p>
 <br>
-<p><span class="new-item item-g">Cumulative distribution function (CDF)</span> The cumulative distribution function $F$, which is monotonically non-decreasing and is such that $\underset{x\rightarrow-\infty}{\textrm{lim}}F(x)=0$ and $\underset{x\rightarrow+\infty}{\textrm{lim}}F(x)=1$, is defined as:</p>
+<p><span class="new-item item-g">(Кумулятивная) функция распределения</span> Сumulative distribution function (CDF) $F$, которая монотонно не убывает и такова, что $\underset{x\rightarrow-\infty}{\textrm{lim}}F(x)=0$ и $\underset{x\rightarrow+\infty}{\textrm{lim}}F(x)=1$, определяется как:</p>
 <div class=mobile-container>
 \[\boxed{F(x)=P(X\leqslant x)}\]
 </div>
@@ -170,8 +170,7 @@
 <br>
 <p><span class="new-item item-g">Функция плотности вероятности</span> Probability density function (PDF) $f$ - это вероятность того, что $X$ принимает значения между двумя смежными реализациями случайной величины.</p>
 <br>
-<p><span class="new-item item-b">Relationships involving the PDF and CDF</span> Here are the important properties to know
-in the discrete (D) and the continuous (C) cases.</p>
+<p><span class="new-item item-b">Отношения с участием PDF и CDF</span> Вот важные свойства, которые необходимо знать в дискретном (D) и непрерывном (C) случаях.</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -231,7 +230,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Variance</span> The variance of a random variable, often noted Var$(X)$ or $\sigma^2$, is a measure of the spread of its distribution function. It is determined as follows:</p>
+<p><span class="new-item item-g">Дисперсия</span> Дисперсия случайной величины (Variance), которую часто называют $\textrm{Var(X)}$ или $\sigma^2$, является мерой разброса её функции распределения. Она определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{Var}(X)=E[(X-E[X])^2]=E[X^2]-E[X]^2}\]
 </div>
@@ -371,7 +370,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 \[\boxed{f_{XY}(x,y)=f_X(x)f_Y(y)}\]
 </div>
 <br>
-<p><span class="new-item item-g">Covariance</span> We define the covariance of two random variables $X$ and $Y$, that we note $\sigma_{XY}^2$ or more commonly $\textrm{Cov}(X,Y)$, as follows:</p>
+<p><span class="new-item item-g">Ковариация</span> мы определяем ковариацию двух случайных величин $X$ и $Y$, которые мы обозначаем σ2XY или более часто $\textrm{Cov}(X,Y)$, следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{Cov}(X,Y)\triangleq\sigma_{XY}^2=E[(X-\mu_X)(Y-\mu_Y)]=E[XY]-\mu_X\mu_Y}\]
 </div>
@@ -408,7 +407,7 @@ in the discrete (D) and the continuous (C) cases.</p>
 </div>
 <br>
 <h3>Оценка дисперсии</h3>
-<p><span class="new-item item-b">Sample variance</span> The sample variance of a random sample is used to estimate the true variance $\sigma^2$ of a distribution, is often noted $s^2$ or $\hat{\sigma}^2$ and is defined as follows:</p>
+<p><span class="new-item item-b">Выборочная дисперсия</span> Дисперсия случайной выборки используется для оценки истинной дисперсии $\sigma^2$ распределения, часто обозначается как $s^2$ или $\hat{\sigma}^2$ и определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{s^2=\hat{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2}\]
 </div>
