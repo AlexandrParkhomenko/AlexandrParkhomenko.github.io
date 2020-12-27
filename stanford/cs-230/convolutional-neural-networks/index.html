@@ -110,9 +110,9 @@
 </tr>
 <tr>
 <td align=center><b>Комментарии</b></td>
-<td align=left>• Сохраняет обнаруженные функции<br>• Most commonly used
+<td align=left>• Сохраняет обнаруженные признаки<br>• Наиболее часто используемые
 </td>
-<td align=left>• Downsamples feature map<br>• Используется в LeNet</td>
+<td align=left>• Карта признаков даунсэмплов<br>• Используется в LeNet</td>
 </tr>
 </tbody>
 </table>
@@ -177,7 +177,7 @@
 <tr>
 <td align=center><b>Цель</b></td>
 <td align=left>• Без дополнения<br>• Отбрасывает последнюю свертку при несовпадении размеров</td>
-<td align=left>• Padding such that feature map size has size $\Bigl\lceil\frac{I}{S}\Bigr\rceil$<br>• Размер вывода математически удобен<br>• Также называется 'половинным' дополнением</td>
+<td align=left>• Дополнения для карты объектов с размерами $\Bigl\lceil\frac{I}{S}\Bigr\rceil$<br>• Размер вывода математически удобен<br>• Также называется 'половинным' дополнением</td>
 <td align=left>• Максимальное дополнение. С ним концевые свертки применяются к пределам ввода<br>• Фильтр 'видит' вход от начала до конца</td>
 </tr>
 </tbody>
@@ -186,7 +186,7 @@
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#hyperparameters id=hyperparameters></a>Настройка гиперпараметров</h2>
-<p><span class="new-item item-r">Совместимость параметров в сверточном слое</span> Обозначим $I$ длину входного размера объёма, $F$ длину фильтра, $P$ длину дополнения нулями, $S$ шаг, затем выходной размер $O$ карты функций по этому измерению определяется как:</p>
+<p><span class="new-item item-r">Совместимость параметров в сверточном слое</span> Обозначим $I$ длину входного размера объёма, $F$ длину фильтра, $P$ длину дополнения нулями, $S$ шаг, затем выходной размер $O$ карты признаков по этому измерению определяется как:</p>
 <div class=mobile-container>
 \[\boxed{O=\frac{I-F+P_\text{start} + P_\text{end}}{S}+1}\]
 </div>
@@ -242,10 +242,10 @@
 <tr>
 <td align=center><b>Примечания</b></td>
 <td align=left>• Один параметр смещения на фильтр<br>
-                 • In most cases, $S &lt; F$<br>
+                 • В большинстве случаев, $S &lt; F$<br>
                  • A common choice for $K$ is $2C$</td>
 <td align=left>• Операция пулинга выполняется поканально<br>
-                 • In most cases, $S = F$</td>
+                 • В большинстве случаев, $S = F$</td>
 <td align=left>• Ввод сглаживается<br>
                  • Один параметр смещения на нейрон<br>
                  • Количество нейронов FC не имеет структурных ограничений</td>
@@ -255,7 +255,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Receptive field</span> The receptive field at layer $k$ is the area denoted $R_k \times R_k$ of the input that each pixel of the $k$-th activation map can 'see'.
+<p><span class="new-item item-g">Рецептивное поле</span> The receptive field at layer $k$ is the area denoted $R_k \times R_k$ of the input that each pixel of the $k$-th activation map can 'see'.
 By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of layer $i$ and with the convention $S_0 = 1$, the receptive field at layer $k$ can be computed with the formula:
 </p><div class=mobile-container>
 \[\boxed{R_k = 1 + \sum_{j=1}^{k} (F_j - 1) \prod_{i=0}^{j-1} S_i}\]
@@ -268,7 +268,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#activation-function id=activation-function></a>Часто используемые функции активации</h2>
-<p><span class="new-item item-g">Блок линейной ректификации</span> Rectified Linear Unit layer (ReLU) - это функция активации $g$, которая используется для всех элементов объёма. Он направлен на привнесение в сеть нелинейностей. Его варианты приведены в таблице ниже:</p>
+<p><span class="new-item item-g">Блок линейной ректификации</span> Блок линейной ректификации layer (ReLU) - это функция активации $g$, которая используется для всех элементов объёма. Он направлен на привнесение в сеть нелинейностей. Его варианты приведены в таблице ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:650px;">
@@ -292,7 +292,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </tr>
 <tr>
 <td align=center><img alt=ReLU class=img-responsive netsrc=teaching/cs-229/illustrations/ src=relu.png?6c1d78551355db5c6e4f6f8b5282cfa8 style="width:100%; max-width:200px;"></td>
-<td align=center><img alt="Leaky ReLU" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=leaky-relu.png?73b2b4303d1880c69b63d7dfe2be852e style="width:100%; max-width:200px;"></td>
+<td align=center><img alt="ReLU с утечкой" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=leaky-relu.png?73b2b4303d1880c69b63d7dfe2be852e style="width:100%; max-width:200px;"></td>
 <td align=center><img alt=ELU class=img-responsive netsrc=teaching/cs-230/illustrations/ src=elu.png?d195c8a479724512b56ff0da101361a6 style="width:100%; max-width:200px;"></td>
 </tr>
 <tr>
@@ -341,7 +341,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </tr>
 <tr>
 <td align=left>Традиционная CNN</td>
-<td align=left>Simplified YOLO, R-CNN</td>
+<td align=left>Упрощенный YOLO, R-CNN</td>
 <td align=left>YOLO, R-CNN</td>
 </tr>
 </tbody>
@@ -380,7 +380,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Пересечение по объединению</span> Intersection over Union (IoU) - это функция, которая количественно определяет, насколько правильно расположена предсказанная ограничивающая рамка $B_p$ над фактической ограничительной рамкой $B_a$. Она определяется как:</p>
+<p><span class="new-item item-g">Пересечение по объединению</span> Пересечение по объединению (IoU) - это функция, которая количественно определяет, насколько правильно расположена предсказанная ограничивающая рамка $B_p$ над фактической ограничительной рамкой $B_a$. Она определяется как:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{IoU}(B_p,B_a)=\frac{B_p\cap B_a}{B_p\cup B_a}}\]
 </div>
@@ -393,7 +393,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 <br>
 <p><span class="new-item item-b">Якорные рамки</span> Anchor box - это метод, используемый для прогнозирования перекрывающихся ограничивающих рамок. На практике сети позволяют прогнозировать более одной рамки одновременно, причем каждое предсказание рамки ограничивается заданным набором геометрических свойств. Например, первый прогноз потенциально может быть прямоугольной рамкой заданной формы, а второй будет другой прямоугольной рамкой с другими параметрами.</p>
 <br>
-<p><span class="new-item item-b">Подавление немаксимума</span> Non-max suppression - Техника подавления немаксимальных направлена на удаление дублирующих перекрывающихся ограничивающих рамок одного и того же объекта путем выбора наиболее репрезентативных. После удаления всех рамок, имеющих прогноз вероятности ниже 0.6, следующие шаги повторяются, пока остаются рамки:</p>
+<p><span class="new-item item-b">Подавление немаксимума</span> Подавление немаксимума - Техника подавления немаксимальных направлена на удаление дублирующих перекрывающихся ограничивающих рамок одного и того же объекта путем выбора наиболее репрезентативных. После удаления всех рамок, имеющих прогноз вероятности ниже 0.6, следующие шаги повторяются, пока остаются рамки:</p>
 <p>Для данного класса,
 <br>• Шаг 1: Выберите рамку с наибольшей вероятностью прогноза.
 <br>• Шаг 2: Отбросьте любую рамку с $\textrm{IoU}\geqslant0.5$ по сравнению с предыдущей рамкой.</p>
@@ -487,7 +487,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 \[\boxed{J_{\textrm{content}}(C,G)=\frac{1}{2}||a^{[l](C)}-a^{[l](G)}||^2}\]
 </div>
 <br>
-<p><span class="new-item item-g">Style matrix</span> The style matrix $G^{[l]}$ of a given layer $l$ is a Gram matrix where each of its elements $G_{kk'}^{[l]}$ quantifies how correlated the channels $k$ and $k'$ are. It is defined with respect to activations $a^{[l]}$ as follows:</p>
+<p><span class="new-item item-g">Матрица стилей</span> The style matrix $G^{[l]}$ of a given layer $l$ is a Gram matrix where each of its elements $G_{kk'}^{[l]}$ quantifies how correlated the channels $k$ and $k'$ are. It is defined with respect to activations $a^{[l]}$ as follows:</p>
 <div class=mobile-container>
 \[\boxed{G_{kk'}^{[l]}=\sum_{i=1}^{n_H^{[l]}}\sum_{j=1}^{n_w^{[l]}}a_{ijk}^{[l]}a_{ijk'}^{[l]}}\]
 </div>
@@ -498,7 +498,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 \[\boxed{J_{\textrm{style}}^{[l]}(S,G)=\frac{1}{(2n_Hn_wn_c)^2}||G^{[l](S)}-G^{[l](G)}||_F^2=\frac{1}{(2n_Hn_wn_c)^2}\sum_{k,k'=1}^{n_c}\Big(G_{kk'}^{[l](S)}-G_{kk'}^{[l](G)}\Big)^2}\]
 </div>
 <br>
-<p><span class="new-item item-b">Функция общей стоимости</span> функция общей стоимости определяется как комбинация функций стоимости контента и стиля, взвешенных параметрами $\alpha,\beta$ следующим образом:</p>
+<p><span class="new-item item-b">Функция общей стоимости</span> функция общей стоимости определяется как комбинация признаков стоимости контента и стиля, взвешенных параметрами $\alpha,\beta$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{J(G)=\alpha J_{\textrm{content}}(C,G)+\beta J_{\textrm{style}}(S,G)}\]
 </div>
@@ -517,6 +517,6 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 \[\boxed{a^{[l+2]}=g(a^{[l]}+z^{[l+2]})}\]
 </div>
 <br>
-<p><span class="new-item item-r">Inception Network</span> Эта архитектура использует начальные модули и нацелена на то, чтобы попробовать различные свертки, чтобы повысить её производительность за счет диверсификации функций. В частности, она использует трюк свертки $1\times1$ для ограничения вычислительной нагрузки. </p>
+<p><span class="new-item item-r">Inception Network</span> Эта архитектура использует начальные модули и нацелена на то, чтобы попробовать различные свертки, чтобы повысить её производительность за счет диверсификации признаков. В частности, она использует трюк свертки $1\times1$ для ограничения вычислительной нагрузки. </p>
 <br>
 </article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>
