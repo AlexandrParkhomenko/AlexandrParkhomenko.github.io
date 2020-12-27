@@ -320,7 +320,7 @@
 <br>
 <p><span class="new-item item-b">Алгоритм</span> после случайной инициализации центроидов кластера $\mu_1,\mu_2,...,\mu_k\in\mathbb{R}^d$ алгоритм $k$-средних повторяет следующий шаг до сходимости:</p>
 <div class=mobile-container>
-\[\boxed{z_i=\underset{j}{\textrm{arg min}}||\phi(x_i)-\mu_j||^2}\quad\textrm{and}\quad\boxed{\mu_j=\frac{\displaystyle\sum_{i=1}^n1_{\{z_i=j\}}\phi(x_i)}{\displaystyle\sum_{i=1}^n1_{\{z_i=j\}}}}\]
+\[\boxed{z_i=\underset{j}{\textrm{arg min}}||\phi(x_i)-\mu_j||^2}\quad\textrm{и}\quad\boxed{\mu_j=\frac{\displaystyle\sum_{i=1}^n1_{\{z_i=j\}}\phi(x_i)}{\displaystyle\sum_{i=1}^n1_{\{z_i=j\}}}}\]
 </div>
 <center>
 <img alt=Illustration class=img-responsive netsrc=teaching/cs-229/illustrations/ src=k-means-en.png?9925605d814ddadebcae2ae4754ab0a4>
@@ -342,7 +342,7 @@
 <p><span class="new-item item-r">Алгоритм</span> процедура метода главных компонент - это метод уменьшения размерности, который проецирует данные по $k$ измерениям, максимизируя дисперсию данных следующим образом:
 <br>- <u>Шаг 1</u>: Нормализовать данные, чтобы получить среднее значение 0 и стандартное отклонение 1.
 </p><div class=mobile-container>
-\[\boxed{\phi_j(x_i)\leftarrow\frac{\phi_j(x_i)-\mu_j}{\sigma_j}}\quad\textrm{where}\quad\boxed{\mu_j = \frac{1}{n}\sum_{i=1}^n\phi_j(x_i)}\quad\textrm{and}\quad\boxed{\sigma_j^2=\frac{1}{n}\sum_{i=1}^n(\phi_j(x_i)-\mu_j)^2}\]
+\[\boxed{\phi_j(x_i)\leftarrow\frac{\phi_j(x_i)-\mu_j}{\sigma_j}}\quad\textrm{где}\quad\boxed{\mu_j = \frac{1}{n}\sum_{i=1}^n\phi_j(x_i)}\quad\textrm{и}\quad\boxed{\sigma_j^2=\frac{1}{n}\sum_{i=1}^n(\phi_j(x_i)-\mu_j)^2}\]
 </div>
 <br>- <u>Шаг 2</u>: Вычислить $\displaystyle\Sigma=\frac{1}{n}\sum_{i=1}^n\phi(x_i){\phi(x_i)}^T\in\mathbb{R}^{d\times d}$, которая симметрична действительным собственным значениям.
 <br>- <u>Шаг 3</u>: Вычислить $u_1, ..., u_k\in\mathbb{R}^d$ $k$ ортогональных главных собственных векторов $\Sigma$, т.е. ортогональные собственные векторы $k$ наибольших собственных значений.
