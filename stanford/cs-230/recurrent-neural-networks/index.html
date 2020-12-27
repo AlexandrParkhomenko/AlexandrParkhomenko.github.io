@@ -69,7 +69,7 @@
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=architecture-rnn-ltr.png?9ea4417fc145b9346a3e288801dbdfdc style="width:100%; max-width:700px;">
 </div>
 <br>
-<p>For each timestep $t$, the activation $a^{&lt; t &gt;}$ and the output $y^{&lt; t &gt;}$ are expressed as follows:
+<p>Для каждого временного шага $t$ активация $a^{&lt; t &gt;}$ и выход $y^{&lt; t &gt;}$ выражаются следующим образом:
 </p><div class=mobile-container>
 \[\boxed{a^{&lt; t &gt;}=g_1(W_{aa}a^{&lt; t-1 &gt;}+W_{ax}x^{&lt; t &gt;}+b_a)}\quad\textrm{and}\quad\boxed{y^{&lt; t &gt;}=g_2(W_{ya}a^{&lt; t &gt;}+b_y)}\]
 </div>
@@ -320,9 +320,9 @@
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=word-embedding-representation-en.png?2dcceb341d5a5ccc9c7e0da0fd523a74 style="width:100%; max-width:225px;"></td>
 </tr>
 <tr>
-<td align=left>• Noted $o_w$<br>
-                 • Naive approach, no similarity information</td>
-<td align=left>• Noted $e_w$<br>
+<td align=left>• Обозначено $o_w$<br>
+                 • Наивный подход, нет информации о сходстве</td>
+<td align=left>• Обозначено $e_w$<br>
                  • Учитывает сходство слов</td>
 </tr>
 </tbody>
@@ -361,8 +361,8 @@
 <div class=mobile-container>
 \[\boxed{J(\theta)=\frac{1}{2}\sum_{i,j=1}^{|V|}f(X_{ij})(\theta_i^Te_j+b_i+b_j'-\log(X_{ij}))^2}\]
 </div>
-<p>where $f$ is a weighting function such that $X_{i,j}=0\Longrightarrow f(X_{i,j})=0$.<br>
-Given the symmetry that $e$ and $\theta$ play in this model, the final word embedding $e_w^{(\textrm{final})}$ is given by:</p>
+<p>где $f$ - такая весовая функция, что $X_{i,j}=0\Longrightarrow f(X_{i,j})=0$.<br>
+Учитывая симметрию, которую играют $e$ и $\theta$ в этой модели, последнее представление слов $e_w^{(\textrm{final})}$ дается выражением:</p>
 <div class=mobile-container>
 \[\boxed{e_w^{(\textrm{final})}=\frac{e_w+\theta_w}{2}}\]
 </div>
@@ -380,7 +380,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">$t$-SNE</span> $t$-SNE ($t$-distributed Stochastic Neighbor Embedding) is a technique aimed at reducing high-dimensional embeddings into a lower dimensional space. In practice, it is commonly used to visualize word vectors in the 2D space.</p>
+<p><span class="new-item item-r">$t$-SNE</span> $t$-распределенное стохастическое соседнее представление ($t$-distributed Stochastic Neighbor Embedding, $t$-SNE) - это метод, направленный на сокращение представлений большой размерности в пространство меньшей размерности. На практике он обычно используется для визуализации векторов слов в 2D-пространстве.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=t-sne-en.png?411bf8ff5d5c06c6e90cae95f7110ff1 style="width:100%; max-width:550px;">
@@ -399,16 +399,17 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 <p><span class=remark>Примечание: PP обычно используется в $t$-SNE.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#machine-translation id=machine-translation></a>Машинный перевод</h2>
-<p><span class="new-item item-r">Overview</span> A machine translation model is similar to a language model except it has an encoder network placed before. For this reason, it is sometimes referred as a conditional language model.</p>
-<p>The goal is to find a sentence $y$ such that:</p>
+<p><span class="new-item item-r">Обзор</span> модель машинного перевода похожа на языковую модель, за исключением того, что в ней размещена сеть кодировщика. По этой причине её иногда называют моделью условного языка.</p>
+<p>Цель состоит в том, чтобы найти такое предложение $y$, что:</p>
 <div class=mobile-container>
 \[\boxed{y=\underset{y^{&lt; 1 &gt;}, ..., y^{&lt; T_y &gt;}}{\textrm{arg max}}P(y^{&lt; 1 &gt;},...,y^{&lt; T_y &gt;}|x)}\]
 </div>
 <br>
 <p><span class="new-item item-g">Лучевой поиск</span> это алгоритм эвристического поиска, используемый в машинном переводе и распознавании речи для поиска наиболее вероятного предложения $y$ при вводе $x$.</p>
 <p>• Шаг 1: Найти top $B$ наиболее вероятных слов $y^{&lt; 1 &gt;}$
-<br>• Step 2: Compute conditional probabilities $y^{&lt; k &gt;}|x,y^{&lt; 1 &gt;},...,y^{&lt; k-1 &gt;}$
-<br>• Step 3: Keep top $B$ combinations $x,y^{&lt; 1&gt;},...,y^{&lt; k &gt;}$</p>
+<br>• Шаг 2: Вычислить условные вероятности $y^{&lt; k &gt;}|x,y^{&lt; 1 &gt;},...,y^{&lt; k-1 &gt;}$
+<br>• Шаг 3: Сохранить top $B$ комбинации $x,y^{&lt; 1&gt;},...,y^{&lt; k &gt;}$</p>
+<br>• Шаг 4: Завершить процесс на стоп-слове</p>
 <br>
 <div class=mobile-container>
 <center>
@@ -426,7 +427,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 </div>
 <p><span class=remark>Примечание: параметр $\alpha$ можно рассматривать как смягчитель, и его значение обычно составляет от 0.5 до 1.</span></p>
 <br>
-<p><span class="new-item item-b">Error analysis</span> When obtaining a predicted translation $\widehat{y}$ that is bad, one can wonder why we did not get a good translation $y^*$ by performing the following error analysis:</p>
+<p><span class="new-item item-b">Анализ ошибок</span> При получении предсказанного перевода $\widehat{y}$, который является плохим, можно задаться вопросом, почему мы не получили хороший перевод $y^*$ , выполнив следующий анализ ошибок:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -467,7 +468,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
 <p><span class=remark>Примечание: к коротким предсказанным переводам может применяться штраф за краткость, чтобы предотвратить искусственно завышенную оценку bleu.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#attention id=attention></a>Внимание</h2>
-<p><span class="new-item item-b">Attention model</span> This model allows an RNN to pay attention to specific parts of the input that is considered as being important, which improves the performance of the resulting model in practice. By noting $\alpha^{&lt; t, t'&gt;}$ the amount of attention that the output $y^{&lt; t &gt;}$ should pay to the activation $a^{&lt; t' &gt;}$ and $c^{&lt; t &gt;}$ the context at time $t$, we have:</p>
+<p><span class="new-item item-b">Модель внимания</span> эта модель позволяет RNN обращать внимание на определенные части входных данных, которые считаются важными, что на практике улучшает производительность полученной модели. Обозначим $\alpha^{&lt; t, t'&gt;}$ количество внимания, которое выход $y^{&lt; t &gt;}$ должен уделять активации $a^{&lt; t' &gt;}$ и $c^{&lt; t &gt;}$ контексту в момент времени $t$, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{c^{&lt; t &gt;}=\sum_{t'}\alpha^{&lt; t, t' &gt;}a^{&lt; t' &gt;}}\quad\textrm{with}\quad\sum_{t'}\alpha^{&lt; t,t' &gt;}=1\]
 </div>
@@ -480,7 +481,7 @@ Given the symmetry that $e$ and $\theta$ play in this model, the final word embe
   </div>
 </center>
 <br>
-<p><span class="new-item item-b">Attention weight</span> The amount of attention that the output $y^{&lt; t &gt;}$ should pay to the activation $a^{&lt; t' &gt;}$ is given by $\alpha^{&lt; t,t' &gt;}$ computed as follows:</p>
+<p><span class="new-item item-b">Вес внимания</span> количество внимания, которое выход $y^{&lt; t &gt;}$ должен уделять активации $a^{&lt; t' &gt;}$, задается выражением $\alpha^{&lt; t,t' &gt;}$, вычисляемым следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\alpha^{&lt; t,t' &gt;}=\frac{\exp(e^{&lt; t,t' &gt;})}{\displaystyle\sum_{t''=1}^{T_x}\exp(e^{&lt; t,t'' &gt;})}}\]
 </div>
