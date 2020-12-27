@@ -120,24 +120,24 @@
 </li></ul>
 <p></p>
 <br>
-<p><span class="new-item item-r">Matrix-vector</span> The product of matrix $A\in\mathbb{R}^{m\times n}$ and vector $x\in\mathbb{R}^{n}$ is a vector of size $\mathbb{R}^{m}$, such that:
+<p><span class="new-item item-r">Матрица-вектор</span> Произведение матрицы A∈Rm×n и вектора $x\in\mathbb{R}^{n}$ - это вектор размера $\mathbb{R}^{m}$, такой что:
 </p><div class=mobile-container>
 \[\boxed{Ax=\left(\begin{array}{c}a_{r,1}^Tx\\\vdots\\a_{r,m}^Tx\end{array}\right)=\sum_{i=1}^na_{c,i}x_{i}\in\mathbb{R}^{m}}\]
 </div>
-where $a_{r,i}^T$ are the vector rows and $a_{c,j}$ are the vector columns of $A$, and $x_i$ are the entries of $x$.<p></p>
+где $a_{r,i}^T$ - векторные строки, а $a_{c,j}$ - векторные столбцы $A$, а $x_i$ - элементы $x$.<p></p>
 <br>
 <p><span class="new-item item-r">Матрица-матрица</span> Произведение матриц $A\in\mathbb{R}^{m\times n}$ и $B\in\mathbb{R}^{n\times p}$ матрица размера $\mathbb{R}^{n\times p}$ такая, что:
 </p><div class=mobile-container>
 \[\boxed{AB=\left(\begin{array}{ccc}a_{r,1}^Tb_{c,1}&amp; \cdots&amp;a_{r,1}^Tb_{c,p}\\\vdots&amp;&amp; \vdots\\a_{r,m}^Tb_{c,1}&amp; \cdots&amp;a_{r,m}^Tb_{c,p}\end{array}\right)=\sum_{i=1}^na_{c,i}b_{r,i}^T\in\mathbb{R}^{n\times p}}\]
 </div>
-where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the vector columns of $A$ and $B$ respectively.<p></p>
+где $a_{r,i}^T, b_{r,i}^T$ - векторные строки и $a_{c,j}, b_{c,j}$ - векторные столбцы $A$ и $B$ соответственно<p></p>
 <br>
 <h3>Прочие операции</h3>
 <p><span class="new-item item-g">Транспонирование</span> Транспонирование матрицы $A\in\mathbb{R}^{m\times n}$, обозначается $A^T$, таково, что её элементы переворачиваются:</p>
 <div class=mobile-container>
 \[\boxed{\forall i,j,\quad\quad A_{i,j}^T=A_{j,i}}\]
 </div><br>
-<p><span class=remark>Remark: for matrices $A,B$, we have $(AB)^T=B^TA^T$.</span></p>
+<p><span class=remark>Примечание: для матриц $A,B$ имеем $(AB)^T=B^TA^T$.</span></p>
 <br>
 <p><span class="new-item item-g">Обращение</span> Обратная квадратная матрица $A$ обозначается как $A^{-1}$ и является единственной матрицей, такой что:</p>
 <div class=mobile-container>
@@ -159,9 +159,9 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 <br>
 <h2><a aria-hidden=true class=anchor href=#properties id=properties></a>Свойства матрицы</h2>
 <h3>Определения</h3>
-<p><span class="new-item item-r">Symmetric decomposition</span> A given matrix $A$ can be expressed in terms of its symmetric and antisymmetric parts as follows:</p>
+<p><span class="new-item item-r">Симметричное разложение</span> Данная матрица $A$ может быть выражена в терминах её симметричной и антисимметричной частей следующим образом:</p>
 <div class=mobile-container>
-\[\boxed{A=\underbrace{\frac{A+A^T}{2}}_{\textrm{Symmetric}}+\underbrace{\frac{A-A^T}{2}}_{\textrm{Antisymmetric}}}\]
+\[\boxed{A=\underbrace{\frac{A+A^T}{2}}_{\textrm{Симметричная}}+\underbrace{\frac{A-A^T}{2}}_{\textrm{Антисимметричная}}}\]
 </div>
 <br>
 <p><span class="new-item item-b">Норма</span> Норма - это функция $N:V\longrightarrow[0,+\infty[$ где $V$ - векторное пространство, и такая, что для всех $x,y\in V$, есть:
@@ -227,7 +227,7 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 <br>
 <p><span class="new-item item-r">Спектральная теорема</span> Пусть $A\in\mathbb{R}^{n\times n}$. Если $A$ симметрична, то $A$ диагонализуема действительной ортогональной матрицей $U\in\mathbb{R}^{n\times n}$. Обозначим $\Lambda=\textrm{diag}(\lambda_1,...,\lambda_n)$, у нас есть:</p>
 <div class=mobile-container>
-\[\boxed{\exists\Lambda\textrm{ diagonal},\quad A=U\Lambda U^T}\]
+\[\boxed{\exists\Lambda\textrm{ диагональ},\quad A=U\Lambda U^T}\]
 </div>
 <br>
 <p><span class="new-item item-g">Сингулярное разложение</span> Для данной матрицы $A$ размеров $m\times n$ разложение по сингулярным числам (singular-value decomposition, SVD) представляет собой метод факторизации, который гарантирует существование унитарных матриц $U$ $m\times m$, диагональных $\Sigma$ $m\times n$ и унитарных матриц $V$ $n\times n$, таких что:</p>
@@ -242,7 +242,7 @@ where $a_{r,i}^T, b_{r,i}^T$ are the vector rows and $a_{c,j}, b_{c,j}$ are the 
 </div>
 <p><span class=remark>Примечание: градиент $f$ определяется только тогда, когда $f$ - функция, возвращающая скаляр.</span></p>
 <br>
-<p><span class="new-item item-b">Hessian</span> Let $f:\mathbb{R}^{n}\rightarrow\mathbb{R}$ be a function and $x\in\mathbb{R}^{n}$ be a vector. The hessian of $f$ with respect to $x$ is a $n\times n$ symmetric matrix, noted $\nabla_x^2 f(x)$, such that:</p>
+<p><span class="new-item item-b">Гессиан</span> Пусть $f:\mathbb{R}^{n}\rightarrow\mathbb{R}$ функция, а $x\in\mathbb{R}^{n}$ - вектор. Гессиан $f$ относительно $x$ является симметричной матрицей размера $n\times n$, обозначенной как $\nabla_x^2 f(x)$, такой что:</p>
 <div class=mobile-container>
 \[\boxed{\Big(\nabla_x^2 f(x)\Big)_{i,j}=\frac{\partial^2 f(x)}{\partial x_i\partial x_j}}\]
 </div>
