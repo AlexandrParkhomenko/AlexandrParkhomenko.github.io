@@ -95,7 +95,7 @@
 <h3><a aria-hidden=true class=anchor href=#dynamic-ordering id=dynamic-ordering></a>Динамическое упорядочивание</h3>
 <p><span class="new-item item-g">Зависимые факторы</span> Набор зависимых факторов переменной $X_i$ с частичным присвоением $x$ называется $D(x,X_i)$ и обозначает набор факторов, которые связывают $X_i$ с уже присвоенными переменными.</p>
 <br>
-<p><span class="new-item item-r">Backtracking search</span> Backtracking search is an algorithm used to find maximum weight assignments of a factor graph. At each step, it chooses an unassigned variable and explores its values by recursion. Dynamic ordering (<i>i.e.</i> choice of variables and values) and lookahead (<i>i.e.</i> early elimination of inconsistent options) can be used to explore the graph more efficiently, although the worst-case runtime stays exponential: $O(|\text{Domain}|^n)$.</p>
+<p><span class="new-item item-r">Поиск с возвратом</span> Backtracking search - это алгоритм, используемый для нахождения максимального веса факторного графа. На каждом этапе он выбирает неназначенную переменную и исследует её значения с помощью рекурсии. Динамическое упорядочение (<i>то есть</i> выбор переменных и значений) и опережение (<i>то есть</i> раннее устранение несовместимых вариантов) могут использоваться для более эффективного изучения графика, хотя время выполнения в худшем случае остается экспоненциальным: O(|Domain|n).</p>
 <br>
 <p><span class="new-item item-b">Прямая проверка</span> это эвристика упреждающего просмотра за один шаг. Она упреждающе удаляет несогласованные значения из доменов соседних переменных. Она имеет следующие характеристики:
 </p><ul>
@@ -141,7 +141,7 @@
 <br>
 <p><span class="new-item item-b">Выборка по Гиббсу</span> это итеративный приближенный метод; который изменяет присвоение факторному графу одной переменной за раз до сходимости. На шаге $i$:
 </p><ul>
-<li> we assign to each element $u \in \textrm{Domain}_i$ a weight $w(u)$ that is the product of all factors connected to that variable,
+<li> мы присваиваем каждому элементу $u \in \textrm{Domain}_i$ вес $w(u)$. Вес является произведением всех связанных с этой переменной факторов,
 </li><li> мы выбираем $v$ из индуцированного $w$ распределения вероятностей и присваиваем его $X_i$.
 </li></ul>
 <p></p>
@@ -253,36 +253,36 @@
 </tr>
 <tr>
 <td align=center valign=center>Markov Model</td>
-<td align=left valign=center>Generate $X_i\sim p(X_i|X_{i-1})$</td>
+<td align=left valign=center>Создаёт $X_i\sim p(X_i|X_{i-1})$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-1.png?6e4d6ca0714baa89294b193bc49fa832></td>
 <td align=center>Языковое моделирование</td>
 </tr>
 <tr>
 <td align=center valign=center>Hidden Markov Model<br>(HMM)</td>
-<td align=left valign=center>Generate $H_t\sim p(H_t|H_{t-1})$<br>
-                              Generate $E_t\sim p(E_t|H_{t})$</td>
+<td align=left valign=center>Создаёт $H_t\sim p(H_t|H_{t-1})$<br>
+                              Создаёт $E_t\sim p(E_t|H_{t})$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-2.png?9775f4e07376395a94d34d4339b7aac5></td>
 <td align=center>Трекинг объектов</td>
 </tr>
 <tr>
 <td align=center valign=center>Factorial HMM</td>
-<td align=left valign=center>Generate $H_t^o\underset{\small o\in\{a,b\}}{\sim} p(H_t^o|H_{t-1}^o)$<br>
-                              Generate $E_t\sim p(E_t|H_t^a,H_t^b)$</td>
+<td align=left valign=center>Создаёт $H_t^o\underset{\small o\in\{a,b\}}{\sim} p(H_t^o|H_{t-1}^o)$<br>
+                              Создаёт $E_t\sim p(E_t|H_t^a,H_t^b)$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-3.png?49285b53aba41464df086b86841a02f8></td>
 <td align=center>Трекинг нескольких объектов</td>
 </tr>
 <tr>
 <td align=center valign=center>Naive Bayes</td>
-<td align=left valign=center>Generate $Y\sim p(Y)$<br>
-                              Generate $W_i\sim p(W_i|Y)$</td>
+<td align=left valign=center>Создаёт $Y\sim p(Y)$<br>
+                              Создаёт $W_i\sim p(W_i|Y)$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-4.png?bf75f98f3cf02c590d9050d53eb2365f></td>
 <td align=center>Классификация документов</td>
 </tr>
 <tr>
 <td align=center valign=center>Latent Dirichlet Allocation<br>(LDA)</td>
-<td align=left valign=center>Generate $\alpha\in\mathbb{R}^K$ distribution<br>
-                              Generate $Z_i\sim p(Z_i|\alpha)$<br>
-                              Generate $W_i\sim p(W_i|Z_i)$</td>
+<td align=left valign=center>Создаёт $\alpha\in\mathbb{R}^K$ distribution<br>
+                              Создаёт $Z_i\sim p(Z_i|\alpha)$<br>
+                              Создаёт $W_i\sim p(W_i|Z_i)$</td>
 <td align=center><img class=img-responsive netsrc=teaching/cs-221/illustrations/ src=probabilistic-programs-5.png?42bff30421fe4f7acf5881f6bd7cd191></td>
 <td align=center>Тематическое моделирование</td>
 </tr>
