@@ -155,7 +155,7 @@
 </li></ul>
 <p></p>
 <br>
-<p><span class="new-item item-g">Dropout</span> Dropout is a technique meant to prevent overfitting the training data by dropping out units in a neural network. In practice, neurons are either dropped with probability $p$ or kept with probability $1-p.$</p>
+<p><span class="new-item item-g">Прореживание (Dropout)</span> это метод, предназначенный для предотвращения переобучения на обучающих данных путем исключения блоков в нейронной сети. На практике нейроны либо отбрасываются с вероятностью $p$, либо сохраняются с вероятностью $1−p$.</p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#cnn id=cnn></a>Сверточные нейронные сети</h2>
 <p><span class="new-item item-r">Требования к сверточному слою</span> обозначим $W$ - размер входного объёма, $F$ - размер нейронов сверточного слоя, $P$ - величину дополнения нулями, тогда количество нейронов $N$, которые помещаются в данный объём, будет таким:</p>
@@ -163,7 +163,7 @@
 \[\boxed{N=\frac{W-F+2P}{S}+1}\]
 </div>
 <br>
-<p><span class="new-item item-g">Batch normalization</span> It is a step of hyperparameter $\gamma, \beta$ that normalizes the batch $\{x_i\}$. By noting $\mu_B, \sigma_B^2$ the mean and variance of that we want to correct to the batch, it is done as follows:
+<p><span class="new-item item-g">Пакетная нормировка</span> метод адаптивной перепараметризации $\gamma, \beta$, который нормирует пакет $\{x_i\}$. Обозначим $\mu_B, \sigma_B^2$ как среднее значение и дисперсию, которые мы хотим скорректировать для пакета, это делается следующим образом:
 </p><div class=mobile-container>
 \[\boxed{x_i\longleftarrow\gamma\frac{x_i-\mu_B}{\sqrt{\sigma_B^2+\epsilon}}+\beta}\]
 </div>
@@ -198,7 +198,7 @@
 <br>
 <p><span class="new-item item-b">LSTM</span> Сеть с долгой кратковременной памятью (LSTM) - это тип модели RNN, которая позволяет избежать проблемы исчезающего градиента, добавляя вентиль «забывания».</p>
 <br>
-<div class="alert alert-warning" role=alert>For a more detailed overview of the concepts above, check out the <a class=alert-link nethref=teaching/cs-230 href=../../cs-230/recurrent-neural-networks/index.html onclick=trackOutboundLink(this);>Deep Learning cheatsheets</a>!</div>
+<div class="alert alert-warning" role=alert>Для более подробного обзора приведенных выше концепций ознакомьтесь с <a class=alert-link nethref=teaching/cs-230 href=../../cs-230/recurrent-neural-networks/index.html onclick=trackOutboundLink(this);>Шпаргалкой по Рекуррентным Нейронным Сетям</a>!</div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#reinforcement id=reinforcement></a>Обучение с подкреплением и контроль</h2>
 <p>Цель обучения с подкреплением - научить агента развиваться в окружающей среде.</p>
@@ -220,11 +220,11 @@
 \[\boxed{V^\pi(s)=E\Big[R(s_0)+\gamma R(s_1)+\gamma^2 R(s_2)+...|s_0=s,\pi\Big]}\]
 </div>
 <br>
-<p><span class="new-item item-r">Bellman equation</span> The optimal Bellman equations characterizes the value function $V^{\pi^*}$ of the optimal policy $\pi^*$:</p>
+<p><span class="new-item item-r">Уравнение Беллмана</span> Оптимальные уравнения Беллмана характеризуют функцию цены $V^{\pi^*}$ оптимальной политики $\pi^*$:</p>
 <div class=mobile-container>
 \[\boxed{V^{\pi^*}(s)=R(s)+\max_{a\in\mathcal{A}}\gamma\sum_{s'\in S}P_{sa}(s')V^{\pi^*}(s')}\]
 </div>
-<p><span class=remark>Remark: we note that the optimal policy $\pi^*$ for a given state $s$ is such that:</span></p>
+<p><span class=remark>Примечание: отметим, что оптимальная политика $\pi^*$ для данного состояния $s$ такова, что:</span></p>
 <div class=mobile-container>
 \[\boxed{\pi^*(s)=\underset{a\in\mathcal{A}}{\textrm{argmax}}\sum_{s'\in\mathcal{S}}P_{sa}(s')V^*(s')}\]
 </div>
@@ -249,5 +249,5 @@
 \[\boxed{Q(s,a)\leftarrow Q(s,a)+\alpha\Big[R(s,a,s')+\gamma\max_{a'}Q(s',a')-Q(s,a)\Big]}\]
 </div>
 <br>
-<div class="alert alert-warning" role=alert>For a more detailed overview of the concepts above, check out the <a class=alert-link nethref=teaching/cs-221/cheatsheet-states-models/ href=../../cs-221/states-models/index.html onclick=trackOutboundLink(this);>States-based Models cheatsheets</a>!</div>
+<div class="alert alert-warning" role=alert>Для более подробного обзора приведенных выше концепций ознакомьтесь с <a class=alert-link nethref=teaching/cs-221/cheatsheet-states-models/ href=../../cs-221/states-models/index.html onclick=trackOutboundLink(this);>Моделями на основе состояний с поисковой оптимизацией и Марковским процессом принятия решений (MDP)</a>!</div>
 </article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>
