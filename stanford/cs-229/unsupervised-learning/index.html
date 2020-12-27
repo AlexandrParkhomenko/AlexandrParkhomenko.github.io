@@ -118,11 +118,11 @@
 <br>
 <p><span class="new-item item-g">Алгоритм</span> Алгоритм ожидания-максимизации (Expectation-Maximization, EM) дает эффективный метод оценки параметра $\theta$ посредством оценки максимального правдоподобия путем многократного построения нижней границы правдоподобия (E-шаг) и оптимизации этой нижней границы (M-шаг) следующим образом:
 </p><ul>
-<li>E-step: Evaluate the posterior probability $Q_{i}(z^{(i)})$ that each data point $x^{(i)}$ came from a particular cluster $z^{(i)}$ as follows:
+<li><u>E-шаг</u>: Оценить апостериорную вероятность $Q_{i}(z^{(i)})$ того, что каждая точка данных $x^{(i)}$ пришла из определенного кластера $z^{(i)}$ следующим образом:
 <div class=mobile-container>
 \[\boxed{Q_i(z^{(i)})=P(z^{(i)}|x^{(i)};\theta)}\]
 </div>
-</li><li>M-step: Use the posterior probabilities $Q_i(z^{(i)})$ as cluster specific weights on data points $x^{(i)}$ to separately re-estimate each cluster model as follows:
+</li><li><u>M-шаг</u>: Использовать апостериорные вероятности $Q_i(z^{(i)})$ в качестве весовых коэффициентов для конкретных кластеров точек данных $x^{(i)}$, чтобы отдельно переоценить каждую модель кластера следующим образом:
 <div class=mobile-container>
 \[\boxed{\theta_i=\underset{\theta}{\textrm{argmax }}\sum_i\int_{z^{(i)}}Q_i(z^{(i)})\log\left(\frac{P(x^{(i)},z^{(i)};\theta)}{Q_i(z^{(i)})}\right)dz^{(i)}}\]<p></p>
 </div>
@@ -131,7 +131,7 @@
 <img alt=Illustration class=img-responsive netsrc=teaching/cs-229/illustrations/ src=expectation-maximization-en.png?ed72a10f73a6d201e2ad20e04d145e82>
 </center>
 <br>
-<h3>$k$-means clustering</h3>
+<h3>Метод $k$-средних</h3>
 <p>Мы обозначаем $c^{(i)}$ кластер точки данных $i$ и $\mu_j$ центр кластера $j$.</p>
 <br>
 <p><span class="new-item item-g">Алгоритм</span> после случайной инициализации центроидов кластера $\mu_1,\mu_2,...,\mu_k\in\mathbb{R}^n$ алгоритм $k$-средних повторяет следующий шаг до сходимости:</p>
@@ -175,7 +175,7 @@
 <br>
 <h3>Кластеризация показателей оценки</h3>
 <p>В условиях обучения без учителя часто бывает трудно оценить производительность модели, поскольку у нас нет основных меток истинности, как это было в условиях обучения с учителем.</p>
-<p><span class="new-item item-b">Silhouette coefficient</span> By noting $a$ and $b$ the mean distance between a sample and all other points in the same class, and between a sample and all other points in the next nearest cluster, the silhouette coefficient $s$ for a single sample is defined as follows:</p>
+<p><span class="new-item item-b">Коэффициент силуэта</span> Обозначим $a$ и $b$ среднее расстояние между образцом и всеми другими точками в том же классе, а также между образцом и всеми другими точками в следующем ближайшем кластере, коэффициент силуэта $s$ для одного образца определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{s=\frac{b-a}{\max(a,b)}}\]
 </div>
@@ -210,8 +210,8 @@
 <div class=mobile-container>
 \[\boxed{x_j^{(i)}\leftarrow\frac{x_j^{(i)}-\mu_j}{\sigma_j}}\quad\textrm{where}\quad\boxed{\mu_j = \frac{1}{m}\sum_{i=1}^mx_j^{(i)}}\quad\textrm{and}\quad\boxed{\sigma_j^2=\frac{1}{m}\sum_{i=1}^m(x_j^{(i)}-\mu_j)^2}\]
 </div>
-</li><li><u>Step 2</u>: Compute $\displaystyle\Sigma=\frac{1}{m}\sum_{i=1}^mx^{(i)}{x^{(i)}}^T\in\mathbb{R}^{n\times n}$, which is symmetric with real eigenvalues.
-</li><li><u>Step 3</u>: Compute $u_1, ..., u_k\in\mathbb{R}^n$ the $k$ orthogonal principal eigenvectors of $\Sigma$, i.e. the orthogonal eigenvectors of the $k$ largest eigenvalues.
+</li><li><u>Шаг 2</u>: Вычислить $\displaystyle\Sigma=\frac{1}{m}\sum_{i=1}^mx^{(i)}{x^{(i)}}^T\in\mathbb{R}^{n\times n}$, она симметричная с действительными собственными значениями.
+</li><li><u>Шаг 3</u>: Вычислить $u_1, ..., u_k\in\mathbb{R}^n$ the $k$ ортогональных главных собственных векторов матрицы $\Sigma$, то есть ортогональных собственных векторов $k$ наибольших собственных значений.
 </li><li><u>Шаг 4</u>: Спроецировать данные на $\textrm{span}_\mathbb{R}(u_1,...,u_k)$.
 </li></ul><p></p>
 <p>Эта процедура максимизирует дисперсию всех $k$-мерных пространств.</p>
@@ -233,7 +233,7 @@
 <div class=mobile-container>
 \[p(x)=\prod_{i=1}^np_s(w_i^Tx)\cdot|W|\]
 </div>
-</li><li>Write the log likelihood given our training data $\{x^{(i)}, i\in[\![1,m]\!]\}$ and by noting $g$ the sigmoid function as:
+</li><li>Записать логарифмическое правдоподобие с учетом наших обучающих данных $\{x^{(i)}, i\in[\![1,m]\!]\}$ и обозначенной $g$ сигмоидальной функции как:
 <div class=mobile-container>
 \[l(W)=\sum_{i=1}^m\left(\sum_{j=1}^n\log\Big(g'(w_j^Tx^{(i)})\Big)+\log|W|\right)\]
 </div>
