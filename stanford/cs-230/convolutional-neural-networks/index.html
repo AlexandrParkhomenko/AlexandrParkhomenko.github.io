@@ -243,7 +243,7 @@
 <td align=center><b>Примечания</b></td>
 <td align=left>• Один параметр смещения на фильтр<br>
                  • В большинстве случаев, $S &lt; F$<br>
-                 • A common choice for $K$ is $2C$</td>
+                 • Обычный выбор для $K$ - это $2C$</td>
 <td align=left>• Операция пулинга выполняется поканально<br>
                  • В большинстве случаев, $S = F$</td>
 <td align=left>• Ввод сглаживается<br>
@@ -255,8 +255,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Рецептивное поле</span> The receptive field at layer $k$ is the area denoted $R_k \times R_k$ of the input that each pixel of the $k$-th activation map can 'see'.
-By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of layer $i$ and with the convention $S_0 = 1$, the receptive field at layer $k$ can be computed with the formula:
+<p><span class="new-item item-g">Рецептивное поле</span> Воспринимающее поле в слое $k$ - это область, обозначенная $R_k \times R_k$ входа, которую может "видеть" каждый пиксель $k$-й карты активации. Называя $F_j$ размером фильтра слоя $j$, а $S_i$ значением шага слоя $i$, и, согласно соглашению $S_0 = 1$, рецептивное поле на слое $k$ можно вычислить по формуле:
 </p><div class=mobile-container>
 \[\boxed{R_k = 1 + \sum_{j=1}^{k} (F_j - 1) \prod_{i=0}^{j-1} S_i}\]
 </div>
@@ -372,8 +371,8 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=detection-landmark.jpeg?ed85ca8d6c2673f35e8c266c5476690f style="width:100%; max-width:300px;"></td>
 </tr>
 <tr>
-<td align=left>Box of center $(b_x,b_y)$, height $b_h$ and width $b_w$</td>
-<td align=left>Reference points $(l_{1x},l_{1y}),$ $...,$ $(l_{nx},l_{ny})$</td>
+<td align=left>Рамка с центром $(b_x,b_y)$, высота $b_h$ и ширина $b_w$</td>
+<td align=left>Ориентиры $(l_{1x},l_{1y}), ..., (l_{nx},l_{ny})$</td>
 </tr>
 </tbody>
 </table>
@@ -457,7 +456,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">One Shot Learning</span> One Shot Learning is a face verification algorithm that uses a limited training set to learn a similarity function that quantifies how different two given images are. The similarity function applied to two images is often noted $d(\textrm{image 1}, \textrm{image 2}).$</p>
+<p><span class="new-item item-b">Обучение одним выстрелом</span> One Shot Learning - это алгоритм проверки лица, который использует ограниченный обучающий набор для изучения функции сходства, которая количественно определяет, насколько разные два заданных изображения. Функция подобия, применяемая к двум изображениям, часто обозначается $d(\textrm{image 1}, \textrm{image 2}).$</p>
 <br>
 <p><span class="new-item item-r">Сиамские сети</span> Siamese Network стремятся научиться кодировать изображения, чтобы затем количественно оценить, насколько два изображения отличаются друг от друга. Для заданного входного изображения $x^{(i)}$ закодированный вывод часто обозначается как $f(x^{(i)})$.</p>
 <br>
@@ -487,7 +486,7 @@ By calling $F_j$ the filter size of layer $j$ and $S_i$ the stride value of laye
 \[\boxed{J_{\textrm{content}}(C,G)=\frac{1}{2}||a^{[l](C)}-a^{[l](G)}||^2}\]
 </div>
 <br>
-<p><span class="new-item item-g">Матрица стилей</span> The style matrix $G^{[l]}$ of a given layer $l$ is a Gram matrix where each of its elements $G_{kk'}^{[l]}$ quantifies how correlated the channels $k$ and $k'$ are. It is defined with respect to activations $a^{[l]}$ as follows:</p>
+<p><span class="new-item item-g">Матрица стиля</span> Матрица стилей $G^{[l]}$ данного слоя $l$ является определителем Грама, где каждый из его элементов $G_{kk'}^{[l]}$ количественно определяет степень корреляции каналов $k$ и $k'$. Она определяется по отношению к активациям $a^{[l]}$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{G_{kk'}^{[l]}=\sum_{i=1}^{n_H^{[l]}}\sum_{j=1}^{n_w^{[l]}}a_{ijk}^{[l]}a_{ijk'}^{[l]}}\]
 </div>
