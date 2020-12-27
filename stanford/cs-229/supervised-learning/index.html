@@ -88,7 +88,7 @@
 <tr>
 <td align=center><b></b></td>
 <td align=center><b>Регрессия</b></td>
-<td align=center><b>Classification</b></td>
+<td align=center><b>Классификация</b></td>
 </tr>
 <tr>
 <td align=center><b>Результат</b></td>
@@ -98,7 +98,7 @@
 <tr>
 <td align=center><b>Примеры</b></td>
 <td align=center>Линейная регрессия</td>
-<td align=center>Logistic regression, SVM, Naive Bayes</td>
+<td align=center>Логистическая регрессия, SVM, Наивный Байес</td>
 </tr>
 </tbody>
 </table>
@@ -122,13 +122,13 @@
 </tr>
 <tr>
 <td align=center><b>Цель</b></td>
-<td align=left>Directly estimate $P(y|x)$</td>
-<td align=left>Estimate $P(x|y)$ to then deduce $P(y|x)$</td>
+<td align=left>Прямо оценить $P(y|x)$</td>
+<td align=left>Оценить $P(x|y)$ затем Вывести $P(y|x)$</td>
 </tr>
 <tr>
 <td align=center><b>Что изучено</b></td>
 <td align=left>Граница решения</td>
-<td align=left>Probability distributions of the data</td>
+<td align=left>Распределения вероятностей данных</td>
 </tr>
 <tr>
 <td align=center><b>Иллюстрация</b></td>
@@ -137,8 +137,8 @@
 </tr>
 <tr>
 <td align=center><b>Примеры</b></td>
-<td align=left>Regressions, SVMs</td>
-<td align=left>GDA, Naive Bayes</td>
+<td align=left>Регрессии, SVMs</td>
+<td align=left>GDA, Наивный Байес</td>
 </tr>
 </tbody>
 </table>
@@ -204,13 +204,13 @@
 <br>
 <p><span class=remark>Примечание: Стохастический градиентный спуск (SGD) обновляет параметры на основе случайного обучающего примера, а пакетный градиентный спуск обновляет параметры используя пакет обучающих примеров.</span></p>
 <br>
-<p><span class="new-item item-b">Likelihood</span> The likelihood of a model $L(\theta)$ given parameters $\theta$ is used to find the optimal parameters $\theta$ through likelihood maximization. We have:</p>
+<p><span class="new-item item-b">Правдоподобие модели</span> Likelihood $L(\theta)$ при заданных параметрах $\theta$ используется для поиска оптимальных параметров $\theta$ посредством максимизации правдоподобия.</p>
 <div class=mobile-container>
 \[\boxed{\theta^{\textrm{opt}}=\underset{\theta}{\textrm{arg max }}L(\theta)}\]
 </div>
-<p><span class=remark>Remark: in practice, we use the log-likelihood $\ell(\theta)=\log(L(\theta))$ which is easier to optimize.</span></p>
+<p><span class=remark>Примечание: На практике мы используем логарифмическую вероятность $\ell(\theta)=\log(L(\theta))$, которую легче оптимизировать. У нас есть:</span></p>
 <br>
-<p><span class="new-item item-r">Newton's algorithm</span> Newton's algorithm is a numerical method that finds $\theta$ such that $\ell'(\theta)=0$. Its update rule is as follows:</p>
+<p><span class="new-item item-r">Алгоритм Ньютона</span> это численный метод, который находит такое $\theta$, что $\ell'(\theta)=0$. Его правила обновления следующие:</p>
 <div class=mobile-container>
 \[\boxed{\theta\leftarrow\theta-\frac{\ell'(\theta)}{\ell''(\theta)}}\]
 </div>
@@ -222,7 +222,7 @@
 <h2><a aria-hidden=true class=anchor href=#linear-models id=linear-models></a>Линейные модели</h2>
 <h3>Линейная регрессия</h3>
 <p>Мы предполагаем здесь что $y|x;\theta\sim\mathcal{N}(\mu,\sigma^2)$</p>
-<p><span class="new-item item-g">Normal equations</span> By noting $X$ the design matrix, the value of $\theta$ that minimizes the cost function is a closed-form solution such that:</p>
+<p><span class="new-item item-g">Нормальные уравнения</span> Обозначим $X$ как матрицу данных (объекты-признаки), значение $\theta$, которое минимизирует функцию стоимости, является решением в аналитическом виде, так что:</p>
 <div class=mobile-container>
 \[\boxed{\theta=(X^TX)^{-1}X^Ty}\]
 </div>
@@ -250,7 +250,7 @@
 </div>
 <p><span class=remark>Remark: logistic regressions do not have closed form solutions.</span></p>
 <br>
-<p><span class="new-item item-b">Softmax regression</span> A softmax regression, also called a multiclass logistic regression, is used to generalize logistic regression when there are more than 2 outcome classes. By convention, we set $\theta_K=0$, which makes the Bernoulli parameter $\phi_i$ of each class $i$ be such that:</p>
+<p><span class="new-item item-b">Регрессия Softmax</span> Регрессия softmax, также называемая многоклассовой логистической регрессией, используется для обобщения логистической регрессии, когда существует более двух классов результатов. По соглашению мы полагаем $\theta_K=0$, что делает параметр Бернулли $\phi_i$ каждого класса $i$ равным:</p>
 <div class=mobile-container>
 \[\boxed{\displaystyle\phi_i=\frac{\exp(\theta_i^Tx)}{\displaystyle\sum_{j=1}^K\exp(\theta_j^Tx)}}\]
 </div>
@@ -261,7 +261,7 @@
 \[\boxed{p(y;\eta)=b(y)\exp(\eta T(y)-a(\eta))}\]
 </div>
 <p><span class=remark>Примечание: у нас будет часто $T(y)=y$. Также, $\exp(-a(\eta))$ можно рассматривать как параметр нормализации, который гарантирует, что сумма вероятностей равна единице.</span></p>
-<p>The most common exponential distributions are summed up in the following table:</p>
+<p>Наиболее распространенные экспоненциальные распределения приведенны в следующей таблице:</p>
 <div class=mobile-container>
 <center>
 <table>
@@ -306,7 +306,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Assumptions of GLMs</span> Generalized Linear Models (GLM) aim at predicting a random variable $y$ as a function of $x\in\mathbb{R}^{n+1}$ and rely on the following 3 assumptions:</p>
+<p><span class="new-item item-r">Предположения GLM</span> Обобщенные линейные модели (GLM) нацелены на предсказание случайной величины $y$ как функции от $x\in\mathbb{R}^{n+1}$ и основываются на следующих трех предположениях:</p>
 <div class=row>
  <div class=col-sm-4>$(1)\quad\boxed{y|x;\theta\sim\textrm{ExpFamily}(\eta)}$</div>
  <div class=col-sm-4>$(2)\quad\boxed{h_\theta(x)=E[y|x;\theta]}$</div>
@@ -328,14 +328,14 @@
 <center>
   <img alt=SVM class=img-responsive netsrc=teaching/cs-229/illustrations/ src=svm-en.png?d23456fe589935f26cf32c1664c90851 style=width:100%;max-width:600px>
 </center>
-<p><span class=remark>Remark: the decision boundary is defined as $\boxed{w^Tx-b=0}$.</span></p>
+<p><span class=remark>Примечание: граница решения определяется как $\boxed{w^Tx-b=0}$.</span></p>
 <br>
 <p><span class="new-item item-b">Hinge loss</span> Потери на шарнирах используются при настройке SVM и определяются следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{L(z,y)=[1-yz]_+=\max(0,1-yz)}\]
 </div>
 <br>
-<p><span class="new-item item-b">Kernel</span> Given a feature mapping $\phi$, we define the kernel $K$ as follows:</p>
+<p><span class="new-item item-b">Kernel</span> Учитывая отображение признаков $\phi$, мы определяем ядро $K$ как:</p>
 <div class=mobile-container>
 \[\boxed{K(x,z)=\phi(x)^T\phi(z)}\]
 </div>
@@ -388,11 +388,11 @@
 \[\boxed{P(x|y)=P(x_1,x_2,...|y)=P(x_1|y)P(x_2|y)...=\prod_{i=1}^nP(x_i|y)}\]
 </div>
 <br>
-<p><span class="new-item item-r">Solutions</span> Maximizing the log-likelihood gives the following solutions:
+<p><span class="new-item item-r">Решения</span> Максимизация логарифмического правдоподобия дает следующие решения:
 </p><div class=mobile-container>
 \[\boxed{P(y=k)=\frac{1}{m}\times\#\{j|y^{(j)}=k\}}\quad\textrm{ and }\quad\boxed{P(x_i=l|y=k)=\frac{\#\{j|y^{(j)}=k\textrm{ and }x_i^{(j)}=l\}}{\#\{j|y^{(j)}=k\}}}\]
 </div>
-with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
+с $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 <p><span class=remark>Примечание: Наивный байесовский метод широко используется для классификации текста и обнаружения спама.</span></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#tree id=tree></a>Древовидные и ансамблевые методы</h2>
@@ -417,9 +417,9 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 </tr>
 <tr>
 <td align=left>• Ошибкам уделяется большое внимание, чтобы их можно было исправить на следующем этапе усиления<br>
-• Known as Adaboost</td>
-<td align=left>• Weak learners are trained on residuals<br>
-• Examples include XGBoost</td>
+• Известный как Adaboost</td>
+<td align=left>• Слабые ученики обучаются на разнице<br>
+• Примеры включают XGBoost</td>
 </tr>
 </tbody>
 </table>
@@ -428,7 +428,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#other id=other></a>Другие непараметрические подходы</h2>
 <p><span class="new-item item-b">$k$-ближайшие соседи</span> Алгоритм $k$-ближайших соседей, широко известный как $k$-NN, представляет собой непараметрический подход, в котором ответ точки данных определяется природой её $k$ соседей из обучающего набора. Его можно использовать как для классификации, так и для настройки регрессии.</p>
-<p><span class=remark>Remark: the higher the parameter $k$, the higher the bias, and the lower the parameter $k$, the higher the variance.</span></p>
+<p><span class=remark>Примечание: Чем выше параметр $k$, тем выше смещение, а чем ниже параметр $k$, тем выше дисперсия.</span></p>
 <div class=mobile-container>
 <center>
   <img alt="k nearest neighbors" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=k-nearest-neighbors.png?02f80a524bb11e2b7a70b58c9ed3b0f4 style=width:100%;max-width:740px>
@@ -457,7 +457,7 @@ with $k\in\{0,1\}$ and $l\in[\![1,L]\!]$<p></p>
 <br>
 <p><span class="new-item item-g">Probably Approximately Correct (PAC)</span> Вероятно приближённо корректное обучение - эта схема, в рамках которой были доказаны многочисленные результаты по теории обучения, и имеет следующий набор предположений:</p>
 <ul>
-	<li>the training and testing sets follow the same distribution</li>
+	<li>наборы для обучения и тестирования имеют одинаковое распределение</li>
 	<li>обучающие примеры строятся независимо</li>
 </ul>
 <br>
