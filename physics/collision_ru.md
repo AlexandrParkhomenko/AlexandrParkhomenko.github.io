@@ -1065,20 +1065,9 @@ the axis along which the data has the least variance. Robustly finding the eigen
 and eigenvectors of a matrix is a nontrivial task in general. Typically, they are found
 using some (iterative) numerical technique (for which a good source is [Golub96]).
 
-By definition, the covariance matrix is always symmetric. As a result, it decomposes
-into real (rather than complex) eigenvalues and an orthonormal basis of eigenvec-
-tors. For symmetric matrices, a simpler decomposition approach can be used. For
-a moderate-size matrix, as here, the Jacobi method works quite well. The intricate
-details of the Jacobi method are beyond the scope of this book. Briefly, however,
-the algorithm performs a number of transformation steps to the given input matrix.
-Each step consists of applying a rotation to the matrix, bringing the matrix closer and
-closer to a diagonal matrix (all elements zero, except along the diagonal). When the
-matrix is diagonal, the elements on the diagonal are the eigenvalues. While this is
-done, all rotations are also concatenated into another matrix. Upon exit, this matrix
-will contain the eigenvectors. Ideally, this decomposition should be performed in
-double-precision arithmetic to minimize numerical errors. The following code for the
-Jacobi method is based on the presentation in [Golub96]. First is a subroutine for
-assisting in computing the rotation matrix.
+По определению ковариационная матрица всегда симметрична. В результате он распадается на действительные (а не комплексные) собственные значения и ортонормированный базис собственных векторов. Для симметричных матриц можно использовать более простой подход декомпозиции. Для матрицы среднего размера, как здесь, метод Якоби работает довольно хорошо. Сложные детали метода Якоби выходят за рамки этой книги. Вкратце, однако, алгоритм выполняет ряд шагов преобразования заданной входной матрицы.
+
+Каждый шаг заключается в применении поворота к матрице, приближая матрицу к диагональной матрице (все элементы равны нулю, кроме элементов на диагонали). Когда матрица диагональна, элементы на диагонали являются собственными значениями. При этом все повороты также объединяются в другую матрицу. После выхода эта матрица будет содержать собственные векторы. В идеале это разложение должно выполняться в арифметике с двойной точностью, чтобы минимизировать числовые ошибки. Следующий код для метода Якоби основан на презентации в [Golub96]. Во-первых, это подпрограмма для помощи в вычислении матрицы вращения.
 
 ### 4.3.4 Ограничивающая сфера посредством итеративного уточнения
 
