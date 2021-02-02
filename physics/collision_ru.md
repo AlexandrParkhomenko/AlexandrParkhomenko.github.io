@@ -1632,21 +1632,103 @@ int TestKDOPKDOP(KDOP &a, KDOP &b, int k) {
 
 ### 4.6.4 Вычисление и настройка k-DOP
 
+Вычисление k-DOP для объекта можно рассматривать как обобщение метода вычисления AABB, так же как тест перекрытия для двух k-DOP на самом деле является обобщением теста перекрытия AABB-AABB. Таким образом, k-DOP просто вычисляется из проекционного распространения вершин объекта вдоль определяющих осей k-DOP. По сравнению с расчетом AABB, единственное отличие состоит в том, что вершины должны быть спроецированы на оси, и нужно учитывать больше осей. Ограничение на сохранение компонентов оси в наборе {−1, 0, 1} делает жестко запрограммированную функцию для вычисления k-DOP менее затратной, чем обычная функция для произвольных направлений, поскольку проекция вершин на эти оси теперь включает не более трех дополнений. Например, 8-DOP вычисляется следующим образом:
 
 ```
+    // Вычислить 8-DOP для вершин объекта v[] в мировых координатах
+    // с помощью осей (1,1,1), (1,1,-1), (1,-1,1) и (-1,1,1)
+    void ComputeDOP8(Point v[], int numPts, DOP8 &dop8) {
+        // Инициализация 8-DOP в пустой объём
+        dop8.min[0] = dop8.min[1] = dop8.min[2] = dop8.min[3] = FLT_MAX;
+        dop8.max[0] = dop8.max[1] = dop8.max[2] = dop8.max[3] = -FLT_MAX;
+        // Для каждой точки при необходимости обновить границы 8-DOP
+        float value;
+        for (int i = 0; i < numPts; i++) {
+            // Ось 0 = (1,1,1)
+            value = v[i].x + v[i].y + v[i].z;
+            if (value < dop8.min[0]) dop8.min[0] = value;
+            else if (value > dop8.max[0]) dop8.max[0] = value;
+            // Ось 1 = (1,1,-1)
+            value = v[i].x + v[i].y - v[i].z;
+            if (value < dop8.min[1]) dop8.min[1] = value;
+            else if (value > dop8.max[1]) dop8.max[1] = value;
+            // Ось 2 = (1,-1,1)
+            value = v[i].x - v[i].y + v[i].z;
+            if (value < dop8.min[2]) dop8.min[2] = value;
+            else if (value > dop8.max[2]) dop8.max[2] = value;
+            // Ось 3 = (-1,1,1)
+            value = -v[i].x + v[i].y + v[i].z;
+            if (value < dop8.min[3]) dop8.min[3] = value;
+            else if (value > dop8.max[3]) dop8.max[3] = value;
+        }
+    }
 ```
+
+Хотя k-DOP инвариантны при перемещении, при вращении объем не выровнен с предварительно заданными осями. Следовательно, как и в случае с AABB, k-DOP необходимо перестраивать при каждом повороте объёма. Простое решение - пересчитать k-DOP с нуля, как описано. Однако, поскольку пересчет k-DOP включает в себя преобразование вершин объекта в новое пространство, это становится дорогостоящим при большом количестве вершин объекта. Более эффективный подход к перестройке - использование метода подъема на холм, подобного тому, который описан в разделе 4.2.5 для вычисления AABB. Единственное отличие состоит в том, что вместо того, чтобы отслеживать шесть ссылок на вершины выпуклой оболочки, альпинист для k-DOP теперь будет отслеживать k ссылок на вершины, по одной для каждого направления грани k-DOP. Если когерентность между кадрами высока, а объекты вращаются между кадрами на небольшие промежутки времени, отслеживание вершин - хороший подход. Однако наихудшая сложность этого метода - $O(n^2)$, и он может плохо работать при низкой когерентности. Восхождение на холм приводит к жесткому ограничению объема.
+
+Другой, приближенный, подход основан на вычислении и сохранении вершин каждого k-DOP для его начальной локальной ориентации во время препроцессора. Затем во время выполнения k-DOP пересчитывается из этих вершин и преобразуется в мировое пространство с помощью текущей матрицы ориентации. Это эквивалентно методу AABB, описанному в Разделе 4.2.6.
+
+Множество вершин k-DOP в его начальной ориентации можно вычислить с помощью отображения преобразования двойственности. Здесь двойственное отображение плоскости $ax+by+cz=1$ точка (a, b, c) и наоборот. Пусть определяющие плоскости k-DOP выражаются уравнениями плоскости. Затем, вычисляя выпуклую оболочку двойственной к этим плоскостям, грани (ребра и вершины) выпуклой оболочки отображаются в вершины (ребра и грани) пересечения исходных плоскостей при преобразовании обратно в соответствии с отображением двойственности. Чтобы эта процедура двойственности работала, k-DOP должен быть преобразован, чтобы содержать начало, если он еще не содержится в k-DOP. Для объемов, образованных пересечением полупространств, точка внутри объема может быть получена с помощью линейного программирования (см. Раздел 9.4.1). 
+
+Другой, более простой вариант - вычислить внутреннюю точку методом попеременной проекции (MAP). Этот метод начинается с произвольной точки в пространстве. Цикл по всем полупространствам в произвольном порядке, точка обновляется, проецируя ее на ограничивающую гиперплоскость текущего полупространства всякий раз, когда она находится за пределами полупространства. Гарантированная сходимость, цикл по всем полупространствам повторяется до тех пор, пока точка не окажется внутри всех полупространств. Если начальная точка лежит за пределами объема пересечения, что вполне вероятно, результирующая точка будет лежать на границе объема пересечения и, в частности, на одной из ограничивающих гиперплоскостей. (Если точка находится внутри объема, методом возвращается сама точка.) Точка внутри объема получается повторением метода чередования проекций с разными начальными точками до тех пор, пока не будет получена вторая точка на другой ограничивающей гиперплоскости. Тогда внутренняя точка - это просто середина двух граничных точек. MAP может очень медленно сходиться для определенных входных данных. Однако для объемов, обычно используемых в качестве ограничивающих объемов, медленная сходимость обычно не является проблемой. Дополнительные сведения о MAP см. [Deutsch01]. Для получения дополнительной информации о преобразованиях двойственности (или полярности) см., например, [Preparata85], [O’Rourke98], or [Berg00].
+
+Более простой способ вычисления начального набора вершин - рассмотреть все комбинации трех не копланарных плоскостей из входного набора граничных плоскостей k-DOP. Каждый такой набор из трех плоскостей пересекается в точке (Раздел 5.4.5 описывает, как вычисляется эта точка). После вычисления всех точек пересечения те, которые находятся перед одной или несколькими граничными плоскостями k-DOP, отбрасываются. Остальные точки являются вершинами k-DOP.
+
+k-DOP также можно перестроить с помощью методов, основанных на линейном программировании, например
+описаными в [Konečný97] и [Konečný98]. Более подробная стратегия перестройки представлена u200bu200bв [Fünfzig03]. Линейное программирование описано в разделе 9.4.
 
 ### 4.6.5 Приблизительные тесты на пересечение выпуклой оболочки
 
+It is easy to test separation between two convex polygons (for example, using the
+rotating calipers method mentioned in Section 4.4.4). Unfortunately, the problem
+is not as simple for polytopes. Accurate methods for this problem are discussed in
+Chapter 9. In many situations, however, fully accurate polytope collision detection
+might be neither necessary nor desired. By relaxing the test to allow approximate
+solutions, it is possible to obtain both simpler and faster methods.
 
-```
-```
+One such approach maintains both the defining planes and vertices of each convex
+hull. To test two hulls against each other, the vertices of each hull are tested against
+the planes of the other to see if they lie fully outside any one plane. If they do, the
+hulls are not intersecting. If neither set of vertices is outside any face of the other hull,
+the hulls are conservatively considered overlapping. In terms of the separating-axis
+test, this corresponds to testing separation on the face normals of both hulls, but not
+the edge-edge combinations of both.
+
+Another approach is simply to replace the vertex set with a set of spheres. The
+spheres are chosen so that their union approximates the convex hull. Now the test
+proceeds by testing spheres (instead of vertices) against the planes. The idea is that
+compared to vertex tests fewer sphere tests must be performed. Although this test is
+faster, it is also less accurate. To improve accuracy while keeping the set size down,
+the set of spheres is often hand optimized.
+
+As with k-DOPs, testing can be sped up by ordering the stored planes to make
+successive planes as perpendicular to each other as possible. Similarly, to avoid degen-
+erate behavior due to clustering the vertices (or spheres) can be randomly ordered.
+Bounding the vertex set with a sphere and testing the sphere against the plane before
+testing all vertices often allow for early outs.
+
+Compared to other bounding volume tests, these tests are still relatively expensive
+and are typically preceded by a cheaper bounding volume test (such as a sphere-
+sphere test) to avoid hull-testing objects that are sufficiently far apart to not be
+intersecting. The coherency methods presented in Chapter 9 are also useful for
+minimizing the number of hull tests that have to be performed.
 
 ## 4.7 Другие ограничивающие объемы
 
+In addition to the bounding volumes covered here, many other types of volumes
+have been suggested as bounding volumes. These include cones [Held97], [Eberly02],
+cylinders [Held97], [Eberly00], [Schömer00], spherical shells [Krishnan98], ellipsoids
+[Rimon92], [Wang01], [Choi02], [Wang02], [Chien03], and zonotopes [Guibas03].
+Cones, cylinders, and ellipsoids are self-explanatory. Spherical shells are the inter-
+section of the volume between two concentric spheres and a cone with its apex at
+the sphere center. Zonotopes are centrally symmetric polytopes of certain properties.
+These shapes have not found widespread use as bounding volumes, in part due to
+having expensive intersection tests. For this reason, they are not covered here further.
 
-```
-```
+It should be noted that whereas ellipsoid-ellipsoid is an expensive intersection test,
+tests of ellipsoids against triangles and other polygons can be transformed into testing
+a sphere against a skewed triangle by applying a nonuniform scaling to the coordinate
+space. Thus, ellipsoids are feasible bounding volumes for certain sets of tests.
 
 ## 4.8 Резюме
 
