@@ -44,10 +44,16 @@
       ul ul ol, ul ol ol, ol ul ol, ol ol ol {
         list-style-type: decimal;
       }
+      .contentcontainer {
+        width:800px;margin:0 auto;
+      }
+      .contentcontainer p, .contentcontainer li {
+        text-align:justify;
+      }
     </style>
   </head>
   <body>
-    <div style="width:800px;margin:0 auto;text-align:justify;">  
+    <div class="contentcontainer">  
     {{ content }}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
