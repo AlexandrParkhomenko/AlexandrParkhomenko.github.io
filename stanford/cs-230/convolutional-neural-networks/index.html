@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Глубокое обучение</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Convolutional Neural Nets</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#overview>Обзор</a></div> <div class=dropdown-container> <a href=#overview><span>Структура архитектуры</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#layer>Типы слоёв</a></div> <div class=dropdown-container> <a href=#layer><span>Свертка</span></a> <a href=#layer><span>Пулинг</span></a> <a href=#layer><span>Полносвязный</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#filter>Фильтрация гиперпараметров</a></div> <div class=dropdown-container> <a href=#filter><span>Размеры</span></a> <a href=#filter><span>Шаг</span></a> <a href=#filter><span>Дополнение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#hyperparameters>Настройка гиперпараметров</a></div> <div class=dropdown-container> <a href=#hyperparameters><span>Совместимость параметров</span></a> <a href=#hyperparameters><span>Сложность модели</span></a> <a href=#hyperparameters><span>Рецептивное поле</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#activation-function>Функции активации</a></div> <div class=dropdown-container> <a href=#activation-function><span>Блок линейной ректификации</span></a> <a href=#activation-function><span>Softmax</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#object-detection>Обнаружение объектов</a></div> <div class=dropdown-container> <a href=#object-detection><span>Типы моделей</span></a> <a href=#object-detection><span>Обнаружение</span></a> <a href=#object-detection><span>Пересечение по объединению</span></a> <a href=#object-detection><span>Подавление немаксимума</span></a> <a href=#object-detection><span>YOLO</span></a> <a href=#object-detection><span>R-CNN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#face>Проверка/распознавание лиц</a></div> <div class=dropdown-container> <a href=#face><span>Обучение одним выстрелом</span></a> <a href=#face><span>Сиамская сеть</span></a> <a href=#face><span>Triplet loss</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#style-transfer>Перенос нейронного стиля</a></div> <div class=dropdown-container> <a href=#style-transfer><span>Активация</span></a> <a href=#style-transfer><span>Матрица стилей</span></a> <a href=#style-transfer><span>Функция стоимости стиля/контента</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#ct-architectures>Архитектуры вычислительных трюков</a></div> <div class=dropdown-container> <a href=#ct-architectures><span>Generative Adversarial Net</span></a> <a href=#ct-architectures><span>ResNet</span></a> <a href=#ct-architectures><span>Inception Network</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-convolutional-neural-networks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-230 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 230 - Глубокое обучение</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Convolutional Neural Nets</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#overview>Обзор</a></div> <div class=dropdown-container> <a href=#overview><span>Структура архитектуры</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#layer>Типы слоёв</a></div> <div class=dropdown-container> <a href=#layer><span>Свертка</span></a> <a href=#layer><span>Пулинг</span></a> <a href=#layer><span>Полносвязный</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#filter>Фильтрация гиперпараметров</a></div> <div class=dropdown-container> <a href=#filter><span>Размеры</span></a> <a href=#filter><span>Шаг</span></a> <a href=#filter><span>Дополнение</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#hyperparameters>Настройка гиперпараметров</a></div> <div class=dropdown-container> <a href=#hyperparameters><span>Совместимость параметров</span></a> <a href=#hyperparameters><span>Сложность модели</span></a> <a href=#hyperparameters><span>Рецептивное поле</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#activation-function>Функции активации</a></div> <div class=dropdown-container> <a href=#activation-function><span>Блок линейной ректификации</span></a> <a href=#activation-function><span>Softmax</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#object-detection>Обнаружение объектов</a></div> <div class=dropdown-container> <a href=#object-detection><span>Типы моделей</span></a> <a href=#object-detection><span>Обнаружение</span></a> <a href=#object-detection><span>Пересечение по объединению</span></a> <a href=#object-detection><span>Подавление немаксимумов</span></a> <a href=#object-detection><span>YOLO</span></a> <a href=#object-detection><span>R-CNN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#face>Проверка/распознавание лиц</a></div> <div class=dropdown-container> <a href=#face><span>Обучение с первого раза</span></a> <a href=#face><span>Сиамская сеть</span></a> <a href=#face><span>Triplet loss</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#style-transfer>Нейронный перенос стиля</a></div> <div class=dropdown-container> <a href=#style-transfer><span>Активация</span></a> <a href=#style-transfer><span>Матрица стиля</span></a> <a href=#style-transfer><span>Функция стоимости стиля/контента</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#ct-architectures>Архитектуры с вычислительными трюками</a></div> <div class=dropdown-container> <a href=#ct-architectures><span>Generative Adversarial Net</span></a> <a href=#ct-architectures><span>ResNet</span></a> <a href=#ct-architectures><span>Inception Network</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-230-deep-learning/blob/master/en/cheatsheet-convolutional-neural-networks.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -62,9 +62,9 @@
   <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Шпаргалка по Сверточным Нейронным Сетям
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-230-deep-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-230-deep-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
-<i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
+<i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и <a href=https://github.com/geotrush onclick=trackOutboundLink(this);>Труш Георгий (Georgy Trush)</a></i>
 <h2><a aria-hidden=true class=anchor href=#overview id=overview></a>Обзор</h2>
-<p><span class="new-item item-r">Архитектура традиционного</span> Сверточные нейронные сети, также известные как (Convolutional neural networks, CNN), представляют собой особый тип нейронных сетей, которые обычно состоят из следующих слоев:</p>
+<p><span class="new-item item-r">Архитектура классической CNN</span> Сверточные нейронные сети, также известные как (Convolutional neural networks, CNN), представляют собой особый тип нейронных сетей, которые обычно состоят из следующих слоев:</p>
 <div class=mobile-container>
 <center>
   <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=architecture-cnn-en.jpeg?3b7fccd728e29dc619e1bd8022bf71cf style=width:100%;max-width:900px>
@@ -74,7 +74,7 @@
 <p>Слой свертки и слой пулинга можно настроить с учетом гиперпараметров, которые описаны в следующих разделах.</p>
 <br>
 <h2><a aria-hidden=true class=anchor href=#layer id=layer></a>Типы слоёв</h2>
-<p><span class="new-item item-b">Слой свертки</span> Convolution layer (CONV) использует фильтры, которые выполняют операции свертки при сканировании входа $I$ относительно его размеров. Его гиперпараметры включают размер фильтра $F$ и шаг $S$. Полученный результат $O$ называется картой характеристик или картой активации.</p>
+<p><span class="new-item item-b">Слой свертки</span> Convolution layer (CONV) использует фильтры, которые выполняют операции свертки при сканировании входа $I$ относительно его размеров. Его гиперпараметры включают размер фильтра $F$ и шаг $S$. Полученный результат $O$ называется картой признаков или картой активации.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=convolution-layer-a.png?1c517e00cb8d709baf32fc3d39ebae67 style=width:100%;max-width:450px>
@@ -83,7 +83,7 @@
 <br>
 <p><span class=remark>Примечание: шаг свертки также может быть обобщен на одномерные и трехмерные случаи.</span></p>
 <br>
-<p><span class="new-item item-b">Слой Пулинга</span> Pooling (POOL) - это операция понижающей дискретизации, обычно применяемая после сверточного слоя, который обеспечивает некоторую пространственную инвариантность. В частности, max-пулинг и усредненный пулинг - это особые виды пулинга, в которых берется максимальное и среднее значение соответственно.</p>
+<p><span class="new-item item-b">Слой Пулинга</span> Pooling (POOL) - это операция понижающей дискретизации, обычно применяемая после сверточного слоя, который обеспечивает некоторую пространственную инвариантность изображенных объектов. В частности, max-пулинг и усредненный пулинг - это особые виды пулинга, в которых берется максимальное и среднее значение соответственно.</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:400px; max-width:720px;">
@@ -100,7 +100,7 @@
 </tr>
 <tr>
 <td align=center><b>Цель</b></td>
-<td align=left>Каждая операция пулинга выбирает максимальное значение текущего просмотра</td>
+<td align=left>Каждая операция пулинга выбирает максимальное значение текущего представления</td>
 <td align=left>Каждая операция пулинга усредняет значения текущего представления</td>
 </tr>
 <tr>
@@ -119,7 +119,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Полносвязный</span> Fully Connected (FC) слой работает на сглаженном входе, где каждый вход подключен ко всем нейронам. Уровни FC, если они присутствуют, обычно находятся ближе к концу архитектур CNN и могут использоваться для оптимизации целей, таких как оценки классов.</p>
+<p><span class="new-item item-b">Полносвязный</span> Fully Connected (FC) слой работает на сглаженном входе, где каждый вход подключен ко всем нейронам. Уровни FC, если они присутствуют, обычно находятся ближе к концу архитектур CNN и могут использоваться для оптимизации целевых метрик, таких как оценки классов.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=fully-connected-ltr.png?32caf9e07c79d652faa292812579d063 style="width:100%; max-width:500px;">
@@ -128,7 +128,7 @@
 <br>
 <h2><a aria-hidden=true class=anchor href=#filter id=filter></a>Фильтрация гиперпараметров</h2>
 <p>Слой свертки содержит фильтры, для которых важно знать значение его гиперпараметров.</p>
-<p><span class="new-item item-b">Размеры фильтра</span> Фильтр размера $F\times F$, применяемый к входу, содержащему каналы $C$, представляет собой объём $F \times F \times C$, который выполняет свертки на входе размера $I \times I \times C$ и создает карту выходных характеристик (также называемую картой активации) размера $O \times O \times 1$.
+<p><span class="new-item item-b">Размеры фильтра</span> Фильтр размера $F\times F$, применяемый к входу, содержащему каналы $C$, представляет собой объём $F \times F \times C$, который выполняет свертки на входе размера $I \times I \times C$ и создает карту выходных признаков (также называемую картой активации) размера $O \times O \times 1$.
 </p><div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=dimensions-filter-en.png?7ce161e129a392a1804a231536b59f45 style=width:100%;>
@@ -145,7 +145,7 @@
 </div>
 <br>
 <br>
-<p><span class="new-item item-b">Дополнение нулями</span> Zero-padding означает процесс добавления $P$ нулей к каждой стороне границ ввода. Это значение можно указать вручную или автоматически в одном из трех режимов, описанных ниже:</p>
+<p><span class="new-item item-b">Дополнение нулями</span> Zero-padding означает процесс добавления $P$ нулей к каждой стороне входного изображения. Это значение можно указать вручную или автоматически в одном из трех режимов, описанных ниже:</p>
 <div class=mobile-container>
 <center>
 <table style="table-layout:fixed; width:100%; min-width:700px;">
@@ -177,8 +177,8 @@
 <tr>
 <td align=center><b>Цель</b></td>
 <td align=left>• Без дополнения<br>• Отбрасывает последнюю свертку при несовпадении размеров</td>
-<td align=left>• Дополнения для карты объектов с размерами $\Bigl\lceil\frac{I}{S}\Bigr\rceil$<br>• Размер вывода математически удобен<br>• Также называется 'половинным' дополнением</td>
-<td align=left>• Максимальное дополнение. С ним концевые свертки применяются к пределам ввода<br>• Фильтр 'видит' вход от начала до конца</td>
+<td align=left>• Дополнения для карты признаков с размерами $\Bigl\lceil\frac{I}{S}\Bigr\rceil$<br>• Размер вывода математически удобен<br>• Также называется 'половинным' дополнением</td>
+<td align=left>• Максимальное дополнение. С ним концевые свертки применяются к границам входа<br>• Фильтр 'видит' вход от начала до конца</td>
 </tr>
 </tbody>
 </table>
@@ -246,7 +246,7 @@
                  • Обычный выбор для $K$ - это $2C$</td>
 <td align=left>• Операция пулинга выполняется поканально<br>
                  • В большинстве случаев, $S = F$</td>
-<td align=left>• Ввод сглаживается<br>
+<td align=left>• Вход сглаживается<br>
                  • Один параметр смещения на нейрон<br>
                  • Количество нейронов FC не имеет структурных ограничений</td>
 </tr>
@@ -296,7 +296,7 @@
 </tr>
 <tr>
 <td align=left>• Сложности нелинейности поддаются биологической интерпретации</td>
-<td align=left>• Решает проблему умирания ReLU для отрицательных значений</td>
+<td align=left>• Решает проблему зануления ReLU отрицательных значений</td>
 <td align=left>• Дифференцируема везде</td>
 </tr>
 </tbody>
@@ -392,7 +392,7 @@
 <br>
 <p><span class="new-item item-b">Якорные рамки</span> Anchor box - это метод, используемый для прогнозирования перекрывающихся ограничивающих рамок. На практике сети позволяют прогнозировать более одной рамки одновременно, причем каждое предсказание рамки ограничивается заданным набором геометрических свойств. Например, первый прогноз потенциально может быть прямоугольной рамкой заданной формы, а второй будет другой прямоугольной рамкой с другими параметрами.</p>
 <br>
-<p><span class="new-item item-b">Подавление немаксимума</span> Подавление немаксимума - Техника подавления немаксимальных направлена на удаление дублирующих перекрывающихся ограничивающих рамок одного и того же объекта путем выбора наиболее репрезентативных. После удаления всех рамок, имеющих прогноз вероятности ниже 0.6, следующие шаги повторяются, пока остаются рамки:</p>
+<p><span class="new-item item-b">Подавление немаксимумов</span> Подавление немаксимумов - Техника подавления немаксимумов направлена на удаление дублирующих перекрывающихся ограничивающих рамок одного и того же объекта путем выбора наиболее репрезентативных. После удаления всех рамок, имеющих прогноз вероятности ниже 0.6, следующие шаги повторяются, пока остаются рамки:</p>
 <p>Для данного класса,
 <br>• Шаг 1: Выберите рамку с наибольшей вероятностью прогноза.
 <br>• Шаг 2: Отбросьте любую рамку с $\textrm{IoU}\geqslant0.5$ по сравнению с предыдущей рамкой.</p>
@@ -443,9 +443,9 @@
 </tr>
 <tr>
 <td align=left>• Это правильный человек?<br>
-                 • Один-к-одному поиск</td>
+                 • Поиск one-to-one</td>
 <td align=left>• Это одно из $K$ лиц в базе данных?<br>
-                 • Один-к-многим поиск</td>
+                 • Поиск one-to-many</td>
 </tr>
 <tr>
 <td align=center><img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=face-verification-en.jpeg?9b6ea3c15805347193943fe09692f71b style="width:100%; max-width:300px;"></td>
@@ -456,11 +456,11 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-b">Обучение одним выстрелом</span> One Shot Learning - это алгоритм проверки лица, который использует ограниченный обучающий набор для изучения функции сходства, которая количественно определяет, насколько разные два заданных изображения. Функция подобия, применяемая к двум изображениям, часто обозначается $d(\textrm{image 1}, \textrm{image 2}).$</p>
+<p><span class="new-item item-b">Обучение с первого раза</span> One Shot Learning - это алгоритм проверки лица, который использует ограниченный обучающий набор для изучения функции сходства, которая количественно определяет, насколько разные два заданных изображения. Функция подобия, применяемая к двум изображениям, часто обозначается $d(\textrm{image 1}, \textrm{image 2}).$</p>
 <br>
 <p><span class="new-item item-r">Сиамские сети</span> Siamese Network стремятся научиться кодировать изображения, чтобы затем количественно оценить, насколько два изображения отличаются друг от друга. Для заданного входного изображения $x^{(i)}$ закодированный вывод часто обозначается как $f(x^{(i)})$.</p>
 <br>
-<p><span class="new-item item-g">Потеря триплета</span> Triplet loss $\ell$ - это функция потерь, вычисленная на представлении триплета изображений $A$ (anchor), $P$ (positive) и $N$ (negative). Якорь (anchor) и положительный пример относятся к одному классу, а отрицательный пример - к другому. Называя $\alpha\in\mathbb{R}^+$ параметром отступа, этот потеря определяется следующим образом:</p>
+<p><span class="new-item item-g">Потеря тройки</span> Triplet loss $\ell$ - это функция потерь, вычисленная на представлении тройки изображений $A$ (anchor), $P$ (positive) и $N$ (negative). Якорь (anchor) и положительный пример относятся к одному классу, а отрицательный пример - к другому. Называя $\alpha\in\mathbb{R}^+$ параметром отступа, этот потеря определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\ell(A,P,N)=\max\left(d(A,P)-d(A,N)+\alpha,0\right)}\]
 </div>
@@ -471,8 +471,8 @@
   </div>
 </center>
 <br>
-<h2><a aria-hidden=true class=anchor href=#style-transfer id=style-transfer></a>Перенос нейронного стиля</h2>
-<p><span class="new-item item-g">Мотивация</span> цель переноса нейронного стиля - создать изображение $G$ на основе заданного контента $C$ и заданного стиля $S$.</p>
+<h2><a aria-hidden=true class=anchor href=#style-transfer id=style-transfer></a>Нейронный перенос стиля</h2>
+<p><span class="new-item item-g">Мотивация</span> цель нейронного переноса стиля - создать изображение $G$ на основе заданного контента $C$ и заданного стиля $S$.</p>
 <div class=mobile-container>
 <center>
 <img class=img-responsive netsrc=teaching/cs-230/illustrations/ src=neural-style-motivation-en.jpeg?6b66c6e6a11a720c49301837f7834a61 style=width:100%;>
@@ -486,7 +486,7 @@
 \[\boxed{J_{\textrm{content}}(C,G)=\frac{1}{2}||a^{[l](C)}-a^{[l](G)}||^2}\]
 </div>
 <br>
-<p><span class="new-item item-g">Матрица стиля</span> Матрица стилей $G^{[l]}$ данного слоя $l$ является определителем Грама, где каждый из его элементов $G_{kk'}^{[l]}$ количественно определяет степень корреляции каналов $k$ и $k'$. Она определяется по отношению к активациям $a^{[l]}$ следующим образом:</p>
+<p><span class="new-item item-g">Матрица стиля</span> Матрица стиля $G^{[l]}$ данного слоя $l$ является определителем Грама, где каждый из его элементов $G_{kk'}^{[l]}$ количественно определяет степень корреляции каналов $k$ и $k'$. Она определяется по отношению к активациям $a^{[l]}$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{G_{kk'}^{[l]}=\sum_{i=1}^{n_H^{[l]}}\sum_{j=1}^{n_w^{[l]}}a_{ijk}^{[l]}a_{ijk'}^{[l]}}\]
 </div>
@@ -516,6 +516,6 @@
 \[\boxed{a^{[l+2]}=g(a^{[l]}+z^{[l+2]})}\]
 </div>
 <br>
-<p><span class="new-item item-r">Inception Network</span> Эта архитектура использует начальные модули и нацелена на то, чтобы попробовать различные свертки, чтобы повысить её производительность за счет диверсификации признаков. В частности, она использует трюк свертки $1\times1$ для ограничения вычислительной нагрузки. </p>
+<p><span class="new-item item-r">Inception Network</span> Эта архитектура использует начальные модули и нацелена на то, чтобы попробовать различные свертки, тем самым повышая распознавательную способность за счет комбинации карт признаков различных масштабов. В частности, она использует трюк свертки $1\times1$ для ограничения вычислительной нагрузки. </p>
 <br>
 </article> </div> <!-- FOOTER <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi onclick=trackOutboundLink(this);><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea onclick=trackOutboundLink(this);><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ" onclick=trackOutboundLink(this);><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="trackOutboundLink(this); window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> --> </body></html>
