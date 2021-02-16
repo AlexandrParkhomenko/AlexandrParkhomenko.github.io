@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Multi-Body Dynamics"
+description: "Deriving the equations of motion"
+date: 
+---
+
+
 # Multi-Body Dynamics
 
 # Deriving the equations of motion (an example)
@@ -33,8 +41,8 @@ are:
 \begin{eqnarray*}
 {\bf p}_1 =& l_1\begin{bmatrix} s_1 \\ - c_1 \end{bmatrix}, &{\bf p}_2  =
 {\bf p}_1 + l_2\begin{bmatrix} s_{1+2} \\ - c_{1+2} \end{bmatrix} \\
-\dot{{\bf p}}_1 =& l_1 \dot{q}_1\begin{bmatrix} c_1 \\ s_1 \end{bmatrix},
-&\dot{{\bf p}}_2 = \dot{{\bf p}}_1 + l_2 (\dot{q}_1+\dot{q}_2) \begin{bmatrix} c_{1+2} \\ s_{1+2} \end{bmatrix}
+\dot{\bf{p}}_1 =& l_1 \dot{q}_1\begin{bmatrix} c_1 \\ s_1 \end{bmatrix},
+&\dot{\bf{p}}_2 = \dot{\bf{p}}_1 + l_2 (\dot{q}_1+\dot{q}_2) \begin{bmatrix} c_{1+2} \\ s_{1+2} \end{bmatrix}
 \end{eqnarray*}
 
 Note that $s_1$ is shorthand for $\sin(q_1)$, $c_{1+2}$ is shorthand for
@@ -66,8 +74,7 @@ If you crank through the Lagrangian dynamics for a few simple robotic
 manipulators, you will begin to see a pattern emerge - the resulting
 equations of motion all have a characteristic form.  For example, the
 kinetic energy of your robot can always be written in the form:
-\begin{equation} T = \frac{1}{2} \bf{\dot q}^T \bf M(\bf q)
-\bf{\dot q},\end{equation} where $\bf M$ is the state-dependent inertia matrix
+$T = \frac{1}{2} \bf{\dot q}^T \bf M(\bf q)\bf{\dot q},$ where $\bf M$ is the state-dependent inertia matrix
 (aka mass matrix). This observation affords some insight into general
 manipulator dynamics - for example we know that ${\bf M}$ is always positive
 definite, and symmetric<elib>Asada86</elib>(p.107) and has a beautiful
@@ -78,8 +85,8 @@ advantage of in our algorithms.
 Continuing our abstractions, we find that the equations of motion of a
 general robotic manipulator (without kinematic loops) take the form
 
-\begin{equation} \bf{M}(\bf{q})\bf{\ddot q} + \bf{C}(\bf{q},\bf{\dot q})\bf{\dot q} =
-\bf \tau_g(\bf q) + {\bf B}\bf u, \label{eq:manip} \end{equation}
+$$\bf{M}(\bf{q})\bf{\ddot q} + \bf{C}(\bf{q},\bf{\dot q})\bf{\dot q} = \bf \tau_g(\bf q) + {\bf B}\bf u,$$ 
+<!-- \label{eq:manip} -->
 
 where $\bf q$ is
 the joint position vector, ${\bf M}$ is the inertia matrix, $\bf C$ captures
@@ -100,7 +107,7 @@ m_2 l_1 l_2 c_2 & m_2 l_2^2 \end{bmatrix} \\ \bf C(\bf q,\bf{\dot q}) =&
 \dot{q}_1 s_2 & 0 \end{bmatrix} \\ \bf \tau_g(\bf q) =& -g \begin{bmatrix} (m_1 +
 m_2) l_1 s_1 + m_2 l_2 s_{1+2} \\ m_2 l_2 s_{1+2} \end{bmatrix} , \quad \bf B
 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \end{align*} Note that this
-choice of the $\bf C$ matrix was not unique. </example>
+choice of the $\bf C$ matrix was not unique. <!-- /example -->
 
 The manipulator equations are very general, but they do define some
 important characteristics.  For example, $\bf{\ddot q}$ is (state-dependent)
@@ -118,10 +125,9 @@ quaternion, described by 4 real values (plus a norm constraint).  However we
 can still represent the rotational velocity without singularities using just
 3 real values.  This means that the length of our velocity vector is no
 longer the same as the length of our position vector.  For this reason, you
-will see that most of the software in <drake></drake> uses the more general
+will see that most of the software uses the more general
 notation with $\bf v$ to represent velocity, $\bf q$ to represent positions, and
-the manipulator equations are written as \begin{equation} \bf M(\bf q) \bf{\dot v}
-+ \bf C(\bf q,\bf v)\bf v = \bf \tau_g(\bf q) + \bf B \bf u, \end{equation} which is
+the manipulator equations are written as $\bf M(\bf q) \bf{\dot v} + \bf C(\bf q,\bf v)\bf v = \bf \tau_g(\bf q) + \bf B \bf u,$ which is
 not necessarily a second-order system.  See <elib>Duindam06</elib> for a
 nice discussion of this topic.
 
@@ -135,7 +141,7 @@ equations of motion.  For a detailed reference on these methods, see
 Articulated Body Method in <elib>Mirtich96</elib>.  The implementation in
 <drake></drake> uses a related formulation from <elib>Jain11</elib>.
 
-</subsection>
+<!-- /subsection -->
 
 # Bilateral Position Constraints
 
@@ -153,16 +159,16 @@ ensure that the constraint is always satisfied.
 
 Consider the constraint equation
 
-\begin{equation}\bf h(\bf q) =
-0.\end{equation}
+$$\bf h(\bf q) = 0.$$
+
 For the case of the kinematic closed-chain, this can be
 the kinematic constraint that the location of one end of the chain is
 equal to the location of the other end of the chain. The equations of
-motion can be written \begin{equation}\bf M({\bf q})\bf{\ddot q} +
-\bf C(\bf q,\bf{\dot q})\dot\bf q = \bf \tau_g(\bf q) + \bf B\bf u + \bf H^T(\bf q)
-\bf \lambda,\label{eq:constrained_manip}\end{equation} where $\bf H(\bf q) = \frac{\partial \bf h}{\partial \bf q}$ and ${\bf \lambda}$ is the constraint force.  Let's use the
-shorthand 
-\begin{equation} \bf M({\bf q})\bf{\ddot q} = \bf \tau(q,\dot{q},u) + \bf H^T(\bf q) \bf \lambda. \label{eq:manip_short} \end{equation}<
+motion can be written $\bf{M}(\bf{q})\bf{\ddot q} + \bf{C}(\bf q,\bf{\dot q})\bf{\dot q} = \bf \tau_g(\bf q) + \bf B\bf u + \bf H^T(\bf q) \bf \lambda,$ <!-- \label{eq:constrained_manip} --> where $\bf H(\bf q) = \frac{\partial \bf h}{\partial \bf q}$ and ${\bf \lambda}$ is the constraint force.  Let's use the
+shorthand
+
+$$\bf M({\bf q})\bf{\ddot q} = \bf \tau(q,\dot{q},u) + \bf H^T(\bf q) \bf \lambda. $$
+<!-- \label{eq:manip_short} -->
 
 Using 
 
@@ -173,8 +179,7 @@ we can solve for
 $\bf \lambda$, by observing that when the constraint is imposed, $\bf h=0$ and
 therefore $\bf \dot h=0$ and $\bf\ddot h=0$.  Inserting the dynamics
 (\ref{eq:manip_short}) into (\ref{eq:ddoth}) yields
-\begin{equation}\bf \lambda =- (\bf H \bf M^{-1} \bf H^T)^+ (\bf H \bf M^{-1} \bf \tau +
-\bf \dot H\bf \dot q).\label{eq:lambda_from_h}\end{equation} The $^+$ notation refers to a Moore-Penrose
+$\bf \lambda =- (\bf H \bf M^{-1} \bf H^T)^+ (\bf H \bf M^{-1} \bf \tau + \bf \dot H\bf \dot q).$ <!-- \label{eq:lambda_from_h} --> The $^+$ notation refers to a Moore-Penrose
 pseudo-inverse.  In many cases, this matrix will be full rank (for
 instance, in the case of multiple independent four-bar linkages) and the
 traditional inverse could have been used.  When the matrix drops rank
@@ -185,15 +190,16 @@ To combat numerical "constraint drift", one might like to add a
 restoring force in the event that the constraint is not satisfied to
 numerical precision.  To accomplish this, rather than solving for
 $\bf \ddot h = 0$ as above, we can instead solve for 
-\begin{equation}\bf\ddot h
+$$\bf\ddot h
 = \bf H\bf\ddot q + \bf{\dot H \dot q} = -2\alpha \bf\dot h - \alpha^2
-\bf h,\end{equation}
+\bf h,$$
 where $\alpha>0$ is a stiffness parameter. This is
 known as Baumgarte's stabilization technique, implemented here with a
 single parameter to provide a critically-damped response. Carrying this
-through yields \begin{equation} \bf \lambda =- (\bf H \bf M^{-1} \bf H^T)^+ (\bf H
+through yields 
+$$\bf \lambda =- (\bf H \bf M^{-1} \bf H^T)^+ (\bf H
 \bf M^{-1} \bf\tau + (\bf{\dot H} + 2\alpha \bf H)\bf{\dot q} + \alpha^2 \bf H).
-\end{equation}
+$$
 
 There is an important optimization-based derivation/interpretation of
 these equations, which we will build on below, using <a
@@ -228,39 +234,40 @@ the decision variables, and the dual formulation has constraint forces as
 the decision variables.  For now this is merely a cute observation; we'll
 build on it more when we get to discussing contact forces.
 
-</subsection>
+<!-- /subsection -->
 
 # Bilateral Velocity Constraints
 
-Consider the constraint equation \begin{equation}\bf H_v(\bf q,\bf{\dot q}) =
-0,\end{equation} where $\frac{\partial \bf H_v}{\partial \bf{\dot q}} \ne 0.$  These are less
+Consider the constraint equation $\bf H_v(\bf q,\bf{\dot q}) = 0,$ where $\frac{\partial \bf H_v}{\partial \bf{\dot q}} \ne 0.$  These are less
 common, but arise when, for instance, a joint is driven through a
 prescribed motion. Here, the manipulator equations are given by
 
-\begin{equation}\bf M\bf{\ddot q}  = \bf\tau + \frac{\partial \bf H_v}{\partial \bf{\dot q}}^T
-\bf \lambda.\end{equation}
+$$\bf M\bf{\ddot q}  = \bf\tau + \frac{\partial \bf H_v}{\partial \bf{\dot q}}^T
+\bf \lambda.$$
 
 Using
 
-\begin{equation} \bf\dot H_v = \frac{\partial \bf H_v}{\partial \bf q}
-\bf{\dot q} + \frac{\partial \bf H_v}{\partial \bf{\dot q}}\bf{\ddot q},\end{equation}
+$$\bf\dot H_v = \frac{\partial \bf H_v}{\partial \bf q}
+\bf{\dot q} + \frac{\partial \bf H_v}{\partial \bf{\dot q}}\bf{\ddot q},$$
 
 setting
 
-$\bf\dot H_v = 0$ yields \begin{equation}\bf \lambda = - \left(
+$\bf\dot H_v = 0$ yields 
+
+$$\bf \lambda = - \left(
 \frac{\partial \bf H_v}{\partial \bf{\dot q}} \bf M^{-1} \frac{\partial \bf H_v}{\partial \bf{\dot q}} \right)^+ \left[
 \frac{\partial \bf H_v}{\partial \bf{\dot q}} \bf M^{-1} \bf\tau + \frac{\partial \bf H_v}{\partial \bf q} \bf{\dot q}
-\right].\end{equation}
+\right].$$
 
-Again, to combat constraint drift, we can ask instead for $\dot\bf H_v =
--\alpha \bf H_v$, which yields \begin{equation}\bf \lambda = - \left(
+Again, to combat constraint drift, we can ask instead for $\bf{\dot H_v} = -\alpha \bf H_v$, which yields 
+$$\bf \lambda = - \left(
 \frac{\partial \bf H_v}{\partial \bf{\dot q}} \bf M^{-1} \frac{\partial \bf H_v}{\partial \bf{\dot q}} \right)^+ \left[
 \frac{\partial \bf H_v}{\partial \bf{\dot q}} \bf M^{-1} \bf\tau + \frac{\partial \bf H_v}{\partial \bf q} \bf{\dot q} + \alpha
-\bf H_v \right].\end{equation}
+\bf H_v \right].$$
 
-</subsection>
+<!-- /subsection -->
 
-</section>
+<!-- /section -->
 
 # The Dynamics of Contact
 
@@ -284,17 +291,15 @@ applications.
 Before we begin, there is a bit of notation that we will use throughout.
 Let $\phi(\bf q)$ indicate the relative (signed) distance between two rigid
 bodies.  For rigid contact, we would like to enforce the unilateral
-constraint: \begin{equation} \phi(\bf q) \geq 0. \end{equation}  We'll use
+constraint: $\phi(\bf q) \geq 0$.  We'll use
 ${\bf n} = \frac{\partial \phi}{\partial \bf q}$ to denote the "contact normal", as well as ${\bf
 t}_1$ and ${\bf t}_2$ as a basis for the tangents at the contact
 (orthonormal vectors in the Cartesian space, projected into joint space),
 all represented as row vectors in joint coordinates.  
 
-
 <figure><img width="100%" src="figures/contact_coordinates_2d.jpg"
 /><figcaption>Contact coordinates in 2D.  (a) The signed distance between
-contact bodies, $\phi(\bf q)$. (b) The normal (${\bf n}$) and tangent (${\bf
-t}$) contact vectors -- note that these can be drawn in 2D when the $\bf q$ is
+contact bodies, $\phi(\bf q)$. (b) The normal (${\bf n}$) and tangent (${\bf t}$) contact vectors -- note that these can be drawn in 2D when the $\bf q$ is
 the $x,y$ positions of one of the bodies, but more generally the vectors
 live in the configuration space. (c) Sometimes it will be helpful for us to
 express the tangential coordinates using $d_1$ and $d_2$; this will make
@@ -315,8 +320,9 @@ closest points in the contact coordinates; it can be also be extended with
 three more rows to output a full spatial velocity (e.g. when modeling
 torsional friction).  The generalized force produced by the contact is given
 by $\bf J^T \lambda$, where $\lambda = [f_n, f_{t1}, f_{t2}]^T:$
-\begin{equation} \bf M(\bf q) \dot{\bf v} + \bf C(\bf q,\bf v)\bf v = \bf\tau_g(\bf q) + \bf B
-\bf u + \bf J^T(\bf q)\lambda. \end{equation}
+
+$$\bf M(\bf q) \dot{\bf v} + \bf C(\bf q,\bf v)\bf v = \bf\tau_g(\bf q) + \bf B
+\bf u + \bf J^T(\bf q)\lambda.$$
 
 # Compliant Contact Models
 
@@ -406,7 +412,7 @@ numerical challenges of dealing with penetration are very real, and they
 motivate our other two approaches that attempt to more strictly enforce
 the non-penetration constraints.
 
-</subsection>
+<!-- /subsection -->
 
 # Rigid Contact with Event Detection
 
@@ -414,8 +420,7 @@ the non-penetration constraints.
 
 The collision event is described by the zero-crossings (from positive
 to negative) of $\phi$. Let us start by assuming frictionless
-collisions, allowing us to write \begin{equation}\bf M\bf{\ddot q} = \bf\tau +
-\lambda {\bf n}^T,\end{equation} where ${\bf n}$ is the "contact normal"
+collisions, allowing us to write $\bf M\bf{\ddot q} = \bf\tau + \lambda {\bf n}^T,$ where ${\bf n}$ is the "contact normal"
 we defined above and $\lambda \ge 0$ is now a (scalar) impulsive force
 that is well-defined when integrated over the time of the collision
 (denoted $t_c^-$ to $t_c^+$). Integrate both sides of the equation over
@@ -470,9 +475,9 @@ a Cartesian vector representing the contact impulse, and (for infinite
 friction) the post-impact velocity condition becomes ${\bf J}\bf{\dot q}^+
 = \text{diag}(-e, 0, 0) {\bf J}\bf{\dot q}^-,$ resulting in the equations:
 
-\begin{equation}\bf{\dot q}^+ = \left[ \bf I - \bf M^{-1} \bf J^T
+$$\bf{\dot q}^+ = \left[ \bf I - \bf M^{-1} \bf J^T
 \text{diag}(1+e, 1, 1) \left[\bf J \bf M^{-1} \bf J^T \right]^\# \bf J
-\right]\bf{\dot q}^-.\end{equation}
+\right]\bf{\dot q}^-.$$
 
 If $\bf \lambda$ is restricted to a
 friction cone, as in Coulomb friction, in general we have to solve an
@@ -503,16 +508,15 @@ $$\bf{\dot q}^+ = \begin{bmatrix} \frac{3}{5} & 0 &
 
 <!-- Derivation is here: https://www.wolframcloud.com/obj/russt/Published/BouncingBallWithSpin.nb-->
 
-</example>
+<!-- /example -->
 
-</subsubsection>
+<!-- /subsubsection -->
 
 # Putting it all together
 
  We can put the bilateral constraint equations and the impulsive
 collision equations together to implement a hybrid model for unilateral
-constraints of the form. Let us generalize \begin{equation}\bf phi(\bf q)
-\ge 0,\end{equation} to be the vector of all pairwise (signed) distance
+constraints of the form. Let us generalize $\bf phi(\bf q) \ge 0,$ to be the vector of all pairwise (signed) distance
 functions between rigid bodies; this vector describes all possible
 contacts. At every moment, some subset of the contacts are active, and
 can be treated as a bilateral constraint ($\bf phi_i=0$). The guards of
@@ -528,9 +532,9 @@ If the contact involves Coulomb friction, then the transitions
 between sticking and sliding can be modeled as additional hybrid
 guards.
 
-</subsubsection>
+<!-- /subsubsection -->
 
-</subsection>
+<!-- /subsection -->
 
 # Time-stepping Approximations for Rigid Contact
 
@@ -625,7 +629,7 @@ seamless="seamless" src="data/lcp_cart.html" height="250"
 width="100%"></iframe> -->
 </figure>
 
-</example>
+<!-- /example -->
 
 In the (time-stepping, "impulse-velocity") LCP formulation, we write
 the contact problem in it's combinatorial form.  In the simple example
@@ -703,7 +707,7 @@ must have $f^+=0$, $v_{abs} = v[n+1]$, and $f^- = \mu mg$.  When
 $v[n+1] = 0$, we can have $v_{abs} = 0$, $f^+ - f^- \le \mu mg$, and
 those forces must add up to make $v[n+1] = 0$.
 
-</example>
+<!-- /example -->
 
 We can put it all together and write an LCP with both normal forces
 and friction forces, related by Coulomb friction (using a polyhedral
@@ -713,7 +717,7 @@ href="https://en.wikipedia.org/wiki/Linear_complementarity_problem">can
 also be represented as the solution to a QP</a>, the QP for this problem
 is non-convex.
 
-</subsubsection>
+<!-- /subsubsection -->
 
 # Anitescu's convex formulation
 
@@ -771,7 +775,7 @@ point; <elib>Anitescu06</elib> studies the typical case of only
 including potential contact pairs with $\phi(\bf q) \le \epsilon$, for
 small $\epsilon \ge 0$.  
 
-</subsubsection>
+<!-- /subsubsection -->
 
 # Todorov's convex formulation
 
@@ -810,7 +814,7 @@ down.
 In dual form, it is natural to consider the full conic description of
 the friction cone: 
 
-$$\mathcal{FC}(\bf q) = \left\{{\bf \lambda} = [f_n,
+$$\mathcal{FC}(\bf q) = \left\{\bf{\lambda} = [f_n,
 f_{t1}, f_{t2}]^T \middle| f_n \ge 0, \sqrt{f^2_{t1}+f^2_{t2}} \le \mu
 f_n \right\}.$$
 
@@ -835,9 +839,9 @@ absurd MuJoCo simulations, especially when researchers who don't care
 much about the physics start changing simulation parameters to optimize
 their learning curves!
 
-</subsubsection>
+<!-- /subsubsection -->
 
-<todo>
+<!-- todo -->
 
 # Relaxed complementarity-free formulation: Normal force
 @todo
@@ -876,8 +880,8 @@ This introduced two additional
 relaxation parameters; MuJoCo calls $\epsilon$ the "impulse
 regularization scaling" and $\kappa$ the "error-reduction time
 constant".
-</example>
-</todo>
+<!-- /example -->
+<!-- /todo -->
 
 # Beyond Point Contact
 
