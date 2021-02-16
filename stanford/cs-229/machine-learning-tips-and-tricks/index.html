@@ -79,8 +79,8 @@
 </h1>
 <i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
 <h2><a aria-hidden=true class=anchor href=#classification-metrics id=classification-metrics></a>Метрики классификации</h2>
-<p>В контексте бинарной классификации вот основные метрики, которые важно отслеживать, чтобы оценить производительность модели.</p>
-<p><span class="new-item item-b">Матрица ошибок</span> Матрица ошибок используется для получения более полной картины при оценке производительности модели. Она определяется следующим образом:</p>
+<p>В контексте бинарной классификации вот основные метрики, которые важно отслеживать, чтобы оценить качество модели.</p>
+<p><span class="new-item item-b">Матрица ошибок</span> Матрица ошибок используется для получения более полной картины при оценке качества модели. Она определяется следующим образом:</p>
 <div class=mobile-container>
 <table style="margin-left: 10%">
 <colgroup><col width=120px>
@@ -97,7 +97,7 @@
 <td align=center style="background: rgba(255, 255, 255, 1);border: 0px"><b>-</b></td>
 </tr>
 <tr style="border-top: 0px">
-<td align=center rowspan=2 style="border: 0px"><b>Актуальный</b> класс</td>
+<td align=center rowspan=2 style="border: 0px"><b>Фактический</b> класс</td>
 <td align=center style="background: rgba(255, 255, 255, 1);border: 0px;"><b>+</b></td>
 <td align=center style="background: rgba(0, 255, 0, 0.15);border: 0px;"><b>TP</b><br>True Positives</td>
 <td align=center style="background: rgba(255, 0, 0, 0.25);border: 0px;"><b>FN</b><br>False Negatives<br>Type II error</td>
@@ -139,7 +139,7 @@
 <tr>
 <td align=center>Specificity</td>
 <td align=center>$\displaystyle\frac{\textrm{TN}}{\textrm{TN}+\textrm{FP}}$</td>
-<td align=left>Специфика выделенных отрицательных образцов</td>
+<td align=left>Спецификация показывает, какая часть отрицательных наблюдений была выделена классификатором</td>
 </tr>
 <tr>
 <td align=center>F1 мера</td>
