@@ -12,7 +12,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Reflex-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#linear-predictors>Линейные предсказатели</a></div> <div class=dropdown-container> <a href=#linear-predictors><span>Вектор признаков</span></a> <a href=#linear-predictors><span>Линейный классификатор/регрессия</span></a> <a href=#linear-predictors><span>Отступ</span></a> <a href=#linear-predictors><span>Разность</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#loss-minimization>Минимизация потерь</a></div> <div class=dropdown-container> <a href=#loss-minimization><span>Функция потерь</span></a> <a href=#loss-minimization><span>Фреймворк</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#non-linear-predictors>Нелинейные предсказатели</a></div> <div class=dropdown-container> <a href=#non-linear-predictors><span>k-ближайшие соседи</span></a> <a href=#non-linear-predictors><span>Нейронные сети</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#stochastic-gradient-descent>Стохастический градиентный спуск</a></div> <div class=dropdown-container> <a href=#stochastic-gradient-descent><span>Градиент</span></a> <a href=#stochastic-gradient-descent><span>Стохастические обновления</span></a> <a href=#stochastic-gradient-descent><span>Пакетные обновления</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#fine-tuning-models>Доводка моделей</a></div> <div class=dropdown-container> <a href=#fine-tuning-models><span>Класс гипотез</span></a> <a href=#fine-tuning-models><span>Обратное распространение ошибки</span></a> <a href=#fine-tuning-models><span>Регуляризация</span></a> <a href=#fine-tuning-models><span>Наборы словарей</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#unsupervised-learning>Обучение без учителя</a></div> <div class=dropdown-container> <a href=#unsupervised-learning><span>k-средние</span></a> <a href=#unsupervised-learning><span>Метод главных компонент</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-reflex-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-221 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 12px;">   <b>CS 221 - Artificial Intelligence</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Reflex-based models</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#linear-predictors>Линейные предсказатели</a></div> <div class=dropdown-container> <a href=#linear-predictors><span>Вектор признаков</span></a> <a href=#linear-predictors><span>Линейный классификатор/регрессия</span></a> <a href=#linear-predictors><span>Зазор</span></a> <a href=#linear-predictors><span>Разность</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#loss-minimization>Минимизация потерь</a></div> <div class=dropdown-container> <a href=#loss-minimization><span>Функция потерь</span></a> <a href=#loss-minimization><span>Фреймворк</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#non-linear-predictors>Нелинейные предсказатели</a></div> <div class=dropdown-container> <a href=#non-linear-predictors><span>k-ближайших соседей</span></a> <a href=#non-linear-predictors><span>Нейронные сети</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#stochastic-gradient-descent>Стохастический градиентный спуск</a></div> <div class=dropdown-container> <a href=#stochastic-gradient-descent><span>Градиент</span></a> <a href=#stochastic-gradient-descent><span>Стохастические обновления</span></a> <a href=#stochastic-gradient-descent><span>Пакетные обновления</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#fine-tuning-models>Дообучение моделей</a></div> <div class=dropdown-container> <a href=#fine-tuning-models><span>Класс гипотез</span></a> <a href=#fine-tuning-models><span>Обратное распространение ошибки</span></a> <a href=#fine-tuning-models><span>Регуляризация</span></a> <a href=#fine-tuning-models><span>Наборы словарей</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#unsupervised-learning>Обучение без учителя</a></div> <div class=dropdown-container> <a href=#unsupervised-learning><span>k-средние</span></a> <a href=#unsupervised-learning><span>Метод главных компонент</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence/blob/master/en/cheatsheet-reflex-models.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -57,25 +57,25 @@
   </div>
 </div>
 <h1>
-  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Модели на основе рефлексов с машинным обучением
+  <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Модели машинного обучения на основе рефлексов
 </h1>
-<i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
+<i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и <a href=https://github.com/geotrush onclick=trackOutboundLink(this);>Труш Георгий (Georgy Trush)</a></i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
 <h2><a aria-hidden=true class=anchor href=#linear-predictors id=linear-predictors></a>Линейные предсказатели</h2>
-<p>В этом разделе мы рассмотрим модели, основанные на рефлексах, которые можно улучшить с опытом, просмотрев образцы с парами вход-выход.</p>
+<p>В этом разделе мы рассмотрим модели, основанные на рефлексах, которые улучшаются по мере накопления опыта, обучаясь на парах наблюдений вход-выход.</p>
 <br>
 <p><span class="new-item item-g">Вектор признаков</span> Вектор признаков входного сигнала $x$ обозначается как $\phi(x)$ и таков, что:</p>
 <div class=mobile-container>
 \[\boxed{\phi(x)=\left[\begin{array}{c}\phi_1(x)\\\vdots\\\phi_d(x)\end{array}\right]\in\mathbb{R}^d}\]
 </div>
 <br>
-<p><span class="new-item item-r">Оценка</span> Оценка $s(x,w)$ примера $(\phi(x),y) \in \mathbb{R}^d \times \mathbb{R}$, связанного с линейной моделью весов $w \in \mathbb{R}^d$, дается внутренним произведением:</p>
+<p><span class="new-item item-r">Оценка</span> Оценка $s(x,w)$ примера $(\phi(x),y) \in \mathbb{R}^d \times \mathbb{R}$, связанного с линейной моделью весов $w \in \mathbb{R}^d$, задается внутренним произведением:</p>
 <div class=mobile-container>
 \[\boxed{s(x,w)=w\cdot\phi(x)}\]
 </div>
 <br>
 <h3>Классификация</h3>
-<p><span class="new-item item-b">Линейный классификатор</span> Для вектора весов $w\in\mathbb{R}^d$ и вектора признаков $\phi(x)\in\mathbb{R}^d$ двоичный линейный классификатор $f_w$ имеет вид:</p>
+<p><span class="new-item item-b">Линейный классификатор</span> Для вектора весов $w\in\mathbb{R}^d$ и вектора признаков $\phi(x)\in\mathbb{R}^d$ бинарный линейный классификатор $f_w$ имеет вид:</p>
 <div class=mobile-container>
 \[\boxed{f_w(x)=\textrm{sign}(s(x,w))=\left\{
   \begin{array}{cr}
@@ -90,7 +90,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Отступ</span> Отступ $m(x,y,w) \in \mathbb{R}$ примера $(\phi(x),y) \in \mathbb{R}^d \times \{-1,+1\}$, связанная с линейной моделью весов $w\in \mathbb{R}^d$, количественно оценивает уверенность прогноз: большие значения лучше. Задается:</p>
+<p><span class="new-item item-g">Зазор</span> Отступ $m(x,y,w) \in \mathbb{R}$ примера $(\phi(x),y) \in \mathbb{R}^d \times \{-1,+1\}$, связанная с линейной моделью весов $w\in \mathbb{R}^d$, количественно оценивает уверенность прогноза: большие значения лучше. Задается следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{m(x,y,w)=s(x,w)\times y}\]
 </div>
@@ -100,15 +100,15 @@
 <div class=mobile-container>
 \[\boxed{f_w(x)=s(x,w)}\]
 </div>
-<p><span class="new-item item-g">Разность</span> Residual $\textrm{res}(x,y,w) \in \mathbb{R}$ определяется как величина, на которую прогноз $f_w(x)$ превышает целевой $y$:</p>
+<p><span class="new-item item-g">Остаток</span> Разность Residual $\textrm{res}(x,y,w) \in \mathbb{R}$ определяется как величина, на которую прогноз $f_w(x)$ превышает целевой $y$:</p>
 <div class=mobile-container>
 \[\boxed{\textrm{res}(x,y,w)=f_w(x)-y}\]
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#loss-minimization id=loss-minimization></a>Минимизация потерь</h2>
-<p><span class="new-item item-g">Функция потерь</span> Функция потерь $\textrm{Loss}(x,y,w)$ количественно определяет, насколько мы недовольны весами $w$ модели в задаче прогнозирования выхода $y$ из входа $x$. Это количество, которое мы хотим минимизировать во время тренировочного процесса.</p><p>
+<p><span class="new-item item-g">Функция потерь</span> Функция потерь $\textrm{Loss}(x,y,w)$ количественно определяет, насколько мы недовольны весами $w$ модели в задаче прогнозирования выхода $y$ по известному входу $x$. Это количество, которое мы хотим минимизировать во время тренировочного процесса.</p><p>
 <br>
-</p><p><span class="new-item item-r">Классификационный случай</span> Классификация выборки $x$ истинной метки $y\in \{-1,+1\}$ с линейной моделью весов $w$ может быть выполнена с помощью предиктора $f_w(x) \triangleq \textrm{sign}(s(x,w))$. В этой ситуации интересующий показатель, определяющий качество классификации, задается отступом $m(x,y,w)$ и может использоваться со следующими функциями потерь:</p>
+</p><p><span class="new-item item-r">Случай классификации</span> Классификация выборки $x$ истинной метки $y\in \{-1,+1\}$ с линейной моделью весов $w$ может быть выполнена с помощью предиктора $f_w(x) \triangleq \textrm{sign}(s(x,w))$. В этой ситуации интересующий показатель, определяющий качество классификации, задается зазором $m(x,y,w)$ и может использоваться со следующими функциями потерь:</p>
 <div class=mobile-container>
   <table style="table-layout:fixed; width:100%; min-width:725px; max-width:800px;">
     <colgroup>
@@ -120,9 +120,9 @@
 <tbody>
 <tr>
 <td align=center><b>Название</b></td>
-<td align=center>потеря ноль единицы</td>
-<td align=center>потеря петли</td>
-<td align=center>логистическая потеря</td>
+<td align=center>Zero-one loss</td>
+<td align=center>Hinge loss</td>
+<td align=center>Logistic loss</td>
 </tr>
 <tr>
 <td align=center>$\textrm{Loss}(x,y,w)$</td>
@@ -140,7 +140,7 @@
 </table>
 </div>
 <br>
-<p><span class="new-item item-b">Случай регрессии</span> Предсказание выборки $x$ истинной метки $y \in \mathbb{R}$ с помощью линейной модели весов $w$ может быть выполнено с помощью предиктора $f_w(x) \triangleq s(x,w)$. В этой ситуации интересующий показатель, количественно оценивающий качество регрессии, задается отступом $\textrm{res}(x,y,w)$ и может использоваться со следующими функциями потерь:</p>
+<p><span class="new-item item-b">Случай регрессии</span> Предсказание выборки $x$ истинной метки $y \in \mathbb{R}$ с помощью линейной модели весов $w$ может быть выполнено с помощью предиктора $f_w(x) \triangleq s(x,w)$. В этой ситуации интересующий показатель, количественно оценивающий качество регрессии, задается зазором $\textrm{res}(x,y,w)$ и может использоваться со следующими функциями потерь:</p>
 <div class=mobile-container>
   <table style="table-layout:fixed; width:100%; min-width:525px; max-width:575px;">
     <colgroup>
@@ -174,7 +174,7 @@
 </div>
 <br>
 <h2><a aria-hidden=true class=anchor href=#non-linear-predictors id=non-linear-predictors></a>Нелинейные предсказатели</h2>
-<p><span class="new-item item-g">$k$-ближайшие соседи</span> Алгоритм $k$-ближайших соседей, широко известный как $k$-NN, представляет собой непараметрический подход, в котором ответ для точки данных определяется характером её $k$ соседей из обучающего набора. Его можно использовать в настройках как классификации, так и регрессии.</p>
+<p><span class="new-item item-g">Алгоритм $k$-ближайших соседей</span> - широко известен как $k$-NN, представляет собой непараметрический подход, в котором метка новой точки данных определяется признаками её $k$ соседей из обучающего набора. Его можно использовать в случаях как классификации, так и регрессии.</p>
 <div class=mobile-container>
 <center>
 <img alt="k nearest neighbors" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=k-nearest-neighbors.png?02f80a524bb11e2b7a70b58c9ed3b0f4 style=width:100%;max-width:740px>
@@ -207,11 +207,11 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Стохастические обновления</span> Stochastic gradient descent (SGD) обновляет параметры модели по одному обучающему примеру $(\phi(x),y)\in\mathcal{D}_{\textrm{train}}$ за раз. Этот метод приводит к иногда шумным, но быстрым обновлениям.</p>
+<p><span class="new-item item-r">Стохастические обновления</span> Stochastic gradient descent (SGD) обновляет параметры модели по одному обучающему примеру $(\phi(x),y)\in\mathcal{D}_{\textrm{train}}$ за раз. Этот метод зачастую приводит к иногда шумным, но быстрым обновлениям.</p>
 <br>
 <p><span class="new-item item-b">Пакетные обновления</span> Batch gradient descent (BGD) обновляет параметры модели по одной партии примеров (например, половина обучающего набора) за раз. Этот метод вычисляет стабильные направления обновления с большими вычислительными затратами.</p>
 <br>
-<h2><a aria-hidden=true class=anchor href=#fine-tuning-models id=fine-tuning-models></a>Доводка моделей</h2>
+<h2><a aria-hidden=true class=anchor href=#fine-tuning-models id=fine-tuning-models></a>Дообучение моделей</h2>
 <p><span class="new-item item-g">Класс гипотез</span> Класс гипотез $\mathcal{F}$ - это набор возможных предикторов с фиксированным $\phi(x)$ и изменяющимся $w$:</p>
 <div class=mobile-container>
 \[\boxed{\mathcal{F}=\left\{f_w:w\in\mathbb{R}^d\right\}}\]
@@ -223,14 +223,14 @@
 </div>
 <p><span class=remark>Примечание: у нас есть $\sigma'(z)=\sigma(z)(1-\sigma(z))$.</span></p>
 <br>
-<p><span class="new-item item-b">Обратное распространение ошибки</span> Backpropagation (Backprop) - Прямой проход выполняется через $f_i$, которое является значением подвыражения с индексом $i$, а обратный проход выполняется через $g_i=\frac{\partial\textrm{out}}{\partial f_i}$ и представляет, как $f_i$ влияет на вывод.</p>
+<p><span class="new-item item-b">Обратное распространение ошибки</span> Backpropagation (Backprop) - Прямой проход сети выполняется через $f_i$, которое является значением подвыражения с индексом $i$, а обратный проход выполняется через $g_i=\frac{\partial\textrm{out}}{\partial f_i}$ отражает то, как сильно $f_i$ влияет на выход.</p>
 <div class=mobile-container>
 <center>
 <img alt=Backpropagation class=img-responsive netsrc=teaching/cs-221/illustrations/ src=backpropagation.png?24671572de19eb4f92606f950c21409d style=width:100%;max-width:450px>
 </center>
 </div>
 <br>
-<p><span class="new-item item-g">Ошибка аппроксимации и оценки</span> Ошибка аппроксимации $\epsilon_\text{approx}$ представляет, как далеко весь класс гипотез $\mathcal{F}$ от целевого предиктора $g^*$, в то время как ошибка оценки $\epsilon_{\text{est}}$ количественно определяет, насколько хорош предиктор $\hat{f}$ по отношению к лучшему предиктору $f^{*}$ из класса гипотез $\mathcal{F}$.</p>
+<p><span class="new-item item-g">Ошибка приближения и оценки</span> Ошибка аппроксимации $\epsilon_\text{approx}$ отражает то, насколько далеко весь класс гипотез $\mathcal{F}$ от целевого предиктора $g^*$, в то время как ошибка оценки $\epsilon_{\text{est}}$ количественно определяет, насколько хорош предиктор $\hat{f}$ по отношению к лучшему предиктору $f^{*}$ из класса гипотез $\mathcal{F}$.</p>
 <div class=mobile-container>
 <center>
 <img alt="Approximation and estimation error" class=img-responsive netsrc=teaching/cs-221/illustrations/ src=approximation-model.png?2598ff172e014fd68e0663c2703b69ef style=width:100%;max-width:450px>
@@ -311,7 +311,7 @@
 <h2><a aria-hidden=true class=anchor href=#unsupervised-learning id=unsupervised-learning></a>Обучение без учителя</h2>
 <p>Класс методов обучения без учителя направлен на обнаружение структуры данных, которые могут иметь богатые скрытые структуры.</p>
 <h3>$k$-means</h3>
-<p><span class="new-item item-g">Кластеризация</span> Дан обучающий набор входных точек $\mathcal{D}_{\textrm{train}}$, цель алгоритма кластеризации состоит в том, чтобы назначить каждую точку $\phi(x_i)$ кластеру $z_i\in\{1,...,k\}$.</p>
+<p><span class="new-item item-g">Кластеризация</span> Дан обучающий набор входных точек $\mathcal{D}_{\textrm{train}}$, цель алгоритма кластеризации состоит в том, чтобы определить каждую точку $\phi(x_i)$ к одному из кластеров $z_i\in\{1,...,k\}$.</p>
 <br>
 <p><span class="new-item item-r">Целевая функция</span> функция потерь для одного из основных алгоритмов кластеризации, $k$-средних, определяется выражением:</p>
 <div class=mobile-container>
