@@ -77,8 +77,8 @@
   <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Памятка: Вероятности и Статистики
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-229-machine-learning on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-229-machine-learning onclick=trackOutboundLink(this);>Star</a></div>
 </h1>
-<i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
-<h2><a aria-hidden=true class=anchor href=#introduction id=introduction></a>Введение в вероятность и комбинаторику</h2>
+<i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и <a href=https://github.com/geotrush onclick=trackOutboundLink(this);>Труш Георгий (Georgy Trush)</a></i>
+<h2><a aria-hidden=true class=anchor href=#introduction id=introduction></a>Введение в Теорию Вероятности и Комбинаторику</h2>
 <p><span class="new-item item-g">Пространство выборки</span> Набор всех возможных результатов эксперимента известен как пространство выборки эксперимента и обозначается $S$.</p>
 <br>
 <p><span class="new-item item-g">Событие</span> Любое подмножество $E$ пространства выборки известно как событие. То есть событие - это набор, состоящий из возможных результатов эксперимента. Если результат эксперимента содержится в $E$, то мы говорим, что $E$ произошло.</p>
@@ -245,7 +245,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Преобразование случайных величин</span> пусть переменные $X$ и $Y$ связаны некоторой функцией. Обозначим $f_X$ и $f_Y$ функцию распределения $X$ и $Y$ соответственно у нас есть:</p>
+<p><span class="new-item item-r">Преобразование случайных величин</span> пусть переменные $X$ и $Y$ связаны некоторой функцией. Обозначим $f_X$ и $f_Y$ функциями распределения $X$ и $Y$ соответственно, у нас есть:</p>
 <div class=mobile-container>
 \[\boxed{f_Y(y)=f_X(x)\left|\frac{dx}{dy}\right|}\]
 </div>
@@ -334,7 +334,7 @@
 </center>
 </div>
 <br>
-<h2><a aria-hidden=true class=anchor href=#joint-rv id=joint-rv></a>Совместно распределенные случайные переменные</h2>
+<h2><a aria-hidden=true class=anchor href=#joint-rv id=joint-rv></a>Совместно распределенные случайные величины</h2>
 <p><span class="new-item item-g">Предельная плотность и кумулятивное распределение</span> Из функции вероятности совместной плотности $f_{XY}$ мы имеем</p>
 <div class=mobile-container>
 <center>
@@ -375,7 +375,7 @@
 \[\boxed{\textrm{Cov}(X,Y)\triangleq\sigma_{XY}^2=E[(X-\mu_X)(Y-\mu_Y)]=E[XY]-\mu_X\mu_Y}\]
 </div>
 <br>
-<p><span class="new-item item-g">Корреляция</span> Обозначим $\sigma_X, \sigma_Y$ стандартных отклонений $X$ и $Y$, мы определяем корреляцию между случайными величинами $X$ и $Y$, отмеченными $\rho_{XY}$, следующим образом:</p>
+<p><span class="new-item item-g">Корреляция</span> Обозначим $\sigma_X, \sigma_Y$ стандартные отклонения $X$ и $Y$, мы определяем корреляцию между случайными величинами $X$ и $Y$, обозначенную как $\rho_{XY}$, следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{\rho_{XY}=\frac{\sigma_{XY}^2}{\sigma_X\sigma_Y}}\]
 </div>
@@ -399,7 +399,7 @@
 <div class=mobile-container>
 \[\boxed{\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i}\]
 </div>
-<p><span class=remark>Примечание: выборочное среднее несмещенное, т. е $E[\overline{X}]=\mu$.</span></p>
+<p><span class=remark>Примечание: выборочное среднее является несмещенным, т. е $E[\overline{X}]=\mu$.</span></p>
 <br>
 <p><span class="new-item item-r">Центральная предельная теорема</span> Возьмем случайную выборку $X_1, ..., X_n$ следуя заданному распределению со средним $\mu$ и дисперсией $\sigma^2$, тогда у нас есть:</p>
 <div class=mobile-container>
@@ -407,7 +407,7 @@
 </div>
 <br>
 <h3>Оценка дисперсии</h3>
-<p><span class="new-item item-b">Выборочная дисперсия</span> Дисперсия случайной выборки используется для оценки истинной дисперсии $\sigma^2$ распределения, часто обозначается как $s^2$ или $\hat{\sigma}^2$ и определяется следующим образом:</p>
+<p><span class="new-item item-b">Дисперсия выборки</span> Дисперсия случайной выборки используется для оценки истинной дисперсии $\sigma^2$ распределения, часто обозначается как $s^2$ или $\hat{\sigma}^2$ и определяется следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{s^2=\hat{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2}\]
 </div>

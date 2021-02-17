@@ -60,7 +60,7 @@
 <h1>
   <a aria-hidden=true class=anchor-bis href=#cheatsheet id=user-content-cheatsheet></a>Модели логик с логикой высказываний и логикой первого порядка
 </h1>
-<i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);> Alexandr Parkhomenko</a> и {здесь можете быть Вы}</i>
+<i><!-- By --><a href=https://twitter.com/afshinea onclick=trackOutboundLink(this);>Afshine Amidi</a> и <a href=https://twitter.com/shervinea onclick=trackOutboundLink(this);>Shervine Amidi</a>;<a href=https://github.com/AlexandrParkhomenko onclick=trackOutboundLink(this);>  Parkhomenko</a> и {здесь можете быть Вы}</i>
   <div style=float:right;display:none;> <!-- DISPLAY:NONE --><a aria-label="Star afshinea/stanford-cs-221-artificial-intelligence on GitHub" class="github-button fa-fw" data-icon=octicon-star data-show-count=true href=https://github.com/afshinea/stanford-cs-221-artificial-intelligence onclick=trackOutboundLink(this);>Star</a></div>
 <h2><a aria-hidden=true class=anchor href=#basics id=basics></a>Основы</h2>
 <p><span class="new-item item-b">Синтаксис логики высказываний</span> Обозначим формулы $f,g$ и $\neg, \wedge, \vee, \rightarrow, \leftrightarrow$ связки, мы можем написать следующие логические выражения:</p>
@@ -330,11 +330,11 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 </div>
 <p><span class=remark>Примечание: для применения этого правила может потребоваться экспоненциальное время, поскольку каждое приложение генерирует предложение, которое имеет подмножество пропозициональных символов.</span></p>
 <br>
-<p><span class="new-item item-b">Вывод на основе разрешения</span> Алгоритм вывода на основе разрешении. Включает следующие шаги:
+<p><span class="new-item item-b">Вывод на основе разрешения</span> Алгоритм вывода на основе разрешения. Включает следующие шаги:
 </p><ul>
 <li><u>Шаг 1</u>: Преобразовать все формулы в CNF
 </li><li><u>Шаг 2</u>: Повторно применить правило разрешения
-</li><li><u>Шаг 3</u>: Вернуть неудовлетворительно; если и только если $\text{False}$ is derived<p></p>
+</li><li><u>Шаг 3</u>: Вернуть неудовлетворительно, если и только если выводится $\text{False}$<p></p>
 </li></ul>
 <br>
 <h2><a aria-hidden=true class=anchor href=#first-order-logic id=first-order-logic></a>Логика первого порядка</h2>
@@ -350,7 +350,7 @@ $\mathcal{M}(\textrm{KB})\cap\mathcal{M}(f)\neq\mathcal{M}(\textrm{KB})$
 \[\boxed{\forall x_1,...,\forall x_n,\quad(a_1\wedge...\wedge a_k)\rightarrow b}\]
 </div>
 <br>
-<p><span class="new-item item-g">Подстановка</span> Замена $\theta$ отображает переменные в термы, а $\textrm{Subst}[\theta,f]$ обозначает результат замены $\theta$ на $f$.</p>
+<p><span class="new-item item-g">Подстановка</span> Замена $\theta$ отображает переменные в составляющие формул, а $\textrm{Subst}[\theta,f]$ обозначает результат замены $\theta$ на $f$.</p>
 <br>
 <p><span class="new-item item-g">Объединение</span> Объединение берет две формулы $f$ и $g$ и возвращает наиболее общую замену $\theta$, которая уравнивает их:</p>
 <div class=mobile-container>
