@@ -13,7 +13,7 @@
 <script defer src=../../js/article.min.js></script>
 <script defer src=../../js/lang.min.js></script>
 <script async defer src=../../js/buttons.js></script>
-</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Supervised Learning</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#introduction>Введение</a></div> <div class=dropdown-container> <a href=#introduction><span>Тип предсказания</span></a> <a href=#introduction><span>Тип модели</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#notations>Обозначения и основные понятия</a></div> <div class=dropdown-container> <a href=#notations><span>Функция потерь</span></a> <a href=#notations><span>Градиентный спуск</span></a> <a href=#notations><span>Правдоподобие</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#linear-models>Линейные модели</a></div> <div class=dropdown-container> <a href=#linear-models><span>Линейная регрессия</span></a> <a href=#linear-models><span>Логистическая регрессия</span></a> <a href=#linear-models><span>Обобщенные линейные модели</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#svm>Метод Опорных Векторов</a></div> <div class=dropdown-container> <a href=#svm><span>Оптимальный Классификатор с Отступом</span></a> <a href=#svm><span>Hinge loss</span></a> <a href=#svm><span>Ядро</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#generative-learning>Генеративное обучение</a></div> <div class=dropdown-container> <a href=#generative-learning><span>Гауссовский дискриминантный анализ</span></a> <a href=#generative-learning><span>Наивный Байес</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#tree>Деревья и ансамблевые методы</a></div> <div class=dropdown-container> <a href=#tree><span>CART</span></a> <a href=#tree><span>Случайный лес</span></a> <a href=#tree><span>Boosting</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#other>Другие методы</a></div> <div class=dropdown-container> <a href=#other><span>k-NN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-theory>Теория вычислительного обучения</a></div> <div class=dropdown-container> <a href=#learning-theory><span>Неравенство Хёфдинга</span></a> <a href=#learning-theory><span>PAC</span></a> <a href=#learning-theory><span>VC размерность</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-supervised-learning.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
+</head> <body data-offset=50 data-spy=scroll data-target=.navbar> <!-- HEADER <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href onclick=trackOutboundLink(this);> <img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href onclick=trackOutboundLink(this);>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects onclick=trackOutboundLink(this);>Projects</a></li> <li class=active><a href=teaching onclick=trackOutboundLink(this);>Teaching</a></li> <li><a href=blog onclick=trackOutboundLink(this);>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this);>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi onclick=trackOutboundLink(this); style="padding: 0px;"> <img alt=MIT netsrc=images/ src=../../images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> --> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title style=display:none;> <!-- DISPLAY:NONE --> <a href=teaching/cs-229 onclick=trackOutboundLink(this);><img alt=Stanford netsrc=images/ src=../../images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>CS 229 - Machine Learning</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>Supervised Learning</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#introduction>Введение</a></div> <div class=dropdown-container> <a href=#introduction><span>Тип предсказания</span></a> <a href=#introduction><span>Тип модели</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#notations>Обозначения и основные понятия</a></div> <div class=dropdown-container> <a href=#notations><span>Функция потерь</span></a> <a href=#notations><span>Градиентный спуск</span></a> <a href=#notations><span>Правдоподобие</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#linear-models>Линейные модели</a></div> <div class=dropdown-container> <a href=#linear-models><span>Линейная регрессия</span></a> <a href=#linear-models><span>Логистическая регрессия</span></a> <a href=#linear-models><span>Обобщенные линейные модели</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#svm>Метод Опорных Векторов</a></div> <div class=dropdown-container> <a href=#svm><span>Оптимальный классификатор с зазором</span></a> <a href=#svm><span>Hinge loss</span></a> <a href=#svm><span>Ядро</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#generative-learning>Генеративное обучение</a></div> <div class=dropdown-container> <a href=#generative-learning><span>Гауссовский дискриминантный анализ</span></a> <a href=#generative-learning><span>Наивный Байес</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#tree>Деревья и ансамблевые методы</a></div> <div class=dropdown-container> <a href=#tree><span>CART</span></a> <a href=#tree><span>Случайный лес</span></a> <a href=#tree><span>Boosting</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#other>Другие методы</a></div> <div class=dropdown-container> <a href=#other><span>k-NN</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#learning-theory>Теория вычислительного обучения</a></div> <div class=dropdown-container> <a href=#learning-theory><span>Неравенство Хёфдинга</span></a> <a href=#learning-theory><span>PAC</span></a> <a href=#learning-theory><span>VC размерность</span></a> </div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/afshinea/stanford-cs-229-machine-learning/blob/master/en/cheatsheet-supervised-learning.pdf onclick=trackOutboundLink(this); style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> Посмотреть PDF-версию на GitHub </a> </li> </div> </center> </div> <article class="markdown-body entry-content" itemprop=text>
 <div class="alert alert-primary" role=alert style=display:none;> <!-- DISPLAY:NONE -->
   Would you like to see this cheatsheet in your native language? You can help us <a class=alert-link href=https://github.com/shervinea/cheatsheet-translation onclick=trackOutboundLink(this);>translating it</a> on GitHub!
 </div>
@@ -188,7 +188,7 @@
 </center>
 </div>
 <br>
-<p><span class="new-item item-r">Функция стоимости</span> функция стоимости $J$ обычно используется для оценки производительности модели и определяется функцией потерь $L$ следующим образом:</p>
+<p><span class="new-item item-r">Функция стоимости</span> функция стоимости $J$ обычно используется для оценки предсказательной способности модели и определяется функцией потерь $L$ следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{J(\theta)=\sum_{i=1}^mL(h_\theta(x^{(i)}), y^{(i)})}\]
 </div>
@@ -281,14 +281,14 @@
 <td align=center>$1$</td>
 </tr>
 <tr>
-<td align=center>Гауссово</td>
+<td align=center>Гаусса</td>
 <td align=center>$\mu$</td>
 <td align=center>$y$</td>
 <td align=center>$\frac{\eta^2}{2}$</td>
 <td align=center>$\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{y^2}{2}\right)$</td>
 </tr>
 <tr>
-<td align=center>Пуассон</td>
+<td align=center>Пуассона</td>
 <td align=center>$\log(\lambda)$</td>
 <td align=center>$y$</td>
 <td align=center>$e^{\eta}$</td>
@@ -317,7 +317,7 @@
 <br>
 <h2><a aria-hidden=true class=anchor href=#svm id=svm></a>Метод Опорных Векторов</h2>
 <p>Задача метода опорных векторов - найти линию, которая максимизирует минимальное расстояние до линии.</p>
-<p><span class="new-item item-b">Оптимальный Классификатор с Отступом</span> $h$ таков, что:</p>
+<p><span class="new-item item-b">Оптимальный классификатор с зазором</span> $h$ таков, что:</p>
 <div class=mobile-container>
 \[\boxed{h(x)=\textrm{sign}(w^Tx-b)}\]
 </div>
@@ -330,7 +330,7 @@
 </center>
 <p><span class=remark>Примечание: граница решения определяется как $\boxed{w^Tx-b=0}$.</span></p>
 <br>
-<p><span class="new-item item-b">Hinge loss</span> Потери на шарнирах используются при настройке SVM и определяются следующим образом:</p>
+<p><span class="new-item item-b">Hinge loss</span> используется в качестве функции потерь SVM и определяются следующим образом:</p>
 <div class=mobile-container>
 \[\boxed{L(z,y)=[1-yz]_+=\max(0,1-yz)}\]
 </div>
@@ -339,7 +339,7 @@
 <div class=mobile-container>
 \[\boxed{K(x,z)=\phi(x)^T\phi(z)}\]
 </div>
-<p>На практике ядро $K$ определяется как $K(x,z)=\exp\left(-\frac{||x-z||^2}{2\sigma^2}\right)$ называется ядром Гаусса и обычно используется оно.</p>
+<p>На практике ядро $K$ определяется как $K(x,z)=\exp\left(-\frac{||x-z||^2}{2\sigma^2}\right)$ называется ядром Гаусса и чаще всего используется.</p>
 <center>
   <img alt="SVM kernel" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=svm-kernel-en.png?43f2af419ba926948a5bbf3289f2cf39>
 </center>
@@ -471,7 +471,7 @@
 \[\boxed{\epsilon(\widehat{h})\leqslant\left(\min_{h\in\mathcal{H}}\epsilon(h)\right)+2\sqrt{\frac{1}{2m}\log\left(\frac{2k}{\delta}\right)}}\]
 </div>
 <br>
-<p><span class="new-item item-g">VC размерность</span> Размерность Вапника-Червоненкиса (VC) данного бесконечного класса гипотез $\mathcal{H}$, отмеченное как $\textrm{VC}(\mathcal{H})$, - это размер самого большого множества, которое разрушается $\mathcal{H}$.</p>
+<p><span class="new-item item-g">VC размерность</span> Размерность Вапника-Червоненкиса (VC) данного бесконечного класса гипотез $\mathcal{H}$, обозначается как $\textrm{VC}(\mathcal{H})$, - это размер самого большого множества, которое разрушается $\mathcal{H}$.</p>
 <p><span class=remark>Примечание: VC размерность ${\small\mathcal{H}=\{\textrm{набор линейных классификаторов в 2-х измерениях}\}}$ это 3.</span></p>
 <center>
   <img alt="VC dimension" class=img-responsive netsrc=teaching/cs-229/illustrations/ src=vc-dimension.png?73859dedcc66a0e47526936f801b7b56>
