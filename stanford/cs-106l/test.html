@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="top">
+score:0
+</div>
+<br>
+<br>
+
+<div><pre>
+Q - Where is the variable specified correctly?
+</pre>
+<button onclick=f(this,20,0)>A - var str = "Hi";</button>
+<button onclick=f(this,20,0)>B - int num = "1";</button>
+<button onclick=f(this,20,0)>C - done = true;</button>
+<button onclick=f(this,20,1)>D - char sym = 'a';</button>
+
+
+</div><div><pre class="prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+void f() { 
+   static int i; 
+   
+   ++i; 
+   cout &lt;&lt; i &lt;&lt; " "; 
+}
+
+int main() { 
+   f(); 
+   f(); 
+   f(); 
+}
+</pre>
+<button onclick=f(this,1,0)>A - 1 1 1</button>
+<button onclick=f(this,1,0)>B - 0 0 0</button>
+<button onclick=f(this,1,0)>C - 3 2 1</button>
+<button onclick=f(this,1,1)>C - 1 2 3</button>
+</div><div><pre class="prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+int main() { 
+   int i = 13, j = 60;
+   
+   i^=j;
+   j^=i;
+   i^=j;
+   cout &lt;&lt; i &lt;&lt; " " &lt;&lt; j;
+}
+</pre>
+<button onclick=f(this,2,0)>A - 73 73</button>
+<button onclick=f(this,2,1)>B - 60 13</button>
+<button onclick=f(this,2,0)>C - 13 60</button>
+<button onclick=f(this,2,0)>C - 60 60</button>
+</div><div><pre>
+Q - How can we make an class act as an interface in C++?
+</pre>
+<!--
+Интерфейсы C ++ реализуются с использованием абстрактных классов,и эти абстрактные классы не следует путать с абстракцией данных, которая представляет собой концепцию сохранения деталей реализации отдельно от связанных данных.
+
+Класс делается абстрактным, объявляя хотя бы одну из своих функций чистой виртуальной функцией. Чистая виртуальная функция задается путем размещения в объявлении «= 0» следующим образом:
+
+class Box {
+   public:
+      // pure virtual function
+      virtual double getVolume() = 0;
+      
+   private:
+      double length;      // Length of a box
+      double breadth;     // Breadth of a box
+      double height;      // Height of a box
+};
+-->
+<button onclick=f(this,3,1)>A - By only providing all the functions as virtual functions in the class.</button>
+<button onclick=f(this,3,0)>B - Defining the class following with the keyword virtual</button>
+<button onclick=f(this,3,0)>C - Defining the class following with the keyword interface</button>
+<button onclick=f(this,3,0)>C - Defining the class following with the keyword abstract</button>
+</div><div><pre class="prettyprint">
+#include &lt;iostream&gt;
+
+using namespace std;
+int main() { 
+   int x = 5;
+
+   if(x==5) {	
+      if(x==5) break;
+      cout &lt;&lt; "Hello";
+   } 
+
+   cout &lt;&lt; "Hi"; 
+}
+</pre>
+<button onclick=f(this,4,1)>A - Compile error</button>
+<button onclick=f(this,4,0)>B - Hi</button>
+<button onclick=f(this,4,0)>C - HelloHi</button>
+<button onclick=f(this,4,0)>C - Hello</button>
+</div><div><pre class="prettyprint">
+Q - What is the output of the following program?
+
+#include &lt;iostream&gt;
+
+using namespace std;
+int main() {
+   char *s = "C++";
+   
+	cout &lt;&lt; s &lt;&lt; " ";
+	s++;
+	cout &lt;&lt; s &lt;&lt; " ";
+}
+</pre>
+<button onclick=f(this,5,0)>A - C++ C++</button>
+<button onclick=f(this,5,1)>B - C++ ++</button>
+<button onclick=f(this,5,0)>C - ++ ++</button>
+<button onclick=f(this,5,0)>C - Compile error</button>
+</div><div><pre class="prettyprint">
+Q - From the below class choose the proper definition of the member function f().
+
+template <class T>
+
+class abc {
+   void f();
+};
+</pre>
+<button onclick=f(this,19,1)>A - template <class T><br>
+    void abc<T>::f() { }
+</button>
+<button onclick=f(this,19,0)>B - template<class T><br>
+    void abc::f() { }
+</button>
+<button onclick=f(this,19,0)>C - template<T><br>
+    void abc<class T>::f() { }
+</button>
+<button onclick=f(this,19,0)>C - template<T><br>
+    void abc<T>::f() { }</button>
+</div><div><pre class="prettyprint"> 
+#include &lt;iostream&gt;
+using namespace std;
+ 
+int main () {
+   // local variable declaration:
+   int x = 1;
+
+   switch(x) {
+   case 1 :
+      cout  &lt;&lt;  "Hi!"  &lt;&lt;  endl; 
+      break;
+   default :
+      cout  &lt;&lt;  "Hello!"  &lt;&lt;  endl;
+   }
+}
+</pre>
+<button onclick=f(this,6,0)>A - Hello</button>
+<button onclick=f(this,6,1)>B - Hi</button>
+<button onclick=f(this,6,0)>C - HelloHi</button>
+<button onclick=f(this,6,0)>C - Compile error</button>
+</div><div><pre>
+Q - An inline function can execute faster than a normal function.
+</pre>
+<button onclick=f(this,7,1)>A - True</button>
+<button onclick=f(this,7,0)>B - False</button>
+</div><div><pre class="prettyprint">
+Q - What is the output of the following program?
+
+int main() {
+}
+</pre>
+<button onclick=f(this,8,1)>A - No output</button>
+<button onclick=f(this,8,0)>B - Garbage</button>
+<button onclick=f(this,8,0)>C - Compile error</button>
+<button onclick=f(this,8,0)>C - Runtime error</button>
+</div><div><pre>
+Q - Choose the option not applicable for the constructor.
+</pre>
+<button onclick=f(this,9,0)>A - Cannot be called explicitly.</button>
+<button onclick=f(this,9,0)>B - Cannot be overloaded.</button>
+<button onclick=f(this,9,1)>C - Cannot be overridden.</button>
+<button onclick=f(this,9,0)>C - None of the above.</button>
+</div><div><pre class="prettyprint">
+Q - What is the output of the following program?
+
+#include &lt;iostream&gt;
+
+using namespace std;
+int main() { 
+
+   int i = 1, j = 2, k = 3, r; 
+
+   r = (i, j, k);
+
+   cout &lt;&lt; r &lt;&lt; endl;
+
+}
+</pre>
+<button onclick=f(this,10,0)>A - 1</button>
+<button onclick=f(this,10,0)>B - 2</button>
+<button onclick=f(this,10,1)>C - 3</button>
+<button onclick=f(this,10,0)>C - Compile Error</button>
+</div><div><pre>
+Q - Which type of data file is analogous to an audio cassette tape?
+</pre>
+<button onclick=f(this,11,0)>A - Random access file</button>
+<button onclick=f(this,11,1)>B - Sequential access file</button>
+<button onclick=f(this,11,0)>C - Binary file</button>
+<button onclick=f(this,11,0)>C - Source code file</button>
+</div><div><pre>
+Q - Choose the invalid identifier from the below
+</pre>
+<button onclick=f(this,12,0)>A - Int</button>
+<button onclick=f(this,12,1)>B - bool</button>
+<button onclick=f(this,12,0)>C - DOUBLE</button>
+<button onclick=f(this,12,0)>C - __0__</button>
+</div><div><pre class="prettyprint">
+Q - What is the size of the following union definition?
+
+#include &lt;iostream&gt;
+
+using namespace std;
+int main() {
+   union abc { 
+      char a, b, c, d, e, f, g, h; 
+      
+      int i;
+   };
+   cout &lt;&lt; sizeof(abc) &lt;&lt; endl;
+}
+</pre>
+<button onclick=f(this,13,0)>A - 1</button>
+<button onclick=f(this,13,0)>B - 2</button>
+<button onclick=f(this,13,1)>C - 4</button>
+<button onclick=f(this,13,0)>C - 8</button>
+</div><div><pre>
+Q - Runtime polymorphism is done using.
+</pre>
+<button onclick=f(this,14,0)>A - Function overloading</button>
+<button onclick=f(this,14,0)>B - Virtual classes</button>
+<button onclick=f(this,14,1)>C - Virtual functions</button>
+<button onclick=f(this,14,0)>C - Friend function</button>
+</div><div><pre>
+Q - A trigraph character begins with
+</pre>
+<button onclick=f(this,15,0)>A - #</button>
+<button onclick=f(this,15,0)>B - ##</button>
+<button onclick=f(this,15,1)>C - ?</button>
+<button onclick=f(this,15,0)>C - ??</button>
+</div><div><pre>
+Q - Choose the pure virtual function definition from the following.
+</pre>
+<button onclick=f(this,16,0)>A - virtual void f()=0 { }</button>
+<button onclick=f(this,16,0)>B - void virtual f()=0 { }</button>
+<button onclick=f(this,16,0)>C - virtual void f() {} = 0;</button>
+<button onclick=f(this,16,1)>C - None of the above.</button>
+</div><div><pre>
+Q - What is the full form of RTTI.
+</pre>
+<button onclick=f(this,17,1)>A - Runtime type identification</button>
+<button onclick=f(this,17,0)>B - Runtime template identification</button>
+<button onclick=f(this,17,0)>C - Robust Template Type Inheritance</button>
+<button onclick=f(this,17,0)>C - None of the above.</button>
+</div><div><pre>
+Q - We can have varying number of arguments for the overloaded form of () operator.
+</pre>
+<button onclick=f(this,18,1)>A - True</button>
+<button onclick=f(this,18,0)>B - False</button>
+</div><div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
