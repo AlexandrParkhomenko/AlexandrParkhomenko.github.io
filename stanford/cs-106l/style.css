@@ -15,4 +15,4 @@ button {
     text-align: start;
     margin: 0em;
 }
-#top   {width:100%;position:fixed;background:lightsteelblue;margin:0;padding:0.5em;--padding-x: 1.2em;}
+#top   {width:100%;position:fixed;background:#8c1515;color:white;margin:0;padding:0.5em;--padding-x: 1.2em;}
