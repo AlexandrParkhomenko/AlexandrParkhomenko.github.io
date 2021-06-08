@@ -1,0 +1,18 @@
+body   {margin:0}
+div    {margin:0;padding:0.5em;}
+pre    {width:99%;}
+button {
+    width:99%;
+    -webkit-writing-mode: horizontal-tb !important;
+    -webkit-appearance: button;
+    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+    border-style: solid;
+    border-width: 1px;
+    padding: 1px 7px 2px;
+    text-rendering: auto;
+    color: initial;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+}
+#top   {width:100%;position:fixed;background:#8c1515;color:white;margin:0;padding:0.5em;--padding-x: 1.2em;}
