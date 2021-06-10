@@ -1,5 +1,5 @@
 /*
-  вычитаем из первого списка второй
+  Simple ters generator
 */
 
 e = function(__id){
@@ -8,13 +8,45 @@ e = function(__id){
 
 run = function(){
   a = e("textinput1").value.split("\n");
-  b = e("textinput2").value.split("\n");
-  for(i=0; i<b.length; i++){
-    c = a.indexOf(b[i])
-console.log("b[i]="+b[i])
-console.log("c="+c)
-    if(c != -1 )  a.splice(c,1);
-console.log(a)
+  let doc = document.createElement('div');
+  let div;
+  let num = 1;
+  for(i=0; i<a.length; i++){
+    c = a[i].split(" ");
+    if(c[0]==""){
+      if(c[1]=="!"){
+        c.splice(0, 2); // удаление форматирования
+        a[i] = c.join(" ");
+        let help = document.createElement('div');
+        let text = document.createTextNode(a[i]);
+        help.appendChild(text);
+        help.className = "help";
+        div.appendChild(help);
+      } else {
+        let t = 0;
+        if(c[2]=="=") {
+          t = 1;
+          c[2] = "-";
+          a[i] = c.join(" ");
+        }
+        let button = document.createElement('button');
+        let text = document.createTextNode(a[i]);
+        button.appendChild(text);
+        button.setAttribute("onclick", "f(this,"+num+","+t+")");
+        div.appendChild(button);
+      }
+    } else {
+      if (div != undefined){
+        doc.appendChild(div);
+        num++;
+      }
+      div = document.createElement('div');
+      let pre = document.createElement('pre');
+      let text = document.createTextNode(a[i]);
+      pre.appendChild(text);
+      div.appendChild(pre);
+    }
   }
-  e("textoutput").value = a.join("\n");
+//console.log(a)
+  e("textoutput").value = doc.innerHTML;
 }
