@@ -40,9 +40,15 @@ run = function(){
         doc.appendChild(div);
         num++;
       }
+      let q = "";
+      do{
+        q = q + a[i] + "\n";
+        i++;
+      } while(i<a.length && (a[i].substr(0,3).match(/\s[A-Z]\s/)===null))
+      i--; // выскочили на ответы, откатываемся
       div = document.createElement('div');
       let pre = document.createElement('pre');
-      let text = document.createTextNode(a[i]);
+      let text = document.createTextNode(q);
       pre.appendChild(text);
       div.appendChild(pre);
     }
